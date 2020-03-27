@@ -36,3 +36,9 @@ jobs:
 
         sudo -E sshpass -e scp packages.yml root@${{ secrets.DROPLET_IP }}:packages.yml
         sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} 'sudo -E /opt/tljh/user/bin/conda env update -n base --file packages.yml'
+        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} 'sudo -E /opt/tljh/user/bin/pip install jupyter_contrib_nbextensions'
+        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} 'sudo -E /opt/tljh/user/bin/jupyter contrib nbextension install --sys-prefix'
+        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} 'sudo -E /opt/tljh/user/bin/jupyter nbextension enable freeze/main'
+
+
+        
