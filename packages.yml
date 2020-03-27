@@ -1,0 +1,15 @@
+name: required_environment
+channels: 
+    - conda-forge
+    - underworldcode
+dependencies:
+    - stripy
+    - litho1pt0
+    - quagmire
+    - cartopy
+    - obspy
+    - pandas
+    - pip 
+
+
+
