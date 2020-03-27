@@ -3,9 +3,9 @@
 Editing this file triggers a (re)install of the jupyterhub installation.
 There will be errors if the github secrets have not been set up 
 
- - **IP Address:** http://128.199.153.60
+ - **IP Address:** http://159.89.203.1
  - **Release ID:** 0.0.1
- - **Droplet Name:** ubuntu-rses-earth-sci-dev
+ - **Droplet Name:** ubuntu-emsc-2022-2020
  
  ## Comments
    

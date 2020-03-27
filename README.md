@@ -1,4 +1,4 @@
-# Jupyterhub on DigitalOcean to serve notebooks for a course
+# Jupyterhub for ANU EMSC2022
 
 Many of us use jupyter notebooks to teach classes and we often serve them through `mybinder.org` because all of our students experience the same environment no matter what platform they use. The only problem with binder is that any changes the students make to their notebooks are not recorded if their session times out - the student session on binder is *not persistent* across sessions. 
 
@@ -16,7 +16,7 @@ is alive and well.
 This template repository contains sample content that runs on a dedicated droplet ... the status of that droplet
 is autoatically monitored:
  
-![Health check](https://github.com/ANU-RSES-Education/droplet-template/workflows/Health%20check/badge.svg)
+![Health check](https://github.com/ANU-RSES-Education/EMSC-2022/workflows/Health%20check/badge.svg)
 
 
 ## How to use this template
@@ -34,6 +34,11 @@ The full set of instructions is given in the [Documentation](Documentation) fold
 ## Try out the Nbgitpuller
 
 To make a "binder-like" link to a repository on a droplet that you have set up, you can do this:
+
+[https://jupyterhub.github.io/nbgitpuller/link.html](https://jupyterhub.github.io/nbgitpuller/link.html)
+
 You can launch this example to try it out by clicking on this link. Your work is persistent. 
 
-http://128.199.153.60/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FANU-RSES-Education%2Fdroplet-template&urlpath=tree%2Fdroplet-template%2FStartHere.ipynb&branch=master
+http://159.89.203.1/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FANU-RSES-Education%2FEMSC-2022&urlpath=lab%2Ftree%2FEMSC-2022%2FStartHere.ipynb
+
+
