@@ -21,6 +21,14 @@ Manage users / reset passwords etc
 
 [![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Admin-EMSC2022-Red)](http://159.89.203.1/hub/admin)
  
+Make an nbgitpuller link for a particular notebook
+
+[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Admin-LinkMaker-Red)](https://jupyterhub.github.io/nbgitpuller/link.html?hub=http://159.89.203.1&repo=https://github.com/ANU-RSES-Education/EMSC-2022)
+
+
+
+
+ 
 
 
 
