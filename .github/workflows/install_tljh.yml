@@ -26,19 +26,47 @@ jobs:
     # Updates packages / reconfig tljh then reloads just in case
     - name: Install tljh from scratch then update the packages
       env:  
-        SSHPASS:       ${{ secrets.DROPLET_PASS }}
-        HUBADMIN:      ${{ secrets.HUBADMIN_USER }}
+        SSHPASS:       ${{ secrets.DROPLET_PASS }} 
+        HUBADMIN:      ${{ secrets.HUBADMIN_USER }} 
         HUBADMIN_PASS: ${{ secrets.HUBADMIN_PASSWORD }}
+        REMOTE_SH:     "sudo -E sshpass -e ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }}"
       run: |
-        sudo -E sshpass -e ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }} "hostname"
-        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} "curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 -  --admin lmoresi --admin $HUBADMIN:$HUBADMIN_PASS" 
-        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} "sudo tljh-config reload hub"
-
-        sudo -E sshpass -e scp packages.yml root@${{ secrets.DROPLET_IP }}:packages.yml
-        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} 'sudo -E /opt/tljh/user/bin/conda env update -n base --file packages.yml'
-        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} 'sudo -E /opt/tljh/user/bin/pip install jupyter_contrib_nbextensions'
-        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} 'sudo -E /opt/tljh/user/bin/jupyter contrib nbextension install --sys-prefix'
-        sudo -E sshpass -e ssh root@${{ secrets.DROPLET_IP }} 'sudo -E /opt/tljh/user/bin/jupyter nbextension enable freeze/main'
-
-
+        $REMOTE_SH "hostname"
+        $REMOTE_SH "curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 -  --admin $HUBADMIN:$HUBADMIN_PASS" 
         
+        # This is optional if you want to use a different authenticator
+        $REMOTE_SH "sudo tljh-config set auth.type nativeauthenticator.NativeAuthenticator"
+        $REMOTE_SH "sudo tljh-config set auth.NativeAuthenticator..ask_email_on_signup true"
+
+        # And this changes the default to use jupyterlab
+        $REMOTE_SH "sudo tljh-config set user_environment.default_app jupyterlab"
+
+        # Idle timeout 
+        $REMOTE_SH "sudo tljh-config set services.cull.timeout 1800"
+
+        $REMOTE_SH "sudo tljh-config reload hub"
+
+        # Update/Install apt-get packages
+        sed '/^[[:blank:]]*#/d;s/#.*//' apt_get_packages.txt > apt_get_packages_no_comment.txt
+        sudo -E sshpass -e scp apt_get_packages_no_comment.txt root@${{ secrets.DROPLET_IP }}:apt_get_packages.txt
+        $REMOTE_SH 'sudo -E xargs apt-get -y install < apt_get_packages.txt'
+  
+        # Update/Install python packages 
+        sudo -E sshpass -e scp conda_packages.yml root@${{ secrets.DROPLET_IP }}:conda_packages.yml
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/conda env update -n base --file conda_packages.yml'
+        
+        # This is the lavavu install (note, lavavu introduces the list of apt-get dependencies)
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/pip install lavavu xvfbwrapper'
+
+        # Notebook extensions are handled like this 
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/pip install jupyter_contrib_nbextensions'
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/jupyter contrib nbextension install --sys-prefix'
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/jupyter nbextension enable freeze/main'
+
+        # And this is how to enable https via letsencrypt (see tljh docs for details)
+
+        $REMOTE_SH 'sudo tljh-config set https.enabled true'
+        $REMOTE_SH 'sudo tljh-config set https.letsencrypt.email diablo@underworldcode.org'
+        $REMOTE_SH "sudo tljh-config add-item https.letsencrypt.domains ${{ secrets.DROPLET_IP }}"
+        $REMOTE_SH "sudo tljh-config reload proxy"
+

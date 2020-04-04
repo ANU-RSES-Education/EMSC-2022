@@ -11,6 +11,9 @@ dependencies:
     - pandas
     - pip 
     - libiconv
+    - swig
+    - compilers # No underworld binaries at this point
+
 
 
 
