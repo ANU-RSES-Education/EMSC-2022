@@ -43,7 +43,6 @@ jobs:
 
         # Idle timeout 
         $REMOTE_SH "sudo tljh-config set services.cull.timeout 1800"
-
         $REMOTE_SH "sudo tljh-config reload hub"
 
         # Update/Install apt-get packages

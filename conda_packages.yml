@@ -12,6 +12,7 @@ dependencies:
     - pip 
     - libiconv
     - swig
+    - scons
     - compilers # No underworld binaries at this point
 
 

@@ -27,8 +27,10 @@ jobs:
       if: failure()
       env:  
         SSHPASS: ${{ secrets.DROPLET_PASS }}
+        REMOTE_SH: "sudo -E sshpass -e ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }}"
+
       run: |
-        sshpass -e ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }} hostname
-        sshpass -e ssh root@${{ secrets.DROPLET_IP }} "sudo tljh-config reload hub"
+        $REMOTE_SH hostname
+        $REMOTE_SH "sudo tljh-config reload hub"
         
       
