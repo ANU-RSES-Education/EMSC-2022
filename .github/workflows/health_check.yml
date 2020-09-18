@@ -1,8 +1,12 @@
 name: Health check
 
 on:
-  schedule: 
-    - cron:  '*/30 * * * *'  # Every 30 minutes
+#   schedule: 
+#     - cron:  '*/30 * * * *'  # Every 30 minutes
+
+  # Option to run this by hand
+  workflow_dispatch:
+
 
   push:
 
