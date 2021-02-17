@@ -1,19 +1,16 @@
 name: required_environment
 channels: 
     - conda-forge
-    - underworldcode
+    - geo-down-under
 dependencies:
     - stripy
     - litho1pt0
-    - quagmire
     - cartopy
     - obspy
     - pandas
     - pip 
     - libiconv
-    - swig
-    - scons
-    - compilers # No underworld binaries at this point
+
 
 
 
