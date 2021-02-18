@@ -1,19 +1,19 @@
 # Line-by-line list of packages for apt-get on the remote machine
 
 # lavavu build
-build-essential 
-libx11-dev 
-libpng-dev 
-libtiff-dev 
+# build-essential 
+# libx11-dev 
+# libpng-dev 
+# libtiff-dev 
 
 # lavavu build / run
-libgl1-mesa-dev 
-libglu1-mesa-dev 
-freeglut3-dev 
-mesa-common-dev 
-libglu1-mesa-dev 
-libx11-dev 
-xvfb 
+# libgl1-mesa-dev 
+# libglu1-mesa-dev 
+# freeglut3-dev 
+# mesa-common-dev 
+# libglu1-mesa-dev 
+# libx11-dev 
+# xvfb 
 
 # Underworld build / run
 
