@@ -14,6 +14,8 @@ Change my password (only for NativeAuthenticator)
 
 [![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Password-EMSC2022-Red)](https://emsc2022-2021.rses.underworldcloud.org/hub/change-password)
 -->
+ 
+<img src="ImagesEtc/EMSC-2022-2021-QRcode.png" alt="QR Code" width="150" >
 
 ## Administration
 
