@@ -35,7 +35,7 @@ jobs:
         $REMOTE_SH "hostname"
 
         sudo -E sshpass -e scp conda_packages.yml root@${{ secrets.DROPLET_IP }}:conda_packages.yml
-        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/conda env update -n base --file packages.yml'
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/conda env update --file packages.yml'
 
         # Update/Install apt-get packages
 
