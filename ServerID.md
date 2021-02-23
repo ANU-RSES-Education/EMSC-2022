@@ -18,6 +18,7 @@ The https config failed today (expired) and it may be necessary to reboot to get
 2021.02.14 - Restore for 2021 with new IP, new droplet. This completely removes all history & logins etc
 2021.02.14 - Fix DNS
 2021.02.14 - geoscience.education is blocked by our firewall, sadly - user underworldcloud.org
+2021.02.23 - Restore again to remove old authorization methods
 
 
 
