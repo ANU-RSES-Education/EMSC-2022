@@ -34,9 +34,10 @@ jobs:
         $REMOTE_SH "hostname"
         $REMOTE_SH "curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 -  --admin $HUBADMIN:$HUBADMIN_PASS" 
         
-        # This is optional if you want to use a different authenticator
-        $REMOTE_SH "sudo tljh-config set auth.type nativeauthenticator.NativeAuthenticator"
-        $REMOTE_SH "sudo tljh-config set auth.NativeAuthenticator..ask_email_on_signup true"
+        # This is optional if you want to use a different authenticator (1st use authenticator is default - add users, then let them choose a password)
+        # $REMOTE_SH "sudo tljh-config set auth.type nativeauthenticator.NativeAuthenticator"
+        $REMOTE_SH "sudo tljh-config set auth.FirstUseAuthenticator.create_users False"
+        $REMOTE_SH "sudo tljh-config reload hub"
 
         # And this changes the default to use jupyterlab
         $REMOTE_SH "sudo tljh-config set user_environment.default_app jupyterlab"
