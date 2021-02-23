@@ -11,6 +11,8 @@ dependencies:
     - pandas
     - pip 
     - libiconv
+    - pip:
+      - lavavu<1.7
 
 
 
