@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAB 5 - Maps &#8212; EMSC 42022</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="On demand mapping services" href="LAB5_On_Demand_MapServices.html" />
+    <link rel="prev" title="EMSC 2022-2021 Week 5 - Making Maps with Python" href="Week5_Lab.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 42022</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Lab 1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB1/EMSC2022W1.html">
+   Jupyter Notebook: EMSC2022, Practical Week 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB1/EMSC2022W1.html#calculating-the-relative-velocity-of-two-plates-based-on-an-euler-pole">
+   Calculating the relative velocity of two plates based on an Euler pole
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Lab 2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB2/EMSC2022W2.html">
+   EMSC2022 Practical - Heat flow and ocean depth - Solution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Lab 4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB4/EMSC2022W4.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB4/EMSC2022W4.html#your-challenge">
+   Your challenge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Maps
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="Week5_Lab.html">
+   EMSC 2022-2021 Week 5 - Making Maps with Python
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     LAB 5 - Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="LAB5_On_Demand_MapServices.html">
+     On demand mapping services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="LAB5_Volcano%2BMap.html">
+     LAB 5 - Map of active volcanoes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Earthquakes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week6/LAB6-focal_mechanisms.html">
+   LAB 4 - Focal Mechanisms
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Earthquakes 2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week7/LAB7-Raypaths.html">
+   LAB 5 - Seismic raypaths
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week7/LAB7-NZ_Earthquake.html">
+   Lab 5 - New Zealand Earthquake Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Earthquakes 3
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week8/LAB8-Gutenberg-Richter.html">
+   Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Mantle dynamics and heat flow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.i.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.ii.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.iii.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.iv.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.v.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/LAB-week5/LAB5_Maps2020.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week5/LAB5_Maps2020.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://emsc2022-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB-week5/LAB5_Maps2020.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-5-maps">
+<h1>LAB 5 - Maps<a class="headerlink" href="#lab-5-maps" title="Permalink to this headline">¶</a></h1>
+<p>Here we will jump in and make some maps based upon what you have learned making the volcano map and the topography maps of where you grew up in the previous two steps of this Lab.</p>
+<p>Remember how we set up our codes by importing what we need in python.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+<p>The second line here is, of course, just our familiar way of importing <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> for plotting.</p>
+<p>Now, making a map is exactly the same as plotting in polar coordinates: we simply need to specify <code class="docutils literal notranslate"><span class="pre">projection=Projection()</span></code> when creating the plot. Here, <code class="docutils literal notranslate"><span class="pre">Projection()</span></code> is one of the Cartopy-supported <a class="reference external" href="https://en.wikipedia.org/wiki/Map_projection">map projections</a>. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ax.set_global()</span></code> command informs Cartopy that we want to make a map of the whole globe, while the <code class="docutils literal notranslate"><span class="pre">ax.coastlines()</span></code> command draws coastline information onto it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the projection then show the plot</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">ce8f47be369f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Specify the projection then show the plot</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, the map is centred on the 0 longitude meridian. To change this, we can pass <code class="docutils literal notranslate"><span class="pre">central_longitude=longitude</span></code> to <code class="docutils literal notranslate"><span class="pre">ccrs.PlateCarree()</span></code>.</p>
+<p>Make a single figure that consists of multiple subplots, illustrating the following projections:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ccrs.PlateCarree</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ccrs.Mercator</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ccrs.Mollweide</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ccrs.Robinson</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ccrs.InterruptedGoodeHomolosine</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ccrs.NearsidePerspective</span></code></p></li>
+</ul>
+<p>The maps we have made so far are global. If you only want to work with a subset of the globe, you can specify a different region (after creating the axes, but before doing any plotting) by removing <code class="docutils literal notranslate"><span class="pre">ax.set_global()</span></code> and instead calling <code class="docutils literal notranslate"><span class="pre">ax.set_extent((llon,rlon,llat,ulat))</span></code> where <code class="docutils literal notranslate"><span class="pre">llon</span></code> and <code class="docutils literal notranslate"><span class="pre">rlon</span></code> are the longitudes of the left- and right-hand sides of the region, and <code class="docutils literal notranslate"><span class="pre">llat</span></code> and <code class="docutils literal notranslate"><span class="pre">ulat</span></code> are the lower and upper latitudes of the region.  Remember to set <code class="docutils literal notranslate"><span class="pre">central_longitude</span></code> appropriately, or you may get surprising results.</p>
+<p>Make a map of the area around your hometown. You may wish to pass <code class="docutils literal notranslate"><span class="pre">resolution='50m'</span></code> or <code class="docutils literal notranslate"><span class="pre">resolution='10m'</span></code> to <code class="docutils literal notranslate"><span class="pre">ax.coastlines()</span></code> to obtain a better-looking result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To add features such as rivers, national boundaries and so on to your map, we must import another submodule of Cartopy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cf</span>
+</pre></div>
+</div>
+<p>This provides immediate access to several low-resolution feature datasets, including:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cf.BORDERS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cf.COASTLINE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cf.LAND</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cf.OCEAN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cf.LAKES</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cf.RIVERS</span></code></p></li>
+</ul>
+<p>Each of these can be added to your plot by calling <code class="docutils literal notranslate"><span class="pre">ax.add_feature(feature)</span></code>; additional arguments such as <code class="docutils literal notranslate"><span class="pre">color=colorname</span></code> can be used to control how they are displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For higher-resolution data, and for other features, Cartopy allows you to make use of data from <a class="reference external" href="https://www.naturalearthdata.com/">Natural Earth</a>. Unfortunately, the documentation for doing so is currently rather poor, and getting everything to work can require some amount of trial and error. The basic syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">scale</span><span class="p">),</span>
+               <span class="n">edgecolor</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">category</span></code> is either <code class="docutils literal notranslate"><span class="pre">'physical'</span></code> or <code class="docutils literal notranslate"><span class="pre">'cultural'</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code> is <code class="docutils literal notranslate"><span class="pre">'10m'</span></code>, <code class="docutils literal notranslate"><span class="pre">'50m'</span></code> or <code class="docutils literal notranslate"><span class="pre">'110m'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'name'</span></code> is the name of the appropriate dataset. It seems this has to be inferred from the ‘download’ links on the Natural Earth website. The color options, <code class="docutils literal notranslate"><span class="pre">edgecolor</span></code> and <code class="docutils literal notranslate"><span class="pre">facecolor</span></code>, specify the colour used to draw outlines and fills; for some reason, it is necessary to pass the text string <code class="docutils literal notranslate"><span class="pre">'none'</span></code> (and not, as is more usual, the Python object <code class="docutils literal notranslate"><span class="pre">None</span></code>) if one does not want an object to be filled. Thus, for example, high-resolution rivers can be drawn by the command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span><span class="s1">&#39;rivers_lake_centerlines&#39;</span><span class="p">,</span><span class="s1">&#39;10m&#39;</span><span class="p">),</span>
+               <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Add rivers and country boundaries (as appropriate) to your hometown map.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is also an interface to <a class="reference external" href="https://www.ngdc.noaa.gov/mgg/shorelines/">GSHHS coastline data</a>.</p>
+<p>Because Cartopy is built as an add-on to <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>, you can use all of the standard plotting tools to add data to your map. For example, point data and lines can be added using <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>, contours can be drawn using <code class="docutils literal notranslate"><span class="pre">plt.contour()</span></code>, and gridded data using <code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code>. However, it is critically important that you include <code class="docutils literal notranslate"><span class="pre">transform</span> <span class="pre">=</span> <span class="pre">&lt;something</span> <span class="pre">appropriate&gt;</span></code> in each plotting command, to ensure that Cartopy correctly interprets the data you provide. For most common cases, where your data is expressed in terms of latitude and longitude, the most appropriate choice will be <code class="docutils literal notranslate"><span class="pre">transform=ccrs.Geodetic()</span></code>. When a geodetic coordinate system is used, using <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> to draw a line between two points will result in a geodesic curve (the great-circle path representing the shortest distance on the surface of the spherical Earth). If you instead wish to draw a line that appears straight in the 2-D plane, you can use <code class="docutils literal notranslate"><span class="pre">transform=ccrs.PlateCarree()</span></code>.</p>
+<p>Create a global map and plot a line joining your hometown and Canberra using both <code class="docutils literal notranslate"><span class="pre">transform=ccrs.PlateCarree()</span></code> and <code class="docutils literal notranslate"><span class="pre">transform=ccrs.Geodetic()</span></code>. Satisfy yourself that you understand the difference. Plot (and label) the locations of your hometown, the capital city of your country, and Canberra.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/LAB-week5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Week5_Lab.html" title="previous page">EMSC 2022-2021 Week 5 - Making Maps with Python</a>
+    <a class='right-next' id="next-link" href="LAB5_On_Demand_MapServices.html" title="next page">On demand mapping services</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By David Heslop, Meghan Miller, Louis Moresi<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

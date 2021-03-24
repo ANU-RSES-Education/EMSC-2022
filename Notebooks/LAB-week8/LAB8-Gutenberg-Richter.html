@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation &#8212; EMSC 42022</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor." href="../LAB-convection/EMSC2022W11.i.html" />
+    <link rel="prev" title="Lab 5 - New Zealand Earthquake Data" href="../LAB-week7/LAB7-NZ_Earthquake.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 42022</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Lab 1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB1/EMSC2022W1.html">
+   Jupyter Notebook: EMSC2022, Practical Week 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB1/EMSC2022W1.html#calculating-the-relative-velocity-of-two-plates-based-on-an-euler-pole">
+   Calculating the relative velocity of two plates based on an Euler pole
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Lab 2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB2/EMSC2022W2.html">
+   EMSC2022 Practical - Heat flow and ocean depth - Solution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Lab 4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB4/EMSC2022W4.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB4/EMSC2022W4.html#your-challenge">
+   Your challenge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Maps
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../LAB-week5/Week5_Lab.html">
+   EMSC 2022-2021 Week 5 - Making Maps with Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-week5/LAB5_Maps2020.html">
+     LAB 5 - Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-week5/LAB5_On_Demand_MapServices.html">
+     On demand mapping services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-week5/LAB5_Volcano%2BMap.html">
+     LAB 5 - Map of active volcanoes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Earthquakes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week6/LAB6-focal_mechanisms.html">
+   LAB 4 - Focal Mechanisms
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Earthquakes 2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week7/LAB7-Raypaths.html">
+   LAB 5 - Seismic raypaths
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week7/LAB7-NZ_Earthquake.html">
+   Lab 5 - New Zealand Earthquake Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Earthquakes 3
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  EMSC2022 - Mantle dynamics and heat flow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.i.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.ii.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.iii.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.iv.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.v.html">
+   EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://emsc2022-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-make-a-plot-of-magnitude-vs-number-of-stations">
+   Exercise 1:  Make a plot of Magnitude vs. Number of stations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-make-gutenberg-richter-plots">
+   Exercise 2: Make Gutenberg-Richter plots
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#we-got-you-started-but-you-need-to-plot-the-data">
+     We got you started but you need to plot the data …
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gutenberg-richter">
+   Exercise 3:  You need to  plot a fitted line to the data.  Remember the equation for Gutenberg-Richter …
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-6-introduction-to-scatter-plots-and-the-gutenberg-richter-relation">
+<h1>Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation<a class="headerlink" href="#lab-6-introduction-to-scatter-plots-and-the-gutenberg-richter-relation" title="Permalink to this headline">¶</a></h1>
+<p>This lesson will introduce scatter plots and how to make them in several different ways. We will start by importing the ANSS earthquake catalog which you can optionally download <a class="reference external" href="http://www.ncedc.org/anss/catalog-search.html">here</a>. OR, for your convenience this file is also provided in the “data” folder within the LAB6 folder.</p>
+<p>The catalog provided is for magnitude &gt;= 5 events occurring between 1997 and 2009 worldwide. For easy import, it is best to download a CSV version.</p>
+<p>For additional details see the publication:
+John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Computation to Seismology Students. Seismological Research Letters ; 89 (3): 1165–1171. doi: <a class="reference external" href="https://doi.org/10.1785/0220170246">https://doi.org/10.1785/0220170246</a></p>
+<p>Here we will import the familiar toolkit <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that we used in Lab 4 to import data from Oregon State University volcano database.  As well as the plotting library we have used before <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next cell will read the csv data from the data folder previously downloaded for you. Then the following cell will display the first 5 lines (head) of the table from the .csv file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read the data, set space delimiter, and get rid of the dash line in 1st line after header</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/anss.csv&#39;</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Depth</th>
+      <th>Mag</th>
+      <th>Magt</th>
+      <th>Nst</th>
+      <th>Gap</th>
+      <th>Clo</th>
+      <th>RMS</th>
+      <th>SRC</th>
+      <th>Event</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1997/01/01</td>
+      <td>04:35:51.88</td>
+      <td>6.813</td>
+      <td>-72.894</td>
+      <td>163.7</td>
+      <td>5.3</td>
+      <td>Mw</td>
+      <td>150</td>
+      <td>1.10</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1997/01/01</td>
+      <td>22:32:32.30</td>
+      <td>-0.127</td>
+      <td>123.823</td>
+      <td>115.4</td>
+      <td>5.8</td>
+      <td>Me</td>
+      <td>178</td>
+      <td>1.01</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1997/01/01</td>
+      <td>22:43:32.31</td>
+      <td>-5.977</td>
+      <td>129.665</td>
+      <td>177.0</td>
+      <td>5.0</td>
+      <td>Mb</td>
+      <td>31</td>
+      <td>0.77</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1997/01/02</td>
+      <td>02:57:51.65</td>
+      <td>-23.860</td>
+      <td>-179.870</td>
+      <td>500.0</td>
+      <td>5.4</td>
+      <td>Mw</td>
+      <td>107</td>
+      <td>0.91</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1997/01/02</td>
+      <td>10:52:35.03</td>
+      <td>10.568</td>
+      <td>92.742</td>
+      <td>33.0</td>
+      <td>5.1</td>
+      <td>Mb</td>
+      <td>117</td>
+      <td>0.95</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>What are these columns?</p>
+<p>Some are self explanatory but some are not:</p>
+<ul class="simple">
+<li><p>MagT - magnitude type, the way the magnitude was calculated</p></li>
+<li><p>Nst - the number of stations used to locate the earthquake</p></li>
+<li><p>Gap - azimuthal gap of stations used to locate the earthquake</p></li>
+<li><p>RMS - root mean square error for the location</p></li>
+<li><p>SRC - network organization that reported the event</p></li>
+<li><p>EventID - ID number assigned to the event</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Depth</th>
+      <th>Mag</th>
+      <th>Nst</th>
+      <th>RMS</th>
+      <th>Event</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>12835.000000</td>
+      <td>12835.000000</td>
+      <td>12835.000000</td>
+      <td>12835.000000</td>
+      <td>12835.000000</td>
+      <td>1.274000e+04</td>
+      <td>2.400000e+01</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2.457569</td>
+      <td>45.992318</td>
+      <td>62.271610</td>
+      <td>5.411432</td>
+      <td>153.968991</td>
+      <td>1.992723e+11</td>
+      <td>1.136930e+07</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>28.948117</td>
+      <td>119.242131</td>
+      <td>105.848819</td>
+      <td>0.425692</td>
+      <td>123.620500</td>
+      <td>1.324377e+10</td>
+      <td>1.205323e+07</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-65.736000</td>
+      <td>-179.994000</td>
+      <td>-5.000000</td>
+      <td>5.000000</td>
+      <td>0.000000</td>
+      <td>4.000000e-02</td>
+      <td>1.129580e+05</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-17.171000</td>
+      <td>-70.130000</td>
+      <td>10.000000</td>
+      <td>5.100000</td>
+      <td>63.000000</td>
+      <td>1.999100e+11</td>
+      <td>1.184708e+06</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>-1.549000</td>
+      <td>97.239000</td>
+      <td>33.000000</td>
+      <td>5.300000</td>
+      <td>116.000000</td>
+      <td>2.002011e+11</td>
+      <td>5.370876e+06</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>23.772000</td>
+      <td>142.433000</td>
+      <td>50.200000</td>
+      <td>5.600000</td>
+      <td>207.000000</td>
+      <td>2.004052e+11</td>
+      <td>2.125422e+07</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>86.283000</td>
+      <td>179.993000</td>
+      <td>691.600000</td>
+      <td>9.000000</td>
+      <td>929.000000</td>
+      <td>2.006031e+11</td>
+      <td>3.022827e+07</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Scatter plots are used to look at how two variables compare. For example, does the magnitude of the earthquake correlate in some way to the number of stations used to locate it?</p>
+<div class="section" id="exercise-1-make-a-plot-of-magnitude-vs-number-of-stations">
+<h2>Exercise 1:  Make a plot of Magnitude vs. Number of stations<a class="headerlink" href="#exercise-1-make-a-plot-of-magnitude-vs-number-of-stations" title="Permalink to this headline">¶</a></h2>
+<p>We got it started for you here, but you need to fill in the brackets to actually make a scatter plot for the magnitude (x-axis) and number of stations (y-axis)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/LAB8-Gutenberg-Richter_10_1.png" src="../../_images/LAB8-Gutenberg-Richter_10_1.png" />
+</div>
+</div>
+<p>We can clean this plot up a lot though. Lets start by looking at the machinery that creates it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Mag&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Nst&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;None&#39;</span>
+       <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;violet&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Does the number of stations change for the magnitude?&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Stations&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Magnitude&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/LAB8-Gutenberg-Richter_12_1.png" src="../../_images/LAB8-Gutenberg-Richter_12_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercise-2-make-gutenberg-richter-plots">
+<h2>Exercise 2: Make Gutenberg-Richter plots<a class="headerlink" href="#exercise-2-make-gutenberg-richter-plots" title="Permalink to this headline">¶</a></h2>
+<p>In seismology, the Gutenberg–Richter law expresses the relationship between the magnitude and total number of earthquakes (that is the distribution) in any given region and time period of at least that magnitude.</p>
+<p><span class="math notranslate nohighlight">\(log_{10}N = a -bM\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(N = 10^{a-bM}\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N\)</span>  is the number of events having a magnitude, <span class="math notranslate nohighlight">\(\geq M\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span>  and <span class="math notranslate nohighlight">\(b\)</span>  are constants.</p></li>
+</ul>
+<p>To create the Gutenberg-Richter distribution of the earthquake magnitudes from the ANSS catalog (aka the .cvs file!) we imported above, we are going to use the familar toolkit <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try importing here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.3, 5.8, 5. , ..., 5.1, 5.1, 5.1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#cummulative histogram</span>
+<span class="n">chist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">hist</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">a8973581bf95</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#cummulative histogram</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">chist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">hist</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Look at what the variable “edges” is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">8</span><span class="n">f0dc154e2d9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">edges</span>
+
+<span class="ne">NameError</span>: name &#39;edges&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Look at what ‘hist’ is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%matplotlib inline
+import pandas as pd
+import matplotlib.pyplot as plt
+# read the data, set space delimiter, and get rid of the dash line in 1st line after header
+df = pd.read_csv(&#39;data/anss.csv&#39;, delim_whitespace=True, skiprows=[1])
+df.head()
+df.describe()
+df.plot()
+fig, ax = plt.subplots(1, figsize=(8,5))
+
+df.plot(ax=ax, kind=&#39;scatter&#39;, x=&#39;Mag&#39;, y=&#39;Nst&#39;, alpha=0.15, edgecolor=&#39;None&#39;
+       ,color=&#39;violet&#39;)
+
+ax.set_ylim(0, 1000)
+ax.set_xlim(4.5, 10)
+ax.grid(True)
+ax.set_title(&#39;Does the number of stations change for the magnitude?&#39;)
+
+ax.set_ylabel(&#39;Number of Stations&#39;)
+ax.set_xlabel(&#39;Magnitude&#39;)
+# Try importing here
+df.Mag.values.round(1)
+hist, edges = np.histogram(a=df.Mag.values.round(1), bins=101, range=(0,10))
+#cummulative histogram
+chist = np.cumsum(hist[::-1])[::-1]
+edges
+hist
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="we-got-you-started-but-you-need-to-plot-the-data">
+<h3>We got you started but you need to plot the data …<a class="headerlink" href="#we-got-you-started-but-you-need-to-plot-the-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1">#try plotting the data (&#39;edges&#39; variable here)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">chist</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gutenberg-Richter Distribution&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">5724459</span><span class="n">f6606</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#try plotting the data (&#39;edges&#39; variable here)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">chist</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;edges&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../_images/LAB8-Gutenberg-Richter_23_1.png" src="../../_images/LAB8-Gutenberg-Richter_23_1.png" />
+</div>
+</div>
+<p>We quite frequently want to plot the fit of the <i>a</i> and <i>b</i> values of the Gutenberg-Richter distribution. To do this, we are going to use the equation below which calculates the maximum likelihood of the distribution and returns the parameters:</p>
+<ul class="simple">
+<li><p><i>a</i> - the “productivity” of the distribution, but really just the y-intercept</p></li>
+<li><p><i>b</i> - the “mean magnitude” but really it’s just the slope</p></li>
+<li><p><i>bstdev</i> - the standard deviation of <i>b</i></p></li>
+<li><p><i>length</i> - the number of earthquakes used to calculate the values</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fmd_values</span><span class="p">(</span><span class="n">magnitudes</span><span class="p">,</span> <span class="n">bin_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    params magnitudes : numpy.array</span>
+<span class="sd">    params bin_width : float</span>
+<span class="sd">    </span>
+<span class="sd">    returns a,b,bstd, n-values if above the earthquake count threshold</span>
+<span class="sd">    else returns np.nans</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">minimum</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">average</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">b_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">average</span> <span class="o">-</span> <span class="p">(</span><span class="n">minimum</span> <span class="o">-</span> <span class="p">(</span><span class="n">bin_width</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">square_every_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">b_stddev</span> <span class="o">=</span> <span class="n">square_every_value</span><span class="p">((</span><span class="n">magnitudes</span> <span class="o">-</span> <span class="n">average</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">b_stddev</span> <span class="o">=</span> <span class="mf">2.3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b_stddev</span><span class="p">)</span> <span class="o">*</span> <span class="n">b_value</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">a_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">+</span> <span class="n">b_value</span> <span class="o">*</span> <span class="n">minimum</span>
+    
+    <span class="k">return</span> <span class="n">a_value</span><span class="p">,</span> <span class="n">b_value</span><span class="p">,</span> <span class="n">b_stddev</span><span class="p">,</span> <span class="n">length</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fmd_values</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">b1d241b11fe1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fmd_values</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-13-eece174e9830&gt;</span> in <span class="ni">fmd_values</span><span class="nt">(magnitudes, bin_width)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">minimum</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">average</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">b_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">average</span> <span class="o">-</span> <span class="p">(</span><span class="n">minimum</span> <span class="o">-</span> <span class="p">(</span><span class="n">bin_width</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">square_every_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">b_stddev</span> <span class="o">=</span> <span class="n">square_every_value</span><span class="p">((</span><span class="n">magnitudes</span> <span class="o">-</span> <span class="n">average</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">bstd</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">fmd_values</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">4362</span><span class="n">b9422d8f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">bstd</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">fmd_values</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-13-eece174e9830&gt;</span> in <span class="ni">fmd_values</span><span class="nt">(magnitudes, bin_width)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">minimum</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">average</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">b_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">average</span> <span class="o">-</span> <span class="p">(</span><span class="n">minimum</span> <span class="o">-</span> <span class="p">(</span><span class="n">bin_width</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">square_every_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">b_stddev</span> <span class="o">=</span> <span class="n">square_every_value</span><span class="p">((</span><span class="n">magnitudes</span> <span class="o">-</span> <span class="n">average</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have our values that represent the y-intercept (<i>a</i> value) and the slope (<i>b</i> value).</p>
+</div>
+</div>
+<div class="section" id="exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gutenberg-richter">
+<h2>Exercise 3:  You need to  plot a fitted line to the data.  Remember the equation for Gutenberg-Richter …<a class="headerlink" href="#exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gutenberg-richter" title="Permalink to this headline">¶</a></h2>
+<p>We’ve started it for you, but you need to work through the calcuations … in particular defining ‘y’ and actually making the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-16-94f69fb088ab&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="n">y</span> <span class="o">=</span>
+       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e0</span><span class="p">,</span> <span class="mf">1e5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gutenberg-Richter Distribution&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">14</span><span class="n">b3421b9fd4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../_images/LAB8-Gutenberg-Richter_30_1.png" src="../../_images/LAB8-Gutenberg-Richter_30_1.png" />
+</div>
+</div>
+<p>This fit looks pretty good! I hope!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/LAB-week8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../LAB-week7/LAB7-NZ_Earthquake.html" title="previous page">Lab 5 - New Zealand Earthquake Data</a>
+    <a class='right-next' id="next-link" href="../LAB-convection/EMSC2022W11.i.html" title="next page">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By David Heslop, Meghan Miller, Louis Moresi<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
