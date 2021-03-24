@@ -3,6 +3,7 @@
 Notebooks/*.png
 Notebooks/Lab*/*.png 
 
+/Jupyterbook/_build
 
 # IDE files
 

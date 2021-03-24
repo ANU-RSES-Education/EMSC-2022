@@ -1,0 +1,181 @@
+- file: FrontPage.md
+
+- part: EMSC2022 - Lab 1
+  chapters:
+  - file: Notebooks/LAB1/EMSC2022W1.ipynb 
+
+- part: EMSC2022 - Lab 2
+  chapters:
+  - file: Notebooks/LAB2/EMSC2022W2.ipynb
+
+- part: EMSC2022 - Lab 4
+  chapters:
+  - file: Notebooks/LAB4/EMSC2022W4.ipynb
+
+- part: EMSC2022 - Maps
+  chapters:
+  - file: Notebooks/LAB-week5/Week5_Lab.ipynb
+    sections:
+    - file: Notebooks/LAB-week5/LAB5_Maps2020.ipynb
+    - file: Notebooks/LAB-week5/LAB5_On_Demand_MapServices.ipynb
+    - file: Notebooks/LAB-week5/LAB5_Volcano+Map.ipynb
+
+- part: EMSC2022 - Earthquakes 
+  chapters:
+  - file: Notebooks/LAB-week6/LAB6-focal_mechanisms.ipynb
+  - file: Notebooks/LAB-week6/LAB6-izmit+focal+mechanism.ipynb
+
+- part: EMSC2022 - Earthquakes 2
+  chapters:
+  - file: Notebooks/LAB-week7/LAB7-Raypaths.ipynb
+  - file: Notebooks/LAB-week7/LAB7-NZ_Earthquake.ipynb
+
+- part: EMSC2022 - Earthquakes 3
+  chapters:
+  - file: Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb
+  
+- part: EMSC2022 - Mantle dynamics and heat flow
+  chapters:
+  - file: Notebooks/LAB-convection/EMSC2022W11.i.ipynb
+  - file: Notebooks/LAB-convection/EMSC2022W11.ii.ipynb
+  - file: Notebooks/LAB-convection/EMSC2022W11.iii.ipynb
+  - file: Notebooks/LAB-convection/EMSC2022W11.iv.ipynb
+  - file: Notebooks/LAB-convection/EMSC2022W11.v.ipynb
+
+
+
+
+
+
+
+
+
+
+
+
+#   - file: Notebooks/Themes/Introduction2Python/1-IntroductionToJupyterNotebooks
+#     sections:
+#     - file: Notebooks/Themes/Introduction2Python/2-IntroductionToIpython
+#     - file: Notebooks/Themes/Introduction2Python/3-PythonDataTypes
+#     - file: Notebooks/Themes/Introduction2Python/4-PythonClasses
+
+#   - file: Notebooks/Themes/Introduction2VersionControl/1-GettingStartedWithGit
+#     sections:
+#      - file: Notebooks/Themes/Introduction2VersionControl/2-NextStepsWithGit
+#      - file: Notebooks/Themes/Introduction2VersionControl/3-YourOwnRepositories
+
+#   - file: Notebooks/Themes/Plotting/1-IntroductionToMatplotlib
+
+
+# - part: Step by Step
+#   chapters:
+#   - file: Notebooks/StepByStep/Introduction.md
+#     sections:
+#     - file: Notebooks/StepByStep/Ex01/Exercise 1 - Getting started
+#     - file: Notebooks/StepByStep/Ex02/Exercise 2 - Variables and functions
+#     - file: Notebooks/StepByStep/Ex03/Exercise 3 - Loops and conditionals
+#     - file: Notebooks/StepByStep/Ex04/Guessing Games
+#     - file: Notebooks/StepByStep/Ex05/Exercise 5 - Lists, tuples and dictionaries
+#     - file: Notebooks/StepByStep/Ex06/Exercise 6 - More loops
+#     - file: Notebooks/StepByStep/Ex07/Exercise 7 - Strings
+#     - file: Notebooks/StepByStep/Ex08/Exercise 8 - Reading and writing files
+#     - file: Notebooks/StepByStep/Ex09/Exercise 9 - Modules
+#     - file: Notebooks/StepByStep/Ex10/Exercise 10 - Exception handling
+#     - file: Notebooks/StepByStep/Ex11/Exercise 11 - Sudoku
+#     - file: Notebooks/StepByStep/Ex12/Exercise 12 - Plotting
+#     - file: Notebooks/StepByStep/Ex13/Exercise 13 - Radioactive Decay
+#     - file: Notebooks/StepByStep/Ex14/Exercise 14 - Pandas
+#     - file: Notebooks/StepByStep/Ex15/Exercise 15 - More plotting
+#     - file: Notebooks/StepByStep/Ex16/Exercise 16 - Maps
+#     - file: Notebooks/StepByStep/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles
+#     - file: Notebooks/StepByStep/Ex18/Exercise 18 - Object-oriented programming
+#     - file: Notebooks/StepByStep/Ex19/Exercise N - differential equations
+#     - file: Notebooks/StepByStep/Ex20/Exercise N - Sorting
+
+# # - file: Notebooks/StepByStep/ExNN/Exercise 11 - NumPy
+# # - file: Notebooks/StepByStep/ExNS/Processing spectral data
+
+# - part: "Going deeper - examples from the Earth Sciences"
+#   chapters:
+#   - file: Notebooks/Themes/NumpyAndScipy/0-NumpyAndScipy
+#     sections:
+#     - file: Notebooks/Themes/NumpyAndScipy/1-IntroductionToNumpy
+#     - file: Notebooks/Themes/NumpyAndScipy/2-Application-TheGameOfLife
+#     - file: Notebooks/Themes/NumpyAndScipy/3-Discussion-TheGameOfLife
+#     - file: Notebooks/Themes/NumpyAndScipy/4-IntroductionToScipy
+#     - file: Notebooks/Themes/NumpyAndScipy/5-ScipyInterpolate
+#     - file: Notebooks/Themes/NumpyAndScipy/6-ScipySpatialAndMeshing
+#     - file: Notebooks/Themes/NumpyAndScipy/7-ScipyOptimize
+#     - file: Notebooks/Themes/NumpyAndScipy/8-Numpy+ScipyMiscellany
+
+#   - file: Notebooks/Themes/Mapping/0-Maps_with_Cartopy
+#     sections:
+#     - file: Notebooks/Themes/Mapping/0-Preliminaries
+#     - file: Notebooks/Themes/Mapping/1-IntroductingCartopy
+#     - file: Notebooks/Themes/Mapping/2-ImagesAndGeoTIFFs
+#     - file: Notebooks/Themes/Mapping/3-WorkingWithRealData
+#     - file: Notebooks/Themes/Mapping/4-ContouringGlobalData
+#     - file: Notebooks/Themes/Mapping/5-WorkingWithPointData
+#     - file: Notebooks/Themes/Mapping/6-WorkingWithShuttleRadarTopography
+#     - file: Notebooks/Themes/Mapping/7-WorkingWithOn-DemandMappingServices
+#     - file: Notebooks/Themes/Mapping/8-GlobalPlateMotionsEtc
+#     - file: Notebooks/Themes/Mapping/9-HimalayaRegionMapsAndImages
+#     - file: Notebooks/Themes/Mapping/9a-HimalayaRegionMapsAndImages-Pt2
+ 
+#   - file: Notebooks/Themes/SphericalMeshing/0-Stripy    
+#     sections:
+#     - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/0-Spherical
+#       sections:
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex2-SphericalGrids
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex3-Interpolation
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex4-Gradients
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex5-Smoothing
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension
+#       - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram
+
+#     - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/0-Cartesian
+#       sections:
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex3-Interpolation
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex5-Smoothing
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension
+#       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram
+
+#     - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/Ex1-Litho1Layers
+#       sections:
+#       - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/Ex2-Litho1Properties
+#       - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/Ex3-CrustalRegionalisation
+
+#       - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties
+#       - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx2-OceanDepthAge
+
+#       # The tutorial should be an alternative to WEx2
+#       - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-1
+#         sections:
+#         - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-2
+#         - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3
+#         - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4
+#         - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5
+   
+#   - file: Notebooks/Themes/SympleSympy/StartingWithSympy
+#     sections:
+#     - file: Notebooks/Themes/SympleSympy/StartingWithSympy-2
+#     - file: Notebooks/Themes/SympleSympy/StartingWithSympy-3
+#     - file: Notebooks/Themes/SympleSympy/StartingWithSympy-4
+
+#   - file: Notebooks/Themes/SolveMathProblems/0-IntroductionToNumericalSolutions
+#     sections:
+#     - file: Notebooks/Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes
+#     - file: Notebooks/Themes/SolveMathProblems/2-FiniteDifferences
+#     - file: Notebooks/Themes/SolveMathProblems/3-AdvancedFiniteDifferences
+
+
+
+
