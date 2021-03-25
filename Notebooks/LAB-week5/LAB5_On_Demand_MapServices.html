@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="LAB 5 - Map of active volcanoes" href="LAB5_Volcano%2BMap.html" />
-    <link rel="prev" title="LAB 5 - Maps" href="LAB5_Maps2020.html" />
+    <link rel="next" title="LAB 5 - Maps" href="LAB5_Maps2020.html" />
+    <link rel="prev" title="LAB 5 - Map of active volcanoes" href="LAB5_Volcano%2BMap.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -150,8 +150,8 @@
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="LAB5_Maps2020.html">
-     LAB 5 - Maps
+    <a class="reference internal" href="LAB5_Volcano%2BMap.html">
+     LAB 5 - Map of active volcanoes
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -160,8 +160,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="LAB5_Volcano%2BMap.html">
-     LAB 5 - Map of active volcanoes
+    <a class="reference internal" href="LAB5_Maps2020.html">
+     LAB 5 - Maps
     </a>
    </li>
   </ul>
@@ -194,7 +194,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week7/LAB7-NZ_Earthquake.html">
-   Lab 5 - New Zealand Earthquake Data
+   Lab - New Zealand Earthquake Data
   </a>
  </li>
 </ul>
@@ -457,24 +457,30 @@ The difference between google maps and many of the examples we have looked at so
 <span class="n">lon0</span> <span class="o">=</span>  <span class="o">-</span><span class="mi">119</span><span class="p">;</span> <span class="n">lon1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">117.5</span>
 
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
-
-<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">mapbox_satellite</span>
+<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">map_quest_aerial</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="c1"># ax = plt.axes(projection=ccrs.PlateCarree(), extent=himalaya_extent)</span>
 
 <span class="c1"># Create a GeoAxes in the tile&#39;s projection.</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">map_tiles</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
+
+<span class="c1"># Add the coastline to see where we are </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9dde89e7d0&gt;
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
 The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use Axes.redraw_in_frame() instead. If any parameter follows &#39;inframe&#39;, they should be passed as keyword, not positionally.
   inframe=inframe)
 </pre></div>
 </div>
-<img alt="../../_images/LAB5_On_Demand_MapServices_6_1.png" src="../../_images/LAB5_On_Demand_MapServices_6_1.png" />
+<img alt="../../_images/LAB5_On_Demand_MapServices_6_2.png" src="../../_images/LAB5_On_Demand_MapServices_6_2.png" />
 </div>
 </div>
 <p>Here you can set up the size of the map and add on the on-demand image.  Try to adjust the resolution and how it works best with the map area.</p>
@@ -492,7 +498,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f4379f6f2d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9dde4aa790&gt;
 </pre></div>
 </div>
 </div>
@@ -527,7 +533,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f4379efddd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9dde22b9d0&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/10m/physical/ne_10m_rivers_lake_centerlines.zip
@@ -573,7 +579,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f4379c81250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9dde762750&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/50m/physical/ne_50m_coastline.zip
@@ -758,8 +764,8 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="LAB5_Maps2020.html" title="previous page">LAB 5 - Maps</a>
-    <a class='right-next' id="next-link" href="LAB5_Volcano%2BMap.html" title="next page">LAB 5 - Map of active volcanoes</a>
+    <a class='left-prev' id="prev-link" href="LAB5_Volcano%2BMap.html" title="previous page">LAB 5 - Map of active volcanoes</a>
+    <a class='right-next' id="next-link" href="LAB5_Maps2020.html" title="next page">LAB 5 - Maps</a>
 
         </div>
         

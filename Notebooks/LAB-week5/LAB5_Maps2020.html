@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="On demand mapping services" href="LAB5_On_Demand_MapServices.html" />
-    <link rel="prev" title="EMSC 2022-2021 Week 5 - Making Maps with Python" href="Week5_Lab.html" />
+    <link rel="next" title="LAB 4 - Focal Mechanisms" href="../LAB-week6/LAB6-focal_mechanisms.html" />
+    <link rel="prev" title="On demand mapping services" href="LAB5_On_Demand_MapServices.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -149,9 +149,9 @@
    EMSC 2022-2021 Week 5 - Making Maps with Python
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     LAB 5 - Maps
+   <li class="toctree-l2">
+    <a class="reference internal" href="LAB5_Volcano%2BMap.html">
+     LAB 5 - Map of active volcanoes
     </a>
    </li>
    <li class="toctree-l2">
@@ -159,9 +159,9 @@
      On demand mapping services
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LAB5_Volcano%2BMap.html">
-     LAB 5 - Map of active volcanoes
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     LAB 5 - Maps
     </a>
    </li>
   </ul>
@@ -194,7 +194,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week7/LAB7-NZ_Earthquake.html">
-   Lab 5 - New Zealand Earthquake Data
+   Lab - New Zealand Earthquake Data
   </a>
  </li>
 </ul>
@@ -374,9 +374,12 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the projection then show the plot</span>
+
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
@@ -386,18 +389,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">ce8f47be369f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Specify the projection then show the plot</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
+The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use Axes.redraw_in_frame() instead. If any parameter follows &#39;inframe&#39;, they should be passed as keyword, not positionally.
+  inframe=inframe)
+/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/110m/physical/ne_110m_coastline.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
 </pre></div>
 </div>
+<img alt="../../_images/LAB5_Maps2020_2_1.png" src="../../_images/LAB5_Maps2020_2_1.png" />
 </div>
 </div>
 <p>By default, the map is centred on the 0 longitude meridian. To change this, we can pass <code class="docutils literal notranslate"><span class="pre">central_longitude=longitude</span></code> to <code class="docutils literal notranslate"><span class="pre">ccrs.PlateCarree()</span></code>.</p>
@@ -495,8 +494,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Week5_Lab.html" title="previous page">EMSC 2022-2021 Week 5 - Making Maps with Python</a>
-    <a class='right-next' id="next-link" href="LAB5_On_Demand_MapServices.html" title="next page">On demand mapping services</a>
+    <a class='left-prev' id="prev-link" href="LAB5_On_Demand_MapServices.html" title="previous page">On demand mapping services</a>
+    <a class='right-next' id="next-link" href="../LAB-week6/LAB6-focal_mechanisms.html" title="next page">LAB 4 - Focal Mechanisms</a>
 
         </div>
         

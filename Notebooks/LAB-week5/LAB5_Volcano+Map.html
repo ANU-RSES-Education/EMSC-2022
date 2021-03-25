@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="LAB 4 - Focal Mechanisms" href="../LAB-week6/LAB6-focal_mechanisms.html" />
-    <link rel="prev" title="On demand mapping services" href="LAB5_On_Demand_MapServices.html" />
+    <link rel="next" title="On demand mapping services" href="LAB5_On_Demand_MapServices.html" />
+    <link rel="prev" title="EMSC 2022-2021 Week 5 - Making Maps with Python" href="Week5_Lab.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -149,9 +149,9 @@
    EMSC 2022-2021 Week 5 - Making Maps with Python
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="LAB5_Maps2020.html">
-     LAB 5 - Maps
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     LAB 5 - Map of active volcanoes
     </a>
    </li>
    <li class="toctree-l2">
@@ -159,9 +159,9 @@
      On demand mapping services
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     LAB 5 - Map of active volcanoes
+   <li class="toctree-l2">
+    <a class="reference internal" href="LAB5_Maps2020.html">
+     LAB 5 - Maps
     </a>
    </li>
   </ul>
@@ -194,7 +194,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week7/LAB7-NZ_Earthquake.html">
-   Lab 5 - New Zealand Earthquake Data
+   Lab - New Zealand Earthquake Data
   </a>
  </li>
 </ul>
@@ -342,6 +342,21 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources-you-will-use">
+   Resources you will use.
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -353,10 +368,20 @@
   <div class="section" id="lab-5-map-of-active-volcanoes">
 <h1>LAB 5 - Map of active volcanoes<a class="headerlink" href="#lab-5-map-of-active-volcanoes" title="Permalink to this headline">¶</a></h1>
 <p>Here is an example of plotting a map of active volcanoes using data online at Oregon State University.</p>
+<!-- This form breaks the book 
 <div>
 <img src="Images/volcano_map.png" width="50%"/>
 </div>
+-->
+<p><img alt="volcano_map" src="Notebooks/LAB-week5/Images/volcano_map.png" /></p>
 <p>At the end of this script you will produce a map just like the one shown here.</p>
+<div class="section" id="resources-you-will-use">
+<h2>Resources you will use.<a class="headerlink" href="#resources-you-will-use" title="Permalink to this headline">¶</a></h2>
+<p>This notebook makes use of a couple of packages that might come in handy another time. The maps
+are made by <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> which is a mapping tool written by the Meteorological Office in the UK (and
+which happens to be really good a plotting satellite data). The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package is a database
+tool that is really very good at manipulating tables of different types of data, selecting, sorting,
+refining and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -435,25 +460,25 @@ Lava Dome              10
 Scoria Cone             8
 Pyroclastic Shield      8
 Maar                    7
-Subglacial Volcano      6
-Somma Volcano           6
 Unknown                 6
+Somma Volcano           6
+Subglacial Volcano      6
 Lava Cone               5
 Crater Rows             5
 Pumice Cone             3
 Fumarole Field          3
-Fissure Vent            2
-Explosion Craters       2
 Volcanic Complex        2
+Explosion Craters       2
+Fissure Vent            2
+Island Arc              1
+Lava Field              1
+Cones                   1
+Flood Basalts           1
 Tuff Rings              1
 Cone                    1
-Hydrothermal Field      1
-Flood Basalts           1
 Flood Basalt            1
 Volcanic Landform       1
-Cones                   1
-Lava Field              1
-Island Arc              1
+Hydrothermal Field      1
 Name: Type, dtype: int64
 </pre></div>
 </div>
@@ -639,27 +664,27 @@ Lava Domes             31
 Fissure Vents          18
 Submarine Volcano      16
 Tuff Cone              13
-Maars                  11
 Compound Volcano       11
+Maars                  11
 Lava Dome              10
 Pyroclastic Shield      8
 Scoria Cone             7
 Maar                    7
 Somma Volcano           6
 Subglacial Volcano      6
-Crater Rows             5
 Lava Cone               5
-Fumarole Field          3
+Crater Rows             5
 Unknown                 3
 Pumice Cone             3
-Fissure Vent            2
+Fumarole Field          3
 Volcanic Complex        2
-Cones                   1
-Hydrothermal Field      1
-Tuff Rings              1
+Fissure Vent            2
 Lava Field              1
-Volcanic Landform       1
+Cones                   1
+Tuff Rings              1
 Explosion Craters       1
+Volcanic Landform       1
+Hydrothermal Field      1
 Name: Type, dtype: int64
 </pre></div>
 </div>
@@ -692,7 +717,7 @@ Name: Type, dtype: int64
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Stratovolcanoes of the world | &#39;</span> <span class="o">+</span> <span class="n">chartinfo</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.04</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -705,6 +730,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </pre></div>
 </div>
 <img alt="../../_images/LAB5_Volcano+Map_18_1.png" src="../../_images/LAB5_Volcano+Map_18_1.png" />
+</div>
 </div>
 </div>
 </div>
@@ -734,8 +760,8 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="LAB5_On_Demand_MapServices.html" title="previous page">On demand mapping services</a>
-    <a class='right-next' id="next-link" href="../LAB-week6/LAB6-focal_mechanisms.html" title="next page">LAB 4 - Focal Mechanisms</a>
+    <a class='left-prev' id="prev-link" href="Week5_Lab.html" title="previous page">EMSC 2022-2021 Week 5 - Making Maps with Python</a>
+    <a class='right-next' id="next-link" href="LAB5_On_Demand_MapServices.html" title="next page">On demand mapping services</a>
 
         </div>
         
