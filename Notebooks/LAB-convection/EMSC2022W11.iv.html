@@ -100,7 +100,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB1/EMSC2022W1.html">
-   Jupyter Notebook: EMSC2022, Practical Week 1
+   EMSC2022, Practical Week 1
   </a>
  </li>
  <li class="toctree-l1">
@@ -178,6 +178,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week6/LAB6-focal_mechanisms.html">
    LAB 4 - Focal Mechanisms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week6/LAB6-izmit%2Bfocal%2Bmechanism.html">
+   LAB 4 - Focal Mechanisms continued
   </a>
  </li>
 </ul>
@@ -453,12 +458,12 @@ plot the regular points on a flat projection. You can choose</em>)</p></li>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f38b1220110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f44f52ade10&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
@@ -539,12 +544,12 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">meshages</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu&quot;</span><span class="p">,</span>
             <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-            <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+            <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3899d36d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f44e9df7350&gt;
 </pre></div>
 </div>
 <img alt="../../_images/EMSC2022W11.iv_7_1.png" src="../../_images/EMSC2022W11.iv_7_1.png" />

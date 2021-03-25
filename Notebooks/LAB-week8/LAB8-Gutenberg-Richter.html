@@ -102,7 +102,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB1/EMSC2022W1.html">
-   Jupyter Notebook: EMSC2022, Practical Week 1
+   EMSC2022, Practical Week 1
   </a>
  </li>
  <li class="toctree-l1">
@@ -180,6 +180,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week6/LAB6-focal_mechanisms.html">
    LAB 4 - Focal Mechanisms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week6/LAB6-izmit%2Bfocal%2Bmechanism.html">
+   LAB 4 - Focal Mechanisms continued
   </a>
  </li>
 </ul>
@@ -754,21 +759,11 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="c1">#cummulative histogram</span>
 <span class="n">chist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">hist</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">a8973581bf95</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#cummulative histogram</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">chist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">hist</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -781,12 +776,27 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">8</span><span class="n">f0dc154e2d9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">edges</span>
-
-<span class="ne">NameError</span>: name &#39;edges&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.0990099 ,  0.1980198 ,  0.2970297 ,  0.3960396 ,
+        0.4950495 ,  0.59405941,  0.69306931,  0.79207921,  0.89108911,
+        0.99009901,  1.08910891,  1.18811881,  1.28712871,  1.38613861,
+        1.48514851,  1.58415842,  1.68316832,  1.78217822,  1.88118812,
+        1.98019802,  2.07920792,  2.17821782,  2.27722772,  2.37623762,
+        2.47524752,  2.57425743,  2.67326733,  2.77227723,  2.87128713,
+        2.97029703,  3.06930693,  3.16831683,  3.26732673,  3.36633663,
+        3.46534653,  3.56435644,  3.66336634,  3.76237624,  3.86138614,
+        3.96039604,  4.05940594,  4.15841584,  4.25742574,  4.35643564,
+        4.45544554,  4.55445545,  4.65346535,  4.75247525,  4.85148515,
+        4.95049505,  5.04950495,  5.14851485,  5.24752475,  5.34653465,
+        5.44554455,  5.54455446,  5.64356436,  5.74257426,  5.84158416,
+        5.94059406,  6.03960396,  6.13861386,  6.23762376,  6.33663366,
+        6.43564356,  6.53465347,  6.63366337,  6.73267327,  6.83168317,
+        6.93069307,  7.02970297,  7.12871287,  7.22772277,  7.32673267,
+        7.42574257,  7.52475248,  7.62376238,  7.72277228,  7.82178218,
+        7.92079208,  8.01980198,  8.11881188,  8.21782178,  8.31683168,
+        8.41584158,  8.51485149,  8.61386139,  8.71287129,  8.81188119,
+        8.91089109,  9.00990099,  9.10891089,  9.20792079,  9.30693069,
+        9.40594059,  9.5049505 ,  9.6039604 ,  9.7029703 ,  9.8019802 ,
+        9.9009901 , 10.        ])
 </pre></div>
 </div>
 </div>
@@ -799,33 +809,16 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%matplotlib inline
-import pandas as pd
-import matplotlib.pyplot as plt
-# read the data, set space delimiter, and get rid of the dash line in 1st line after header
-df = pd.read_csv(&#39;data/anss.csv&#39;, delim_whitespace=True, skiprows=[1])
-df.head()
-df.describe()
-df.plot()
-fig, ax = plt.subplots(1, figsize=(8,5))
-
-df.plot(ax=ax, kind=&#39;scatter&#39;, x=&#39;Mag&#39;, y=&#39;Nst&#39;, alpha=0.15, edgecolor=&#39;None&#39;
-       ,color=&#39;violet&#39;)
-
-ax.set_ylim(0, 1000)
-ax.set_xlim(4.5, 10)
-ax.grid(True)
-ax.set_title(&#39;Does the number of stations change for the magnitude?&#39;)
-
-ax.set_ylabel(&#39;Number of Stations&#39;)
-ax.set_xlabel(&#39;Magnitude&#39;)
-# Try importing here
-df.Mag.values.round(1)
-hist, edges = np.histogram(a=df.Mag.values.round(1), bins=101, range=(0,10))
-#cummulative histogram
-chist = np.cumsum(hist[::-1])[::-1]
-edges
-hist
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0, 2067, 1896, 1817, 1408, 1313,
+        938,  737,  559,  411,  372,  283,  213,  169,  138,  114,   79,
+         71,   49,   40,   23,   29,   26,   18,   11,    8,   10,   11,
+          7,    8,    3,    1,    2,    0,    1,    1,    0,    1,    0,
+          0,    0,    1,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0])
 </pre></div>
 </div>
 </div>
@@ -846,16 +839,7 @@ hist
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">5724459</span><span class="n">f6606</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#try plotting the data (&#39;edges&#39; variable here)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">chist</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;edges&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Gutenberg-Richter Distribution&#39;)
 </pre></div>
 </div>
 <img alt="../../_images/LAB8-Gutenberg-Richter_23_1.png" src="../../_images/LAB8-Gutenberg-Richter_23_1.png" />
@@ -899,19 +883,7 @@ hist
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">b1d241b11fe1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fmd_values</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-
-<span class="nn">&lt;ipython-input-13-eece174e9830&gt;</span> in <span class="ni">fmd_values</span><span class="nt">(magnitudes, bin_width)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">minimum</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">average</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">b_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">average</span> <span class="o">-</span> <span class="p">(</span><span class="n">minimum</span> <span class="o">-</span> <span class="p">(</span><span class="n">bin_width</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">square_every_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">b_stddev</span> <span class="o">=</span> <span class="n">square_every_value</span><span class="p">((</span><span class="n">magnitudes</span> <span class="o">-</span> <span class="n">average</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(8.814338041852478, 0.9411884337690031, 8.527349128951242e-16, 12835)
 </pre></div>
 </div>
 </div>
@@ -922,23 +894,6 @@ hist
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">4362</span><span class="n">b9422d8f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">bstd</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">fmd_values</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-
-<span class="nn">&lt;ipython-input-13-eece174e9830&gt;</span> in <span class="ni">fmd_values</span><span class="nt">(magnitudes, bin_width)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">minimum</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">average</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">b_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">average</span> <span class="o">-</span> <span class="p">(</span><span class="n">minimum</span> <span class="o">-</span> <span class="p">(</span><span class="n">bin_width</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">square_every_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">b_stddev</span> <span class="o">=</span> <span class="n">square_every_value</span><span class="p">((</span><span class="n">magnitudes</span> <span class="o">-</span> <span class="n">average</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now that we have our values that represent the y-intercept (<i>a</i> value) and the slope (<i>b</i> value).</p>
 </div>
@@ -946,7 +901,7 @@ hist
 <div class="section" id="exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gutenberg-richter">
 <h2>Exercise 3:  You need to  plot a fitted line to the data.  Remember the equation for Gutenberg-Richter …<a class="headerlink" href="#exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gutenberg-richter" title="Permalink to this headline">¶</a></h2>
 <p>We’ve started it for you, but you need to work through the calcuations … in particular defining ‘y’ and actually making the plot.</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span>
@@ -962,7 +917,7 @@ hist
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
