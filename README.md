@@ -27,7 +27,9 @@ Make an nbgitpuller link for a particular notebook
 
 [![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Admin-LinkMaker-Red)](https://jupyterhub.github.io/nbgitpuller/link.html?hub=https://emsc2022-2021.rses.underworldcloud.org&repo=https://github.com/ANU-RSES-Education/EMSC-2022)
 
+## Development
 
+[Jupyterbook](https://anu-rses-education.github.io/EMSC-2022/FrontPage.html) build of the 2021 notebooks
 
 
  
