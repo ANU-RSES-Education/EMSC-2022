@@ -1,0 +1,48 @@
+- file: FrontPage.md
+
+- part: EMSC2022 - Lab 1
+  chapters:
+  - file: Notebooks/LAB1/EMSC2022W1.ipynb 
+
+- part: EMSC2022 - Lab 2
+  chapters:
+  - file: Notebooks/LAB2/EMSC2022W2.ipynb
+
+- part: EMSC2022 - Lab 4
+  chapters:
+  - file: Notebooks/LAB4/EMSC2022W4.ipynb
+
+- part: EMSC2022 - Maps
+  chapters:
+  - file: Notebooks/LAB-week5/Week5_Lab.ipynb
+    sections:
+    - file: Notebooks/LAB-week5/LAB5_Volcano+Map.ipynb
+    - file: Notebooks/LAB-week5/LAB5_On_Demand_MapServices.ipynb
+    - file: Notebooks/LAB-week5/LAB5_Maps2020.ipynb
+
+- part: EMSC2022 - Earthquakes 
+  chapters:
+  - file: Notebooks/LAB-week6/LAB6-focal_mechanisms.ipynb
+  - file: Notebooks/LAB-week6/LAB6-izmit+focal+mechanism.ipynb
+
+- part: EMSC2022 - Earthquakes 2
+  chapters:
+  - file: Notebooks/LAB-week7/LAB7-Raypaths.ipynb
+  - file: Notebooks/LAB-week7/LAB7-NZ_Earthquake.ipynb
+
+- part: EMSC2022 - Earthquakes 3
+  chapters:
+  - file: Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb
+  
+- part: EMSC2022 - Mantle dynamics and heat flow
+  chapters:
+  - file: Notebooks/LAB-convection/EMSC2022W11.i.ipynb
+  - file: Notebooks/LAB-convection/EMSC2022W11.ii.ipynb
+  - file: Notebooks/LAB-convection/EMSC2022W11.iii.ipynb
+  - file: Notebooks/LAB-convection/EMSC2022W11.iv.ipynb
+  - file: Notebooks/LAB-convection/EMSC2022W11.v.ipynb
+
+
+
+
+

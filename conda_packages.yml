@@ -7,10 +7,13 @@ dependencies:
     - litho1pt0
     - proj=7.*.        # errors with cartopy when 6.2.* is used
     - cartopy=0.17.*
+    - gdal
     - obspy
     - pandas
     - pip 
     - libiconv
+    - xarray
+    - jupytext
     - pip:
       - lavavu<1.7
 
