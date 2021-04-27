@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LAB 5 - Map of active volcanoes &#8212; EMSC 42022</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -56,14 +53,14 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="On demand mapping services" href="LAB5_On_Demand_MapServices.html" />
     <link rel="prev" title="EMSC 2022-2021 Week 5 - Making Maps with Python" href="Week5_Lab.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -72,83 +69,78 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
-  
-  <img src="../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">EMSC 42022</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EMSC 42022</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../FrontPage.html">
    Jupyterbook example
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   EMSC2022 - Lab 1
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB1/EMSC2022W1.html">
    EMSC2022, Practical Week 1
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../LAB1/EMSC2022W1.html#calculating-the-relative-velocity-of-two-plates-based-on-an-euler-pole">
-   Calculating the relative velocity of two plates based on an Euler pole
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   EMSC2022 - Lab 2
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB2/EMSC2022W2.html">
    EMSC2022 Practical - Heat flow and ocean depth - Solution
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   EMSC2022 - Lab 4
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB4/EMSC2022W4.html">
    Introduction
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../LAB4/EMSC2022W4.html#your-challenge">
-   Your challenge
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   EMSC2022 - Maps
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Week5_Lab.html">
    EMSC 2022-2021 Week 5 - Making Maps with Python
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      LAB 5 - Map of active volcanoes
@@ -165,16 +157,14 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   EMSC2022 - Earthquakes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week6/LAB6-focal_mechanisms.html">
    LAB 4 - Focal Mechanisms
@@ -186,15 +176,15 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   EMSC2022 - Earthquakes 2
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week7/LAB7-Raypaths.html">
-   LAB 5 - Seismic raypaths
+   LAB 7 - Seismic raypaths
   </a>
  </li>
  <li class="toctree-l1">
@@ -203,24 +193,24 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   EMSC2022 - Earthquakes 3
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week8/LAB8-Gutenberg-Richter.html">
-   Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation
+   Lab 8: Introduction to scatter plots and the Gutenberg-Richter Relationship
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   EMSC2022 - Mantle dynamics and heat flow
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-convection/EMSC2022W11.i.html">
    EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
@@ -248,6 +238,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -310,12 +301,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -347,12 +338,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#resources-you-will-use">
    Resources you will use.
@@ -360,8 +350,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -421,10 +410,57 @@ refining and so on.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">dd74e51d3c50</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">pdurl</span> <span class="o">=</span> <span class="s1">&#39;http://volcano.oregonstate.edu/oldroot/volcanoes/alpha.html&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">xpath</span> <span class="o">=</span> <span class="s1">&#39;//table&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">pdurl</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">tables</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">xpath</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/lxml/html/__init__.py</span> in <span class="ni">parse</span><span class="nt">(filename_or_url, parser, base_url, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="k">if</span> <span class="n">parser</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">938</span>         <span class="n">parser</span> <span class="o">=</span> <span class="n">html_parser</span>
+<span class="ne">--&gt; </span><span class="mi">939</span>     <span class="k">return</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filename_or_url</span><span class="p">,</span> <span class="n">parser</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">940</span> 
+<span class="g g-Whitespace">    </span><span class="mi">941</span> 
+
+<span class="nn">src/lxml/etree.pyx</span> in <span class="ni">lxml.etree.parse</span><span class="nt">()</span>
+
+<span class="nn">src/lxml/parser.pxi</span> in <span class="ni">lxml.etree._parseDocument</span><span class="nt">()</span>
+
+<span class="nn">src/lxml/parser.pxi</span> in <span class="ni">lxml.etree._parseDocumentFromURL</span><span class="nt">()</span>
+
+<span class="nn">src/lxml/parser.pxi</span> in <span class="ni">lxml.etree._parseDocFromFile</span><span class="nt">()</span>
+
+<span class="nn">src/lxml/parser.pxi</span> in <span class="ni">lxml.etree._BaseParser._parseDocFromFile</span><span class="nt">()</span>
+
+<span class="nn">src/lxml/parser.pxi</span> in <span class="ni">lxml.etree._ParserContext._handleParseResultDoc</span><span class="nt">()</span>
+
+<span class="nn">src/lxml/parser.pxi</span> in <span class="ni">lxml.etree._handleParseResult</span><span class="nt">()</span>
+
+<span class="nn">src/lxml/parser.pxi</span> in <span class="ni">lxml.etree._raiseParseError</span><span class="nt">()</span>
+
+<span class="ne">OSError</span>: Error reading file &#39;http://volcano.oregonstate.edu/oldroot/volcanoes/alpha.html&#39;: failed to load external entity &quot;http://volcano.oregonstate.edu/oldroot/volcanoes/alpha.html&quot;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">table_dfs</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">491</span><span class="n">dc5ca83c6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_volc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">table_dfs</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;table_dfs&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -448,43 +484,15 @@ refining and so on.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stratovolcano         713
-Shield Volcano        173
-Submarine Volcano     137
-Volcanic Field         98
-Caldera                87
-Cinder Cone            84
-Complex Volcano        56
-Pyroclastic Cone       43
-Lava Domes             31
-Fissure Vents          18
-Tuff Cone              14
-Maars                  12
-Compound Volcano       11
-Lava Dome              10
-Pyroclastic Shield      8
-Scoria Cone             8
-Maar                    7
-Somma Volcano           6
-Subglacial Volcano      6
-Unknown                 6
-Crater Rows             5
-Lava Cone               5
-Pumice Cone             3
-Fumarole Field          3
-Volcanic Complex        2
-Explosion Craters       2
-Fissure Vent            2
-Flood Basalt            1
-Lava Field              1
-Cones                   1
-Cone                    1
-Flood Basalts           1
-Volcanic Landform       1
-Island Arc              1
-Tuff Rings              1
-Hydrothermal Field      1
-Name: Type, dtype: int64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">e2b4b5fb9b50</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">df_volc</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_volc</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cleanup_type</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">df_volc</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df_volc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -498,7 +506,13 @@ Name: Type, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1513
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">d5a9717ab36c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_volc</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_volc</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df_volc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -512,7 +526,13 @@ Name: Type, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1406
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">b050807185b9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_volc</span> <span class="o">=</span> <span class="n">df_volc</span><span class="p">[</span><span class="n">df_volc</span><span class="p">[</span><span class="s1">&#39;Elevation (m)&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_volc</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df_volc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -526,129 +546,16 @@ Name: Type, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1406
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">c47a18f951b4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_volc</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_volc</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df_volc&#39; is not defined
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Type</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Elevation (m)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Abu</td>
-      <td>Honshu-Japan</td>
-      <td>Shield Volcano</td>
-      <td>34.50</td>
-      <td>131.60</td>
-      <td>641.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Acamarachi</td>
-      <td>Chile-N</td>
-      <td>Stratovolcano</td>
-      <td>-23.30</td>
-      <td>-67.62</td>
-      <td>6046.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Acatenango</td>
-      <td>Guatemala</td>
-      <td>Stratovolcano</td>
-      <td>14.50</td>
-      <td>-90.88</td>
-      <td>3976.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Acigöl-Nevsehir</td>
-      <td>Turkey</td>
-      <td>Caldera</td>
-      <td>38.57</td>
-      <td>34.52</td>
-      <td>1689.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Adams</td>
-      <td>US-Washington</td>
-      <td>Stratovolcano</td>
-      <td>46.21</td>
-      <td>-121.49</td>
-      <td>3742.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Adatara</td>
-      <td>Honshu-Japan</td>
-      <td>Stratovolcano</td>
-      <td>37.64</td>
-      <td>140.29</td>
-      <td>1718.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Adwa</td>
-      <td>Ethiopia</td>
-      <td>Stratovolcano</td>
-      <td>10.07</td>
-      <td>40.84</td>
-      <td>1733.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Afderà</td>
-      <td>Ethiopia</td>
-      <td>Stratovolcano</td>
-      <td>13.08</td>
-      <td>40.85</td>
-      <td>1295.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Agrigan</td>
-      <td>Mariana Is-C Pacific</td>
-      <td>Stratovolcano</td>
-      <td>18.77</td>
-      <td>145.67</td>
-      <td>965.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Agua</td>
-      <td>Guatemala</td>
-      <td>Stratovolcano</td>
-      <td>14.47</td>
-      <td>-90.74</td>
-      <td>3760.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 <p>Determine the number of each type of volcanoes from this list and output this information to the screen.</p>
 <div class="cell docutils container">
@@ -658,39 +565,12 @@ Name: Type, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stratovolcano         713
-Shield Volcano        172
-Volcanic Field         87
-Caldera                86
-Cinder Cone            81
-Complex Volcano        56
-Pyroclastic Cone       38
-Lava Domes             31
-Fissure Vents          18
-Submarine Volcano      16
-Tuff Cone              13
-Maars                  11
-Compound Volcano       11
-Lava Dome              10
-Pyroclastic Shield      8
-Maar                    7
-Scoria Cone             7
-Somma Volcano           6
-Subglacial Volcano      6
-Lava Cone               5
-Crater Rows             5
-Unknown                 3
-Fumarole Field          3
-Pumice Cone             3
-Volcanic Complex        2
-Fissure Vent            2
-Cones                   1
-Lava Field              1
-Volcanic Landform       1
-Explosion Craters       1
-Tuff Rings              1
-Hydrothermal Field      1
-Name: Type, dtype: int64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">a4a0ed5df24e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_volc</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df_volc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -703,7 +583,13 @@ Name: Type, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1406
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">d5a9717ab36c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_volc</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_volc</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df_volc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -711,6 +597,16 @@ Name: Type, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_volc</span><span class="p">[</span><span class="n">df_volc</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Stratovolcano&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">46</span><span class="n">dbd3358d04</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df_volc</span><span class="p">[</span><span class="n">df_volc</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Stratovolcano&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df_volc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -729,12 +625,24 @@ Name: Type, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mf">4e82</span><span class="n">a4793315</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Stratovolcanoes of the world | &#39;</span> <span class="o">+</span> <span class="n">chartinfo</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.04</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
 The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use Axes.redraw_in_frame() instead. If any parameter follows &#39;inframe&#39;, they should be passed as keyword, not positionally.
   inframe=inframe)
 </pre></div>
 </div>
-<img alt="../../_images/LAB5_Volcano+Map_18_1.png" src="../../_images/LAB5_Volcano+Map_18_1.png" />
+<img alt="../../_images/LAB5_Volcano+Map_18_2.png" src="../../_images/LAB5_Volcano+Map_18_2.png" />
 </div>
 </div>
 </div>
@@ -786,11 +694,9 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 
       </div>
     </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
