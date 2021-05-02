@@ -13,6 +13,7 @@ dependencies:
     - pip 
     - libiconv
     - xarray
+    - nodejs
     - jupytext
     - pip:
       - lavavu<1.7
