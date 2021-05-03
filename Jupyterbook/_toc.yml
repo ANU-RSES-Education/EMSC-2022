@@ -43,6 +43,9 @@
   - file: Notebooks/LAB-convection/EMSC2022W11.v.ipynb
 
 
-
-
-
+- part: EMSC2022 - Lectures
+  chapters:
+  - file: Lectures/Index.md
+    sections: 
+    - file: Lectures/Lectures-MantleDynamics.md
+    # - file: Lectures/Lecture_example_2.md

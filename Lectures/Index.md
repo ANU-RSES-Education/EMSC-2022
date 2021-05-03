@@ -1,8 +1,11 @@
 # Lecture notes EMSC 3002
 
-## Introduction
+The following lectures from the class are available directly from the notes.
 
-  - [Introduction to EMSC 3002](Lecture-1-Introduction) 
+
+## Mantle Dynamics
+
+  - [Mantle dynamics EMSC 3002 - MD1](Lectures-MantleDynamics) 
 
 ## Something
 
