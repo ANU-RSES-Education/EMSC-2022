@@ -71,7 +71,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+      <img src="../../_static/etopoimageH.mp4" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">EMSC 42022</h1>
@@ -184,7 +184,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week7/LAB7-Raypaths.html">
-   LAB 7 - Seismic raypaths
+   LAB 5 - Seismic raypaths
   </a>
  </li>
  <li class="toctree-l1">
@@ -201,7 +201,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../LAB-week8/LAB8-Gutenberg-Richter.html">
-   Lab 8: Introduction to scatter plots and the Gutenberg-Richter Relationship
+   Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation
   </a>
  </li>
 </ul>
@@ -235,6 +235,30 @@
   <a class="reference internal" href="../LAB-convection/EMSC2022W11.v.html">
    EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
   </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  EMSC2022 - Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Lectures/Index.html">
+   Lecture notes EMSC 3002
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Lectures/Lectures-MantleDynamics.html">
+     Introduction to Mantle Dynamics (EMSC 2022)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -371,11 +395,6 @@ The difference between google maps and many of the examples we have looked at so
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Populating the interactive namespace from numpy and matplotlib
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s pre-define some features that we can add to maps later. This can be especially helpful for satellite images where it can be hard to orient the images without some overlays.</p>
 <div class="cell docutils container">
@@ -467,17 +486,6 @@ The difference between google maps and many of the examples we have looked at so
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7ff228646690&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
-The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use Axes.redraw_in_frame() instead. If any parameter follows &#39;inframe&#39;, they should be passed as keyword, not positionally.
-  inframe=inframe)
-</pre></div>
-</div>
-<img alt="../../_images/LAB5_On_Demand_MapServices_6_2.png" src="../../_images/LAB5_On_Demand_MapServices_6_2.png" />
-</div>
 </div>
 <p>Here you can set up the size of the map and add on the on-demand image.  Try to adjust the resolution and how it works best with the map area.</p>
 <div class="cell docutils container">
@@ -490,11 +498,6 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 <span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">rivers</span><span class="p">,</span>    <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span>  <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7ff21bf85a50&gt;
 </pre></div>
 </div>
 </div>
@@ -527,16 +530,6 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">rivers</span><span class="p">,</span>    <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span>  <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7ff228266410&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/10m/physical/ne_10m_rivers_lake_centerlines.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
-</pre></div>
-</div>
-<img alt="../../_images/LAB5_On_Demand_MapServices_10_2.png" src="../../_images/LAB5_On_Demand_MapServices_10_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -574,20 +567,6 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7ff2284798d0&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/50m/physical/ne_50m_coastline.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/50m/physical/ne_50m_rivers_lake_centerlines.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
-</pre></div>
-</div>
-<img alt="../../_images/LAB5_On_Demand_MapServices_12_3.png" src="../../_images/LAB5_On_Demand_MapServices_12_3.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -611,9 +590,6 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/LAB5_On_Demand_MapServices_13_0.png" src="../../_images/LAB5_On_Demand_MapServices_13_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,9 +609,6 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 <span class="n">ax2</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_Artist</span><span class="p">,</span>       <span class="mi">7</span><span class="p">,</span>  <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/LAB5_On_Demand_MapServices_14_0.png" src="../../_images/LAB5_On_Demand_MapServices_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -677,9 +650,6 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/LAB5_On_Demand_MapServices_15_0.png" src="../../_images/LAB5_On_Demand_MapServices_15_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -712,9 +682,6 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 <span class="n">ax2</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">google_maps_satellite</span>  <span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/LAB5_On_Demand_MapServices_18_0.png" src="../../_images/LAB5_On_Demand_MapServices_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
