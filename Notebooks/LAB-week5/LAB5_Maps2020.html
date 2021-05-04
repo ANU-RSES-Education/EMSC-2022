@@ -71,7 +71,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+      <img src="../../_static/etopoimageH.mp4" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">EMSC 42022</h1>
@@ -237,6 +237,30 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  EMSC2022 - Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Lectures/Index.html">
+   Lecture notes EMSC 3002
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Lectures/Lectures-MantleDynamics.html">
+     Introduction to Mantle Dynamics (EMSC 2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -383,16 +407,6 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
-The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use Axes.redraw_in_frame() instead. If any parameter follows &#39;inframe&#39;, they should be passed as keyword, not positionally.
-  inframe=inframe)
-/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/110m/physical/ne_110m_coastline.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
-</pre></div>
-</div>
-<img alt="../../_images/LAB5_Maps2020_2_1.png" src="../../_images/LAB5_Maps2020_2_1.png" />
 </div>
 </div>
 <p>By default, the map is centred on the 0 longitude meridian. To change this, we can pass <code class="docutils literal notranslate"><span class="pre">central_longitude=longitude</span></code> to <code class="docutils literal notranslate"><span class="pre">ccrs.PlateCarree()</span></code>.</p>
