@@ -67,7 +67,6 @@ jobs:
         pip install jupyter-book
         npm install -g reveal-md
 
-
     # Build the book
     - name: Build the book
       shell: bash -l {0}

@@ -19,9 +19,9 @@ parse:
 sphinx:
   config:
     html_show_copyright: false
-    # html_extra_path: ['files']
-
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    html_extra_path: ['Lectures/static_slides']
+
 
     myst_enable_extensions: 
     - amsmath
@@ -54,3 +54,6 @@ execute:
 
   execute_notebooks: false
   # cache: .jupyter-cache 
+
+  # bibtex_bibfiles:
+  #  - JupyterBook.bib
