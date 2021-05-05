@@ -2,7 +2,7 @@
 
 This lecture introduces concepts behind Mantle Convection and how it leads to plate motions. 
 
-<iframe src="../slideshows/Lecture-MD1.reveal.html" title="Slideshow" width=100%, height=500, allowfullscreen></iframe>
+<iframe src="../slideshows/Lectures-MD1.reveal.html" title="Slideshow" width=100%, height=500, allowfullscreen></iframe>
 
 
 and this lecture ... 
