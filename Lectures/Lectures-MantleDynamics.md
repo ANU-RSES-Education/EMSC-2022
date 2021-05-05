@@ -5,13 +5,19 @@ This lecture introduces concepts behind Mantle Convection and how it leads to pl
 <iframe src="../slideshows/Lecture-MD1.reveal.html" title="Slideshow" width=100%, height=500, allowfullscreen></iframe>
 
 
+and this lecture ... 
 
-and This lecture ... 
+(ToDo)
+
+## Concepts
 
 
-?? 
+## What you will learn
 
-<iframe src="../slideshows/Lecture-MD1.reveal.html" title="Slideshow" width=100%, height=500, allowfullscreen></iframe>
+
+
+
+
 
 
 
