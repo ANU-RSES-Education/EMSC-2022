@@ -3,7 +3,7 @@ title: EMSC 2022
 author: David Heslop, Meghan Miller, Louis Moresi 
 # logo: Figures/AuWorldEQ.jpg
 logo: Figures/etopoimageH.mp4
-exclude_patterns: ["README.md", "Notes/*", "Scripts/*, */ScratchPad/*"]
+exclude_patterns: ["README.md", "Notes/*", "Scripts/*, */ScratchPad/*", "Lectures/*reveal.md"]
 
 latex:
   latex_documents:
