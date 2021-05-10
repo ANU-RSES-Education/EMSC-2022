@@ -1,8 +1,7 @@
 # Book settings
 title: EMSC 2022
 author: David Heslop, Meghan Miller, Louis Moresi 
-# logo: Figures/AuWorldEQ.jpg
-logo: Figures/etopoimageH.mp4
+logo: Figures/AuWorldEQ.jpg
 exclude_patterns: ["README.md", "Notes/*", "Scripts/*, */ScratchPad/*", "Lectures/*reveal.md"]
 
 latex:
@@ -20,7 +19,7 @@ sphinx:
   config:
     html_show_copyright: false
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    html_extra_path: ['Lectures/static_slides']
+    html_extra_path: ['Lectures/static_slides', 'Movies']
 
 
     myst_enable_extensions: 

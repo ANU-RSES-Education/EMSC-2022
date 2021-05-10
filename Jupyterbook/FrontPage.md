@@ -1,13 +1,27 @@
 # Welcome to EMSC 2022 for 2021 !
-```{figure} Figures/AuWorldEQ.jpg
+
+<center>
+<video controls autoplay width="400">
+    <source src="MP4Movies/etopoimageH.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+*The Earth's topography and bathymetry.*
+</center>
+
 ---
-width: 100mm
-name: mundus-subterraneus
----
-Recent earthquakes coloured by depth with a map of the global landmasses projected to 670km depth.
-```
+
+
+<video controls width="400">
+    <source src="MP4Movies/LavaLampNormalSpeed.m4v"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+
+
 
 These are the course lab examples rendered as a web page for upload
-
-
-
