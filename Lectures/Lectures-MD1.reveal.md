@@ -1,6 +1,6 @@
 ---
 title: Introduction to EMSC 3002
-separator: '<--o-->'
+separator: '<--o-->  '
 verticalSeparator: '<--v-->'
 revealOptions:
 #    transition: 'fade'
@@ -27,7 +27,7 @@ revealOptions:
 
 </div>
 
-<--o-->
+<--o-->  
 
 ## Mantle Convection
 
@@ -42,21 +42,16 @@ Convection in Earth’s interior is (a little bit) like a boiling pot (as we saw
 
 The hot soup rises to the surface, spreads and begins to cool, and then sinks back to the bottom of the pot where it is reheated and rises again. **Why does hot soup rise and cold soup sink** ?
 
-<--o-->
+<--o-->  
 
 ## General Observations on Convection
 
 Without being particularly quantitative:
 
-
-<div style="width:100%">
-
   - Hot liquid is more buoyant than cold material **and it tends to rise**
   - Cooler liquid is less buoyant and **therefore tends to sink**
   - This can only happen if the two can **move past each other**
   - Convection produces a self-stirring
-
-</div>
 
 ![USGS-Convection](images/AWatchedPot.png)  <!-- .element style="float:right; width:25%" -->
 
@@ -68,7 +63,7 @@ $$
 
 Convection like this will only work when the soup is heated from below or, in the case of the Earth, if it is heated from within by radioactivity. **( Can you see why ?)**
 
-<--o-->
+<--o-->  
 
 ## General Observations on Convection
 
@@ -76,7 +71,7 @@ Convection like this will only work when the soup is heated from below or, in th
 
 <center>
 <video autoplay controls width="33%">
-    <source src="images/LavaLampNormalSpeed.m4v"
+    <source src="movies/LavaLampNormalSpeed.m4v"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
@@ -86,7 +81,7 @@ Convection like this will only work when the soup is heated from below or, in th
 
 Convection is one of the ways we transfer heat from hot regions deep in the Earth to cooler, shallow regions. 
 
-<--o-->
+<--o-->  
 
 ## Heat Transfer 
 
@@ -118,7 +113,7 @@ $$
 
 </br>
 
-$A$￼ is the cross sectional area of the sample, $L$￼is its length, $k$￼is a thermal conductivity “constant” dependent on the nature of the material and often also on the temperature, and $\Delta T$￼ is the temperature difference across the sample. (Note the minus sign because heat will always flow from a higher temperature to a lower temperature.)
+$A$ is the cross sectional area of the sample, $L$ is its length, $k$ is a thermal conductivity “constant” dependent on the nature of the material and often also on the temperature, and $\Delta T$ is the temperature difference across the sample. (Note the minus sign because heat will always flow from a higher temperature to a lower temperature.)
 
 note: We could add an "advanced" slide here to explain the differential equation version
 
@@ -171,6 +166,7 @@ This is exactly the same equation for the anomalous temperature as for the quant
 
 <--v-->
 
+
 ## Thermal diffusion (advanced)
 
 If a region has a different heat flux in v. out, then there must be a gradient in the heat flux. A change in temperature is driven by gradients in the heat flux like this:
@@ -203,18 +199,378 @@ This heat engine is the driving force behind tectonic motion and the constructiv
   - The soup does not show any evidence of plate tectonics.
   - Hot and cold rocks have quite different physical properties (e.g. viscosity, elastic strength) even if they don’t melt.
 
-<--v-->
-
-Todo: Add discussion points
-
-    - (How do we know that the mantle is solid*?)
-    - (When does a solid act like a viscous fluid†  ?)
-
-* Hint: how do we know that the outer core is not solid ? 
-
-† If you are interested, read about crystal defects and deformation
 
 <--o-->
+
+## Lava Lakes
+
+There are some hints at plate-like surface motions in caldera lava lakes like this one from the USGS
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ybMekPyvq9Y?start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+*April 17, 2021: The lava lake in Halema‘uma‘u Crater, at the summit of Kīlauea Volcano, remains active. This video is shown at 20x speed and shows the lava supplying the lake from the western fissure.*
+
+<--v-->
+
+## Lava Lakes
+
+This shows the foundering of the cooler crust of the lake into the interior. New solid crust forms where the molten lava meets the atmosphere.
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/moWrOrPvaV0?start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+
+*This video shows crustal foundering and resurfacing at the lava lake in Halema‘uma‘u, at the summit of Kīlauea on January 8, 2021. Recently this foundering process has been common in the eastern portion of the lake. The video is shown at 20x speed.*
+
+
+<--o-->
+
+## Discussion points
+
+
+
+**What have we learned so far ?** 
+
+If the Earth really follows this cartoon, we need to understand how solid rock can deform as though it was a viscous liquid. 
+
+![Convection cartoon](images/ConvectionCartoon.png) <!-- .element style="width:25%; float:right" -->
+
+
+<div style="width:75%">
+
+  - How do we know that the mantle is solid (*) ?
+
+  - When/how does a solid act like a viscous fluid (†)  ?
+
+  - What is the typical speed of viscous flow in the mantle ?
+
+  - How much energy is the Earth using up for plate tectonics ?
+
+</div>
+
+**(*)**:  How do we know that the outer core is not solid ? 
+
+**(†)**: If you are interested, read about crystal defects and deformation
+
+<--o-->
+
+## A Toy Model
+
+<center>
+<video autoplay controls height="315">
+    <source src="movies/ReferenceSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+
+Imagine a tank of **thick, viscous fluid** (like syrup, for example). This turns out to be a reasonable model for the interior of a solid (rocky / icy) planet if we consider the evolution on a geological timescale. A cold / dense blob of material sinks and stirs a tank of fluid just like this computer model shows.
+
+<--o-->
+
+## What is viscosity ?
+
+<center>
+
+![Honey](images/Honey.tiff)  <!-- .element style="height:250px;" -->
+![Tar](images/UQ_PitchDropExperiment.png) <!-- .element style="height:250px;" -->
+
+</center>
+
+**Viscosity** is a measure of the resistance of a fluid to deform under shear stress. It is commonly perceived as "thickness", or resistance to flow. Viscosity describes a fluid's internal resistance to flow and may be thought of as a measure of fluid friction. Water is runny, having a lower viscosity, while honey is "thick" having a higher viscosity.
+
+*The right image is from the University of Queensland [Pitch Drop Experiment](https://smp.uq.edu.au/pitch-drop-experiment)*
+
+<--v-->
+
+## What is viscosity ?
+
+
+![Shear](images/ShearFlow.png) <!-- .element style="width:35%; float:right; padding-left:30px; " -->
+
+Viscous deformation is an irreversible *flow* that occurs in response to an applied shear stress. 
+The stress is found to depend on the strength of the shearing *velocity gradient*.
+
+
+$$
+  \tau = \eta \frac{d v_1}{d x_2} 
+$$  <!-- .element style="width:60%;" -->
+
+
+![GC](images/GravityCurrentAnim.gif) <!-- .element style="width:35%; float:right; padding-left:30px;" -->
+
+Think of this as the stress that resists the shear deformation, i.e. how hard it is to stir the fluid. This is much harder if the fluid is **more viscous**. 
+Or think of it as how fast the fluid responds to a given force (e.g. gravity) so a viscous gravity current will spread **more slowly** if the viscosity is high.
+
+Viscosity only opposes the formation of velocity gradients; not a driving force, only a resistance.
+
+<--o-->
+
+## A Toy Model
+
+<center>
+<video autoplay controls loop height="315">
+    <source src="movies/ReferenceSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+<video autoplay controls loop height="315">
+    <source src="movies/ReferenceFloater.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+</center>
+
+In this toy model, do hot blobs and cold blobs behave in the same way 
+(other than moving up v. moving down ?)
+
+<--o-->
+
+## A Toy Model
+
+<center>
+<video autoplay controls loop height="315">
+    <source src="movies/ReferenceSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+Now let us think about how the physical properties of the fluid and the boundary conditions change how this blob behaves.  
+
+$$ \textrm{Activity} = \frac{\textrm{Whatever tends to enhance the flow}}{\textrm{Whatever tends to retard the flow}} $$
+
+We will consider how the behaviour changes with various parameters. When we change a parameter does it tend to enhance flow or retard it ?
+
+<--o-->
+
+## Buoyancy forces
+
+$$ \mathrm{buoyancy} \propto g\rho_0\alpha\left(1-\Delta T\right) $$  <!-- .element style="width:40%" -->
+
+<center>
+<video autoplay controls loop height="315">
+    <source src="movies/LessBuoyantSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="315">
+    <source src="movies/ReferenceSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="315">
+    <source src="movies/MoreBuoyantSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+Lower strength of buoyancy forces on the left, increasing towards the right. 
+
+Does *buoyancy* drive the flow harder when it is a stronger effect ?
+
+<--o-->
+
+## Viscous drag
+
+<center>
+<video autoplay controls loop height="315">
+    <source src="movies/LessViscousSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="315">
+    <source src="movies/ReferenceSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="315">
+    <source src="movies/MoreViscousSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+Lower viscous drag stresses on the left, increasing towards the right. 
+
+Does *viscous drag* drive the flow harder when it is a stronger effect ?
+
+<--o-->
+
+## Thermal conductivity (or diffusivity)
+
+$$
+   \frac{\partial T}{\partial t} =  -\color{blue}{\frac{k}{\rho C_p}} \frac{\partial^2 T}{\partial x^2} + H 
+                                 = - \color{blue}{\kappa}  \frac{\partial^2 T}{\partial x^2} + H 
+$$
+
+
+<center>
+<video autoplay controls loop height="315">
+    <source src="movies/LowerThermalDiff.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="315">
+    <source src="movies/ReferenceSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="315">
+    <source src="movies/HigherThermalDiff.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+Slower diffusion rates (lower diffusivity) on the left, faster towards the right. 
+
+Does *thermal diffusivity* drive the flow harder when it is a stronger effect ?
+
+
+
+<--o-->
+
+## The Size of the Box
+
+<center>
+<video autoplay controls loop height="80">
+    <source src="movies/TinyLittleBox.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="160">
+    <source src="movies/ReferenceSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="320">
+    <source src="movies/GreatBigBox.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+Is the flow moving faster when the box is larger ? 
+
+<--v-->
+
+## The Size of the Box (Scaled to fit)
+
+<center>
+<video autoplay controls loop height="315">
+    <source src="movies/TinyLittleBox.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="315">
+    <source src="movies/ReferenceSinker.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<video autoplay controls loop height="315">
+    <source src="movies/GreatBigBox.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+Is the flow moving faster when the box is larger ? 
+
+<--o-->
+
+## Convective Activity
+
+**Intuition** from these simple toy models suggests that the vigour of convection may depend upon the various system parameters according to the following equation:
+
+$$
+\mathrm{Activity} \propto \frac{\textrm{buoyancy} \times d}{\kappa \eta}
+$$
+
+This turns out to be roughly correct, but there is an actual relationship that looks like this (with buoyancy highlighted in <span style="color:blue;">blue</span>)
+
+$$
+\mathrm{Activity} \propto \frac{\color{blue}{g\rho_0\alpha\Delta T} d^3}{\kappa \eta}
+$$
+
+One reason we know the latter to be the valid relationship is that this quantity **has no units** and these simple ratios often end up being important *universal* descriptions of convecting systems at all scales.
+
+<--o-->
+
+## Dimensionless Numbers
+
+Ratios where the units cancel are called **dimensionless numbers**. For fluid dynamics, the following numbers appear again and again 
+
+**Rayleigh number** measures the intensity of buoyancy forces 
+
+$$ \mathrm{Ra} = \frac{\color{blue}{g\rho_0\alpha\Delta T} d^3}{\kappa \eta} $$
+
+**Reynolds number** measures the relative importance of inertial to viscous forces
+
+$$ \mathrm{Re}=\frac{\rho V_0 d}{\eta} = \frac{V_0 d}{\nu}   $$
+
+**Prandtl number** measures stress diffusion compared to thermal diffusion
+
+$$ \mathrm{Pr} = \frac{\eta}{\rho \kappa} = \frac{\nu}{\kappa} $$ 
+
+<--o-->
+
+## Thermal Convection
+
+
+In very-viscous convection, only the Rayleigh number plays a role. 
+
+<center>
+
+![Convection](images/AdvectionVDiffusion.png) <!-- .element style="width:33%;" -->
+
+</center>
+
+The structure of the flow and the pattern of the temperature field is predictable once we know the Rayleigh number but it is helpful first to develop some feeling for the patterns by seeing them.
+
+<--v-->
+
+## Thermal Convection
+
+<center>
+
+<video autoplay controls loop height="315">
+    <source src="movies/Ra1e2.mov"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+Rayleigh number: $Ra=100$
+
+<--o-->
+
 
 ## Resources
 
@@ -232,3 +588,16 @@ with lecture materials, practicals and live computational examples.
 
 <--o-->
 
+## Useful 
+
+<--o-->
+
+
+```js [1-2|3|4]
+let a = 1;
+let b = 2;
+let c = x => 1 + 2 + x;
+c(3);
+```
+
+<--o-->

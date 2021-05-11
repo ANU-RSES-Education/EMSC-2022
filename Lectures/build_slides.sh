@@ -14,4 +14,4 @@ reveal-md  --static static_slides/slideshows \
            --theme css/anu.css --glob '**/*.reveal.md' \
            --separator '<--o-->' \
            --vertical-separator '<--v-->' \
-           --static-dirs images 
+           --static-dirs movies,images  
