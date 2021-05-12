@@ -529,7 +529,7 @@ Ratios where the units cancel are called **dimensionless numbers**. For fluid dy
 
 **Rayleigh number** measures the intensity of buoyancy forces 
 
-$$ \mathrm{Ra} = \frac{\color{blue}{g\rho_0\alpha\Delta T} d^3}{\kappa \eta} $$
+$$ \mathrm{Ra} = \frac{g\rho_0\alpha\Delta T d^3}{\kappa \eta} $$
 
 **Reynolds number** measures the relative importance of inertial to viscous forces
 
@@ -658,13 +658,37 @@ Rayleigh number: $Ra=10,000,000$
 
 ## Flat Earth, Round Earth
 
+<center>
+
 Rayleigh number: $Ra=1,000,000$
 
 <video autoplay controls loop height="250">
-    <source src="movies/Ra1e6-4x1.m4v"
+    <source src="movies/Ra1e6-4x1.mov"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
+
+</center>
+
+The pattern is not changed much when we make the box a little wider
+
+<--v-->
+
+## Flat Earth, Round Earth
+
+<center>
+
+Rayleigh number: $Ra=1,000,000$
+
+<video autoplay controls loop height="300">
+    <source src="movies/Ra1e6-annu.mp4"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+</center>
+
+Nor does it make a qualitative difference if we account for the Earth's curvature
 
 <--o-->
 

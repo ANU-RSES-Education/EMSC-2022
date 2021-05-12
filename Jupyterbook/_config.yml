@@ -19,7 +19,7 @@ sphinx:
   config:
     html_show_copyright: false
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    html_extra_path: ['Lectures/static_slides', 'Movies']
+    # html_extra_path: ['Lectures/static_slides']
 
 
     myst_enable_extensions: 
