@@ -172,13 +172,13 @@ This is exactly the same equation for the anomalous temperature as for the quant
 If a region has a different heat flux in v. out, then there must be a gradient in the heat flux. A change in temperature is driven by gradients in the heat flux like this:
 
 $$
-   \frac{\partial T}{\partial t} =  -\frac{k}{\rho C_p} \frac{\partial q}{\partial x} + H
+   \frac{\partial T}{\partial t} =  \frac{k}{\rho C_p} \frac{\partial q}{\partial x} + H
 $$
 
 $H$ is internal heat generation which is often important in the Earth because of the decay of radioactive isotopes.  Now we substitute for $q$ from Fourier's Law and have this expression:
 
 $$
-   \frac{\partial T}{\partial t} =  -\frac{k}{\rho C_p} \frac{\partial^2 T}{\partial x^2} + H
+   \frac{\partial T}{\partial t} =  \frac{k}{\rho C_p} \frac{\partial^2 T}{\partial x^2} + H
 $$
 
 Fourier was one of the first to solve this mathematically and developed his method of summing harmonics (series solutions) along the way. 
@@ -417,8 +417,8 @@ Does *viscous drag* drive the flow harder when it is a stronger effect ?
 ## Thermal conductivity (or diffusivity)
 
 $$
-   \frac{\partial T}{\partial t} =  -\color{blue}{\frac{k}{\rho C_p}} \frac{\partial^2 T}{\partial x^2} + H 
-                                 = - \color{blue}{\kappa}  \frac{\partial^2 T}{\partial x^2} + H 
+   \frac{\partial T}{\partial t} =  \color{blue}{\frac{k}{\rho C_p}} \frac{\partial^2 T}{\partial x^2} + H 
+                                 =  \color{blue}{\kappa}  \frac{\partial^2 T}{\partial x^2} + H 
 $$
 
 
@@ -521,7 +521,7 @@ $$
 
 One reason we know the latter to be the valid relationship is that this quantity **has no units** and these simple ratios often end up being important *universal* descriptions of convecting systems at all scales.
 
-<--o-->
+<--v-->
 
 ## Dimensionless Numbers
 
@@ -541,36 +541,357 @@ $$ \mathrm{Pr} = \frac{\eta}{\rho \kappa} = \frac{\nu}{\kappa} $$
 
 <--o-->
 
+
+![Convection](images/AdvectionVDiffusion.png) <!-- .element style="width:33%; float:right" -->
+
 ## Thermal Convection
 
-
-In very-viscous convection, only the Rayleigh number plays a role. 
-
-<center>
-
-![Convection](images/AdvectionVDiffusion.png) <!-- .element style="width:33%;" -->
-
-</center>
+In very-viscous convection, only the Rayleigh number plays a role 
+($\mathrm{Re}\rightarrow 0$ and $\mathrm{Pr} \rightarrow \infty$)
 
 The structure of the flow and the pattern of the temperature field is predictable once we know the Rayleigh number but it is helpful first to develop some feeling for the patterns by seeing them.
 
-<--v-->
+</br>
+
+*Blue  is cool, red is warm. The bottom of the box is kept hot, the top cold and the difference in temperature is $\Delta T$, the depth of the box is $d$ and so on. These numbers are set up so that the Rayleigh number is the required value. In a lab experiment, the simplest parameter to change is $\Delta T$ assuming that the material has a constant viscosity with $T$ and does not freeze, melt, burn or boil.*
+
+
+<--v-->  
 
 ## Thermal Convection
 
 <center>
 
-<video autoplay controls loop height="315">
+Rayleigh number: $Ra=100$
+
+<video autoplay controls loop height="500">
     <source src="movies/Ra1e2.mov"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
 
-Rayleigh number: $Ra=100$
+
+<--v-->  
+
+## Thermal Convection
+
+<center>
+
+Rayleigh number: $Ra=1,000$
+
+<video autoplay controls loop height="500">
+    <source src="movies/Ra1e3.mov"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+
+<--v-->  
+
+## Thermal Convection
+
+<center>
+
+Rayleigh number: $Ra=10,000$
+
+<video autoplay controls loop height="500">
+    <source src="movies/Ra1e4.mov"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+
+
+<--v-->  
+
+## Thermal Convection
+
+<center>
+
+Rayleigh number: $Ra=100,000$
+
+<video autoplay controls loop height="500">
+    <source src="movies/Ra1e5.mov"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+
+
+<--v-->  
+
+## Thermal Convection
+
+<center>
+
+Rayleigh number: $Ra=1,000,000$
+
+<video autoplay controls loop height="500">
+    <source src="movies/Ra1e6.mov"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+
+
+<--v-->  
+
+## Thermal Convection
+
+<center>
+
+Rayleigh number: $Ra=10,000,000$
+
+<video autoplay controls loop height="500">
+    <source src="movies/Ra1e7.mov"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
 
 <--o-->
 
+## Flat Earth, Round Earth
+
+Rayleigh number: $Ra=1,000,000$
+
+<video autoplay controls loop height="250">
+    <source src="movies/Ra1e6-4x1.m4v"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+<--o-->
+
+## Steady State Convection
+
+![Convection](images/AdvectionVDiffusion.png) <!-- .element style="width:33%; float:right" -->
+
+In many of the examples, we reach a *steady state* in which the system stops changing and the movies appear to be frozen.
+
+<div style="width:60%">
+
+However, this steady state actually represents a dynamic balance between:
+  - heat conduction into and out of the model at the bottom and top respectively
+  - heat advection by continual rotation in the fluid that drags hot material between the two boundaries
+
+</div>
+
+Again, the best thing is to watch the system evolve and get a feel for what happens.
+
+<--v-->
+
+## Steady State Convection
+
+<center>
+
+Rayleigh number: $Ra=100,000$
+
+<video autoplay controls loop height="450">
+    <source src="movies/Ra1e5tr.mov"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+
+<--v-->
+
+## Steady State Convection
+
+
+<center>
+
+Rayleigh number: $Ra=1,000,000$
+
+<video autoplay controls loop height="450">
+    <source src="movies/Ra1e6tr.mov"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+<--v-->
+
+## Steady State Convection
+
+
+<center>
+
+Rayleigh number: $Ra=10,000,000$
+
+<video autoplay controls loop height="450">
+    <source src="movies/Ra1e7tr.m4v"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+<--o-->  
+
+## Understanding Thermal Convection
+
+<center>
+
+![BoundaryLayers](images/blt.png) <!-- .element style="height:200px;" -->
+
+</center>
+
+A relatively simple pattern emerges from the competition between advection of heat by fluid flow and diffusion:
+
+  - Convection cells that become independent
+  - Boundary layers where horizontal advection balances vertical diffusion
+  - Rotation in the middle of the box without much deformation
+
+
+<--v-->
+
+## Understanding Thermal Convection
+
+<center>
+
+![BoundaryLayers](images/blt.png) <!-- .element style="height:200px;" -->
+
+</center>
+
+Convection length and timescales are determined by the Rayleigh number. 
+
+  - High $\mathrm{Ra}$ narrower boundary layers, higher temperature gradients
+  - High $\mathrm{Ra}$ more likely to be time-dependent, unsteady
+  - Low $\mathrm{Ra}$, convection suddenly shuts off
+
+
+We will see this picture again when we consider the patterns of heat flow in the Earth's ocean floor.
+
+<--o-->
+
+## Average temperature
+
+<center>
+
+![Taverage](images/ConvectionTgrads.png) <!-- .element style="height:450px;" -->
+
+</center>
+
+The temperature (velocity, stress etc) profiles vary systematically with $\mathrm{Ra}$.
+
+<--v-->
+
+
+<div style="width:30%; float:right;">
+
+![Taverage](images/ConvectionTgrads.png) <!-- .element style="width:100%; " -->
+![Nusselt](images/NuExperiment.png) <!-- .element style="width:100%;" -->
+
+</div>
+
+## Nusselt number
+
+<div style="width:65%">
+Another, independent, dimensionless quantity can be derived for the convecting system and it is called the *Nusslet number*. 
+
+$$ \mathrm{Nu} = \frac{Q d}{k \Delta T} $$
+
+Which is the ratio of the heat transported in the convection model ($Q$) compared to what would be transported if
+only conduction were at work. It turns out that
+
+$$ \mathrm{Nu} \propto \mathrm{Ra}^{1/3} $$
+
+</div>
+
+*The results (right) are from an experiment using liquid He which could not be much more different that solid rock but the principals still hold and the agreement with theory is excellent*
+
+<--o-->
+
+## Critical Rayleigh number
+
+It can be a little difficult to see from a small set of movies, but if we reduce the Rayleigh number enough, conduction completely wins over advection and no motion takes place at all. 
+
+![Critical Ra](images/crit_ra.png) <!-- .element style="width:35%; float:right " -->
+
+<div style="width:65%">
+
+This can be approached theoretically, and we find that there is a critical value of the Rayleigh number and a critical wavelength where this transition occurs. 
+
+$$\mathrm{Ra}_c = \frac{27}{4} \pi^4 = 657.51 $$
+
+and
+
+$$ k = \frac{\pi}{\sqrt{2}} = 2.22 $$
+
+</div>
+
+If $\mathrm{Ra} \gg \mathrm{Ra}_c$ then convective motion is inevitable
+
+<--o-->
+
+## Discussion: Ra for the Earth's Mantle
+
+
+<div style="float:right; width:35%">
+</video>
+<video autoplay controls loop height="320">
+    <source src="movies/etopoimageH.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</div>
+
+<div style="width:60%">
+
+Use the following values:
+  - Gravity, $g \approx 10 \mathrm{m/s}^2$ through the mantle
+  - Density, $\rho_0 \approx 3000 \mathrm{kg/m}^3$
+  - Thermal Expansivity, $\alpha \approx 10^{-5} \mathrm{K}^{-1}$
+  - Temperature drop, $\Delta T \approx 2000 \mathrm{K}$
+  - Thickness of the mantle, $d \approx 3000 \mathrm{km}$
+  - Thermal diffusivity, $\kappa \approx 10^{-7} \mathrm{m}^2 / \mathrm{s}$
+  - Viscosity, $\eta \approx 10^{22} \mathrm{Pa.s}$
+
+</br> 
+
+$$  \mathrm{Ra}_{\textrm{Earth}} = ? $$
+
+</div>
+
+**Is it above the critical value ?**
+
+**What does that tell us ?**
+
+<--o-->
+
+## Summary
+
+Convection is a heat engine (i.e. it converts heat energy into mechanical work)
+
+Convection is a balance between heat transported by fluid motion and diffusion. 
+The fluid self-organises to create large scale patterns *“out of nowhere”*
+
+In tanks of viscous fluids like syrup or honey, convection depends on just the one free parameter which is a combination of fluid properties, geometry and boundary conditions — this is called the Rayleigh number (Ra).
+
+If we know Ra, we can predict the heat flow and typical velocity of the system 
+
+If Ra is below a critical value, convection dies away but if it is more than (about) ten times this value then convection cannot be suppressed. The Earth’s mantle is very much super-critical and so it must be convecting.
+
+None of these simple models actually produce plate tectonics but they do still tell us about the heat flow in the Earth. 
+
+<--o-->
+
+<center>
+
+## End
+
+</center>
+
+<--o-->
+
+<--o-->
 
 ## Resources
 
@@ -588,16 +909,3 @@ with lecture materials, practicals and live computational examples.
 
 <--o-->
 
-## Useful 
-
-<--o-->
-
-
-```js [1-2|3|4]
-let a = 1;
-let b = 2;
-let c = x => 1 + 2 + x;
-c(3);
-```
-
-<--o-->
