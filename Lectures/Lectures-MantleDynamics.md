@@ -3,20 +3,40 @@
 This section of the course introduces the dynamics of the circulation in the Earth's mantle
 and how this relates to Plate Tectonic motions.
 
-## Lecture Notes
+## Lectures & Labs
+
+The slides should be readable from your browser but 
 
 **Lecture 1** - In which we examine the nature of convection as a phenomenon that transfers heat and generates motion. We will see how we can extract a single number that tells us almost everything about how / whether convection takes place … and we will calculate this for the Earth’s mantle.
 
 <center>
 
-<iframe src="../slideshows/Lectures-MD1.reveal.html" title="Slideshow" width=75%, height=500, allowfullscreen></iframe>
+<iframe src="../slideshows/Lectures-MD1.reveal.html" title="Slideshow" width=500px, height=333px,  allowfullscreen></iframe>
 
 </center>
+
+---
 
 **Lecture 2** - In which we concern ourselves with the observation of signals from the convecting mantle at the surface of the Earth and, perhaps, of the other terrestrial planets. We will see how mantle convection naturally
 produces the pattern of heat flow in the oceans that we discussed in earlier lectures. 
 
-SLIDES HERE
+<center>
+
+<iframe src="../slideshows/Lectures-MD2.reveal.html" title="Slideshow" width=500px, height=333px, allowfullscreen></iframe>
+
+</center>
+
+---
+
+```{image} images/Lab-MD1-MyTargetPlot.png
+:alt: depth-age
+:height: 333px
+:align: center
+```
+
+**Lab 1** - In which we try to obtain the sea-floor age / depth curve from data that we find online. This is in the form of a [short series of jupyter notebooks](../Notebooks/LAB-convection/EMSC2022W11.i.ipynb) that we will work through. 
+
+
 
 
 ## Concepts
@@ -29,11 +49,14 @@ SLIDES HERE
 
 
 
-<!-->
+<!--
 All of the material for this course is online and released as 
 [open-source](https://github.com/underworld-geodynamics-cloud/self-managing-jupyterhub) or creative-commons 
-where possible. There is an [online book](https://anu-rses-education.github.io/EMSC-3002/FrontPage.html)
-with lecture materials, practicals and live computational examples. -->
+where possible. 
+
+There is an [online book](https://anu-rses-education.github.io/EMSC-3002/FrontPage.html)
+with lecture materials, practicals and live computational examples. 
+-->
 
 ## Resources
 
@@ -47,6 +70,8 @@ with lecture materials, practicals and live computational examples. -->
   - University of Queensland Pitch Drop Experiment is the [longest running lab experiment in the world](https://www.brisbanetimes.com.au/national/queensland/pitch-drop-has-new-custodian-after-physicists-death-20130827-2sne4.html). It was set up to [demonstrate creeping viscous flow](https://theconversation.com/explainer-the-pitch-drop-experiment-33734) and inadvertently demonstrated the effect of temperature on viscosity.
 
   - The [Boston Molasses Flood](https://fyfluiddynamics.com/2019/01/today-marks-the-100th-anniversary-of-the-boston/) - Gravity currents, highly viscous flow and temperature dependent viscosity. An interesting [video about viscous flow](https://youtu.be/u5sYoUnp5A0) that might give you some intuition into viscosity.
+
+  - Third year course !
     
 
   <!-- http://web.mit.edu/hml/ncfmf.html Fluid Mechanics Videos -->

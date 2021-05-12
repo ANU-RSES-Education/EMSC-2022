@@ -51,7 +51,6 @@
 
 - part: EMSC2022 - Lectures
   chapters:
-  - file: Lectures/Index.md
-    sections: 
-    - file: Lectures/Lectures-MantleDynamics.md
-    # - file: Lectures/Lecture_example_2.md
+  # - file: Lectures/Index.md   # This would be needed if there were any more lectures blocks online
+  #   sections: 
+  - file: Lectures/Lectures-MantleDynamics.md

@@ -10,7 +10,7 @@ revealOptions:
 
 # EMSC 2022
 
-## Mantle convection and plate motions
+## Mantle convection and plate motions (ii)
 
   - Louis Moresi, Australian National University
 
@@ -20,7 +20,8 @@ revealOptions:
 
 </br>
 
-*In which we shall examine the nature of convection as a phenomenon that transfers heat and generates motion. We will see how we can extract a single number that tells us almost everything about how / whether convection takes place … and we will calculate this for the Earth’s mantle.*
+*In which we concern ourselves with the observation of signals from the convecting mantle at the surface of the Earth and, perhaps, of the other terrestrial planets. We will see how mantle convection naturally
+produces the pattern of heat flow in the oceans that we discussed in earlier lectures.*
 
 </div>
 
