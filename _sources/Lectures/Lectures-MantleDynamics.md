@@ -1,23 +1,29 @@
 # Introduction to Mantle Dynamics (EMSC 2022)
 
-This lecture introduces concepts behind Mantle Convection and how it leads to plate motions. 
+This section of the course introduces the dynamics of the circulation in the Earth's mantle
+and how this relates to Plate Tectonic motions.
 
-<iframe src="../slideshows/Lectures-MD1.reveal.html" title="Slideshow" width=100%, height=500, allowfullscreen></iframe>
+## Lecture Notes
 
-and lecture 2 deals with ... 
+**Lecture 1** - In which we examine the nature of convection as a phenomenon that transfers heat and generates motion. We will see how we can extract a single number that tells us almost everything about how / whether convection takes place … and we will calculate this for the Earth’s mantle.
 
-(ToDo)
+<center>
+
+<iframe src="../slideshows/Lectures-MD1.reveal.html" title="Slideshow" width=75%, height=500, allowfullscreen></iframe>
+
+</center>
+
+**Lecture 2** - In which we concern ourselves with the observation of signals from the convecting mantle at the surface of the Earth and, perhaps, of the other terrestrial planets. We will see how mantle convection naturally
+produces the pattern of heat flow in the oceans that we discussed in earlier lectures. 
+
+SLIDES HERE
+
 
 ## Concepts
 
-The Earth's Mantle is a heat engine that turns the energy from radioactive decay and from the formation of the planet into the mechanical work of plate motions.
+  - The Earth's Mantle is a heat engine that turns the energy from radioactive decay and from the formation of the planet into the mechanical work of plate motions.
 
-We can quantify these motions by understanding fluid convection under different conditions.
-
-## What you will learn
-
-
-
+  - We can quantify these motions by understanding fluid convection under different conditions.
 
 
 
@@ -29,11 +35,12 @@ All of the material for this course is online and released as
 where possible. There is an [online book](https://anu-rses-education.github.io/EMSC-3002/FrontPage.html)
 with lecture materials, practicals and live computational examples. -->
 
-## Links
+## Resources
 
+  - This material 
   - Wattle courses
   - Programmes and courses 
-  - Other ... 
+  - Lab Materials (Notebooks) 
 
 ### Highly viscous flow 
 
