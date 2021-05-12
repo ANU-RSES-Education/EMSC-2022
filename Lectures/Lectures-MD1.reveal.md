@@ -1,13 +1,13 @@
 ---
-title: Introduction to EMSC 3002
+title: EMSC 2022 11.1
 separator: '<--o-->  '
 verticalSeparator: '<--v-->'
 revealOptions:
 #    transition: 'fade'
 
     slideNumber: true
-    width:  1000
-    height: 666
+    width:  1100
+    height: 750
     margin: 0.07
 ---
 
