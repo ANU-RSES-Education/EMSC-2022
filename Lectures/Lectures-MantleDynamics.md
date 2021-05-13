@@ -45,6 +45,12 @@ produces the pattern of heat flow in the oceans that we discussed in earlier lec
 
   - We can quantify these motions by understanding fluid convection under different conditions.
 
+  - Convecting fluids naturally produce *boundary layers* where adjustments occur between the bulk of the material and its boundaries.
+
+  - Understanding the oceanic lithosphere as a boundary layer allows us to predict its thermal state and mechanical thickness quite well.
+
+  - Our observational tests of the boundary layer approach is to predict the depth-age relationship for the sea-floor.
+
 
 
 
@@ -60,10 +66,9 @@ with lecture materials, practicals and live computational examples.
 
 ## Resources
 
-  - This material 
-  - Wattle courses
-  - Programmes and courses 
-  - Lab Materials (Notebooks) 
+All of the material for this course is online and released as 
+[open-source](https://github.com/ANU-RSES-Education/EMSC-2022) or creative-commons 
+where possible. Where we do not own the material that we use, we try to provide it through links to the original site or we provide references to the published material.
 
 ### Highly viscous flow 
 
@@ -71,7 +76,9 @@ with lecture materials, practicals and live computational examples.
 
   - The [Boston Molasses Flood](https://fyfluiddynamics.com/2019/01/today-marks-the-100th-anniversary-of-the-boston/) - Gravity currents, highly viscous flow and temperature dependent viscosity. An interesting [video about viscous flow](https://youtu.be/u5sYoUnp5A0) that might give you some intuition into viscosity.
 
-  - Third year course !
+### Heat transfer
+
+  - Background discussion on heat transfer with that illustrates conduction, convection and radiation using real-world examples and [thermal imaging video](https://youtu.be/oahoaGC8Jfc). 
     
 
   <!-- http://web.mit.edu/hml/ncfmf.html Fluid Mechanics Videos -->
