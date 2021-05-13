@@ -393,7 +393,7 @@ Sea floor topography (bathymetry) is related to buoyancy and hence thermal struc
 
 ## Accompanying Lab 
 
-In the lab on Friday, we will use the available data tomake an up to date version of this graph and someof the other maps from this lecture.
+In the lab on Friday, we will use the available data to make an up to date version of this graph and someof the other maps from this lecture.
 
 <center>
 
@@ -408,3 +408,11 @@ In the lab on Friday, we will use the available data tomake an up to date versio
 <--o-->
 
 ## Advertisement
+
+<center>
+
+![Sea Floor Depth](images/EMSC3034.png) <!-- .element style="width:50%; " -->
+
+</center>
+
+If this course has grabbed your attention, consider the *Geodynamics* course in 3rd year.
