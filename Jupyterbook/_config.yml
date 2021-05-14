@@ -36,7 +36,7 @@ sphinx:
 
 repository:
   url         : https://github.com/ANU-RSES-Education/EMSC-2022  # Online location of this book
-  branch      : jupyterbook  # Which branch of the repository should be used when creating links (optional)
+  branch      : master  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
   jupyterhub_url: "https://emsc2022-2021.rses.underworldcloud.org"  # The URL for your JupyterHub. 
