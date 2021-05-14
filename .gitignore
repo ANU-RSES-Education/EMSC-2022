@@ -4,6 +4,8 @@ Notebooks/*.png
 Notebooks/Lab*/*.png 
 
 /Jupyterbook/_build
+/Lectures/static_slides/slideshows
+*slideshows*
 
 # IDE files
 
