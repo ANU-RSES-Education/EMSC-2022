@@ -421,7 +421,8 @@ You can read more about the dataset here: <a class="reference external" href="ht
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">(</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">)</span>
 
 <span class="n">etopo_dataset</span> <span class="o">=</span> <span class="s2">&quot;http://thredds.socib.es/thredds/dodsC/ancillary_data/bathymetry/ETOPO1_Bed_g_gmt4.nc&quot;</span>
-<span class="n">etopo_data</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">etopo_dataset</span><span class="p">)</span>
+<span class="n">etopo_data</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">etopo_dataset</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;netcdf4&quot;</span><span class="p">)</span>
+
 <span class="n">subs_data</span> <span class="o">=</span> <span class="n">etopo_data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
 
 <span class="n">lons</span> <span class="o">=</span> <span class="n">subs_data</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -443,11 +444,6 @@ You can read more about the dataset here: <a class="reference external" href="ht
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The shape of the array is ... &quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The shape of the array is ... 
 </pre></div>
 </div>
 </div>
@@ -474,12 +470,6 @@ Does that look right ?</p>
            <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">5000.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">5000.</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11e006e50&gt;
-</pre></div>
-</div>
-<img alt="../../_images/EMSC2022W11.ii_8_1.png" src="../../_images/EMSC2022W11.ii_8_1.png" />
 </div>
 </div>
 </div>
