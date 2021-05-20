@@ -3,11 +3,14 @@ channels:
     - conda-forge
     - geo-down-under
 dependencies:
+    - python=3.7
+    - cloudstor
     - stripy
     - litho1pt0
     - proj=7.*.        # errors with cartopy when 6.2.* is used
-    - cartopy=0.17.*
+    - cartopy=0.18.*
     - gdal
+    - libgdal
     - obspy
     - pandas
     - pip 
@@ -15,10 +18,7 @@ dependencies:
     - xarray
     - nodejs
     - jupytext
+    - h5netcdf
     - pip:
       - lavavu<1.7
-
-
-
-
 
