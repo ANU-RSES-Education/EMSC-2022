@@ -19,6 +19,7 @@ dependencies:
     - nodejs
     - jupytext
     - h5netcdf
+    - netcdf4
     - pip:
       - lavavu<1.7
 
