@@ -3,9 +3,10 @@ channels:
     - conda-forge
     - geo-down-under
 dependencies:
-    - cloudstor
-    - stripy
-    - litho1pt0
+    - numpy
+    # - cloudstor
+    # - stripy
+    # - litho1pt0
     - cartopy
     # - proj=7.*.        # errors with cartopy when 6.2.* is used
     # - cartopy=0.18.*
@@ -20,6 +21,10 @@ dependencies:
     - jupytext
     - h5netcdf
     - netcdf4
-    # - pip:
+    - gfortran
+    - pip:
+      - cloudstor
+      - stripy
+      - litho1pt0
     #   - lavavu<1.7
 
