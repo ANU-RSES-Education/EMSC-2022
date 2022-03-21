@@ -1,4 +1,4 @@
-# Welcome to EMSC 2022 for 2021 !
+# Table of Contents
 
 <center>
 <video controls autoplay width="400">
@@ -14,5 +14,8 @@
 Here you will find the Lab notebooks for the course for 2021, and the Mantle Dynamics 
 Lecture slides.
 
-If you are lost you can go back to the [wattle site for the course]()
+```{tableofcontents}
+```
+
+If you are lost you can go back to the [wattle site for the course](https://wattlecourses.anu.edu.au/course/view.php?id=33639)
 

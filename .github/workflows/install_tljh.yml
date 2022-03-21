@@ -50,13 +50,16 @@ jobs:
         sed '/^[[:blank:]]*#/d;s/#.*//' apt_get_packages.txt > apt_get_packages_no_comment.txt
         sudo -E sshpass -e scp apt_get_packages_no_comment.txt root@${{ secrets.DROPLET_IP }}:apt_get_packages.txt
         $REMOTE_SH 'sudo -E xargs apt-get -y install < apt_get_packages.txt'
+
+        # Install mamba to make things work more quickly 
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/conda install -c conda-forge mamba'
   
         # Update/Install python packages 
         sudo -E sshpass -e scp conda_packages.yml root@${{ secrets.DROPLET_IP }}:conda_packages.yml
-        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/conda env update --file conda_packages.yml'
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/mamba env update --file conda_packages.yml'
         
         # This is the lavavu install (note, lavavu introduces the list of apt-get dependencies)
-        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/pip install lavavu xvfbwrapper'
+        # $REMOTE_SH 'sudo -E /opt/tljh/user/bin/pip install lavavu xvfbwrapper'
 
         # Notebook extensions are handled like this 
         $REMOTE_SH 'sudo -E /opt/tljh/user/bin/pip install jupyter_contrib_nbextensions'
