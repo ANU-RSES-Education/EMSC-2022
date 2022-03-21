@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/customize.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -43,6 +44,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/font_button.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
@@ -54,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="EMSC2022, Practical Week 1" href="Notebooks/LAB1/EMSC2022W1.html" />
+    <link rel="next" title="EMSC 2022-2021 Week 5 - Making Maps with Python" href="Notebooks/LAB-week5/Week5_Lab.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -104,21 +106,6 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Notebooks/LAB1/EMSC2022W1.html">
-   Lab week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Notebooks/LAB2/EMSC2022W2.html">
-   Lab week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Notebooks/LAB4/EMSC2022W4.html">
-   Lab week 4
-  </a>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Notebooks/LAB-week5/Week5_Lab.html">
    Lab week 5
@@ -247,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  <button type="button" onclick="legibleFontSwitcher()">Switch Font</button>&nbsp;&nbsp;<button type="button" onclick="fontScaler(1.1)">&#10133;</button><button type="button" onclick="fontScaler(0.0)">&#9679;</button><button type="button" onclick="fontScaler(0.909)">&#10134;</button>
 </div>
 
 </div>
@@ -320,6 +307,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessibility">
+   Accessibility
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -332,6 +332,19 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessibility">
+   Accessibility
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -350,14 +363,10 @@ const thebe_selector_output = ".output, .cell_output"
 </video>
 <p><em>The Earth’s topography and bathymetry.</em></p>
 </center>
-<p>Here you will find the Lab notebooks for the course for 2021, and the Mantle Dynamics
-Lecture slides.</p>
+<p>Here you will find the Lab notebooks for the course, and the Mantle Dynamics Lecture slides.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Notebooks/LAB1/EMSC2022W1.html">Lab week 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebooks/LAB2/EMSC2022W2.html">Lab week 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebooks/LAB4/EMSC2022W4.html">Lab week 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Notebooks/LAB-week5/Week5_Lab.html">Lab week 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Notebooks/LAB-week6/LAB6-focal_mechanisms.html">Lab week 6</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Notebooks/LAB-week7/LAB7-Raypaths.html">Lab week 7</a></li>
@@ -372,6 +381,11 @@ Lecture slides.</p>
 </ul>
 </div>
 <p>If you are lost you can go back to the <a class="reference external" href="https://wattlecourses.anu.edu.au/course/view.php?id=33639">wattle site for the course</a></p>
+<div class="section" id="accessibility">
+<h2>Accessibility<a class="headerlink" href="#accessibility" title="Permalink to this headline">¶</a></h2>
+<p><button type="button" onclick="legibleFontSwitcher()">Switch Font</button>  <button type="button" onclick="fontScaler(1.1)">➕</button><button type="button" onclick="fontScaler(0.0)">●</button><button type="button" onclick="fontScaler(0.909)">➖</button></p>
+<p>The online web page can also be typeset using the <a class="reference external" href="https://brailleinstitute.org/freefont">Atkinson Hyperlegible</a> font everywhere, other than monospaced computer code, as an aid to legibility. This button is also located at the bottom of the left navigation bar on every page and will toggle between settings.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -399,10 +413,10 @@ Lecture slides.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Notebooks/LAB1/EMSC2022W1.html" title="next page">
+    <a class='right-next' id="next-link" href="Notebooks/LAB-week5/Week5_Lab.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">EMSC2022, Practical Week 1</p>
+        <p class="prev-next-title">EMSC 2022-2021 Week 5 - Making Maps with Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -415,6 +429,7 @@ Lecture slides.</p>
     
       By David Heslop, Meghan Miller, Louis Moresi<br/>
     
+        &copy; Copyright 2021.<br/>
   </p>
 </footer>
 </main>

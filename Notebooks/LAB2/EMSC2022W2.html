@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customize.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -43,6 +44,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/font_button.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
@@ -56,8 +58,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introduction" href="../LAB4/EMSC2022W4.html" />
-    <link rel="prev" title="EMSC2022, Practical Week 1" href="../LAB1/EMSC2022W1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,22 +106,7 @@ const thebe_selector_output = ".output, .cell_output"
   Labs
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../LAB1/EMSC2022W1.html">
-   Lab week 1
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Lab week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../LAB4/EMSC2022W4.html">
-   Lab week 4
-  </a>
- </li>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../LAB-week5/Week5_Lab.html">
    Lab week 5
@@ -250,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  <button type="button" onclick="legibleFontSwitcher()">Switch Font</button>&nbsp;&nbsp;<button type="button" onclick="fontScaler(1.1)">&#10133;</button><button type="button" onclick="fontScaler(0.0)">&#9679;</button><button type="button" onclick="fontScaler(0.909)">&#10134;</button>
 </div>
 
 </div>
@@ -330,7 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc2022-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB2/EMSC2022W2.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc2022.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB2/EMSC2022W2.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -477,21 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../LAB1/EMSC2022W1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">EMSC2022, Practical Week 1</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../LAB4/EMSC2022W4.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
@@ -501,6 +472,7 @@ const thebe_selector_output = ".output, .cell_output"
     
       By David Heslop, Meghan Miller, Louis Moresi<br/>
     
+        &copy; Copyright 2021.<br/>
   </p>
 </footer>
 </main>
