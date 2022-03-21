@@ -3,12 +3,12 @@ root: FrontPage
 parts:
   - caption: Labs
     chapters:
-    - file: Notebooks/LAB1/EMSC2022W1.ipynb 
-      title: Lab week 1 
-    - file:  Notebooks/LAB2/EMSC2022W2.ipynb
-      title: Lab week 2
-    - file: Notebooks/LAB4/EMSC2022W4.ipynb
-      title: Lab week 4
+    # - file: Notebooks/LAB1/EMSC2022W1.ipynb 
+    #   title: Lab week 1 
+    # - file:  Notebooks/LAB2/EMSC2022W2.ipynb
+    #   title: Lab week 2
+    # - file: Notebooks/LAB4/EMSC2022W4.ipynb
+    #   title: Lab week 4
     - file: Notebooks/LAB-week5/Week5_Lab.ipynb
       title: Lab week 5
       sections:
