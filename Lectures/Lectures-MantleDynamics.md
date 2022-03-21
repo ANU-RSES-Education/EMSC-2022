@@ -52,9 +52,6 @@ produces the pattern of heat flow in the oceans that we discussed in earlier lec
   - Our observational tests of the boundary layer approach is to predict the depth-age relationship for the sea-floor.
 
 
-
-
-
 <!--
 All of the material for this course is online and released as 
 [open-source](https://github.com/underworld-geodynamics-cloud/self-managing-jupyterhub) or creative-commons 

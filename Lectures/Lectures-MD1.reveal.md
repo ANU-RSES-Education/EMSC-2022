@@ -78,7 +78,6 @@ Convection like this will only work when the soup is heated from below or, in th
 </video>
 </center>
 
-
 Convection is one of the ways we transfer heat from hot regions deep in the Earth to cooler, shallow regions. 
 
 <--o-->  
@@ -299,7 +298,8 @@ The stress is found to depend on the strength of the shearing *velocity gradient
 
 $$
   \tau = \eta \frac{d v_1}{d x_2} 
-$$  <!-- .element style="width:60%;" -->
+$$  
+<!-- .element style="width:60%;" -->
 
 
 ![GC](images/GravityCurrentAnim.gif) <!-- .element style="width:35%; float:right; padding-left:30px;" -->
