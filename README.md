@@ -1,4 +1,4 @@
-# Jupyterhub for ANU EMSC2022
+# Jupyterhub for ANU EMSC2022 
 
 Status of the jupyter notebook server:
  
