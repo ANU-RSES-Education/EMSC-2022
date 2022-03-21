@@ -8,7 +8,6 @@ cd ..
 
 jupyter-book build . 
 
-
 # This is best done by hand so it updates the slides even 
 # if there is no work to be done in rebuilding the book 
 
