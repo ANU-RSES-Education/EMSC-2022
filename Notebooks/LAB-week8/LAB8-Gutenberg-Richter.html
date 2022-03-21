@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation &#8212; EMSC 2022</title>
+    <title>Lab 8: Introduction to scatter plots and the Gutenberg-Richter Relationship &#8212; EMSC 2022</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -323,14 +323,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/jupyterbook?urlpath=tree/Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc2022-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb&branch=jupyterbook"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc2022-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -383,7 +383,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation</h1>
+                <h1>Lab 8: Introduction to scatter plots and the Gutenberg-Richter Relationship</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -424,18 +424,16 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="section" id="lab-6-introduction-to-scatter-plots-and-the-gutenberg-richter-relation">
-<h1>Lab 6: Introduction to scatter plots and the Gutenberg-Richter Relation<a class="headerlink" href="#lab-6-introduction-to-scatter-plots-and-the-gutenberg-richter-relation" title="Permalink to this headline">¶</a></h1>
-<p>This lesson will introduce scatter plots and how to make them in several different ways. We will start by importing the ANSS earthquake catalog which you can optionally download <a class="reference external" href="http://www.ncedc.org/anss/catalog-search.html">here</a>. OR, for your convenience this file is also provided in the “data” folder within the LAB6 folder.</p>
+  <div class="section" id="lab-8-introduction-to-scatter-plots-and-the-gutenberg-richter-relationship">
+<h1>Lab 8: Introduction to scatter plots and the Gutenberg-Richter Relationship<a class="headerlink" href="#lab-8-introduction-to-scatter-plots-and-the-gutenberg-richter-relationship" title="Permalink to this headline">¶</a></h1>
+<p>This lesson will introduce scatter plots and how to make them in several different ways. We will start by importing the ANSS earthquake catalog which you can optionally download <a class="reference external" href="http://www.ncedc.org/anss/catalog-search.html">here</a>. OR, for your convenience this file is also provided in the “data” folder within the LAB-week8 folder.</p>
 <p>The catalog provided is for magnitude &gt;= 5 events occurring between 1997 and 2009 worldwide. For easy import, it is best to download a CSV version.</p>
 <p>For additional details see the publication:
 John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Computation to Seismology Students. Seismological Research Letters ; 89 (3): 1165–1171. doi: <a class="reference external" href="https://doi.org/10.1785/0220170246">https://doi.org/10.1785/0220170246</a></p>
-<p>Here we will import the familiar toolkit <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that we used in Lab 4 to import data from Oregon State University volcano database.  As well as the plotting library we have used before <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<p>Here you need to import the familiar toolkit <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that we used in Lab 6 to import data from Oregon State University volcano database.  As well as the plotting library we have used before <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline 
 </pre></div>
 </div>
 </div>
@@ -455,130 +453,6 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Lat</th>
-      <th>Lon</th>
-      <th>Depth</th>
-      <th>Mag</th>
-      <th>Magt</th>
-      <th>Nst</th>
-      <th>Gap</th>
-      <th>Clo</th>
-      <th>RMS</th>
-      <th>SRC</th>
-      <th>Event</th>
-      <th>ID</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1997/01/01</td>
-      <td>04:35:51.88</td>
-      <td>6.813</td>
-      <td>-72.894</td>
-      <td>163.7</td>
-      <td>5.3</td>
-      <td>Mw</td>
-      <td>150</td>
-      <td>1.10</td>
-      <td>NEI</td>
-      <td>1.997010e+11</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1997/01/01</td>
-      <td>22:32:32.30</td>
-      <td>-0.127</td>
-      <td>123.823</td>
-      <td>115.4</td>
-      <td>5.8</td>
-      <td>Me</td>
-      <td>178</td>
-      <td>1.01</td>
-      <td>NEI</td>
-      <td>1.997010e+11</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1997/01/01</td>
-      <td>22:43:32.31</td>
-      <td>-5.977</td>
-      <td>129.665</td>
-      <td>177.0</td>
-      <td>5.0</td>
-      <td>Mb</td>
-      <td>31</td>
-      <td>0.77</td>
-      <td>NEI</td>
-      <td>1.997010e+11</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1997/01/02</td>
-      <td>02:57:51.65</td>
-      <td>-23.860</td>
-      <td>-179.870</td>
-      <td>500.0</td>
-      <td>5.4</td>
-      <td>Mw</td>
-      <td>107</td>
-      <td>0.91</td>
-      <td>NEI</td>
-      <td>1.997010e+11</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1997/01/02</td>
-      <td>10:52:35.03</td>
-      <td>10.568</td>
-      <td>92.742</td>
-      <td>33.0</td>
-      <td>5.1</td>
-      <td>Mb</td>
-      <td>117</td>
-      <td>0.95</td>
-      <td>NEI</td>
-      <td>1.997010e+11</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>What are these columns?</p>
 <p>Some are self explanatory but some are not:</p>
@@ -596,127 +470,6 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Lat</th>
-      <th>Lon</th>
-      <th>Depth</th>
-      <th>Mag</th>
-      <th>Nst</th>
-      <th>RMS</th>
-      <th>Event</th>
-      <th>ID</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>12835.000000</td>
-      <td>12835.000000</td>
-      <td>12835.000000</td>
-      <td>12835.000000</td>
-      <td>12835.000000</td>
-      <td>1.274000e+04</td>
-      <td>2.400000e+01</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>2.457569</td>
-      <td>45.992318</td>
-      <td>62.271610</td>
-      <td>5.411432</td>
-      <td>153.968991</td>
-      <td>1.992723e+11</td>
-      <td>1.136930e+07</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>28.948117</td>
-      <td>119.242131</td>
-      <td>105.848819</td>
-      <td>0.425692</td>
-      <td>123.620500</td>
-      <td>1.324377e+10</td>
-      <td>1.205323e+07</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>-65.736000</td>
-      <td>-179.994000</td>
-      <td>-5.000000</td>
-      <td>5.000000</td>
-      <td>0.000000</td>
-      <td>4.000000e-02</td>
-      <td>1.129580e+05</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>-17.171000</td>
-      <td>-70.130000</td>
-      <td>10.000000</td>
-      <td>5.100000</td>
-      <td>63.000000</td>
-      <td>1.999100e+11</td>
-      <td>1.184708e+06</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>-1.549000</td>
-      <td>97.239000</td>
-      <td>33.000000</td>
-      <td>5.300000</td>
-      <td>116.000000</td>
-      <td>2.002011e+11</td>
-      <td>5.370876e+06</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>23.772000</td>
-      <td>142.433000</td>
-      <td>50.200000</td>
-      <td>5.600000</td>
-      <td>207.000000</td>
-      <td>2.004052e+11</td>
-      <td>2.125422e+07</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>86.283000</td>
-      <td>179.993000</td>
-      <td>691.600000</td>
-      <td>9.000000</td>
-      <td>929.000000</td>
-      <td>2.006031e+11</td>
-      <td>3.022827e+07</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Scatter plots are used to look at how two variables compare. For example, does the magnitude of the earthquake correlate in some way to the number of stations used to locate it?</p>
 <div class="section" id="exercise-1-make-a-plot-of-magnitude-vs-number-of-stations">
@@ -728,14 +481,8 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
-</pre></div>
 </div>
-<img alt="../../_images/LAB8-Gutenberg-Richter_10_1.png" src="../../_images/LAB8-Gutenberg-Richter_10_1.png" />
-</div>
-</div>
-<p>We can clean this plot up a lot though. Lets start by looking at the machinery that creates it.</p>
+<p>What is this showing??? We can clean this plot up a lot though. Lets start by looking at the machinery that creates it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -752,12 +499,6 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Magnitude&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/LAB8-Gutenberg-Richter_12_1.png" src="../../_images/LAB8-Gutenberg-Richter_12_1.png" />
 </div>
 </div>
 </div>
@@ -776,6 +517,7 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try importing here</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -783,11 +525,6 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.3, 5.8, 5. , ..., 5.1, 5.1, 5.1])
 </pre></div>
 </div>
 </div>
@@ -810,50 +547,11 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.0990099 ,  0.1980198 ,  0.2970297 ,  0.3960396 ,
-        0.4950495 ,  0.59405941,  0.69306931,  0.79207921,  0.89108911,
-        0.99009901,  1.08910891,  1.18811881,  1.28712871,  1.38613861,
-        1.48514851,  1.58415842,  1.68316832,  1.78217822,  1.88118812,
-        1.98019802,  2.07920792,  2.17821782,  2.27722772,  2.37623762,
-        2.47524752,  2.57425743,  2.67326733,  2.77227723,  2.87128713,
-        2.97029703,  3.06930693,  3.16831683,  3.26732673,  3.36633663,
-        3.46534653,  3.56435644,  3.66336634,  3.76237624,  3.86138614,
-        3.96039604,  4.05940594,  4.15841584,  4.25742574,  4.35643564,
-        4.45544554,  4.55445545,  4.65346535,  4.75247525,  4.85148515,
-        4.95049505,  5.04950495,  5.14851485,  5.24752475,  5.34653465,
-        5.44554455,  5.54455446,  5.64356436,  5.74257426,  5.84158416,
-        5.94059406,  6.03960396,  6.13861386,  6.23762376,  6.33663366,
-        6.43564356,  6.53465347,  6.63366337,  6.73267327,  6.83168317,
-        6.93069307,  7.02970297,  7.12871287,  7.22772277,  7.32673267,
-        7.42574257,  7.52475248,  7.62376238,  7.72277228,  7.82178218,
-        7.92079208,  8.01980198,  8.11881188,  8.21782178,  8.31683168,
-        8.41584158,  8.51485149,  8.61386139,  8.71287129,  8.81188119,
-        8.91089109,  9.00990099,  9.10891089,  9.20792079,  9.30693069,
-        9.40594059,  9.5049505 ,  9.6039604 ,  9.7029703 ,  9.8019802 ,
-        9.9009901 , 10.        ])
-</pre></div>
-</div>
-</div>
 </div>
 <p>Look at what ‘hist’ is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hist</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-          0,    0,    0,    0,    0,    0, 2067, 1896, 1817, 1408, 1313,
-        938,  737,  559,  411,  372,  283,  213,  169,  138,  114,   79,
-         71,   49,   40,   23,   29,   26,   18,   11,    8,   10,   11,
-          7,    8,    3,    1,    2,    0,    1,    1,    0,    1,    0,
-          0,    0,    1,    0,    0,    0,    0,    0,    0,    0,    0,
-          0,    0])
 </pre></div>
 </div>
 </div>
@@ -872,12 +570,6 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gutenberg-Richter Distribution&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Gutenberg-Richter Distribution&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/LAB8-Gutenberg-Richter_23_1.png" src="../../_images/LAB8-Gutenberg-Richter_23_1.png" />
 </div>
 </div>
 <p>We quite frequently want to plot the fit of the <i>a</i> and <i>b</i> values of the Gutenberg-Richter distribution. To do this, we are going to use the equation below which calculates the maximum likelihood of the distribution and returns the parameters:</p>
@@ -917,11 +609,6 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(8.814338041852478, 0.9411884337690031, 8.527349128951242e-16, 12835)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -939,15 +626,7 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-16-94f69fb088ab&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
-    <span class="n">y</span> <span class="o">=</span>
-       <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<span class="n">y</span> <span class="o">=</span> 
 </pre></div>
 </div>
 </div>
@@ -966,21 +645,6 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gutenberg-Richter Distribution&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">14</span><span class="n">b3421b9fd4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;x&#39; is not defined
-</pre></div>
-</div>
-<img alt="../../_images/LAB8-Gutenberg-Richter_30_1.png" src="../../_images/LAB8-Gutenberg-Richter_30_1.png" />
 </div>
 </div>
 <p>This fit looks pretty good! I hope!</p>
