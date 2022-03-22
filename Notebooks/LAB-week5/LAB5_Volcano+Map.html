@@ -346,6 +346,11 @@ const thebe_selector_output = ".output, .cell_output"
    Notes on the data source
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-volcanos">
+   More volcanos
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -374,6 +379,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notes-on-the-data-source">
    Notes on the data source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-volcanos">
+   More volcanos
   </a>
  </li>
 </ul>
@@ -558,9 +568,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="more-volcanos">
+<h2>More volcanos<a class="headerlink" href="#more-volcanos" title="Permalink to this headline">¶</a></h2>
+<p>Can you complete the following to get a full map of ALL the volcanos ?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page_source</span> <span class="o">=</span> <span class="s2">&quot;https://volcano.oregonstate.edu/volcano_table?sort_by=title&amp;sort_order=ASC&amp;page=1&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fix this !</span>
+
+<span class="n">page_source</span> <span class="o">=</span> <span class="s2">&quot;???&quot;</span>
 
 <span class="n">tables</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">page_source</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is/are </span><span class="si">{}</span><span class="s2"> table/s on this web page&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)))</span>
@@ -570,22 +586,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc_1</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Can you add this to the previous data frame with pd.concat ?</span>
+
+<span class="n">df_volc_1</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">df_volc_1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_volc_1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_volc</span><span class="p">,</span><span class="n">df_volc_1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
