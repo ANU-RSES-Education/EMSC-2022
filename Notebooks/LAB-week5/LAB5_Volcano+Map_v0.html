@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Map of active volcanoes &#8212; EMSC 2022</title>
+    <title>LAB 5 - Map of active volcanoes &#8212; EMSC 2022</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,8 +56,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="On demand mapping services" href="LAB5_On_Demand_MapServices.html" />
-    <link rel="prev" title="EMSC 2022-2021 Week 5 - Making Maps with Python" href="Week5_Lab.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,19 +104,19 @@ const thebe_selector_output = ".output, .cell_output"
   Labs
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week5_Lab.html">
    Lab week 5
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="LAB5_Volcano%2BMap.html">
      Map of active volcanoes
     </a>
    </li>
@@ -270,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Notebooks/LAB-week5/LAB5_Volcano+Map.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/LAB-week5/LAB5_Volcano+Map_v0.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -308,14 +306,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week5/LAB5_Volcano+Map.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week5/LAB5_Volcano+Map_v0.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc2022.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB-week5/LAB5_Volcano+Map.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc2022.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB-week5/LAB5_Volcano+Map_v0.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -341,11 +339,6 @@ const thebe_selector_output = ".output, .cell_output"
    Resources you will use.
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notes-on-the-data-source">
-   Notes on the data source
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -356,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Map of active volcanoes</h1>
+                <h1>LAB 5 - Map of active volcanoes</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -371,11 +364,6 @@ const thebe_selector_output = ".output, .cell_output"
    Resources you will use.
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notes-on-the-data-source">
-   Notes on the data source
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -385,28 +373,30 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="map-of-active-volcanoes">
-<h1>Map of active volcanoes<a class="headerlink" href="#map-of-active-volcanoes" title="Permalink to this headline">¶</a></h1>
-<p>Here is an example of plotting a map of active volcanoes using data online at Oregon State University.  This example was written by Meghan Miller, of ANU.</p>
-<a class="reference internal image-reference" href="../../_images/volcano_map.png"><img alt="../../_images/volcano_map.png" src="../../_images/volcano_map.png" style="width: 50%;" /></a>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-5-map-of-active-volcanoes">
+<h1>LAB 5 - Map of active volcanoes<a class="headerlink" href="#lab-5-map-of-active-volcanoes" title="Permalink to this headline">¶</a></h1>
+<p>Here is an example of plotting a map of active volcanoes using data online at Oregon State University.</p>
+<!-- This form breaks the book 
+<div>
+<img src="Images/volcano_map.png" width="50%"/>
+</div>
+-->
+<p><img alt="volcano_map" src="../../_images/volcano_map.png" /></p>
 <p>At the end of this script you will produce a map just like the one shown here.</p>
 <div class="section" id="resources-you-will-use">
 <h2>Resources you will use.<a class="headerlink" href="#resources-you-will-use" title="Permalink to this headline">¶</a></h2>
-<p>This notebook makes use of a couple of packages that might come in handy another time. The maps are made by <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> which is a mapping tool written by the Meteorological Office in the UK (and which happens to be really good a plotting satellite data). The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package is a database tool that is really very good at manipulating tables of different types of data, selecting, sorting, refining and so on.</p>
-</div>
-<div class="section" id="notes-on-the-data-source">
-<h2>Notes on the data source<a class="headerlink" href="#notes-on-the-data-source" title="Permalink to this headline">¶</a></h2>
-<p>The data that we are going to use come from <a class="reference external" href="https://volcano.oregonstate.edu/volcano_table?sort_by=title&amp;sort_order=ASC">this web page</a> and you can see that this is a human-readable table, and the first of several pages.</p>
-<p>We will show you how to read the first page, but you can also try this:</p>
-<ul class="simple">
-<li><p>Can you figure out how to read the next one or two pages / all the pages ? (hint: click on the link and look at the url)</p></li>
-<li><p>Can you see how to merge all the tables into one ? (hint: pandas has a <code class="docutils literal notranslate"><span class="pre">concat</span></code> function to combine a list of dataframes)</p></li>
-</ul>
+<p>This notebook makes use of a couple of packages that might come in handy another time. The maps
+are made by <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> which is a mapping tool written by the Meteorological Office in the UK (and
+which happens to be really good a plotting satellite data). The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package is a database
+tool that is really very good at manipulating tables of different types of data, selecting, sorting,
+refining and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">html</span>
 
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 
@@ -419,63 +409,30 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>This next section reads the data from the Oregon State University database at:  <a class="reference external" href="http://volcano.oregonstate.edu/oldroot/volcanoes/alpha.html">http://volcano.oregonstate.edu/oldroot/volcanoes/alpha.html</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy</span>
-<span class="n">cartopy</span><span class="o">.</span><span class="n">__version__</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This next section reads the data from the Oregon State University database. This URL is actually a script to return the table of volcanoes in various forms. This is not a big issue as it returns a valid web page, but not every library that reads html is configured to work with these general URLs.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page_source</span> <span class="o">=</span> <span class="s2">&quot;https://volcano.oregonstate.edu/volcano_table?sort_by=title&amp;sort_order=ASC&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package will read all the tables in a web page and turn them into dataframes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">page_source</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is/are </span><span class="si">{}</span><span class="s2"> table/s on this web page&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>In this case, it is not necessary to parse the various tables to find the one we want, but you would need to check (for example, the page header or footer might be in the form of a table to lay out the information but we don’t want to use that for our map !)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_volc</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pdurl = &#39;https://volcano.oregonstate.edu/volcano_table?sort_by=title&amp;sort_order=ASC&#39;</span>
-<span class="c1"># xpath = &#39;//table&#39;</span>
-<span class="c1"># tree = html.parse(pdurl)</span>
-<span class="c1"># tables = tree.xpath(xpath)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdurl</span> <span class="o">=</span> <span class="s1">&#39;http://volcano.oregonstate.edu/oldroot/volcanoes/alpha.html&#39;</span>
+<span class="n">xpath</span> <span class="o">=</span> <span class="s1">&#39;//table&#39;</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">pdurl</span><span class="p">)</span>
+<span class="n">tables</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">xpath</span><span class="p">)</span>
 
-<span class="c1"># table_dfs = []</span>
-<span class="c1"># for idx in range(4, len(tables)):</span>
-<span class="c1">#     df = pd.read_html(html.tostring(tables[idx]), header=0)[0]</span>
-<span class="c1">#     table_dfs.append(df)</span>
+<span class="n">table_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">tables</span><span class="p">[</span><span class="n">idx</span><span class="p">]),</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">table_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">table_dfs</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Clean up the data to make sure the typos and missing information are not propogated into your database. This doesn’t seem to be needed in this particular case, but, in other instances, you could use this technique to replace definitions / map to a new terminology etc.</p>
+<p>Clean up the data to make sure the typos and missing information are not propogated into your database</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cleanup_type</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
@@ -512,7 +469,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Make a nice table of the first 10 volcanoes from the information that you grabbed out of the Oregon State University website on volcanoes</p>
+<p>Make a nice table of the first 10 volancoes from the information that you grabbed out of the Oregon State University website on volcanoes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_volc</span><span class="p">))</span>
@@ -551,41 +508,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Stratovolcanoes of the world | &#39;</span> <span class="o">+</span> <span class="n">chartinfo</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.04</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude (dd)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude (dd)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page_source</span> <span class="o">=</span> <span class="s2">&quot;https://volcano.oregonstate.edu/volcano_table?sort_by=title&amp;sort_order=ASC&amp;page=1&quot;</span>
-
-<span class="n">tables</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">page_source</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is/are </span><span class="si">{}</span><span class="s2"> table/s on this web page&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc_1</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">df_volc_1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_volc_1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_volc</span><span class="p">,</span><span class="n">df_volc_1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -617,21 +542,7 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Week5_Lab.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">EMSC 2022-2021 Week 5 - Making Maps with Python</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="LAB5_On_Demand_MapServices.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">On demand mapping services</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
