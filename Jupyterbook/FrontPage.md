@@ -16,7 +16,7 @@ Here you will find the Lab notebooks for the course, and the Mantle Dynamics Lec
 ```{tableofcontents}
 ```
 
-If you are lost you can go back to the [wattle site for the course](https://wattlecourses.anu.edu.au/course/view.php?id=33639)
+If you are lost you can go back to the [wattle site for the course](https://wattlecourses.anu.edu.au/course/view.php?id=36759)
 
 
 ## Accessibility
