@@ -28,7 +28,7 @@ jobs:
       env:  
         SSHPASS:       ${{ secrets.DROPLET_PASS }} 
         HUBADMIN:      ${{ secrets.HUBADMIN_USER }} 
-        HUBADMIN_PASS: ${{ secrets.HUBADMIN_PASSWORD }}
+        HUBADMIN_PASS: ${{ secrets.HUBADMIN_PASS }}
         REMOTE_SH:     "sudo -E sshpass -e ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }}"
       run: |
         $REMOTE_SH "hostname"

@@ -23,8 +23,13 @@ parts:
       title: Lab week 7 
       sections:
       - file: Notebooks/LAB-week7/LAB7-NZ_Earthquake.ipynb
+
     - file: Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb
       title: Lab week 8
+
+    - file: Notebooks/LAB-week10/Practical10-Part5-MogiModel.ipynb
+      title: Lab week 10
+
     - file: Notebooks/LAB-convection/EMSC2022W11.i.ipynb
       title: Lab week 11
       sections:
@@ -35,6 +40,8 @@ parts:
 
   - caption: Lectures
     chapters:
-    - file: Lectures/Index.md
+    - file: Lectures/Index
       sections:
-      - file: Lectures/Lectures-MantleDynamics.md
+      - file: Lectures/Lectures-MantleDynamics
+
+
