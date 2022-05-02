@@ -1,6 +1,6 @@
 # Book settings
 title: EMSC 2022
-author: David Heslop, Meghan Miller, Louis Moresi 
+author: David Heslop, Meghan Miller, Voon Hui Lai, Louis Moresi
 logo: Figures/AuWorldEQ.jpg
 exclude_patterns: ["README.md", "Notes/*", "Scripts/*, */ScratchPad/*", "Lectures/*reveal.md"]
 
