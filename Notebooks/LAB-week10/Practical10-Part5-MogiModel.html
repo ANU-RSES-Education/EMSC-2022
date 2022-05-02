@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate the vertical displacement using the Mogi model &#8212; EMSC 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customize.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/font_button.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor." href="../LAB-convection/EMSC2022W11.i.html" />
+    <link rel="prev" title="Lab 8: Introduction to scatter plots and the Gutenberg-Richter Relationship" href="../LAB-week8/LAB8-Gutenberg-Richter.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EMSC 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../FrontPage.html">
+   Table of Contents
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../LAB-week5/Week5_Lab.html">
+   Lab week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-week5/LAB5_On_Demand_MapServices.html">
+     On demand mapping services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-week5/LAB5_Maps2020.html">
+     LAB 5 - Maps
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../LAB-week6/LAB6-focal_mechanisms.html">
+   Lab week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-week6/LAB6-izmit%2Bfocal%2Bmechanism.html">
+     LAB 6 - Focal Mechanisms continued
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../LAB-week7/LAB7-Raypaths.html">
+   Lab week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-week7/LAB7-NZ_Earthquake.html">
+     Lab - New Zealand Earthquake Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LAB-week8/LAB8-Gutenberg-Richter.html">
+   Lab week 8
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab week 10
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../LAB-convection/EMSC2022W11.i.html">
+   Lab week 11
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-convection/EMSC2022W11.ii.html">
+     EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-convection/EMSC2022W11.iii.html">
+     EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-convection/EMSC2022W11.iv.html">
+     EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LAB-convection/EMSC2022W11.v.html">
+     EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Lectures/Index.html">
+   Lecture notes EMSC 3002
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Lectures/Lectures-MantleDynamics.html">
+     Introduction to Mantle Dynamics (EMSC 2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <button type="button" onclick="legibleFontSwitcher()">Switch Font</button>&nbsp;&nbsp;<button type="button" onclick="fontScaler(1.1)">&#10133;</button><button type="button" onclick="fontScaler(0.0)">&#9679;</button><button type="button" onclick="fontScaler(0.909)">&#10134;</button>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/LAB-week10/Practical10-Part5-MogiModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week10/Practical10-Part5-MogiModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://emsc2022.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-2022&urlpath=tree/EMSC-2022/Notebooks/LAB-week10/Practical10-Part5-MogiModel.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-mogi-model-for-vertical-displacement">
+   Define Mogi Model for vertical displacement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#survey-data-from-sakurajima-volcano">
+   Survey data from Sakurajima Volcano
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forward-modelling">
+   Forward modelling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-best-solution">
+   Finding the ‘best’ solution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grid-search-for-best-fitting-mogi-model">
+     Grid-search for best-fitting Mogi model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Calculate the vertical displacement using the Mogi model</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-mogi-model-for-vertical-displacement">
+   Define Mogi Model for vertical displacement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#survey-data-from-sakurajima-volcano">
+   Survey data from Sakurajima Volcano
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forward-modelling">
+   Forward modelling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-best-solution">
+   Finding the ‘best’ solution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grid-search-for-best-fitting-mogi-model">
+     Grid-search for best-fitting Mogi model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="calculate-the-vertical-displacement-using-the-mogi-model">
+<h1>Calculate the vertical displacement using the Mogi model<a class="headerlink" href="#calculate-the-vertical-displacement-using-the-mogi-model" title="Permalink to this headline">¶</a></h1>
+<p>In this notebook, we will define the Mogi model to measure vertical displacements and apply it on data collected at Sakurajima volcano following the 1914 eruption. The following python modules are required in order to run the script:</p>
+<ul class="simple">
+<li><p>matplotlib</p></li>
+<li><p>numpy</p></li>
+<li><p>math</p></li>
+</ul>
+<p>Source: <a class="reference external" href="https://gscommunitycodes.usf.edu/geoscicommunitycodes/public/numeracy/numeracy_mogi/mogi.html#python">https://gscommunitycodes.usf.edu/geoscicommunitycodes/public/numeracy/numeracy_mogi/mogi.html#python</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline 
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="define-mogi-model-for-vertical-displacement">
+<h2>Define Mogi Model for vertical displacement<a class="headerlink" href="#define-mogi-model-for-vertical-displacement" title="Permalink to this headline">¶</a></h2>
+<p>Refresher for Python arithmetic operators: <a class="reference external" href="https://www.w3schools.com/python/gloss_python_arithmetic_operators.asp">https://www.w3schools.com/python/gloss_python_arithmetic_operators.asp</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def mogi_vertical(x,a,d,g,delta_p,sigma):
+    # Calculate the vertical displacement (m)
+    # at the surface due to a subsurface
+    # pressure source using Mogi&#39;s solution
+    # x is horizontal distance (m), radial from source
+    # a is source radius (m) must be &lt;&lt; d
+    # d is depth (m)
+    # g is shear modulus (MPa), typically 3e5 or less
+    # delta_p is the excess pressure of the source (MPa)
+    # sigma is Poisson&#39;s ratio (typically 0.25)
+    
+    # ----&gt;  what is the equation? &lt;----- #
+    w = ???
+    
+    return w  # displacement (m)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_solution</span> <span class="o">=</span> <span class="n">mogi_vertical</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">2500</span><span class="p">,</span><span class="mf">2.5e5</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">check_solution</span><span class="p">)</span>
+
+<span class="c1"># does your value equal to 0.0005366563145999495 ?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="survey-data-from-sakurajima-volcano">
+<h2>Survey data from Sakurajima Volcano<a class="headerlink" href="#survey-data-from-sakurajima-volcano" title="Permalink to this headline">¶</a></h2>
+<p>The survey data were collected using precise line levelling on Sakurajima volcano by F. Omori and were reported in Mogi (1958). The displacements are found by calculating the differences in elevations at permanent survey markers on Sakurajima Volcano between surveys in 1893 and 1914, following the 1914 eruption.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The data is stored as a list in the following format:</span>
+<span class="c1"># 1st column: radial distance of permanent survey markers from the center of summit in km</span>
+<span class="c1"># 2nd column: differences in elevations in mm (i.e., vertical displacements) </span>
+<span class="c1"># between the two surveys at the each corresponding marker </span>
+
+<span class="n">sakura</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">17.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">291.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">16.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">291.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">15.75</span><span class="p">,</span> <span class="o">-</span><span class="mf">302.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">13.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">407.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.45</span><span class="p">,</span> <span class="o">-</span><span class="mf">446.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">10.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">527.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">8.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">658.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">7.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">770.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">6.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">894.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">7.75</span><span class="p">,</span> <span class="o">-</span><span class="mf">776.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">8.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">703.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">9.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">608.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">9.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">526.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">9.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">536.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">9.55</span><span class="p">,</span> <span class="o">-</span><span class="mf">560.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">9.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">577.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">8.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">684.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">8.55</span><span class="p">,</span> <span class="o">-</span><span class="mf">690.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">8.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">681.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">9.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">685.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">10.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">616.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">11.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">481.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">11.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">427.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">369.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">348.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">301.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">306.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">10.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">433.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">11.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">426.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">11.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">453.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">356.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">344.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">363.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">11.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">401.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">11.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">468.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">379.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">13.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">314.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">15.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">242.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">369.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">12.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">338.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">13.75</span><span class="p">,</span> <span class="o">-</span><span class="mf">260.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">14.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">244.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">15.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">206.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">17.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">155.0</span><span class="p">],</span>
+ <span class="p">[</span><span class="mf">18.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">143.0</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rearrange data to 2 separate arrays</span>
+<span class="n">marker_radial_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sakura</span><span class="p">])</span>
+<span class="n">obs_disp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sakura</span><span class="p">])</span>
+
+<span class="c1"># Plot observation </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker_radial_dist</span><span class="p">,</span> <span class="n">obs_disp</span><span class="p">,</span> <span class="s2">&quot;ko&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Radial distance from summit (km)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Vertical displacement (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Vertical displacements at Sakurajima after the 1914 eruption&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="forward-modelling">
+<h2>Forward modelling<a class="headerlink" href="#forward-modelling" title="Permalink to this headline">¶</a></h2>
+<p>Take a guess on the source depth and excess pressure and see how the Mogi model fits on Sakurajima volcano.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>## Input for Mogi Model
+
+# variable
+d = ??? #source depth (m)   &lt;-----
+delta_p = ??? #excess pressure (MPa)  &lt;------
+
+
+# fixed 
+a = 2500.0 #source radius (m)
+sigma = 0.25 #Poisson ratio
+g = 30000.0 #shear modulus (MPa)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ===================================== #</span>
+
+<span class="c1"># calculate vertical displacement for this range of radial distances (m)</span>
+<span class="c1"># !! note the units (e.g., m, mm, km, ...)</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20000</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># in meters</span>
+
+<span class="c1"># Calculate vertical displacement using Mogi model</span>
+<span class="c1"># !! multiply by 1000 as Mogi model uses m and observed measurements are in mm. </span>
+
+<span class="n">syn_disp_in_meter</span> <span class="o">=</span> <span class="n">mogi_vertical</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">delta_p</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">syn_disp</span> <span class="o">=</span> <span class="n">syn_disp_in_meter</span> <span class="o">*</span> <span class="mi">1000</span> <span class="c1"># convert meter to millimeter</span>
+
+<span class="c1"># Compare the Mogi solution to observations for Salurajima after the 1914 eruption</span>
+<span class="c1"># !! note the units when plotting</span>
+
+<span class="n">x1_in_km</span> <span class="o">=</span> <span class="n">x1</span><span class="o">/</span><span class="mi">1000</span>
+
+<span class="c1"># Mogi solution in red line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_in_km</span><span class="p">,</span> <span class="n">syn_disp</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="c1"># Observed displacements in black dots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker_radial_dist</span><span class="p">,</span> <span class="n">obs_disp</span><span class="p">,</span> <span class="s2">&quot;ko&quot;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;radial distance from summit (km)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;vertical displacement (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Vertical displacements at Sakurajima after the 1914 eruption&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="c1"># uncomment the next line if you want to save the figure: </span>
+<span class="c1">#plt.savefig(&quot;sakurajima.png&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finding-the-best-solution">
+<h2>Finding the ‘best’ solution<a class="headerlink" href="#finding-the-best-solution" title="Permalink to this headline">¶</a></h2>
+<p>How do we know if our model, and if our chosen model parameters is any good?</p>
+<p>One way to judge is by measuring the root mean square error (RMSE) between the predicted displacement from our model and the actual observed displacements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the predicted displacements at the survey markers from the previously chosen parameters</span>
+
+<span class="n">y_predicted</span> <span class="o">=</span> <span class="n">mogi_vertical</span><span class="p">(</span><span class="n">marker_radial_dist</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">delta_p</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span>
+<span class="n">y_actual</span> <span class="o">=</span> <span class="n">obs_disp</span>
+
+<span class="c1"># Calcuate the Mean Square Error and take the square root to obtain Root Mean Square Error</span>
+<span class="n">MSE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span><span class="n">y_predicted</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  
+<span class="n">RMSE</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">MSE</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The RMSE for Mogi Model with source depth&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="s2">&quot;[m] and excess pressure of&quot;</span><span class="p">,</span> <span class="n">delta_p</span><span class="p">,</span><span class="s2">&quot;[MPa] is &quot;</span><span class="p">,</span> <span class="n">RMSE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="grid-search-for-best-fitting-mogi-model">
+<h3>Grid-search for best-fitting Mogi model<a class="headerlink" href="#grid-search-for-best-fitting-mogi-model" title="Permalink to this headline">¶</a></h3>
+<p>To find a best-fitting Mogi model, we will test a range of source depths and excess pressures and estimate their corresponding RMSE. Instead of changing the value manually one by one, we will use “nested loops” to iterate through the values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set a range of depth and excess pressure</span>
+<span class="n">depth_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2500</span><span class="p">,</span><span class="mi">30000</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>  <span class="c1"># 2500 m to 30000 m in 500 m increment. cannot be shallower than source radius</span>
+<span class="n">delta_p_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># -1000 MPa to 0 MPa in 50 MPa interval</span>
+
+<span class="c1"># fix other paramters</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">2500.0</span> <span class="c1">#source radius (m)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="c1">#Poisson ratio</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">30000.0</span> <span class="c1">#shear modulus (MPa)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ===================================== #</span>
+
+<span class="c1"># pre-allocate RMSE array</span>
+<span class="n">RMSE_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">depth_range</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">delta_p_range</span><span class="p">)))</span>
+
+<span class="c1"># loop through depth and excess pressure</span>
+<span class="k">for</span> <span class="n">index0</span><span class="p">,</span><span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">depth_range</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index1</span><span class="p">,</span><span class="n">delta_p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">delta_p_range</span><span class="p">):</span>
+        <span class="n">y_predicted_tmp</span> <span class="o">=</span> <span class="n">mogi_vertical</span><span class="p">(</span><span class="n">marker_radial_dist</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">delta_p</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span>
+        <span class="n">MSE_tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span><span class="n">y_predicted_tmp</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  
+        <span class="n">RMSE_array</span><span class="p">[</span><span class="n">index0</span><span class="p">,</span><span class="n">index1</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">MSE_tmp</span><span class="p">)</span>
+    
+
+<span class="c1"># plot results</span>
+<span class="n">extent</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">delta_p_range</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">delta_p_range</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">depth_range</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">depth_range</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">RMSE_array</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Excess pressure [MPa]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Source depth [m]&quot;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;RMSE&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="c1"># find best-fitting model with the smallest RMSE</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">RMSE_array</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">RMSE_array</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta_p_range</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">depth_range</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The best-fitting Mogi Model has a source depth of&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">depth_range</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]),</span><span class="s2">&quot;[m] and excess pressure of&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">delta_p_range</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]]),</span><span class="s2">&quot;[MPa]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/LAB-week10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../LAB-week8/LAB8-Gutenberg-Richter.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab 8: Introduction to scatter plots and the Gutenberg-Richter Relationship</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../LAB-convection/EMSC2022W11.i.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By David Heslop, Meghan Miller, Louis Moresi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
