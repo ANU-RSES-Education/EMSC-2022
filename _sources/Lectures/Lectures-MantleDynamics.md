@@ -3,9 +3,14 @@
 This section of the course introduces the dynamics of the circulation in the Earth's mantle
 and how this relates to Plate Tectonic motions.
 
-## Lectures & Labs
+:::{admonition}  tip
+:class: tip
+The lecture slides below should be viewable from your browser.
+For a full-screen view, hit the <kbd>F</kbd> key with the cursor on the presentation or after clicking on the slide window. Usually you advance to the right, but you might see a down arrow navigation which has some more advanced material in a stack of slide below the main flow.
+<kbd>?</kbd> for help.
+:::  
 
-The slides should be readable from your browser but 
+## Lectures & Labs
 
 **Lecture 1** - In which we examine the nature of convection as a phenomenon that transfers heat and generates motion. We will see how we can extract a single number that tells us almost everything about how / whether convection takes place … and we will calculate this for the Earth’s mantle.
 
