@@ -393,7 +393,7 @@ Sea floor topography (bathymetry) is related to buoyancy and hence thermal struc
 
 ## Accompanying Lab 
 
-In the lab on Friday, we will use the available data to make an up to date version of this graph and someof the other maps from this lecture.
+In the lab this week, we will use the available data to make an up to date version of this graph and someof the other maps from this lecture.
 
 <center>
 
@@ -402,8 +402,6 @@ In the lab on Friday, we will use the available data to make an up to date versi
 
 </center>
 
-
-**Please revise the earlier lab about making maps in python**
 
 <--o-->
 
@@ -415,4 +413,4 @@ In the lab on Friday, we will use the available data to make an up to date versi
 
 </center>
 
-If this course has grabbed your attention, consider the *Geodynamics* course in 3rd year.
+If this section of the course has grabbed your attention, consider the *Geodynamics* course in 3rd year, and the Global Tectonics & Structure class. 

@@ -383,6 +383,21 @@ Lower strength of buoyancy forces on the left, increasing towards the right.
 
 Does *buoyancy* drive the flow harder when it is a stronger effect ?
 
+<--v-->
+
+<!-- Kahoot link ! -->
+
+<center>
+
+![Kahoot](images/Kahoot.jpeg) <!-- .element style="width:75%;" -->
+
+</center>
+
+<--v-->
+
+<iframe width="900" height="600" src="https://play.kahoot.it/v2/?quizId=76e2efc5-de8a-4638-8369-d42722b30f26" frameborder="0" allowfullscreen>
+</iframe> 
+
 <--o-->
 
 ## Viscous drag
@@ -411,6 +426,21 @@ Does *buoyancy* drive the flow harder when it is a stronger effect ?
 Lower viscous drag stresses on the left, increasing towards the right. 
 
 Does *viscous drag* drive the flow harder when it is a stronger effect ?
+
+<--v-->
+
+<!-- Kahoot link ! -->
+
+<center>
+
+![Kahoot](images/Kahoot.jpeg) <!-- .element style="width:75%;" -->
+
+</center>
+
+<--v-->
+
+<iframe width="900" height="600" src="https://play.kahoot.it/v2/?quizId=2cfa29b4-a28c-4257-a2ce-e9b213b80347" frameborder="0" allowfullscreen>
+</iframe> 
 
 <--o-->
 
@@ -447,7 +477,21 @@ Slower diffusion rates (lower diffusivity) on the left, faster towards the right
 
 Does *thermal diffusivity* drive the flow harder when it is a stronger effect ?
 
+<--v-->
 
+<!-- Kahoot link ! -->
+
+<center>
+
+![Kahoot](images/Kahoot.jpeg) <!-- .element style="width:75%;" -->
+
+</center>
+
+
+<--v-->
+
+<iframe width="900" height="600" src="https://play.kahoot.it/v2/?quizId=a3e16838-8531-4ba4-84fd-f0f162bb0a0d" frameborder="0" allowfullscreen>
+</iframe> 
 
 <--o-->
 
@@ -502,6 +546,23 @@ Is the flow moving faster when the box is larger ?
 </center>
 
 Is the flow moving faster when the box is larger ? 
+
+<--v-->
+
+<!-- Kahoot link ! -->
+
+<center>
+
+![Kahoot](images/Kahoot.jpeg) <!-- .element style="width:75%;" -->
+
+</center>
+
+Note: https://create.kahoot.it/my-library/kahoots/4f096a87-9e98-4262-bbfd-5e25815f0935 
+
+<--v-->
+
+<iframe width="900" height="600" src="https://play.kahoot.it/v2/?quizId=82abef8a-7310-4a84-a559-ae9fbd252db8" frameborder="0" allowfullscreen>
+</iframe> 
 
 <--o-->
 
