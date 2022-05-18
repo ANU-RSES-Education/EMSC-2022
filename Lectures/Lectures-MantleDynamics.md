@@ -33,7 +33,7 @@ produces the pattern of heat flow in the oceans that we discussed in earlier lec
 
 ---
 
-```{image} images/Lab-MD1-MyTargetPlot.png
+```{image} images/TheTargetPlotANS.png
 :alt: depth-age
 :height: 333px
 :align: center
