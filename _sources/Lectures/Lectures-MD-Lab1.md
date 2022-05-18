@@ -93,6 +93,8 @@ $$
 
 (Note, they have a typo in their paper !)
 
+You will need to print the [graph of the plot above](https://github.com/ANU-RSES-Education/EMSC-2022/blob/master/Lectures/images/DepthAgeRawPlot.pdf?raw=true)
+
 :::{admonition} Q: Plot the data - (4)
 :class: hint
 
