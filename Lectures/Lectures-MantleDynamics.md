@@ -41,7 +41,13 @@ produces the pattern of heat flow in the oceans that we discussed in earlier lec
 
 **Lab 1** - In which we try to obtain the sea-floor age / depth curve from data that we find online. This is in the form of a [short series of jupyter notebooks](../Notebooks/LAB-convection/EMSC2022W11.i.ipynb) that we will work through. 
 
+**Lab 2** - [Alternative lab that does not use notebooks](Lectures-MD-Lab1). In this lab, we do not process the data but instead we take the final plot and compare it to the theory. There are discussion tasks along the way that are to help you become familiar with the data and why this question is important for understanding Earth dynamics.
 
+## Quiz
+
+A quick quiz that covers some of the concepts in this part of the course (some independent searching is required / expected, so don't forget to cite any sources).
+
+[Take the Quiz !](Lectures-MD-Quiz)
 
 
 ## Concepts
