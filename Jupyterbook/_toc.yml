@@ -27,9 +27,13 @@ parts:
     - file: Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb
       title: Lab week 8
 
-    - file: Notebooks/LAB-week10/Practical10-Part5-MogiModel.ipynb
-      title: Lab week 10
+    - file: Notebooks/LAB-week10/EMSC2022_sem1_2023_lowerpuna.ipynb
+      title: Lab week 10 part 1
 
+    - file: Notebooks/LAB-week10/Practical10-Part5-MogiModel.ipynb
+      title: Lab week 10 part 2
+      
+ 
     - file: Notebooks/LAB-convection/EMSC2022W11.i.ipynb
       title: Lab week 11
       sections:
