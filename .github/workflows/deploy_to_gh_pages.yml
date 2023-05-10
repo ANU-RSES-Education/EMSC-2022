@@ -71,8 +71,9 @@ jobs:
     - name: Install Conda environment with Micromamba
       uses: mamba-org/provision-with-micromamba@main
       with:
-        environment-file: conda_packages.yml
+        environment-file: ./.github/workflows/envs/build_jb.yml
         cache-downloads: true
+
 
     # Build the book
     - name: Build the book
