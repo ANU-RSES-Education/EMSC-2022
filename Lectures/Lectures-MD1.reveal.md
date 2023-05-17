@@ -276,7 +276,7 @@ Imagine a tank of **thick, viscous fluid** (like syrup, for example). This turns
 
 <center>
 
-![Honey](images/Honey.tiff)  <!-- .element style="height:250px;" -->
+![Honey](images/honey.png)  <!-- .element style="height:250px;" -->
 ![Tar](images/UQ_PitchDropExperiment.png) <!-- .element style="height:250px;" -->
 
 </center>
@@ -626,7 +626,7 @@ The structure of the flow and the pattern of the temperature field is predictabl
 Rayleigh number: $Ra=100$
 
 <video autoplay controls loop height="500">
-    <source src="movies/Ra1e2.mov"
+    <source src="movies/Ra1e2.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -642,7 +642,7 @@ Rayleigh number: $Ra=100$
 Rayleigh number: $Ra=1,000$
 
 <video autoplay controls loop height="500">
-    <source src="movies/Ra1e3.mov"
+    <source src="movies/Ra1e3.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -658,7 +658,7 @@ Rayleigh number: $Ra=1,000$
 Rayleigh number: $Ra=10,000$
 
 <video autoplay controls loop height="500">
-    <source src="movies/Ra1e4.mov"
+    <source src="movies/Ra1e4.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -675,7 +675,7 @@ Rayleigh number: $Ra=10,000$
 Rayleigh number: $Ra=100,000$
 
 <video autoplay controls loop height="500">
-    <source src="movies/Ra1e5.mov"
+    <source src="movies/Ra1e5.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -692,7 +692,7 @@ Rayleigh number: $Ra=100,000$
 Rayleigh number: $Ra=1,000,000$
 
 <video autoplay controls loop height="500">
-    <source src="movies/Ra1e6.mov"
+    <source src="movies/Ra1e6.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -709,7 +709,7 @@ Rayleigh number: $Ra=1,000,000$
 Rayleigh number: $Ra=10,000,000$
 
 <video autoplay controls loop height="500">
-    <source src="movies/Ra1e7.mov"
+    <source src="movies/Ra1e7.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -724,7 +724,7 @@ Rayleigh number: $Ra=10,000,000$
 Rayleigh number: $Ra=1,000,000$
 
 <video autoplay controls loop height="250">
-    <source src="movies/Ra1e6-4x1.mov"
+    <source src="movies/Ra1e6-4x1.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -778,7 +778,7 @@ Again, the best thing is to watch the system evolve and get a feel for what happ
 Rayleigh number: $Ra=100,000$
 
 <video autoplay controls loop height="450">
-    <source src="movies/Ra1e5tr.mov"
+    <source src="movies/Ra1e5tr.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -795,7 +795,7 @@ Rayleigh number: $Ra=100,000$
 Rayleigh number: $Ra=1,000,000$
 
 <video autoplay controls loop height="450">
-    <source src="movies/Ra1e6tr.mov"
+    <source src="movies/Ra1e6tr.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
