@@ -1,4 +1,4 @@
-# Mantle Dynamics EMSC 3002 - Quiz
+# Mantle Dynamics EMSC 2022 - Quiz
 
 In this task, you will need to find out some extra information that
 is not spelled out in the lecture notes. A complete answer to 
@@ -63,6 +63,6 @@ $$
 
 What is meant by the term "Heat Engine" (1) ?
 
-Why is it important to the understanding of *geology* that the Earth's mantle is a heat engine (1) ?
+Why is it important to a *geologist* that the Earth's mantle is a heat engine. What does the heat engine drive (1) ?
 
 :::
