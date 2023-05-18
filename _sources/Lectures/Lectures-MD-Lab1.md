@@ -1,4 +1,4 @@
-# Mantle Dynamics EMSC 3002 - Lab worksheet
+# Mantle Dynamics EMSC 2022 - Lab worksheet
 
 In the lectures, we learned that, if the oceanic plates are really part of the mantle circulation, then they should be a thermal boundary layer and their thickness should scale as the square root of their age.
 
