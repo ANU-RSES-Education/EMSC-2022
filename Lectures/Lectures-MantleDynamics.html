@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction to Mantle Dynamics (EMSC 2022) &#8212; EMSC 2022</title>
   
@@ -19,52 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/customize.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/customize.css?v=a313bec9" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script src="../_static/font_button.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/Lectures-MantleDynamics';</script>
+    <script src="../_static/font_button.js?v=3ec2d3a6"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Lecture notes EMSC 2022" href="Index.html" />
@@ -77,7 +73,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../FrontPage.html">
+  
   
   
   
@@ -143,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/AuWorldEQ.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/AuWorldEQ.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/AuWorldEQ.jpg" class="logo__image only-light" alt="EMSC 2022 - Home"/>
+    <script>document.write(`<img src="../_static/AuWorldEQ.jpg" class="logo__image only-dark" alt="EMSC 2022 - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -311,20 +331,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -368,10 +390,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-mantle-dynamics-emsc-2022">
-<h1>Introduction to Mantle Dynamics (EMSC 2022)<a class="headerlink" href="#introduction-to-mantle-dynamics-emsc-2022" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Mantle Dynamics (EMSC 2022)<a class="headerlink" href="#introduction-to-mantle-dynamics-emsc-2022" title="Link to this heading">#</a></h1>
 <p>This section of the course introduces the dynamics of the circulation in the Earth’s mantle
 and how this relates to Plate Tectonic motions.</p>
 <div class="tip admonition">
@@ -381,7 +403,7 @@ For a full-screen view, hit the <kbd>F</kbd> key with the cursor on the presenta
 <kbd>?</kbd> for help.</p>
 </div>
 <section id="lectures-labs">
-<h2>Lectures &amp; Labs<a class="headerlink" href="#lectures-labs" title="Permalink to this heading">#</a></h2>
+<h2>Lectures &amp; Labs<a class="headerlink" href="#lectures-labs" title="Link to this heading">#</a></h2>
 <p><strong>Lecture 1</strong> - In which we examine the nature of convection as a phenomenon that transfers heat and generates motion. We will see how we can extract a single number that tells us almost everything about how / whether convection takes place … and we will calculate this for the Earth’s mantle.</p>
 <center>
 <iframe src="../slideshows/Lectures-MD1.reveal.html" title="Slideshow" width=500px, height=333px,  allowfullscreen></iframe>
@@ -394,16 +416,16 @@ produces the pattern of heat flow in the oceans that we discussed in earlier lec
 </center>
 <hr class="docutils" />
 <a class="reference internal image-reference" href="../_images/TheTargetPlotANS.png"><img alt="depth-age" class="align-center" src="../_images/TheTargetPlotANS.png" style="height: 333px;" /></a>
-<p><strong>Lab 1</strong> - In which we try to obtain the sea-floor age / depth curve from data that we find online. This is in the form of a <a class="reference internal" href="../Notebooks/LAB-convection/EMSC2022W11.i.html"><span class="doc std std-doc">short series of jupyter notebooks</span></a> that we will work through.</p>
+<p><strong>Lab 1</strong> - In which we try to obtain the sea-floor age / depth curve from data that we find online. This is in the form of a <a class="reference internal" href="../Notebooks/LAB-convection/EMSC2022W11.i.html"><span class="std std-doc">short series of jupyter notebooks</span></a> that we will work through.</p>
 <p><strong>Lab 2</strong> - <a class="reference internal" href="Lectures-MD-Lab1.html"><span class="doc std std-doc">Alternative lab that does not use notebooks</span></a>. In this lab, we do not process the data but instead we take the final plot and compare it to the theory. There are discussion tasks along the way that are to help you become familiar with the data and why this question is important for understanding Earth dynamics.</p>
 </section>
 <section id="quiz">
-<h2>Quiz<a class="headerlink" href="#quiz" title="Permalink to this heading">#</a></h2>
+<h2>Quiz<a class="headerlink" href="#quiz" title="Link to this heading">#</a></h2>
 <p>A quick quiz that covers some of the concepts in this part of the course (some independent searching is required / expected, so don’t forget to cite any sources).</p>
 <p><a class="reference internal" href="Lectures-MD-Quiz.html"><span class="doc std std-doc">Take the Quiz !</span></a></p>
 </section>
 <section id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this heading">#</a></h2>
+<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The Earth’s Mantle is a heat engine that turns the energy from radioactive decay and from the formation of the planet into the mechanical work of plate motions.</p></li>
 <li><p>We can quantify these motions by understanding fluid convection under different conditions.</p></li>
@@ -421,23 +443,24 @@ with lecture materials, practicals and live computational examples.
 -->
 </section>
 <section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
 <p>All of the material for this course is online and released as
 <a class="reference external" href="https://github.com/ANU-RSES-Education/EMSC-2022">open-source</a> or creative-commons
 where possible. Where we do not own the material that we use, we try to provide it through links to the original site or we provide references to the published material.</p>
 <section id="highly-viscous-flow">
-<h3>Highly viscous flow<a class="headerlink" href="#highly-viscous-flow" title="Permalink to this heading">#</a></h3>
+<h3>Highly viscous flow<a class="headerlink" href="#highly-viscous-flow" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>University of Queensland Pitch Drop Experiment is the <a class="reference external" href="https://www.brisbanetimes.com.au/national/queensland/pitch-drop-has-new-custodian-after-physicists-death-20130827-2sne4.html">longest running lab experiment in the world</a>. It was set up to <a class="reference external" href="https://theconversation.com/explainer-the-pitch-drop-experiment-33734">demonstrate creeping viscous flow</a> and inadvertently demonstrated the effect of temperature on viscosity.</p></li>
 <li><p>The <a class="reference external" href="https://fyfluiddynamics.com/2019/01/today-marks-the-100th-anniversary-of-the-boston/">Boston Molasses Flood</a> - Gravity currents, highly viscous flow and temperature dependent viscosity. An interesting <a class="reference external" href="https://youtu.be/u5sYoUnp5A0">video about viscous flow</a> that might give you some intuition into viscosity.</p></li>
 </ul>
 </section>
 <section id="heat-transfer">
-<h3>Heat transfer<a class="headerlink" href="#heat-transfer" title="Permalink to this heading">#</a></h3>
+<h3>Heat transfer<a class="headerlink" href="#heat-transfer" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Background discussion on heat transfer with that illustrates conduction, convection and radiation using real-world examples and <a class="reference external" href="https://youtu.be/oahoaGC8Jfc">thermal imaging video</a>.</p></li>
 </ul>
-  <!-- http://web.mit.edu/hml/ncfmf.html Fluid Mechanics Videos --></section>
+  <!-- http://web.mit.edu/hml/ncfmf.html Fluid Mechanics Videos -->
+</section>
 </section>
 </section>
 
@@ -466,11 +489,10 @@ where possible. Where we do not own the material that we use, we try to provide 
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Index.html"
@@ -481,10 +503,7 @@ where possible. Where we do not own the material that we use, we try to provide 
         <p class="prev-next-title">Lecture notes EMSC 2022</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -492,6 +511,7 @@ where possible. Where we do not own the material that we use, we try to provide 
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -528,9 +548,10 @@ By David Heslop, Meghan Miller, Voon Hui Lai, Louis Moresi
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -554,8 +575,8 @@ By David Heslop, Meghan Miller, Voon Hui Lai, Louis Moresi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

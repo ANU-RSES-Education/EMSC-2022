@@ -2,9 +2,7 @@
 
 In this task, you will need to find out some extra information that
 is not spelled out in the lecture notes. A complete answer to 
-any question needs to cite where the information was found. 
-
-Be critical - is the source reputable, and do other sources agree ? If not, maybe you need to look elsewhere.
+any question needs to cite where the information was found. Be critical of what you find - is the source reputable, and do other sources agree ? If not, maybe you need to look elsewhere.
 
 :::{admonition} Q: Viscosity (2)
 :class: hint
@@ -63,6 +61,6 @@ $$
 
 What is meant by the term "Heat Engine" (1) ?
 
-Why is it important to a *geologist* that the Earth's mantle is a heat engine. What does the heat engine drive (1) ?
+Why is it important to the understanding of *geology* that the Earth's mantle is a heat engine (1) ?
 
 :::
