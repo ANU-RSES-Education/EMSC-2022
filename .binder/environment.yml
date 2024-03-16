@@ -5,14 +5,14 @@ channels:
 dependencies:
   - python=3.10
   - matplotlib
-  - mpmath<=1.3
-  - mesalib
+  - pyvista[all]
+  # - mpmath<=1.3
+  # - mesalib
+  - pandas
   - numpy
   - scipy
   - h5py
   - sympy
-  - pytest
-  - pyvista[all]
   - cartopy
   - obspy
   - pip
