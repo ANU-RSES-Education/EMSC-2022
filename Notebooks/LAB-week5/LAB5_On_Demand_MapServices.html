@@ -414,8 +414,7 @@ The difference between google maps and many of the examples we have looked at so
 <p><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> provides access to various of the online mapping services that will serve image data on demand in the form of small image tiles at a specified resolution. The tools automatically query the service and assemble the tiles to make the map but there are some tricks that we need to know before we can use them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -467,10 +466,10 @@ The difference between google maps and many of the examples we have looked at so
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## The full list of available interfaces is found in the source code for this one:</span>
 <span class="c1">## https://github.com/SciTools/cartopy/blob/master/lib/cartopy/io/img_tiles.py</span>
 
-<span class="c1">## Continental US terrain images</span>
-<span class="n">stamen_Terrain</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">Stamen</span><span class="p">(</span><span class="s1">&#39;terrain-background&#39;</span><span class="p">)</span>
-<span class="n">stamen_TerrainPlus</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">Stamen</span><span class="p">(</span><span class="s1">&#39;terrain&#39;</span><span class="p">)</span>
-<span class="n">stamen_Artist</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">Stamen</span><span class="p">(</span><span class="s1">&#39;watercolor&#39;</span><span class="p">)</span>
+<span class="c1">## Continental US terrain images (these no longer work without an api key)</span>
+<span class="c1"># stamen_Terrain = cimgt.Stamen(&#39;terrain-background&#39;)</span>
+<span class="c1"># stamen_TerrainPlus = cimgt.Stamen(&#39;terrain&#39;)</span>
+<span class="c1"># stamen_Artist = cimgt.Stamen(&#39;watercolor&#39;)</span>
 
 
 <span class="c1">## Mapquest satellite / streetmap images </span>
@@ -509,10 +508,9 @@ The difference between google maps and many of the examples we have looked at so
 <span class="n">lon0</span> <span class="o">=</span>  <span class="o">-</span><span class="mi">119</span><span class="p">;</span> <span class="n">lon1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">117.5</span>
 
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
-<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">map_quest_aerial</span>
+<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">google_maps_satellite</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-<span class="c1"># ax = plt.axes(projection=ccrs.PlateCarree(), extent=himalaya_extent)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create a GeoAxes in the tile&#39;s projection.</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">map_tiles</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
@@ -523,11 +521,22 @@ The difference between google maps and many of the examples we have looked at so
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fb269c87820&gt;
+</pre></div>
+</div>
+<img alt="../../_images/1f0d7635a3de1cda8529cb1ac39491b97eb37554e268ab5293522b7480692ccb.png" src="../../_images/1f0d7635a3de1cda8529cb1ac39491b97eb37554e268ab5293522b7480692ccb.png" />
+</div>
 </div>
 <p>Here you can set up the size of the map and add on the on-demand image.  Try to adjust the resolution and how it works best with the map area.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the size of the map</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_tiles</span> <span class="o">=</span> <span class="n">google_maps_satellite</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">map_tiles</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+
+<span class="c1"># Set the size of the map</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
 <span class="c1"># Add the on-demand image - the second argument is the resolution and needs to be balanced with the </span>
 <span class="c1"># size of the area the map covers. </span>
@@ -537,6 +546,16 @@ The difference between google maps and many of the examples we have looked at so
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">rivers</span><span class="p">,</span>    <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span>  <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fb269a521d0&gt;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.10/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_rivers_lake_centerlines.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<img alt="../../_images/96c26e400a83e35f83b2922bfac20f268bb824c90e7c7701be31414993ef487e.png" src="../../_images/96c26e400a83e35f83b2922bfac20f268bb824c90e7c7701be31414993ef487e.png" />
 </div>
 </div>
 <p>Now try to create a map using terrain images rather than satelite imagery</p>
@@ -549,7 +568,7 @@ The difference between google maps and many of the examples we have looked at so
 
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
 
-<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">stamen_Terrain</span>
+<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">google_maps_terrain</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="c1"># ax = plt.axes(projection=ccrs.PlateCarree(), extent=himalaya_extent)</span>
@@ -562,11 +581,17 @@ The difference between google maps and many of the examples we have looked at so
 <span class="c1"># Add the on-demand image - the second argument is the resolution and needs to be balanced with the </span>
 <span class="c1"># size of the area the map covers. </span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">rivers</span><span class="p">,</span>    <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span>  <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fb2694d5270&gt;
+</pre></div>
+</div>
+<img alt="../../_images/49596dd100502ba0a78783b245264b3adf9029e4a8a077aa67340d3dc0900937.png" src="../../_images/49596dd100502ba0a78783b245264b3adf9029e4a8a077aa67340d3dc0900937.png" />
 </div>
 </div>
 <p>Now save the figure as a PNG file</p>
@@ -587,9 +612,9 @@ The difference between google maps and many of the examples we have looked at so
 
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
 
-<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">stamen_Artist</span>
+<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">google_maps_street</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">map_tiles</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
 
@@ -606,27 +631,36 @@ The difference between google maps and many of the examples we have looked at so
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="n">lat0</span> <span class="o">=</span>    <span class="p">;</span> <span class="n">lat1</span> <span class="o">=</span>
+              <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Mapquest - Now let&#39;s try mapping the UK</span>
 
-
-
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
 
 
-<span class="n">fig</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-<span class="n">ax1</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">stamen_Terrain</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
-<span class="n">ax2</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">stamen_TerrainPlus</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">fig</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">ax1</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">google_maps_satellite</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">ax2</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">google_maps_street</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
 
-<span class="n">ax1</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_Terrain</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_TerrainPlus</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">google_maps_satellite</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">google_maps_street</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c14c85dc8189729df9407444803d7ba27eac9fb69ebfee3b2ce9ee0c545c721a.png" src="../../_images/c14c85dc8189729df9407444803d7ba27eac9fb69ebfee3b2ce9ee0c545c721a.png" />
 </div>
 </div>
 <p>Test the different terrains</p>
@@ -635,16 +669,19 @@ The difference between google maps and many of the examples we have looked at so
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
 
 <span class="n">fig</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-<span class="n">ax1</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">stamen_Terrain</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">ax1</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">google_maps_terrain</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
 <span class="n">ax2</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">google_maps_terrain</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
 
-<span class="n">ax1</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_Terrain</span><span class="p">,</span>      <span class="mi">7</span><span class="p">,</span>  <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_Artist</span><span class="p">,</span>       <span class="mi">7</span><span class="p">,</span>  <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">google_maps_satellite</span><span class="p">,</span>      <span class="mi">7</span><span class="p">,</span>  <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">open_street_map</span><span class="p">,</span>       <span class="mi">7</span><span class="p">,</span>  <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2a42fd35164966a40164a0fe4d85a7fa7c107379bb997f284b5a367d688db3cb.png" src="../../_images/2a42fd35164966a40164a0fe4d85a7fa7c107379bb997f284b5a367d688db3cb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -662,8 +699,8 @@ The difference between google maps and many of the examples we have looked at so
 
 <span class="c1">## Could also try these ... </span>
 
-<span class="n">maptype1</span> <span class="o">=</span> <span class="n">stamen_Terrain</span>
-<span class="n">maptype2</span> <span class="o">=</span> <span class="n">stamen_TerrainPlus</span>
+<span class="n">maptype1</span> <span class="o">=</span> <span class="n">open_street_map</span>
+<span class="n">maptype2</span> <span class="o">=</span> <span class="n">open_street_map</span>
 
 <span class="n">fig</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="n">ax1</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">maptype1</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
