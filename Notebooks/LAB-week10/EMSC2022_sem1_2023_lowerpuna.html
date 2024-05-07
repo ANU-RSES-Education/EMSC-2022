@@ -599,7 +599,7 @@ Can you recognize the location of the caldera and various vents along the rift z
 
 <span class="c1"># specify time frame for downloading data</span>
 <span class="n">st_starttime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="err">????????</span><span class="p">)</span>  <span class="c1"># &lt;---- adjust start time!</span>
-<span class="n">st_endtime</span> <span class="o">=</span> <span class="n">starttime</span> <span class="o">+</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>  
+<span class="n">st_endtime</span> <span class="o">=</span> <span class="n">st_starttime</span> <span class="o">+</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>  
 
 <span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_waveforms</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s1">&#39;HV&#39;</span><span class="p">,</span><span class="n">station</span> <span class="o">=</span> <span class="n">stationIN</span><span class="p">,</span>
                               <span class="n">location</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;EHZ&#39;</span><span class="p">,</span>
