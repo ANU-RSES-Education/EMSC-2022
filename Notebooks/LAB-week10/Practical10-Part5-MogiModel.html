@@ -459,8 +459,8 @@ document.write(`
     <span class="c1"># delta_p is the excess pressure of the source (MPa)</span>
     <span class="c1"># sigma is Poisson&#39;s ratio (typically 0.25)</span>
     
-    <span class="c1"># ----&gt;  what is the equation? &lt;----- #</span>
-    <span class="n">w</span> <span class="o">=</span> <span class="err">?</span><span class="o">??</span>
+    <span class="c1"># w = [ what is the equation? ]</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="err">????</span><span class="o">??</span>
     
     <span class="k">return</span> <span class="n">w</span>  <span class="c1"># displacement (m)</span>
 </pre></div>
@@ -563,8 +563,8 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Input for Mogi Model</span>
 
 <span class="c1"># variable</span>
-<span class="n">d</span> <span class="o">=</span> <span class="err">???</span> <span class="c1">#source depth (m)   &lt;-----</span>
-<span class="n">delta_p</span> <span class="o">=</span> <span class="err">???</span> <span class="c1">#excess pressure (MPa)  &lt;------</span>
+<span class="n">d</span> <span class="o">=</span> <span class="err">???????</span> <span class="c1">#source depth (m)</span>
+<span class="n">delta_p</span> <span class="o">=</span> <span class="err">???????</span> <span class="c1">#excess pressure (MPa)</span>
 
 
 <span class="c1"># fixed </span>
@@ -619,6 +619,7 @@ document.write(`
 <h2>Finding the ‘best’ solution<a class="headerlink" href="#finding-the-best-solution" title="Link to this heading">#</a></h2>
 <p>How do we know if our model, and if our chosen model parameters is any good?</p>
 <p>One way to judge is by measuring the root mean square error (RMSE) between the predicted displacement from our model and the actual observed displacements.</p>
+<p>The smaller RMSE, the smaller the difference between the predicted and observed values, an indicator of a good-fitting model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the predicted displacements at the survey markers from the previously chosen parameters</span>
@@ -644,6 +645,7 @@ document.write(`
 <span class="n">depth_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2500</span><span class="p">,</span><span class="mi">30000</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>  <span class="c1"># 2500 m to 30000 m in 500 m increment. cannot be shallower than source radius</span>
 <span class="n">delta_p_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># -1000 MPa to 0 MPa in 50 MPa interval</span>
 
+
 <span class="c1"># fix other paramters</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mf">2500.0</span> <span class="c1">#source radius (m)</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="c1">#Poisson ratio</span>
@@ -666,10 +668,9 @@ document.write(`
         <span class="n">MSE_tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span><span class="n">y_predicted_tmp</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  
         <span class="n">RMSE_array</span><span class="p">[</span><span class="n">index0</span><span class="p">,</span><span class="n">index1</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">MSE_tmp</span><span class="p">)</span>
     
-
 <span class="c1"># plot results</span>
 <span class="n">extent</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">delta_p_range</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">delta_p_range</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">depth_range</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">depth_range</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">RMSE_array</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">RMSE_array</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">plasma</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Excess pressure [MPa]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Source depth [m]&quot;</span><span class="p">)</span>
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
