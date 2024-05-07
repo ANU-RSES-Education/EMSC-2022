@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Volcanos part 1 &#8212; EMSC 2022</title>
+    <title>Pu’u O’o vent collapse and the first fissure appearance during the 2018 eruption &#8212; EMSC 2022</title>
   
   
   
@@ -393,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Volcanos part 1</h1>
+    <h1>Pu’u O’o vent collapse and the first fissure appearance during the 2018 eruption</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -407,8 +407,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="volcanos-part-1">
-<h1>Volcanos part 1<a class="headerlink" href="#volcanos-part-1" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="puu-oo-vent-collapse-and-the-first-fissure-appearance-during-the-2018-eruption">
+<h1>Pu’u O’o vent collapse and the first fissure appearance during the 2018 eruption<a class="headerlink" href="#puu-oo-vent-collapse-and-the-first-fissure-appearance-during-the-2018-eruption" title="Link to this heading">#</a></h1>
+<p>In this exercise, we will plot:</p>
+<ol class="arabic simple">
+<li><p>a map of the Kilauea and the rift zone</p></li>
+<li><p>locations of the eruption activities, and associated seismic events</p></li>
+<li><p>snapshot of the seismic activity</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -417,21 +423,54 @@ document.write(`
 <span class="kn">import</span> <span class="nn">cartopy.io.img_tiles</span> <span class="k">as</span> <span class="nn">cimgt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">obspy</span> <span class="kn">import</span> <span class="n">UTCDateTime</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>First, let’s plot a map of Kilauea and rift zone, and also the location of Pu’u O’o vent and the first fissure appearance during the 2018 eruption.</p>
-<p>The Pu’u O’o vent location is also used to set the map boundary.</p>
+<p>From the reports, populate the following details:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># location of Pu&#39;u O&#39;o vent</span>
-<span class="n">puu_oo_lat</span> <span class="o">=</span> <span class="mf">19.386389</span>
-<span class="n">puu_oo_lon</span> <span class="o">=</span> <span class="o">-</span><span class="mf">155.1050</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Specify location of Pu&#39;u O&#39;o vent</span>
+<span class="n">puu_oo_lat</span> <span class="o">=</span> <span class="err">????</span><span class="o">??</span>
+<span class="n">puu_oo_lon</span> <span class="o">=</span> <span class="err">????</span><span class="o">??</span>
 
-<span class="c1"># location of first fissure eruption</span>
-<span class="n">puna_eruption_lat</span> <span class="o">=</span> <span class="mf">19.463</span> 
-<span class="n">puna_eruption_lon</span> <span class="o">=</span> <span class="o">-</span><span class="mf">154.899</span>
+<span class="c1">## Specify location of first fissure eruption</span>
+<span class="n">puna_eruption_lat</span> <span class="o">=</span> <span class="err">????</span><span class="o">??</span> 
+<span class="n">puna_eruption_lon</span> <span class="o">=</span> <span class="err">????</span><span class="o">??</span>
+
+<span class="c1">## Specify start time and end time of the eruption series (as a string)</span>
+<span class="c1"># Obspy scripts read data and time using function UTCDateTime.</span>
+<span class="c1"># Seismogram recordings and event catalogues are always in UTC (universal) time.</span>
+<span class="c1"># use format &quot;YYYY-MM-DDTHH:mm:ss&quot; e.g.: 2024-04-26T00:00:00 </span>
+
+<span class="n">starttime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="err">???????</span><span class="p">)</span> <span class="c1"># &lt;--- pick time a day before Puuoo collapse</span>
+<span class="n">endtime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="err">???????</span><span class="p">)</span> <span class="c1"># &lt;-- pick time a day after the first fissure appears</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for plotting purposes:</span>
+
+<span class="c1"># limit events occuring within the map boundary based on Pu&#39;u O&#39;o vent location</span>
+<span class="n">minlongitude</span> <span class="o">=</span> <span class="n">puu_oo_lon</span><span class="o">-</span><span class="mf">0.2</span>
+<span class="n">maxlongitude</span> <span class="o">=</span> <span class="n">puu_oo_lon</span><span class="o">+</span><span class="mf">0.3</span>
+<span class="n">minlatitude</span> <span class="o">=</span> <span class="n">puu_oo_lat</span><span class="o">-</span><span class="mf">0.2</span>
+<span class="n">maxlatitude</span> <span class="o">=</span> <span class="n">puu_oo_lat</span><span class="o">+</span><span class="mf">0.2</span>
+
+<span class="c1"># pick the background image (either satellite image or street)</span>
+<span class="n">mapbox_satellite</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">MapboxTiles</span><span class="p">(</span><span class="n">map_id</span><span class="o">=</span><span class="s1">&#39;satellite&#39;</span><span class="p">,</span> 
+                                     <span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;</span><span class="p">)</span>
+<span class="n">mapbox_streets</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">MapboxTiles</span><span class="p">(</span><span class="n">map_id</span><span class="o">=</span><span class="s1">&#39;streets&#39;</span><span class="p">,</span> 
+                                     <span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;</span><span class="p">)</span>
+
+<span class="n">google_maps_street</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleTiles</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;street&quot;</span><span class="p">)</span> 
+<span class="n">google_maps_satellite</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleTiles</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;satellite&quot;</span><span class="p">)</span> 
+
+<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">google_maps_satellite</span>
 </pre></div>
 </div>
 </div>
@@ -440,39 +479,44 @@ document.write(`
 Can you recognize the location of the caldera and various vents along the rift zone?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot map</span>
 
-<span class="c1">#plot terrain</span>
-<span class="n">stamen_terrain</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">Stamen</span><span class="p">(</span><span class="s1">&#39;terrain-background&#39;</span><span class="p">)</span>
-<span class="n">projection</span><span class="o">=</span><span class="n">stamen_terrain</span><span class="o">.</span><span class="n">crs</span> <span class="c1"># Set up a custom projection</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># set the projection and extent of map</span>
+<span class="n">projection</span><span class="o">=</span><span class="n">map_tiles</span><span class="o">.</span><span class="n">crs</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
-<span class="n">plot_extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">puu_oo_lon</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">puu_oo_lon</span><span class="o">+</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">puu_oo_lat</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">puu_oo_lat</span><span class="o">+</span><span class="mf">0.15</span><span class="p">)</span> <span class="c1">#map boundary set by puu_oo_lat</span>
+<span class="n">plot_extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">minlongitude</span><span class="p">,</span><span class="n">maxlongitude</span><span class="p">,</span><span class="n">minlatitude</span><span class="p">,</span><span class="n">maxlatitude</span><span class="p">)</span> <span class="c1">#map boundary set by puu_oo_lat</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">plot_extent</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_terrain</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
 
-<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span>  <span class="n">gl</span><span class="o">.</span><span class="n">ylabels_right</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39; Kilauea &#39;</span><span class="p">)</span>
+<span class="c1">#plot satellite / street image</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># add gridlines to the plot</span>
+<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span>  <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># add title</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Kilauea&#39;</span><span class="p">)</span>
 
 <span class="c1"># plot location of Pu&#39;u O&#39;o vent</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;vent&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#C68E17&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;vent&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
     
 <span class="c1"># plot location of 2018 Lower puna eruption</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;eruption&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>   
-
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#E47200&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;fissure </span><span class="se">\n</span><span class="s1">eruption&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>   
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now we will get an inventory of the seismic stations operated by the Hawaiian Volcano Observatory (network code “HV”) using the ‘get_stations’ function.</p>
-<p>We will specifically plot seismometers that has a EHZ channel. EHZ is a channel name for the short period vertical component of the seismometer, which is more sensitive to the weak seismic events.</p>
+<p>Now we will get an inventory of the seismic stations operated by the Hawaiian Volcano Observatory during the time of eruption.</p>
+<p>The specific obspy function to use is ‘get_stations’.</p>
+<p>We will specifically plot HVO seismometers (with network code “HV”) that has a EHZ channel. EHZ is the channel name for the short period vertical component of the seismometer, which is more sensitive to the weak seismic events.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">obspy.clients.fdsn</span> <span class="kn">import</span> <span class="n">Client</span>
@@ -483,7 +527,9 @@ Can you recognize the location of the caldera and various vents along the rift z
 <span class="n">station</span><span class="o">=</span><span class="s2">&quot;*&quot;</span>   <span class="c1"># * means include all stations</span>
 <span class="n">channel</span><span class="o">=</span><span class="s2">&quot;EHZ&quot;</span> <span class="c1"># component of the seismometer.  </span>
 
-<span class="n">inv</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_stations</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span><span class="n">station</span><span class="o">=</span><span class="n">station</span><span class="p">,</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">channel</span><span class="o">=</span><span class="n">channel</span><span class="p">,</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;channel&quot;</span><span class="p">)</span>
+<span class="n">inv</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_stations</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span><span class="n">station</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                          <span class="n">channel</span><span class="o">=</span><span class="n">channel</span><span class="p">,</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;channel&quot;</span><span class="p">,</span>
+                          <span class="n">starttime</span><span class="o">=</span><span class="n">starttime</span><span class="p">,</span> <span class="n">endtime</span><span class="o">=</span><span class="n">endtime</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -492,30 +538,35 @@ Can you recognize the location of the caldera and various vents along the rift z
 <p>Run the next cell to make a new map, which includes the seismic stations you just found.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot map with stations operated by HVO</span>
 
-<span class="c1">#plot map</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 
-<span class="n">stamen_terrain</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">Stamen</span><span class="p">(</span><span class="s1">&#39;terrain-background&#39;</span><span class="p">)</span>
-<span class="n">projection</span><span class="o">=</span><span class="n">stamen_terrain</span><span class="o">.</span><span class="n">crs</span> <span class="c1"># Set up a custom projection</span>
+<span class="c1"># set the projection and extent of map</span>
+<span class="n">projection</span><span class="o">=</span><span class="n">map_tiles</span><span class="o">.</span><span class="n">crs</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
-<span class="n">plot_extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">puu_oo_lon</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">puu_oo_lon</span><span class="o">+</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">puu_oo_lat</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">puu_oo_lat</span><span class="o">+</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">plot_extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">minlongitude</span><span class="p">,</span><span class="n">maxlongitude</span><span class="p">,</span><span class="n">minlatitude</span><span class="p">,</span><span class="n">maxlatitude</span><span class="p">)</span> <span class="c1">#map boundary set by puu_oo_lat</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">plot_extent</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_terrain</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
 
-<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span>  <span class="n">gl</span><span class="o">.</span><span class="n">ylabels_right</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39; HV stations &#39;</span><span class="p">)</span>
- 
-<span class="c1"># Pu&#39;u O&#39;o vent</span>
+<span class="c1">#plot satellite / street image</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># add gridlines to the plot</span>
+<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span>  <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># add title</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Kilauea&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot location of Pu&#39;u O&#39;o vent</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;vent&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#C68E17&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;vent&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
     
-<span class="c1"># 2018 Lower puna eruption</span>
+<span class="c1"># plot location of 2018 Lower puna eruption</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;eruption&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#E47200&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;fissure </span><span class="se">\n</span><span class="s1">eruption&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>   
 
 <span class="c1"># HV stations</span>
 <span class="n">stations</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">stla</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">stlo</span> <span class="o">=</span> <span class="p">[]</span>
@@ -525,69 +576,9 @@ Can you recognize the location of the caldera and various vents along the rift z
     <span class="n">stla</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sta</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span>
     <span class="n">stlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sta</span><span class="o">.</span><span class="n">longitude</span><span class="p">)</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">stlo</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">stla</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#D22B2B&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stations</span><span class="p">)):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stations</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-small&#39;</span><span class="p">,</span><span class="n">clip_on</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">clipbox</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bbox</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s refine the above map, to limit to stations that are running during the eruption.
-This is when we need to use UTCDateTime, which is how the obspy script reads date and time. Seismogram recordings and event catalogues are always in UTC (universal) time, so we will use UTC time.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">obspy</span> <span class="kn">import</span> <span class="n">UTCDateTime</span>
-
-<span class="n">operating_starttime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="s2">&quot;2018-04-30T0:00:00&quot;</span><span class="p">)</span> 
-
-<span class="n">inv</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_stations</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span><span class="n">station</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">channel</span><span class="o">=</span><span class="n">channel</span><span class="p">,</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;channel&quot;</span><span class="p">,</span>
-                         <span class="n">starttime</span> <span class="o">=</span> <span class="n">operating_starttime</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
-
-<span class="c1">#plot map</span>
-
-<span class="n">stamen_terrain</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">Stamen</span><span class="p">(</span><span class="s1">&#39;terrain-background&#39;</span><span class="p">)</span>
-<span class="n">projection</span><span class="o">=</span><span class="n">stamen_terrain</span><span class="o">.</span><span class="n">crs</span> <span class="c1"># Set up a custom projection</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
-<span class="n">plot_extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">puu_oo_lon</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">puu_oo_lon</span><span class="o">+</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">puu_oo_lat</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">puu_oo_lat</span><span class="o">+</span><span class="mf">0.15</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">plot_extent</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_terrain</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
-
-<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span>  <span class="n">gl</span><span class="o">.</span><span class="n">ylabels_right</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39; HV stations operating during the 2018 Eruption&#39;</span><span class="p">)</span>
- 
-<span class="c1"># Pu&#39;u O&#39;o vent</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;vent&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
-    
-<span class="c1"># 2018 Lower puna eruption</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;eruption&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>   
-
-<span class="c1"># HV stations</span>
-<span class="n">stations</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">stla</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">stlo</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">sta</span> <span class="ow">in</span> <span class="n">inv</span><span class="o">.</span><span class="n">networks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stations</span><span class="p">:</span>
-    <span class="c1">#print(sta.code)</span>
-    <span class="n">stations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sta</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
-    <span class="n">stla</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sta</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span>
-    <span class="n">stlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sta</span><span class="o">.</span><span class="n">longitude</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">stlo</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">stla</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stations</span><span class="p">)):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stations</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-small&#39;</span><span class="p">,</span><span class="n">clip_on</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stations</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-small&#39;</span><span class="p">,</span><span class="n">clip_on</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">t</span><span class="o">.</span><span class="n">clipbox</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bbox</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -604,12 +595,15 @@ This is when we need to use UTCDateTime, which is how the obspy script reads dat
 <p>If you get error messages saying FDSNNNoDataException, that means those stations are not operating (hence no data).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stationIN</span> <span class="o">=</span> <span class="s1">&#39;KUPD&#39;</span>  <span class="c1"># &lt;--- input station name</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stationIN</span> <span class="o">=</span> <span class="err">????????</span>  <span class="c1"># &lt;--- input station name (as a string)</span>
 
-<span class="n">starttime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="s2">&quot;2016-05-10T13:00:00&quot;</span><span class="p">)</span>  <span class="c1"># &lt;---- adjust start time!</span>
-<span class="n">endtime</span> <span class="o">=</span> <span class="n">starttime</span> <span class="o">+</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>  
+<span class="c1"># specify time frame for downloading data</span>
+<span class="n">st_starttime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="err">????????</span><span class="p">)</span>  <span class="c1"># &lt;---- adjust start time!</span>
+<span class="n">st_endtime</span> <span class="o">=</span> <span class="n">starttime</span> <span class="o">+</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>  
 
-<span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_waveforms</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s1">&#39;HV&#39;</span><span class="p">,</span><span class="n">station</span> <span class="o">=</span> <span class="n">stationIN</span><span class="p">,</span><span class="n">location</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;EHZ&#39;</span><span class="p">,</span><span class="n">starttime</span><span class="o">=</span><span class="n">starttime</span><span class="p">,</span> <span class="n">endtime</span><span class="o">=</span><span class="n">endtime</span><span class="p">)</span>
+<span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_waveforms</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s1">&#39;HV&#39;</span><span class="p">,</span><span class="n">station</span> <span class="o">=</span> <span class="n">stationIN</span><span class="p">,</span>
+                              <span class="n">location</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;EHZ&#39;</span><span class="p">,</span>
+                              <span class="n">starttime</span><span class="o">=</span><span class="n">st_starttime</span><span class="p">,</span> <span class="n">endtime</span><span class="o">=</span><span class="n">st_endtime</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -624,24 +618,13 @@ This is when we need to use UTCDateTime, which is how the obspy script reads dat
 </div>
 </div>
 <p>Combined with recordings from other stations, seismologists are able to detect many seismic activities and put together an event catalog detailing their magnitude, origin time, and location.</p>
-<p>We will need two inputs:</p>
-<ul class="simple">
-<li><p>start time of the catalog</p></li>
-<li><p>end time of the catalog</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start time and end time of the event catalog</span>
-<span class="n">starttime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="s2">&quot;2018-07-29T0:00:00&quot;</span><span class="p">)</span> <span class="c1"># &lt;--- pick time a day before Puuoo collapse</span>
-<span class="n">endtime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="s2">&quot;2018-010-04T0:00:00&quot;</span><span class="p">)</span> <span class="c1"># &lt;-- pick time a day after the first fissure appears</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We will download a catalog of events occurring near the eruption site before the vent collapse </span>
+<span class="c1"># and shortly after first fissure appearance.</span>
+<span class="c1"># The catalog is compiled by U.S. Geological Survey, using these HV stations. </span>
 
-<span class="c1"># limit events occuring within the map boundary</span>
-<span class="n">minlongitude</span> <span class="o">=</span> <span class="n">puu_oo_lon</span><span class="o">-</span><span class="mf">0.3</span>
-<span class="n">maxlongitude</span> <span class="o">=</span> <span class="n">puu_oo_lon</span><span class="o">+</span><span class="mf">0.3</span>
-<span class="n">minlatitude</span> <span class="o">=</span> <span class="n">puu_oo_lat</span><span class="o">-</span><span class="mf">0.2</span>
-<span class="n">maxlatitude</span> <span class="o">=</span> <span class="n">puu_oo_lat</span><span class="o">+</span><span class="mf">0.15</span>
-
-<span class="n">client_catalog</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;USGS&quot;</span><span class="p">)</span>  <span class="c1"># we switched client to USGS because we will use the catalog compiled by USGS.</span>
+<span class="n">client_catalog</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;USGS&quot;</span><span class="p">)</span>  <span class="c1"># switch client to USGS </span>
 <span class="n">cat</span> <span class="o">=</span> <span class="n">client_catalog</span><span class="o">.</span><span class="n">get_events</span><span class="p">(</span><span class="n">starttime</span> <span class="o">=</span> <span class="n">starttime</span><span class="p">,</span> <span class="n">endtime</span> <span class="o">=</span> <span class="n">endtime</span><span class="p">,</span> 
                                       <span class="n">minlatitude</span> <span class="o">=</span> <span class="n">minlatitude</span><span class="p">,</span> <span class="n">maxlatitude</span> <span class="o">=</span> <span class="n">maxlatitude</span><span class="p">,</span>
                                       <span class="n">minlongitude</span> <span class="o">=</span> <span class="n">minlongitude</span><span class="p">,</span> <span class="n">maxlongitude</span> <span class="o">=</span> <span class="n">maxlongitude</span><span class="p">)</span>
@@ -656,30 +639,25 @@ This is when we need to use UTCDateTime, which is how the obspy script reads dat
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
 <span class="kn">from</span> <span class="nn">matplotlib.dates</span> <span class="kn">import</span> <span class="n">DateFormatter</span><span class="p">,</span><span class="n">DayLocator</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="c1"># plot map with seismic events</span>
 
-<span class="c1">#plot background map</span>
-<span class="n">stamen_terrain</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">Stamen</span><span class="p">(</span><span class="s1">&#39;terrain-background&#39;</span><span class="p">)</span>
-<span class="n">projection</span><span class="o">=</span><span class="n">stamen_terrain</span><span class="o">.</span><span class="n">crs</span> 
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># set the projection and extent of map</span>
+<span class="n">projection</span><span class="o">=</span><span class="n">map_tiles</span><span class="o">.</span><span class="n">crs</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
-<span class="n">plot_extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">puu_oo_lon</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">puu_oo_lon</span><span class="o">+</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">puu_oo_lat</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">puu_oo_lat</span><span class="o">+</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">plot_extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">minlongitude</span><span class="p">,</span><span class="n">maxlongitude</span><span class="p">,</span><span class="n">minlatitude</span><span class="p">,</span><span class="n">maxlatitude</span><span class="p">)</span> <span class="c1">#map boundary set by puu_oo_lat</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">plot_extent</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">stamen_terrain</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span>  <span class="n">gl</span><span class="o">.</span><span class="n">ylabels_right</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="c1"># set title</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39; Seismicity between </span><span class="si">%s</span><span class="s1"> and </span><span class="si">%s</span><span class="s1"> &#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">starttime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%b </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">endtime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%b </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)))</span>
- 
-<span class="c1"># plot locatino of Pu&#39;u O&#39;o vent</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;vent&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
-    
-<span class="c1"># plot location of 2018 Lower puna eruption</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;eruption&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>   
+<span class="c1">#plot satellite / street image</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># add gridlines to the plot</span>
+<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span>  <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># add title</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39; Seismicity between </span><span class="si">%s</span><span class="s1"> and </span><span class="si">%s</span><span class="s1"> &#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">starttime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%b </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">endtime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%b </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)),</span><span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
 
 <span class="c1"># plot location of seismic events</span>
 <span class="n">otime_cb</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">evlat</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">evlon</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">evmag</span> <span class="o">=</span> <span class="p">[]</span>
@@ -694,11 +672,111 @@ This is when we need to use UTCDateTime, which is how the obspy script reads dat
 
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">evlon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">evlat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">evmag</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">otime_cb</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
                   <span class="n">ticks</span><span class="o">=</span><span class="n">DayLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
                   <span class="nb">format</span><span class="o">=</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%b </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># plot location of Pu&#39;u O&#39;o vent</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#C68E17&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;vent&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+    
+<span class="c1"># plot location of 2018 Lower puna eruption</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#E47200&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;fissure </span><span class="se">\n</span><span class="s1">eruption&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>   
+
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># save images for every hour:</span>
+
+<span class="n">kk</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">hrIN</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">starttime</span><span class="p">,</span><span class="n">endtime</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">):</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Plotting &#39;</span><span class="p">,</span> <span class="n">hrIN</span><span class="p">)</span>
+    
+    <span class="c1"># plot location of seismic events</span>
+    <span class="n">otime_cbIN</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">evlatIN</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">evlonIN</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">evmagIN</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">cat</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">time</span> <span class="o">&gt;=</span> <span class="n">starttime</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">time</span> <span class="o">&lt;</span> <span class="n">hrIN</span><span class="p">:</span>
+            <span class="n">otime_cbIN</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">matplotlib_date</span><span class="p">)</span>
+            <span class="n">evlatIN</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span>
+            <span class="n">evlonIN</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">longitude</span><span class="p">)</span>
+            <span class="n">evmagIN</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">magnitudes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mag</span><span class="p">)</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+    <span class="c1"># set the projection and extent of map</span>
+    <span class="n">projection</span><span class="o">=</span><span class="n">map_tiles</span><span class="o">.</span><span class="n">crs</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
+    <span class="n">plot_extent</span> <span class="o">=</span> <span class="p">(</span><span class="n">minlongitude</span><span class="p">,</span><span class="n">maxlongitude</span><span class="p">,</span><span class="n">minlatitude</span><span class="p">,</span><span class="n">maxlatitude</span><span class="p">)</span> <span class="c1">#map boundary set by puu_oo_lat</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">plot_extent</span><span class="p">)</span>
+
+    <span class="c1">#plot satellite / street image</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+    <span class="c1"># add gridlines to the plot</span>
+    <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span>  <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># add title</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;From Pu</span><span class="se">\&#39;</span><span class="s1">u </span><span class="se">\&#39;</span><span class="s1">O</span><span class="se">\&#39;</span><span class="s1">o vent collapse to first fissure eruption&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+
+    <span class="c1"># plot location of Pu&#39;u O&#39;o vent</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puu_oo_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#C68E17&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;vent&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+
+    <span class="c1"># plot location of 2018 Lower puna eruption</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lon</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">puna_eruption_lat</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#E47200&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;fissure </span><span class="se">\n</span><span class="s1">eruption&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>   
+
+    <span class="c1"># plot events:</span>
+    <span class="n">colormap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;magma&#39;</span><span class="p">,</span><span class="n">total_event</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">projection</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">evlonIN</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">evlatIN</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">evmagIN</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">otime_cbIN</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    
+    <span class="c1">## Add time stamp to the top left corner</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">hrIN</span><span class="o">.</span><span class="n">ctime</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d3d3d3&quot;</span><span class="p">,</span><span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+
+
+    <span class="n">fileOUT</span> <span class="o">=</span> <span class="s1">&#39;./Puuoo_eq_</span><span class="si">%03d</span><span class="s1">.png&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">kk</span><span class="p">)</span>
+    <span class="n">kk</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fileOUT</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now view the eruption as an animation!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+
+<span class="c1"># Create the frames</span>
+<span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">imgs</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./Puuoo_eq_*.png&#39;</span><span class="p">)</span>
+<span class="n">imgs</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">:</span>
+    <span class="n">new_frame</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_frame</span><span class="p">)</span>
+
+<span class="c1"># Save into a GIF file that loops once!</span>
+<span class="n">frames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;./Pu_uo_o_eruption.gif&#39;</span><span class="p">,</span>
+               <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;GIF&#39;</span><span class="p">,</span>
+               <span class="n">append_images</span><span class="o">=</span><span class="n">frames</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+               <span class="n">save_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">duration</span><span class="o">=</span><span class="mf">2e-6</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
