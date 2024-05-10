@@ -59,6 +59,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks/LAB-convection/EMSC2022W11.ii';</script>
     <script src="../../_static/font_button.js?v=3ec2d3a6"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -412,6 +414,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-etopo-data-from-a-remote-service">Read ETOPO data from a remote service</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation">Validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
             </nav>
         </div>
@@ -481,7 +484,7 @@ You can read more about the dataset here: <a class="reference external" href="ht
 <span class="n">etopo_dataset</span> <span class="o">=</span> <span class="s2">&quot;http://thredds.socib.es/thredds/dodsC/ancillary_data/bathymetry/ETOPO1_Bed_g_gmt4.nc&quot;</span>
 <span class="n">etopo_data</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">etopo_dataset</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;netcdf4&quot;</span><span class="p">)</span>
 
-<span class="n">subs_data</span> <span class="o">=</span> <span class="n">etopo_data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+<span class="n">subs_data</span> <span class="o">=</span> <span class="n">etopo_data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
 
 <span class="n">lons</span> <span class="o">=</span> <span class="n">subs_data</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">lats</span> <span class="o">=</span> <span class="n">subs_data</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
@@ -505,11 +508,6 @@ You can read more about the dataset here: <a class="reference external" href="ht
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The shape of the array is ... 
-</pre></div>
-</div>
-</div>
 </div>
 <p>and we should plot the data to see if it matches the image above and whether we need more resolution.
 Does that look right ?</p>
@@ -530,27 +528,35 @@ Does that look right ?</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">map_extent</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
-           <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">5000.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">5000.</span><span class="p">)</span>
+           <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span>  <span class="n">vmin</span><span class="o">=-</span><span class="mf">5000.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">5000.</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x135553ac0&gt;
-</pre></div>
 </div>
-<img alt="../../_images/958e133d042575675bf36a9a29312b10e13cefb11b5a3474d789535121380f4c.png" src="../../_images/958e133d042575675bf36a9a29312b10e13cefb11b5a3474d789535121380f4c.png" />
-</div>
-</div>
+<p>The map does not look quite right, does it ?</p>
+<p>It is important to check the data that you download to make sure that:</p>
+<ol class="arabic simple">
+<li><p>you downloaded the correct data</p></li>
+<li><p>the resolution is enough for the job at hand</p></li>
+<li><p>the dataset is complete / not corrupted</p></li>
+</ol>
+<p>In the map, the data is obviously not exactly as we would expect. It’s obviously not corrupted but it is not correctly formatted for the <code class="docutils literal notranslate"><span class="pre">imshow</span></code> command. You can fix this in one of two ways: either adjust the ordering of the dataset to match what <code class="docutils literal notranslate"><span class="pre">imshow</span></code> wants or ask <code class="docutils literal notranslate"><span class="pre">imshow</span></code> to do it for you by adding the <code class="docutils literal notranslate"><span class="pre">origin=&quot;lower&quot;</span></code> argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Fix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Fixed code here</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<p>Download the data at high(er) resolution and <strong>make a nicer map</strong> (say skip every 30 instead of 300) that’s <span class="math notranslate nohighlight">\(10 \times 10\)</span> more data points so it might take a bit longer to download / plot.</p>
+<p><em>Note:</em> the purpose of this exercise is to show you some very basic ways to check the data by downloading a small sample before launching into an expensive analysis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig.savefig(&quot;ETOPO1.png&quot;, dpi=150)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is how you save it if you want to keep it</span>
+<span class="c1"># fig.savefig(&quot;ETOPO1.png&quot;, dpi=150)</span>
 </pre></div>
 </div>
 </div>
@@ -629,6 +635,7 @@ Does that look right ?</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-etopo-data-from-a-remote-service">Read ETOPO data from a remote service</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation">Validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 </ul>
   </nav></div>
 
