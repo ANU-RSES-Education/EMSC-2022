@@ -1,5 +1,5 @@
 # Conda Environment for python packages running under BINDER
-name: emsc_basics
+name: EMSC-2022
 channels:
   - conda-forge
 dependencies:
@@ -15,6 +15,10 @@ dependencies:
   - sympy
   - cartopy
   - obspy
+  - stripy
+  - litho1pt0
+  - xarray
+  - netcdf4
   - pip
   - pip:  
     - gmsh
