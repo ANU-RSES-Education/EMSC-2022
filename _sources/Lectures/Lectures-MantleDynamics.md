@@ -49,6 +49,8 @@ A quick quiz that covers some of the concepts in this part of the course (some i
 
 [Take the Quiz !](Lectures-MD-Quiz)
 
+[Advanced Qn (HPO)](Lectures-MD-Quiz-HPO)
+
 
 ## Concepts
 

@@ -59,6 +59,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/Lectures-MD-Quiz-HPO';</script>
     <script src="../_static/font_button.js?v=3ec2d3a6"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -202,6 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Notebooks/LAB-convection/EMSC2022W11.iii.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Notebooks/LAB-convection/EMSC2022W11.iv.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Notebooks/LAB-convection/EMSC2022W11.v.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Notebooks/LAB-convection/EMSC2022W11.vi.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
 </ul>
 </li>
 </ul>
@@ -381,10 +384,86 @@ document.write(`
 <p>In this task, you will need to find out some extra information that
 is not spelled out in the lecture notes. A complete answer to
 any question needs to cite where the information was found. Be critical of what you find - is the source reputable, and do other sources agree ? If not, maybe you need to look elsewhere.</p>
-<p>???</p>
 <div class="hint admonition">
-<p class="admonition-title">Q: XXXX (10)</p>
-<p>What is …</p>
+<p class="admonition-title">Q: H1 - Heat flow / Velocity and Rayleigh number (10)</p>
+<p>Complete the following table which has data obtained from numerical simulations of convection (these are actually the examples given lecture notes)</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\mathrm{Ra}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathrm{Nu}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\log_{10}(\mathrm{Nu})\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(V_\mathrm{rms}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\log_{10}(V_\mathrm{rms})\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(10^0\)</span></p></td>
+<td><p>1.00</p></td>
+<td><p></p></td>
+<td><p>0.00</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(10^1\)</span></p></td>
+<td><p>1.00</p></td>
+<td><p></p></td>
+<td><p>0.00</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(10^2\)</span></p></td>
+<td><p>1.00</p></td>
+<td><p></p></td>
+<td><p>0.00</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>657</p></td>
+<td><p>1.00</p></td>
+<td><p></p></td>
+<td><p>0.00</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(10^3\)</span></p></td>
+<td><p>1.46</p></td>
+<td><p></p></td>
+<td><p>4.88</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(10^4\)</span></p></td>
+<td><p>4.85</p></td>
+<td><p></p></td>
+<td><p>45.39</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(10^5\)</span></p></td>
+<td><p>10.30</p></td>
+<td><p></p></td>
+<td><p>212.81</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(10^6\)</span></p></td>
+<td><p>20.09</p></td>
+<td><p></p></td>
+<td><p>931.11</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(10^7\)</span></p></td>
+<td><p>40.46</p></td>
+<td><p></p></td>
+<td><p>4,027.17</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>Assuming that the heat flow (Nusselt number) and average (root mean square) velocity are related to Rayleigh number in the following way:</p>
+<div class="math notranslate nohighlight">
+\[
+    \mathrm{Nu} = A \cdot \mathrm{Ra}^\alpha
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+    V_\mathrm{rms} = B \cdot \mathrm{Ra}^\beta
+\]</div>
+<p>Find the values of <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> (e.g. by plotting a graph of <span class="math notranslate nohighlight">\(\log_{10}(\mathrm{Nu})\)</span> against <span class="math notranslate nohighlight">\(\log_{10}(\mathrm{Ra})\)</span>) or by fitting a curve as we did in the lab.</p>
 </div>
 </section>
 
