@@ -16,7 +16,6 @@ dependencies:
   - cartopy
   - obspy
   - stripy
-  - litho1pt0
   - xarray
   - netcdf4
   - pip
@@ -27,4 +26,6 @@ dependencies:
     - pygments>=2.17.0
     - trame-vtk
     - trame-vuetify
+    - litho1pt0
+
   
