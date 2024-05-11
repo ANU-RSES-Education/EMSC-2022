@@ -41,6 +41,7 @@ parts:
       - file: Notebooks/LAB-convection/EMSC2022W11.iii.ipynb
       - file: Notebooks/LAB-convection/EMSC2022W11.iv.ipynb
       - file: Notebooks/LAB-convection/EMSC2022W11.v.ipynb
+      - file: Notebooks/LAB-convection/EMSC2022W11.vi.ipynb
 
   - caption: Lectures
     chapters:

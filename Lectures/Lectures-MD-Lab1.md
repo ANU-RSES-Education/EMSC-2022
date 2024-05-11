@@ -102,7 +102,7 @@ Sketch with your eye a curve through the data.
 
 Plot the two curves from Stein and Stein, (1992) - overlap them so that you can see how they diverge (2)
 
-Did their curve plot below or above yours ? 
+Did their curve plot below or above the one you drew by eye ? 
 
 Summarize our class discussion of what we have not considered in our analysis that might be important (2)
 
