@@ -7,7 +7,7 @@ $code-color: #27A5A2;
 $code-block-border-color: #009491;
 
 $presentation-heading-color: #C4161C;
-$presentation-font-size-root: 30px;
+$presentation-font-size-root: 24px;
 
 $font-family-sans-serif: "Prelo Medium";
 
@@ -21,13 +21,20 @@ h1 {
 
 /*-- scss:rules --*/
 
-@font-face {font-family: "Prelo Medium";
-    src: url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo.eot"); /* IE9*/
-    src: url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo_ie6.eot") format("embedded-opentype"), /* IE6-IE8 */
-    url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo.woff2"), /* chrome firefox */
-    url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo.woff") format("woff"), /* chrome firefox */
-    url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
-    url("https://raw.githubusercontent.com/padsInsper/quarto-insper-theme/main/_extensions/insper/font/prelo.svg") format("svg"); /* iOS 4.1- */
+@font-face {
+  font-family: "Prelo Medium";
+  src: url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo.eot");
+  /* IE9*/
+  src: url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo_ie6.eot") format("embedded-opentype"),
+    /* IE6-IE8 */
+    url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo.woff2"),
+    /* chrome firefox */
+    url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo.woff") format("woff"),
+    /* chrome firefox */
+    url("https://github.com/padsInsper/quarto-insper-theme/raw/main/_extensions/insper/font/prelo.ttf") format("truetype"),
+    /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("https://raw.githubusercontent.com/padsInsper/quarto-insper-theme/main/_extensions/insper/font/prelo.svg") format("svg");
+  /* iOS 4.1- */
 }
 
 
@@ -44,7 +51,7 @@ h1 {
   height: 90%;
 }
 
-.center-x{
+.center-x {
   text-align: center;
 }
 
