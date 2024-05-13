@@ -1,0 +1,10 @@
+title: Insper Presentation Template
+author: Beatriz Milz
+version: 0.0.1
+contributes:
+  formats:
+    revealjs:
+      logo: logo.png
+      theme: [default, insper.scss]
+      preview-links: auto
+      slide-number: true
