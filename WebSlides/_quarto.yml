@@ -3,11 +3,11 @@ project:
   output-dir: ../_build/slides
 
 format:
-  insper-revealjs:
-    logo: Images/ANU-logo.jpg
-    self-contained: true
+  anu_slides-revealjs:
+    # logo: Images/ANU-logo.jpg
+    # self-contained: true
     footer: |
-      ANU Course Notes: RSES Quarto     
+      ANU Course : EMSC 2022     
     code-links:
       - text: Open in Binder
         icon: rocket-takeoff

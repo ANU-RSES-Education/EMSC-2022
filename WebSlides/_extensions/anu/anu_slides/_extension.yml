@@ -1,0 +1,18 @@
+title: ANU Lecture Slides template
+author: Louis Moresi
+version: 0.0.1
+contributes:
+  formats:
+    revealjs:
+      # logo: none
+      theme: [default, anu.scss]
+      preview-links: auto
+      slide-number: true
+      # background-image: ./images/custom/anu_general.png
+      transition: convex
+      # self-contained: true
+      center: true
+      touch: false
+      controls: true
+      controls-layout: bottom-right
+      navigation-mode: vertical

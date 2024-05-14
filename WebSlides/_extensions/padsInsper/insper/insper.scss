@@ -7,16 +7,15 @@ $code-color: #27A5A2;
 $code-block-border-color: #009491;
 
 $presentation-heading-color: #C4161C;
-$presentation-font-size-root: 24px;
+$presentation-font-size-root: 22px;
 
 $font-family-sans-serif: "Prelo Medium";
 
 $presentation-slide-text-align: left;
-
 $code-block-font-size: 1em;
 
 h1 {
-  text-align: center;
+  text-align: left;
 }
 
 /*-- scss:rules --*/
@@ -36,6 +35,9 @@ h1 {
     url("https://raw.githubusercontent.com/padsInsper/quarto-insper-theme/main/_extensions/insper/font/prelo.svg") format("svg");
   /* iOS 4.1- */
 }
+
+
+
 
 
 .reveal .slide blockquote {
