@@ -149,3 +149,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 Notebooks/LAB-convection/MyAwesomePlot.png
+.DS_Store
