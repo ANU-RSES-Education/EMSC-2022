@@ -1,0 +1,104 @@
+project:
+  type: book
+  output-dir: ../_build/book
+
+book:
+  title: "EMSC - Get Going with Python "
+  author:
+    - "Louis Moresi"
+    - "Meghan Miller"
+    - "David Heslop"
+    - "Voon Hui Lai"
+  date: "06/03/2024"
+  bread-crumbs: True
+  chapters:
+    - part: "**Introduction**"
+      chapters:
+        - index.qmd
+        - intro.qmd
+        - TLDR.qmd
+
+    - part: "**Basic Language Skills**"
+      chapters:
+        - Basics/Ex1-IntroWebPython.qmd
+        - Basics/Ex2-Variables.qmd
+        - Basics/Ex2a-Functions.qmd
+        - Basics/Ex3-Conditionals.qmd
+        - Basics/Ex4-Loops.qmd
+        - Basics/Ex5-ListsEtc.qmd
+        - Basics/Ex6-MoreLoops.qmd
+        - Basics/Ex7-Strings.qmd
+        - Basics/Ex8-ReadWriteFiles.qmd
+
+    - part: "**Version Control**"
+      chapters:
+        - Introduction2VersionControl/1-GettingStartedWithGit.qmd
+        - Introduction2VersionControl/2-NextStepsWithGit.qmd
+        - Introduction2VersionControl/3-YourOwnRepositories.qmd
+
+    - part: "**Advanced Language Skills**"
+      chapters:
+        - Advanced/Intro.qmd
+
+    # - part: "Next steps: Becoming a Code Developer"
+    #   chapters:
+    #     - DevSkills/Intro.qmd
+
+    # - part: "Notebooks"
+    #   chapters:
+    #   - Notebooks/Introduction.qmd
+    #   - Notebooks/Ex01/Ex1-GettingStartedWithJupyter.qmd
+
+    # - part: "Slides"
+    #   chapters:
+    #     - LectureSlides/Lecture1.qmd
+
+    - part: "Work in Progress"
+      chapters:
+        - _WIP/Test_Pyodide.qmd
+
+  # appendices:
+  #   - Notebooks/BinderLandingPage.qmd
+  #   - Notebooks/TestNB1.ipynb
+  #   - Notebooks/TestQMD_NB1.qmd
+
+  navbar:
+    search: true
+    logo: assets/ANU-logo.jpg
+    background: "white"
+    foreground: "#C58812" # ANU honey colour
+
+  sidebar:
+    # logo: Images/COS-EarthSciences-800.jpg
+    logo: assets/AuWorldEQ.jpg
+    background: "white"
+    # foreground: "#C58812" # ANU honey colour
+
+bibliography: references.bib
+
+execute:
+  enabled: false
+
+format:
+  html:
+    theme: [united, "assets/theme.scss"] # united / simplex / flatly
+    mainfont: "Jost"
+    fontsize: 0.9em
+    linestretch: 1.7
+    linkcolor: "#C58812"
+    number-sections: false
+    number-depth: 1
+    filters:
+      - pyodide
+
+    code-links:
+      - text: Open in Binder
+        icon: rocket-takeoff
+        href: https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-getting-going-with-python/HEAD?labpath=WebBook/BinderLandingPage.qmd
+    other-links:
+      - text: Github Repository
+        icon: github
+        href: https://github.com/ANU-RSES-Education/EMSC-getting-going-with-python
+
+  # pdf:
+  #   documentclass: scrreprt

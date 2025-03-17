@@ -1,0 +1,31 @@
+---
+title: Presentations
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    format-links: true
+    notebook-links: true
+    logo: ANU-logo.jpg
+    self-contained: true
+
+date-format: long
+lang: en
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.16.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+Index file - just in case
+
+ - [Lecture 1](Lectures-MD1.reveal.html)
+ - [Lecture 2](Lectures-MD2.reveal.html)

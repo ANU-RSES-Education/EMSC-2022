@@ -6,6 +6,14 @@ Notebooks/Lab*/*.png
 /Jupyterbook/_build
 /Lectures/static_slides/slideshows
 *slideshows*
+_build
+WebBook/.quarto
+WebSlides/.quarto
+
+# Annoying mac stuff
+
+.DS_Store
+**/.DS_Store
 
 # IDE files
 
