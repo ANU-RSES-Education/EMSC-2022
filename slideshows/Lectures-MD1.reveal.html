@@ -880,7 +880,6 @@ If $\mathrm{Ra} \gg \mathrm{Ra}_c$ then convective motion is inevitable
 
 ## Discussion: Ra for the Earth's Mantle
 
-
 <div style="float:right; width:35%">
 </video>
 <video autoplay controls loop height="320">
@@ -1026,7 +1025,10 @@ with lecture materials, practicals and live computational examples.
       const mermaidOptions = extend({ startOnLoad: false }, {});
       mermaid.startOnLoad = false;
       mermaid.initialize(mermaidOptions);
-      const cb = function (event) { mermaid.init(mermaidOptions, '.stack.present>.present pre code.mermaid'); };
+      const cb = function (event) {
+        mermaid.init(mermaidOptions, '.stack.present > .present pre code.mermaid');
+        mermaid.init(mermaidOptions, '.slides > .present:not(.stack) pre code.mermaid');
+      }
       Reveal.addEventListener('ready', cb);
       Reveal.addEventListener('slidetransitionend', cb);
     </script>
