@@ -4,8 +4,8 @@ name: deploy-book
 on:
   push:
     branches:
-    - master
-    - jupyterbook
+      - master
+      - jupyterbook
 
   workflow_dispatch:
 
@@ -21,71 +21,79 @@ jobs:
   deploy-book:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    # Install dependencies
-    # - name: Set up Python 3.7
-    #   uses: actions/setup-python@v1
-    #   with:
-    #     python-version: 3.7
+      # Install dependencies
+      # - name: Set up Python 3.7
+      #   uses: actions/setup-python@v1
+      #   with:
+      #     python-version: 3.7
 
-#     - name: Cache book files
-#       uses: actions/cache@v1
-#       env:
-#         # Increase this value to reset cache if etc/example-environment.yml has not changed
-#         CACHE_NUMBER: 1
-#       with:
-#         path: |
-#           ~/conda_pkgs_dir
-#           /usr/share/miniconda3/envs/jupyter
-#           ~/.cache/pip
-#           ~/Jupyterbook/_build
-#         key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('conda_packages.yml') }}
+      #     - name: Cache book files
+      #       uses: actions/cache@v1
+      #       env:
+      #         # Increase this value to reset cache if etc/example-environment.yml has not changed
+      #         CACHE_NUMBER: 1
+      #       with:
+      #         path: |
+      #           ~/conda_pkgs_dir
+      #           /usr/share/miniconda3/envs/jupyter
+      #           ~/.cache/pip
+      #           ~/Jupyterbook/_build
+      #         key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('conda_packages.yml') }}
 
-#     - name: switch base env name to something other than 'base'
-#       run: |
-#         sed 's/name: base/name: jupyter/' conda_packages.yml > conda_jupyter_env.yml
+      #     - name: switch base env name to something other than 'base'
+      #       run: |
+      #         sed 's/name: base/name: jupyter/' conda_packages.yml > conda_jupyter_env.yml
 
-#     - name: Miniconda / Miniforge
-#       uses: conda-incubator/setup-miniconda@v2
-#       with:
-#           miniconda-version: latest
-#           environment-file: conda_jupyter_env.yml
-#           activate-environment: jupyter
-#           python-version: 3.7
-#           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
+      #     - name: Miniconda / Miniforge
+      #       uses: conda-incubator/setup-miniconda@v2
+      #       with:
+      #           miniconda-version: latest
+      #           environment-file: conda_jupyter_env.yml
+      #           activate-environment: jupyter
+      #           python-version: 3.7
+      #           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
 
+      #     # Would be helpful to cache some of the installation
+      #     - name: Install pip dependencies
+      #       shell: bash -l {0}
+      #       run: |
+      #         # sed '/^[[:blank:]]*#/d;s/#.*//' apt_get_packages.txt > apt_get_packages_no_comment.txt
+      #         # sudo xargs apt-get -y install < apt_get_packages_no_comment.txt
 
-#     # Would be helpful to cache some of the installation
-#     - name: Install pip dependencies 
-#       shell: bash -l {0}
-#       run: |
-#         # sed '/^[[:blank:]]*#/d;s/#.*//' apt_get_packages.txt > apt_get_packages_no_comment.txt
-#         # sudo xargs apt-get -y install < apt_get_packages_no_comment.txt
+      #         # Conda cache will not catch the pip installations (need to do this separately)
+      #         pip install jupyter-book
+      #         npm install -g reveal-md
 
-#         # Conda cache will not catch the pip installations (need to do this separately)
-#         pip install jupyter-book
-#         npm install -g reveal-md
-        
-    
-    - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@main
-      with:
-        environment-file: ./.github/workflows/envs/build_jb.yml
-        cache-downloads: true
+      # - name: Install Conda environment with Micromamba
+      #   uses: mamba-org/provision-with-micromamba@main
+      #   with:
+      #     environment-file: ./.github/workflows/envs/build_jb.yml
+      #     cache-downloads: true
 
+      - name: Install Conda environment with Micromamba
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          # environment-file is not assumed anymore
+          environment-file: ./.github/workflows/envs/build_jb.yml
+          # create-args:
+          #   >- # beware the >- instead of |, we don't split on newlines but on spaces
+          #   python=3.10
+          #   numpy
+          # now called cache-environment
+          cache-environment: true
 
-    # Build the book
-    - name: Build the book
-      shell: bash -l {0}
-      run: |
-        cd Jupyterbook 
-        source build_book.sh
+      # Build the book
+      - name: Build the book
+        shell: bash -l {0}
+        run: |
+          cd Jupyterbook
+          source build_book.sh
 
-    # Push the book's HTML to github-pages
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: Jupyterbook/_build/html
-
+      # Push the book's HTML to github-pages
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: Jupyterbook/_build/html
