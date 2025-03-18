@@ -465,11 +465,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.24.0&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>This next section reads the data from the Oregon State University database. This URL is actually a script to return the table of volcanoes in various forms. This is not a big issue as it returns a valid web page, but not every library that reads html is configured to work with these general URLs.</p>
 <div class="cell docutils container">
@@ -487,22 +482,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There is/are 1 table/s on this web page
-</pre></div>
-</div>
-</div>
 </div>
 <p>In this case, it is not necessary to parse the various tables to find the one we want, but you would need to check (for example, the page header or footer might be in the form of a table to lay out the information but we don’t want to use that for our map !)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_volc</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -528,28 +513,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type
-Stratovolcano         126
-Caldera                20
-Shield                 13
-Complex                 8
-Volcanic field          6
-Submarine               5
-Lava dome               3
-Fissure vent            3
-Caldera, Shield         2
-Cinder Cone             2
-Pyroclastic cone        2
-Fissure vent, Maar      2
-Flood Basalt            2
-Plug                    1
-Somma                   1
-Maar                    1
-Name: count, dtype: int64
-</pre></div>
-</div>
-</div>
 </div>
 <p>Clean up the data to make sure the typos and missing information are not propogated into your database. This doesn’t seem to be needed in this particular case, but, in other instances, you could use this technique to replace definitions / map to a new terminology etc.</p>
 <div class="cell docutils container">
@@ -569,39 +532,12 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type
-Stratovolcano         126
-Caldera                20
-Shield                 13
-Complex                 8
-Volcanic Field          6
-Submarine               5
-Lava Dome               3
-Fissure Vent            3
-Caldera, Shield         2
-Cinder Cone             2
-Pyroclastic Cone        2
-Fissure Vent, Maar      2
-Flood Basalt            2
-Plug                    1
-Somma                   1
-Maar                    1
-Name: count, dtype: int64
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now determine the number of volcanoes in the database.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">df_volc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>195
 </pre></div>
 </div>
 </div>
@@ -614,11 +550,6 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>189
-</pre></div>
-</div>
-</div>
 </div>
 <p>Make a nice table of the first 10 volcanoes from the information that you grabbed out of the Oregon State University website on volcanoes</p>
 <div class="cell docutils container">
@@ -628,130 +559,6 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>189
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Volcano Name</th>
-      <th>Country</th>
-      <th>Type</th>
-      <th>Latitude (dd)</th>
-      <th>Longitude (dd)</th>
-      <th>Elevation (m)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Abu</td>
-      <td>Japan</td>
-      <td>Shield</td>
-      <td>34.50</td>
-      <td>131.60</td>
-      <td>641</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Acamarachi</td>
-      <td>Chile</td>
-      <td>Stratovolcano</td>
-      <td>-23.30</td>
-      <td>-67.62</td>
-      <td>6046</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Acatenango</td>
-      <td>Guatemala</td>
-      <td>Stratovolcano</td>
-      <td>14.50</td>
-      <td>-90.88</td>
-      <td>3976</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Acigöl-Nevsehir</td>
-      <td>Turkey</td>
-      <td>Caldera</td>
-      <td>38.57</td>
-      <td>34.52</td>
-      <td>1689</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Adams</td>
-      <td>United States</td>
-      <td>Stratovolcano</td>
-      <td>46.21</td>
-      <td>-121.49</td>
-      <td>3742</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Adatara</td>
-      <td>Japan</td>
-      <td>Stratovolcano</td>
-      <td>37.64</td>
-      <td>140.29</td>
-      <td>1718</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Adwa</td>
-      <td>Ethiopia</td>
-      <td>Stratovolcano</td>
-      <td>10.07</td>
-      <td>40.84</td>
-      <td>1733</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Afderà</td>
-      <td>Ethiopia</td>
-      <td>Stratovolcano</td>
-      <td>13.08</td>
-      <td>40.85</td>
-      <td>1295</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Agrigan</td>
-      <td>Mariana Islands</td>
-      <td>Stratovolcano</td>
-      <td>18.77</td>
-      <td>145.67</td>
-      <td>965</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Agua</td>
-      <td>Guatemala</td>
-      <td>Stratovolcano</td>
-      <td>14.47</td>
-      <td>-90.74</td>
-      <td>3760</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Determine the number of each type of volcanoes from this list and output this information to the screen.</p>
 <div class="cell docutils container">
@@ -760,43 +567,11 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type
-Stratovolcano         126
-Caldera                19
-Shield                 13
-Complex                 8
-Volcanic Field          6
-Lava Dome               3
-Fissure Vent            3
-Caldera, Shield         2
-Cinder Cone             2
-Pyroclastic Cone        2
-Fissure Vent, Maar      2
-Plug                    1
-Somma                   1
-Maar                    1
-Name: count, dtype: int64
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_volc</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">df_volc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/bt/jsh174p911lcyp7hslpkzktc0000gn/T/ipykernel_6008/2615626174.py:1: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df_volc.dropna(inplace=True)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>189
 </pre></div>
 </div>
 </div>
@@ -820,9 +595,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/14dc9b4d4a2d2da372115c6bf32f235de4bb1d5931f332dd8ae14e34f8288b35.png" src="../../_images/14dc9b4d4a2d2da372115c6bf32f235de4bb1d5931f332dd8ae14e34f8288b35.png" />
 </div>
 </div>
 </section>
@@ -855,195 +627,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There is/are 1 table/s on the https://volcano.oregonstate.edu/volcano_table?sort_by=title&amp;sort_order=ASC&amp;page=0 page
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1">## Now concatenate them with pd.concat</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">df_volc_0</span> <span class="o">=</span> <span class="n">table0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">table0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">...</span> <span class="p">))</span> 
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="o">...</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="c1">## Now make the map </span>
-
-<span class="nn">File ~/miniforge3/envs/emsc2022/lib/python3.13/site-packages/pandas/core/reshape/concat.py:382,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="k">elif</span> <span class="n">copy</span> <span class="ow">and</span> <span class="n">using_copy_on_write</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">copy</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="ne">--&gt; </span><span class="mi">382</span> <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">objs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="n">ignore_index</span><span class="o">=</span><span class="n">ignore_index</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="n">verify_integrity</span><span class="o">=</span><span class="n">verify_integrity</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">395</span> <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
-
-<span class="nn">File ~/miniforge3/envs/emsc2022/lib/python3.13/site-packages/pandas/core/reshape/concat.py:448,</span> in <span class="ni">_Concatenator.__init__</span><span class="nt">(self, objs, axis, join, keys, levels, names, ignore_index, verify_integrity, copy, sort)</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span> <span class="n">objs</span><span class="p">,</span> <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_keys_and_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="c1"># figure out what our result ndim is going to be</span>
-<span class="ne">--&gt; </span><span class="mi">448</span> <span class="n">ndims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ndims</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="n">sample</span><span class="p">,</span> <span class="n">objs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sample_object</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">ndims</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span> <span class="c1"># Standardize axis parameter to int</span>
-
-<span class="nn">File ~/miniforge3/envs/emsc2022/lib/python3.13/site-packages/pandas/core/reshape/concat.py:489,</span> in <span class="ni">_Concatenator._get_ndims</span><span class="nt">(self, objs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">(</span><span class="n">ABCSeries</span><span class="p">,</span> <span class="n">ABCDataFrame</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span>         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span>             <span class="sa">f</span><span class="s2">&quot;cannot concatenate object of type &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;; &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>             <span class="s2">&quot;only Series and DataFrame objs are valid&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>         <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">489</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">ndims</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">return</span> <span class="n">ndims</span>
-
-<span class="ne">TypeError</span>: cannot concatenate object of type &#39;&lt;class &#39;ellipsis&#39;&gt;&#39;; only Series and DataFrame objs are valid
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">table0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">table1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">table2</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Volcano Name</th>
-      <th>Country</th>
-      <th>Type</th>
-      <th>Latitude (dd)</th>
-      <th>Longitude (dd)</th>
-      <th>Elevation (m)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Abu</td>
-      <td>Japan</td>
-      <td>Shield</td>
-      <td>34.50</td>
-      <td>131.60</td>
-      <td>641</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Acamarachi</td>
-      <td>Chile</td>
-      <td>Stratovolcano</td>
-      <td>-23.30</td>
-      <td>-67.62</td>
-      <td>6046</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Acatenango</td>
-      <td>Guatemala</td>
-      <td>Stratovolcano</td>
-      <td>14.50</td>
-      <td>-90.88</td>
-      <td>3976</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Acigöl-Nevsehir</td>
-      <td>Turkey</td>
-      <td>Caldera</td>
-      <td>38.57</td>
-      <td>34.52</td>
-      <td>1689</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Adams</td>
-      <td>United States</td>
-      <td>Stratovolcano</td>
-      <td>46.21</td>
-      <td>-121.49</td>
-      <td>3742</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>Yellowstone</td>
-      <td>United States</td>
-      <td>Caldera</td>
-      <td>44.43</td>
-      <td>-110.67</td>
-      <td>2805</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>Zavaritzki Caldera</td>
-      <td>Russia</td>
-      <td>Caldera</td>
-      <td>46.93</td>
-      <td>151.95</td>
-      <td>624</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>Zheltovsky</td>
-      <td>Russia</td>
-      <td>NaN</td>
-      <td>51.57</td>
-      <td>157.32</td>
-      <td>1953</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>Zhupanovsky</td>
-      <td>Russia</td>
-      <td>NaN</td>
-      <td>53.59</td>
-      <td>159.15</td>
-      <td>2958</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>Zimina</td>
-      <td>Russia</td>
-      <td>Stratovolcano</td>
-      <td>55.86</td>
-      <td>160.60</td>
-      <td>3081</td>
-    </tr>
-  </tbody>
-</table>
-<p>435 rows × 6 columns</p>
-</div></div></div>
 </div>
 </section>
 </section>
