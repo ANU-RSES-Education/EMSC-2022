@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; EMSC 2022</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customize.css?v=a313bec9" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks-deprecated/LAB4/EMSC2022W4-Solution';</script>
+    <script src="../../_static/font_button.js?v=3ec2d3a6"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../FrontPage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/AuWorldEQ.jpg" class="logo__image only-light" alt="EMSC 2022 - Home"/>
+    <script>document.write(`<img src="../../_static/AuWorldEQ.jpg" class="logo__image only-dark" alt="EMSC 2022 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../FrontPage.html">
+                    Table of Contents
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Notebooks/LAB-week5/Week5_Lab.html">Lab week 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-week5/LAB5_On_Demand_MapServices.html">On demand mapping services</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Notebooks/LAB-week6/LAB6-focal_mechanisms.html">Lab week 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-week6/LAB6-izmit%2Bfocal%2Bmechanism.html">LAB 6 - Focal Mechanisms continued</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Notebooks/LAB-week7/LAB7-Raypaths.html">Lab week 7</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-week7/LAB7-NZ_Earthquake.html">Lab - New Zealand Earthquake Data</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Notebooks/LAB-week8/LAB8-Gutenberg-Richter.html">Lab week 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Notebooks/LAB-week10/EMSC2022_sem1_2023_lowerpuna.html">Lab week 10 part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Notebooks/LAB-week10/Practical10-Part5-MogiModel.html">Lab week 10 part 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.i.html">Lab week 11</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.ii.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.iii.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.iv.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.v.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.vi.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Lectures/Index.html">Lecture notes EMSC 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Lectures/Lectures-MantleDynamics.html">Introduction to Mantle Dynamics (EMSC 2022)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks-deprecated/LAB4/EMSC2022W4-Solution.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/ANU-RSES-Education/EMSC-2022" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Notebooks-deprecated/LAB4/EMSC2022W4-Solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-magnetic-anomaly-21-in-the-south-atlantic">Observations: Magnetic anomaly 21 in the South Atlantic</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#your-challenge">Your challenge</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entering-the-available-positional-information">Entering the available positional information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positions-along-the-mid-ocean-ridge">Positions along the mid-ocean ridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-anomaly-21-positional-data-along-the-western-flank">Magnetic anomaly 21 positional data along the western flank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-anomaly-21-positional-data-along-the-eastern-flank">Magnetic anomaly 21 positional data along the eastern flank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-need-to-work-in-radians">We need to work in radians</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-following-solution-uses-a-combination-of-exposition-and-python-code-to-illustrate-the-step-by-step-process-of-estimating-an-euler-pole-based-on-the-provided-observations">The following solution uses a combination of exposition and Python code to illustrate the step-by-step process of estimating an Euler pole based on the provided observations.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-estimate-the-spreading-rates-along-the-ridge">Task 1: Estimate the spreading rates along the ridge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textrm-speed-frac-textrm-distance-textrm-time"><span class="math notranslate nohighlight">\(\textrm{speed} = \frac{\textrm{distance}}{\textrm{time}}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-r-theta"><span class="math notranslate nohighlight">\( D = R \theta\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-now-estimate-the-speed-using-python">Let’s now estimate the speed using Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-predicting-spreading-rate-from-an-euler-pole">Task 2: Predicting spreading rate from an Euler pole</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-omega-r-sin-theta"><span class="math notranslate nohighlight">\(v = \omega R \sin \theta\)</span>,</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-cos-1-sin-lambda-p-sin-lambda-r-cos-lambda-p-cos-lambda-r-cos-phi-r-phi-p"><span class="math notranslate nohighlight">\(\theta = \cos^{-1}[\sin \lambda_P \sin \lambda_R + \cos \lambda_P \cos \lambda_R \cos(\phi_R - \phi_P)]\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-an-euler-pole">Defining an Euler pole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-and-plotting-speeds">Predicting and plotting speeds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-model-and-the-observations">Comparing the model and the observations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-improving-the-model-observations-agreement">Task 3: Improving the model-observations agreement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-what-does-our-estimated-pole-correspond-to">Conclusion: What does our estimated pole correspond to?</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+   <div style="clear: left;">
+ <p style="float: left;"><img src="https://world.wng.org/sites/default/files/Beginnings%203-22.1.jpg" height="150" width="350" border="10"></p>
+ </div>
+ <center><p><H1>Welcome to EMSC Geophysics</H1></p>
+ <p><H1>EMSC2022: Introduction to Global Geophysics</H1><p>
+ <p><H1>Semester 1: Week 4 Practical</H1><p>
+ <p><H2>Instructor: Dave Heslop (david.heslop@anu.edu.au)</H2><p><p><font color="red"><hr style="border:none;height:3px;background-color:black;width:950px;"></center></p>
+<center><p><H1>The learning objectives for this practical are:</H1></p>
+<center><p><H2>(1) Estimating the position of an Euler pole.</H2></p>
+<center><p><H2>(2) Understanding how the properties of an Euler pole relate to relative plate motions.</H2></p>
+<center><p><H2>(3) Processing data and creating models in Python.</H2></p></font> 
+    <hr style="border:none;height:3px;background-color:black;width:950px;"></center>
+<center><p><H1>Materials you'll require for this practical are:</H1></p>
+<center><p><H2>(1) Pencil and paper for sketching ideas</H2></p>
+<center><p><H2>(2) Laptop</H2></p>
+<center><p><H2>(3) &#9749; &#x2795; &#129504;</H2></p> <hr style="border:none;height:3px;background-color:black;width:950px;"></center>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>The philosophy of this practical is different to our previous sessions. Typically, we provide you with a sequence of tasks to complete that lead you to a final answer and a demonstration of a given concept. In this practical we will take a “research-led” approach, where you will conceive for yourself the scientific steps required to represent a plate tectonic process.</p>
+<p>Your challenge is to devise a technique to estimate the properties of an Euler pole that approximates the relative motion of the South America and Africa tectonic plates over the last 47 million years.</p>
+<p>Specifically, you should consider that the spreading rate at mid-ocean ridges is expected to vary as the sine of angle between the Euler pole and a given point on the ridge (we discussed this in the lectures).</p>
+<p>The most important aspect of this practical exercise is for you to consider in detail how you can use the information available to estimate a pole position. Once you have developed a plan for estimating the Euler pole, then you can try to code it below. <em><strong>However, the key aim of this practical is for you to develop the concept and details of your estimation process, rather than your ability to code it in Python.</strong></em></p>
+<section id="observations-magnetic-anomaly-21-in-the-south-atlantic">
+<h2>Observations: Magnetic anomaly 21 in the South Atlantic<a class="headerlink" href="#observations-magnetic-anomaly-21-in-the-south-atlantic" title="Link to this heading">#</a></h2>
+<p>The map below shows a locations of the mid-Atlantic ridge and magnetic anomaly 21 in the South Atlantic between South America and Africa. Red lines and points on the map indicate transect locations where the position of magnetic anomaly 21 and the ridge have been recorded within given transform faults. Each transect is marked with a different letter for identification.</p>
+ <p><img src="https://www.dropbox.com/s/2bcaavco6urt3d7/Practical%208%20-%20MAP%20A.jpg?raw=1" height="150" width="900" border="10"></p>
+<p>The positions (latitude and longitude) of the ridge and magnetic anomaly 21 on the western and eastern flanks are given in the table below for each transect.</p>
+ <p><img src="https://www.dropbox.com/s/955atmexyb7nx85/Anomaly%20position%20table.jpg?raw=1" height="150" width="900" border="10"></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="your-challenge">
+<h1>Your challenge<a class="headerlink" href="#your-challenge" title="Link to this heading">#</a></h1>
+<p><em><strong>(1) Working in groups or alone, devise a method to estimate the Euler pole that is most consistent with the seafloor spreading information provided in the table above.</strong></em></p>
+<p><em><strong>(2) Write Python code in this Jupyter notebook to implement your method to estimate the Euler pole.</strong></em> The code below shows you how to enter the positional data. Once that is done, then you should implement your method.</p>
+<hr style="border:none;height:3px;background-color:black;">
+<section id="entering-the-available-positional-information">
+<h2>Entering the available positional information<a class="headerlink" href="#entering-the-available-positional-information" title="Link to this heading">#</a></h2>
+<p>We’ll enter the data sequentially, first entering the positions along the mid-ocean ridge and then the positions of magnetic anomaly 21 on the western and eastern flanks of the ridge. We can enter the latitude and longitude of our positions along the ridge as NumPy arrays. Therefore, we start by importing the NumPy package, which we’ll give the abbreviation <code class="docutils literal notranslate"><span class="pre">np</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:none;height:1px;background-color:black;">
+<section id="positions-along-the-mid-ocean-ridge">
+<h3>Positions along the mid-ocean ridge<a class="headerlink" href="#positions-along-the-mid-ocean-ridge" title="Link to this heading">#</a></h3>
+<p>We’ll use our standard nomenclature, where latitudes and longitudes are given the symbols <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>, respectively.</p>
+<p>For the positions along the ridge, we’ll use the variable names:</p>
+<p><code class="docutils literal notranslate"><span class="pre">lambda_R</span></code> = latitude on the ridge (i.e., <span class="math notranslate nohighlight">\(\lambda_R\)</span>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">phi_R</span></code> = longitude on the ridge (i.e., <span class="math notranslate nohighlight">\(\phi_R\)</span>)</p>
+<p>You can see the numbers entered into the functions correspond to the ridge latitudes and longitudes provided in the original data table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambda_R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">8.86</span><span class="p">,</span><span class="o">-</span><span class="mf">12.03</span><span class="p">,</span><span class="o">-</span><span class="mf">14.41</span><span class="p">,</span><span class="o">-</span><span class="mf">17.95</span><span class="p">,</span><span class="o">-</span><span class="mf">19.54</span><span class="p">,</span><span class="o">-</span><span class="mf">20.58</span><span class="p">,</span><span class="o">-</span><span class="mf">22.17</span><span class="p">,</span>
+                     <span class="o">-</span><span class="mf">23.33</span><span class="p">,</span><span class="o">-</span><span class="mf">24.86</span><span class="p">,</span><span class="o">-</span><span class="mf">26.56</span><span class="p">,</span><span class="o">-</span><span class="mf">29.56</span><span class="p">,</span><span class="o">-</span><span class="mf">31.88</span><span class="p">,</span><span class="o">-</span><span class="mf">32.73</span><span class="p">,</span><span class="o">-</span><span class="mf">36.95</span><span class="p">,</span><span class="o">-</span><span class="mf">40.12</span><span class="p">,</span><span class="o">-</span><span class="mf">42.08</span><span class="p">])</span>
+<span class="n">phi_R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">12.40</span><span class="p">,</span><span class="o">-</span><span class="mf">13.55</span><span class="p">,</span><span class="o">-</span><span class="mf">12.47</span><span class="p">,</span><span class="o">-</span><span class="mf">11.99</span><span class="p">,</span><span class="o">-</span><span class="mf">10.84</span><span class="p">,</span><span class="o">-</span><span class="mf">10.70</span><span class="p">,</span><span class="o">-</span><span class="mf">12.60</span><span class="p">,</span>
+                  <span class="o">-</span><span class="mf">12.33</span><span class="p">,</span><span class="o">-</span><span class="mf">13.08</span><span class="p">,</span><span class="o">-</span><span class="mf">11.99</span><span class="p">,</span><span class="o">-</span><span class="mf">12.53</span><span class="p">,</span><span class="o">-</span><span class="mf">13.55</span><span class="p">,</span><span class="o">-</span><span class="mf">13.69</span><span class="p">,</span><span class="o">-</span><span class="mf">16.33</span><span class="p">,</span><span class="o">-</span><span class="mf">15.45</span><span class="p">,</span><span class="o">-</span><span class="mf">15.11</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:none;height:1px;background-color:black;">
+</section>
+<section id="magnetic-anomaly-21-positional-data-along-the-western-flank">
+<h3>Magnetic anomaly 21 positional data along the western flank<a class="headerlink" href="#magnetic-anomaly-21-positional-data-along-the-western-flank" title="Link to this heading">#</a></h3>
+<p>For the western flank magnetic anomaly positions, we’ll use the variable names:</p>
+<p><code class="docutils literal notranslate"><span class="pre">lambda_W</span></code> = latitude on the western flank (i.e., <span class="math notranslate nohighlight">\(\lambda_W\)</span>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">phi_W</span></code> = longitude on the western flank (i.e., <span class="math notranslate nohighlight">\(\phi_W\)</span>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambda_W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">10.26</span><span class="p">,</span><span class="o">-</span><span class="mf">13.25</span><span class="p">,</span><span class="o">-</span><span class="mf">16.00</span><span class="p">,</span><span class="o">-</span><span class="mf">19.05</span><span class="p">,</span><span class="o">-</span><span class="mf">21.01</span><span class="p">,</span><span class="o">-</span><span class="mf">22.17</span><span class="p">,</span><span class="o">-</span><span class="mf">23.21</span><span class="p">,</span>
+                     <span class="o">-</span><span class="mf">24.86</span><span class="p">,</span><span class="o">-</span><span class="mf">26.20</span><span class="p">,</span><span class="o">-</span><span class="mf">27.97</span><span class="p">,</span><span class="o">-</span><span class="mf">30.90</span><span class="p">,</span><span class="o">-</span><span class="mf">33.04</span><span class="p">,</span><span class="o">-</span><span class="mf">34.69</span><span class="p">,</span><span class="o">-</span><span class="mf">37.74</span><span class="p">,</span><span class="o">-</span><span class="mf">41.16</span><span class="p">,</span><span class="o">-</span><span class="mf">43.11</span><span class="p">])</span>
+<span class="n">phi_W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">21.83</span><span class="p">,</span><span class="o">-</span><span class="mf">24.07</span><span class="p">,</span><span class="o">-</span><span class="mf">23.05</span><span class="p">,</span><span class="o">-</span><span class="mf">22.17</span><span class="p">,</span><span class="o">-</span><span class="mf">21.09</span><span class="p">,</span><span class="o">-</span><span class="mf">21.63</span><span class="p">,</span><span class="o">-</span><span class="mf">22.51</span><span class="p">,</span>
+                  <span class="o">-</span><span class="mf">23.46</span><span class="p">,</span><span class="o">-</span><span class="mf">23.33</span><span class="p">,</span><span class="o">-</span><span class="mf">22.65</span><span class="p">,</span><span class="o">-</span><span class="mf">23.46</span><span class="p">,</span><span class="o">-</span><span class="mf">25.50</span><span class="p">,</span><span class="o">-</span><span class="mf">27.47</span><span class="p">,</span><span class="o">-</span><span class="mf">28.62</span><span class="p">,</span><span class="o">-</span><span class="mf">28.82</span><span class="p">,</span><span class="o">-</span><span class="mf">29.91</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:none;height:1px;background-color:black;">
+</section>
+<section id="magnetic-anomaly-21-positional-data-along-the-eastern-flank">
+<h3>Magnetic anomaly 21 positional data along the eastern flank<a class="headerlink" href="#magnetic-anomaly-21-positional-data-along-the-eastern-flank" title="Link to this heading">#</a></h3>
+<p>For the eastern flank magnetic anomaly positions, we’ll use the variable names:</p>
+<p><code class="docutils literal notranslate"><span class="pre">lambda_E</span></code> = latitude on the eastern flank (i.e., <span class="math notranslate nohighlight">\(\lambda_E\)</span>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">phi_E</span></code> = longitude on the eastern flank (i.e., <span class="math notranslate nohighlight">\(\phi_E\)</span>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambda_E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">7.02</span><span class="p">,</span><span class="o">-</span><span class="mf">10.63</span><span class="p">,</span><span class="o">-</span><span class="mf">13.13</span><span class="p">,</span><span class="o">-</span><span class="mf">15.82</span><span class="p">,</span><span class="o">-</span><span class="mf">17.47</span><span class="p">,</span><span class="o">-</span><span class="mf">18.69</span><span class="p">,</span><span class="o">-</span><span class="mf">19.91</span><span class="p">,</span>
+                     <span class="o">-</span><span class="mf">21.56</span><span class="p">,</span><span class="o">-</span><span class="mf">22.90</span><span class="p">,</span><span class="o">-</span><span class="mf">24.37</span><span class="p">,</span><span class="o">-</span><span class="mf">27.18</span><span class="p">,</span><span class="o">-</span><span class="mf">29.86</span><span class="p">,</span><span class="o">-</span><span class="mf">31.51</span><span class="p">,</span><span class="o">-</span><span class="mf">34.69</span><span class="p">,</span><span class="o">-</span><span class="mf">37.92</span><span class="p">,</span><span class="o">-</span><span class="mf">40.06</span><span class="p">])</span>
+<span class="n">phi_E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.98</span><span class="p">,</span><span class="o">-</span><span class="mf">6.09</span><span class="p">,</span><span class="o">-</span><span class="mf">3.85</span><span class="p">,</span><span class="o">-</span><span class="mf">2.29</span><span class="p">,</span><span class="o">-</span><span class="mf">1.06</span><span class="p">,</span><span class="o">-</span><span class="mf">1.67</span><span class="p">,</span><span class="o">-</span><span class="mf">2.62</span><span class="p">,</span><span class="o">-</span><span class="mf">3.03</span><span class="p">,</span>
+                  <span class="o">-</span><span class="mf">2.83</span><span class="p">,</span><span class="o">-</span><span class="mf">1.61</span><span class="p">,</span><span class="o">-</span><span class="mf">1.33</span><span class="p">,</span><span class="o">-</span><span class="mf">2.49</span><span class="p">,</span><span class="o">-</span><span class="mf">3.37</span><span class="p">,</span><span class="o">-</span><span class="mf">4.73</span><span class="p">,</span><span class="o">-</span><span class="mf">4.32</span><span class="p">,</span><span class="o">-</span><span class="mf">4.52</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="we-need-to-work-in-radians">
+<h3>We need to work in radians<a class="headerlink" href="#we-need-to-work-in-radians" title="Link to this heading">#</a></h3>
+<p>NumPy assumes that all angles are in radians. Therefore, it is simplest to transform all of out latitudes and longitudes into radians at this stage. This is done using the NumPy <code class="docutils literal notranslate"><span class="pre">deg2rad</span></code> functions, which as the names suggests, converts values from degrees into radians.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambda_R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">lambda_R</span><span class="p">)</span> <span class="c1">#convert the ridge latitudes to radians</span>
+<span class="n">phi_R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">phi_R</span><span class="p">)</span> <span class="c1">#convert the ridge longitudes to radians</span>
+<span class="n">lambda_W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">lambda_W</span><span class="p">)</span> <span class="c1">#convert the western flank latitudes to radians</span>
+<span class="n">phi_W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">phi_W</span><span class="p">)</span> <span class="c1">#convert the western flank longitudes to radians</span>
+<span class="n">lambda_E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">lambda_E</span><span class="p">)</span> <span class="c1">#convert the eastern flank latitudes to radians</span>
+<span class="n">phi_E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">phi_E</span><span class="p">)</span> <span class="c1">#convert the eastern flank latitudes to radians</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have now completed the input of our positional data and we have converted it into radians so that is is compatible with NumPy.</p>
+<p><font color="red"><hr style="border:none;height:3px;background-color:black;width:950px;"></center></p>
+<center><p><H1>SOLUTION</H1></p></font> 
+</section>
+<section id="the-following-solution-uses-a-combination-of-exposition-and-python-code-to-illustrate-the-step-by-step-process-of-estimating-an-euler-pole-based-on-the-provided-observations">
+<h3>The following solution uses a combination of exposition and Python code to illustrate the step-by-step process of estimating an Euler pole based on the provided observations.<a class="headerlink" href="#the-following-solution-uses-a-combination-of-exposition-and-python-code-to-illustrate-the-step-by-step-process-of-estimating-an-euler-pole-based-on-the-provided-observations" title="Link to this heading">#</a></h3>
+<hr style="border:none;height:3px;background-color:black;">
+</section>
+</section>
+<section id="task-1-estimate-the-spreading-rates-along-the-ridge">
+<h2>Task 1: Estimate the spreading rates along the ridge<a class="headerlink" href="#task-1-estimate-the-spreading-rates-along-the-ridge" title="Link to this heading">#</a></h2>
+<p>We have defined the locations of magnetic anomaly 21 along the western and eastern flanks, but how can we estimate the spreading rate along the mid-ocean ridge. We can use the simple distance, speed, time formula:</p>
+<section id="textrm-speed-frac-textrm-distance-textrm-time">
+<h3><span class="math notranslate nohighlight">\(\textrm{speed} = \frac{\textrm{distance}}{\textrm{time}}\)</span><a class="headerlink" href="#textrm-speed-frac-textrm-distance-textrm-time" title="Link to this heading">#</a></h3>
+<p>Therefore, if we can estimate the distance between corresponding anomalies on the western and eastern flanks and divide by the time elapsed since the material formed at the mid-ocean ridge, then we can find the speed (which is equivalent to the spreading rate).</p>
+<p>First the easy part, we know the elapsed time because the age of magnetic anomaly 21 is 47 Ma. However, how can estimate the distance between corresponding anomalies on the western and eastern flanks?</p>
+<p>To estimate the distance we’ll employ a concept that we met in the Week 1 practical, specifically; great-circle angle (see Wikipedia for background information: <a class="reference external" href="https://en.wikipedia.org/wiki/Great-circle_distance">https://en.wikipedia.org/wiki/Great-circle_distance</a> ).</p>
+<p>The angle <span class="math notranslate nohighlight">\(\theta\)</span> between two locations <em><strong>A</strong></em> and <em><strong>B</strong></em> on a sphere is given by:</p>
+<p><span class="math notranslate nohighlight">\(\theta = \cos^{-1}[\sin \lambda_A \sin \lambda_B + \cos \lambda_A \cos \lambda_B \cos(\phi_B - \phi_A)]\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the latitude and <span class="math notranslate nohighlight">\(\phi\)</span> is the longitude.</p>
+<p>Once we have found <span class="math notranslate nohighlight">\(\theta\)</span> (in radians) we can determine the distance, <span class="math notranslate nohighlight">\(D\)</span>, between the points using the radius of the Earth, <span class="math notranslate nohighlight">\(R\)</span>:</p>
+</section>
+<section id="d-r-theta">
+<h3><span class="math notranslate nohighlight">\( D = R \theta\)</span><a class="headerlink" href="#d-r-theta" title="Link to this heading">#</a></h3>
+<hr style="border:none;height:1px;background-color:black;">
+</section>
+<section id="lets-now-estimate-the-speed-using-python">
+<h3>Let’s now estimate the speed using Python<a class="headerlink" href="#lets-now-estimate-the-speed-using-python" title="Link to this heading">#</a></h3>
+<p>First we’ll define Earth’s radius in centimeters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mf">6378E5</span> <span class="c1">#Earth&#39;s radius in centimeters</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’ll find the angle between the corresponding anomaly positions on the western and eastern flanks. These angles are in radians and we’ll give them the variable name <code class="docutils literal notranslate"><span class="pre">theta_WE</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_WE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lambda_W</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lambda_E</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lambda_W</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lambda_E</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi_E</span><span class="o">-</span><span class="n">phi_W</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now convert the angles into distances, which we’ll call <code class="docutils literal notranslate"><span class="pre">D</span></code> with units of centimeters (cm):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">theta_WE</span> <span class="c1">#magnetic anomaly seperation (in centimeters)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we’ll estimate the speed <code class="docutils literal notranslate"><span class="pre">V</span></code> in units of centimeters per year (cm yr<span class="math notranslate nohighlight">\(^{-1})\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">D</span> <span class="o">/</span> <span class="mf">47E6</span> <span class="c1">#magnetic anomaly seperation (in centimeters) divided by anomaly age (in years)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have estimated the observed spreading rate, we need to find an Euler pole that is consistent with those observations.</p>
+<hr style="border:none;height:3px;background-color:black;">
+</section>
+</section>
+<section id="task-2-predicting-spreading-rate-from-an-euler-pole">
+<h2>Task 2: Predicting spreading rate from an Euler pole<a class="headerlink" href="#task-2-predicting-spreading-rate-from-an-euler-pole" title="Link to this heading">#</a></h2>
+<p>As we discussed in the lectures, the equation for the relative velocity between two plates based on their shared Euler pole is given by:</p>
+<section id="v-omega-r-sin-theta">
+<h3><span class="math notranslate nohighlight">\(v = \omega R \sin \theta\)</span>,<a class="headerlink" href="#v-omega-r-sin-theta" title="Link to this heading">#</a></h3>
+<p>where <span class="math notranslate nohighlight">\(v\)</span> is the velocity, <span class="math notranslate nohighlight">\(\omega\)</span> is the rotational velocity, <span class="math notranslate nohighlight">\(R\)</span> is Earth’s radius and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the pole and the point of interest.</p>
+<p>Using a great-circle angle we can find the angle between the latitude and longitude of the Euler pole (denoted as <span class="math notranslate nohighlight">\(\lambda_P\)</span> and <span class="math notranslate nohighlight">\(\psi_P\)</span>, respectively) and a point of interest on the mid-ocean ridge (denoted as <span class="math notranslate nohighlight">\(\lambda_R\)</span> and <span class="math notranslate nohighlight">\(\psi_R\)</span>):</p>
+</section>
+<section id="theta-cos-1-sin-lambda-p-sin-lambda-r-cos-lambda-p-cos-lambda-r-cos-phi-r-phi-p">
+<h3><span class="math notranslate nohighlight">\(\theta = \cos^{-1}[\sin \lambda_P \sin \lambda_R + \cos \lambda_P \cos \lambda_R \cos(\phi_R - \phi_P)]\)</span><a class="headerlink" href="#theta-cos-1-sin-lambda-p-sin-lambda-r-cos-lambda-p-cos-lambda-r-cos-phi-r-phi-p" title="Link to this heading">#</a></h3>
+<p>Therefore if we define an Euler pole with parameters <span class="math notranslate nohighlight">\(\lambda_P\)</span>, <span class="math notranslate nohighlight">\(\psi_P\)</span> and <span class="math notranslate nohighlight">\(\omega_P\)</span> we can make predications of the spreading rate at different positions along the mid-ocean ridge.</p>
+<hr style="border:none;height:1px;background-color:black;">
+</section>
+<section id="defining-an-euler-pole">
+<h3>Defining an Euler pole<a class="headerlink" href="#defining-an-euler-pole" title="Link to this heading">#</a></h3>
+<p>Of course to make this calculation we need to define the Euler pole. As a first guess, let’s use the modern Euler pole position for the South America and Africa plates, which has the characteristics; <span class="math notranslate nohighlight">\(\lambda_P\)</span> = 62.5<span class="math notranslate nohighlight">\(^\circ\)</span>N, <span class="math notranslate nohighlight">\(\psi_P\)</span> = 39.4<span class="math notranslate nohighlight">\(^\circ\)</span>W, and <span class="math notranslate nohighlight">\(\omega_P\)</span> = 3.1 <span class="math notranslate nohighlight">\(\times\)</span> 10<span class="math notranslate nohighlight">\(^{-7}\)</span> deg yr<span class="math notranslate nohighlight">\(^{-1}\)</span>. We’ll define these values in Python and convert from degrees into radians:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambda_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mf">62.5</span><span class="p">)</span> <span class="c1">#latitude of pole in radians</span>
+<span class="n">phi_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="o">-</span><span class="mf">39.4</span><span class="p">)</span> <span class="c1">#longitude of pole in radians (negative to represent western hemisphere)</span>
+<span class="n">omega_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mf">3.1E-7</span><span class="p">)</span> <span class="c1">#angular velocity of pole in radians / year</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:none;height:1px;background-color:black;">
+</section>
+<section id="predicting-and-plotting-speeds">
+<h3>Predicting and plotting speeds<a class="headerlink" href="#predicting-and-plotting-speeds" title="Link to this heading">#</a></h3>
+<p>Rather than making predictions for our specific positions along the ridge, we’ll make things simple by plotting the speed predicted for a series of values of <span class="math notranslate nohighlight">\(\theta\)</span>. The NumPy function <code class="docutils literal notranslate"><span class="pre">linspace</span></code> allows us to create a given number equally spaced values between a starting and finishing value. As an example, let’s create 101 equally spaced values for <span class="math notranslate nohighlight">\(\theta\)</span> between 60<span class="math notranslate nohighlight">\(^\circ\)</span> and 125<span class="math notranslate nohighlight">\(^\circ\)</span>. We’ll call these values <code class="docutils literal notranslate"><span class="pre">theta_P</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span> <span class="c1">#series of angles between 60 and 125 degrees</span>
+<span class="n">theta_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">theta_P</span><span class="p">)</span> <span class="c1">#convert angles from degrees into radians</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can calculate the corresponding spreading rates according to <span class="math notranslate nohighlight">\(v = \omega R \sin \theta\)</span>.</p>
+<p>We’ll call the predicted spreading rates <code class="docutils literal notranslate"><span class="pre">V_P</span></code>, which will have units of cm yr<span class="math notranslate nohighlight">\(^{-1}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V_P</span> <span class="o">=</span> <span class="n">omega_P</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_P</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the Matplotlib package we can plot the predicted profile of <code class="docutils literal notranslate"><span class="pre">V_P</span></code> versus <code class="docutils literal notranslate"><span class="pre">theta_P</span></code> (which we’ll plot as degrees using NumPy’s <code class="docutils literal notranslate"><span class="pre">rad2deg</span></code> function). First we import Matplotlib and give it the abbreviation <code class="docutils literal notranslate"><span class="pre">plt</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> <span class="c1">#import matplotlib as plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can make our plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">theta_P</span><span class="p">),</span><span class="n">V_P</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span> <span class="c1">#plot model predictions as a red line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Angle from pole [degrees]&#39;</span><span class="p">)</span> <span class="c1">#label the x-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Spreading rate [cm/yr]&#39;</span><span class="p">)</span> <span class="c1">#label the y-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1">#add a legend to the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">#show the final plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/eada386d170cc7d67af2f728396ce98cdc64239183f0f5317eb4bdb48e50ed6e.png" src="../../_images/eada386d170cc7d67af2f728396ce98cdc64239183f0f5317eb4bdb48e50ed6e.png" />
+</div>
+</div>
+<hr style="border:none;height:1px;background-color:black;">
+</section>
+<section id="comparing-the-model-and-the-observations">
+<h3>Comparing the model and the observations<a class="headerlink" href="#comparing-the-model-and-the-observations" title="Link to this heading">#</a></h3>
+<p>To include the observed velocities we calculated in Task 1 into the plot, we need to find the angle between our hypothesized Euler pole (<span class="math notranslate nohighlight">\(\lambda_P\)</span>,<span class="math notranslate nohighlight">\(\psi_P\)</span>) and the recorded positions along the mid-ocean ridge (<span class="math notranslate nohighlight">\(\lambda_R\)</span>,<span class="math notranslate nohighlight">\(\psi_R\)</span>). Again using our great-circle angle calculation, we can find the angle between the Euler pole and our observed locations along the ridge. We’ll call these angles <code class="docutils literal notranslate"><span class="pre">theta_PR</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_PR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lambda_R</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lambda_P</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lambda_R</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lambda_P</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi_P</span><span class="o">-</span><span class="n">phi_R</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now make a combined plot that includes our model and the magnetic anomaly-based observations (<code class="docutils literal notranslate"><span class="pre">V</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">theta_P</span><span class="p">),</span><span class="n">V_P</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span> <span class="c1">#plot model predictions as a red line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">theta_PR</span><span class="p">),</span><span class="n">V</span><span class="p">,</span><span class="s1">&#39;ob&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Observations&#39;</span><span class="p">)</span> <span class="c1">#plot observations as blue plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Angle from pole [degrees]&#39;</span><span class="p">)</span> <span class="c1">#label the x-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Spreading rate [cm/yr]&#39;</span><span class="p">)</span> <span class="c1">#label the y-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1">#add a legend to the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">#show the final plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4dc7b729ab9151b00fe3f6beddb51f52a52fecc0eaab7846414bf92c0976fefc.png" src="../../_images/4dc7b729ab9151b00fe3f6beddb51f52a52fecc0eaab7846414bf92c0976fefc.png" />
+</div>
+</div>
+<hr style="border:none;height:3px;background-color:black;">
+</section>
+</section>
+<section id="task-3-improving-the-model-observations-agreement">
+<h2>Task 3: Improving the model-observations agreement<a class="headerlink" href="#task-3-improving-the-model-observations-agreement" title="Link to this heading">#</a></h2>
+<p>Now that we have the model and the observations on the same plot, we can see that they don’t agree very well. While there will be some errors in the observations, the main reason for the large disagreement is the parameters for our Euler pole are incorrect. We selected the parameters <span class="math notranslate nohighlight">\(\lambda_P\)</span> and <span class="math notranslate nohighlight">\(\psi_P\)</span> and <span class="math notranslate nohighlight">\(\omega_P\)</span> based on modern observations, there is no reason to assume that pole is appropriate for 47 million years ago. Referring back to Euler’s equation:</p>
+<p><span class="math notranslate nohighlight">\(v = \omega R \sin \theta\)</span></p>
+<p>we can see how adjustments to our pole parameters can be used to improve the agreement between the model and the data. First let’s consider the clear underestimation of spreading rate by the model. In Euler’s equation, the velocity will primarily be controlled by <span class="math notranslate nohighlight">\(\omega_P\)</span> (this makes sense, as the angular velocity increases, the spreading rate will increase too). Let’s increase <span class="math notranslate nohighlight">\(\omega_P\)</span> to 4.0 <span class="math notranslate nohighlight">\(\times\)</span> 10<span class="math notranslate nohighlight">\(^{-7}\)</span> deg yr<span class="math notranslate nohighlight">\(^{-1}\)</span>, recalculate <code class="docutils literal notranslate"><span class="pre">V_P</span></code> and plot the result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mf">4.0E-7</span><span class="p">)</span> <span class="c1">#new angular velocity of pole in radians / year</span>
+<span class="n">V_P</span> <span class="o">=</span> <span class="n">omega_P</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_P</span><span class="p">)</span> <span class="c1">#update the model speeds</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">theta_P</span><span class="p">),</span><span class="n">V_P</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span> <span class="c1">#plot model predictions as a red line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">theta_PR</span><span class="p">),</span><span class="n">V</span><span class="p">,</span><span class="s1">&#39;ob&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Observations&#39;</span><span class="p">)</span> <span class="c1">#plot observations as blue plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Angle from pole [degrees]&#39;</span><span class="p">)</span> <span class="c1">#label the x-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Spreading rate [cm/yr]&#39;</span><span class="p">)</span> <span class="c1">#label the y-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1">#add a legend to the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">#show the final plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e13f7b3cc767ab44fc8fe0910ead6b13b3c27157be646b2e488eea50bf694c16.png" src="../../_images/e13f7b3cc767ab44fc8fe0910ead6b13b3c27157be646b2e488eea50bf694c16.png" />
+</div>
+</div>
+<p>That’s improved the agreement, but there is still clearly room for improvement. The other parameter in Euler’s equation we need to consider is <span class="math notranslate nohighlight">\(\theta\)</span>, which is controlled by the location of the pole. There are two main points to think about:</p>
+<p>(1) The model spreading rate will always reach a maximum at <span class="math notranslate nohighlight">\(\theta\)</span> = 90<span class="math notranslate nohighlight">\(^\circ\)</span> because <span class="math notranslate nohighlight">\(\sin(90)\)</span> = 1.</p>
+<p>(2) Adjusting <span class="math notranslate nohighlight">\(\lambda_P\)</span>,<span class="math notranslate nohighlight">\(\psi_P\)</span> will change the angle between the Euler pole and the observations.</p>
+<p>Therefore if we change the location of the pole we can try to horizontally align the observations and the model spreading rates. This is a little more tricky than improving the agreement in the vertical, but if you play around with the values you can get a reasonable agreement. The best fit I could find was; <span class="math notranslate nohighlight">\(\lambda_P\)</span> = 51.8<span class="math notranslate nohighlight">\(^\circ\)</span>N, <span class="math notranslate nohighlight">\(\psi_P\)</span> = 44.0<span class="math notranslate nohighlight">\(^\circ\)</span>W, and <span class="math notranslate nohighlight">\(\omega_P\)</span> = 4.15 <span class="math notranslate nohighlight">\(\times\)</span> 10<span class="math notranslate nohighlight">\(^{-7}\)</span> deg yr<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
+<p>We can use these pole parameters and again plot the results. First we update the pole and the resulting model spreading rates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambda_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mf">51.77</span><span class="p">)</span> <span class="c1">#latitude of pole in degrees</span>
+<span class="n">phi_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="o">-</span><span class="mf">44.0</span><span class="p">)</span> <span class="c1">#longitude of pole in degrees</span>
+<span class="n">omega_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mf">4.15E-7</span><span class="p">)</span> <span class="c1">#angular velocity of pole in degrees / year</span>
+<span class="n">V_P</span> <span class="o">=</span> <span class="n">omega_P</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_P</span><span class="p">)</span> <span class="c1">#update the model speeds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, changing the pole location also changes the pole-observations angles, which must be updated too:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_PR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lambda_R</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lambda_P</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lambda_R</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lambda_P</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi_P</span><span class="o">-</span><span class="n">phi_R</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can make our final plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">theta_P</span><span class="p">),</span><span class="n">V_P</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span> <span class="c1">#plot model predictions as a red line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">theta_PR</span><span class="p">),</span><span class="n">V</span><span class="p">,</span><span class="s1">&#39;ob&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Observations&#39;</span><span class="p">)</span> <span class="c1">#plot observations as blue plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Angle from pole [degrees]&#39;</span><span class="p">)</span> <span class="c1">#label the x-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Spreading rate [cm/yr]&#39;</span><span class="p">)</span> <span class="c1">#label the y-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1">#add a legend to the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">#show the final plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e72180003fdf879f25bb2e536760d046a1b0d45e4eaad6ef14caf1c3ee4cec08.png" src="../../_images/e72180003fdf879f25bb2e536760d046a1b0d45e4eaad6ef14caf1c3ee4cec08.png" />
+</div>
+</div>
+<p>We now have a reasonable agreement between the model and the observations. Of course the agreement is not perfect, but that is not surprising given uncertainties in the data and that we are estimating a single pole position to represent average spreading over the last 47 Ma.</p>
+<hr style="border:none;height:3px;background-color:black;">
+</section>
+<section id="conclusion-what-does-our-estimated-pole-correspond-to">
+<h2>Conclusion: What does our estimated pole correspond to?<a class="headerlink" href="#conclusion-what-does-our-estimated-pole-correspond-to" title="Link to this heading">#</a></h2>
+<p>This is a more complicated question than it may appear. We identified locations on the seafloor with the same age using magnetic anomaly 21, which has an age of 47 Ma. However, the distances between the locations on the western and eastern flanks is a function of seafloor spreading that has occurred since 47 Ma. During this time the Euler pole describing the separation of the South-American and Africa plates may have moved and the angular velocity may of changed.</p>
+<p>Therefore it is probably best to describe our estimated pole as the “average” Euler pole over the last 47 Ma.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Notebooks-deprecated/LAB4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-magnetic-anomaly-21-in-the-south-atlantic">Observations: Magnetic anomaly 21 in the South Atlantic</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#your-challenge">Your challenge</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entering-the-available-positional-information">Entering the available positional information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positions-along-the-mid-ocean-ridge">Positions along the mid-ocean ridge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-anomaly-21-positional-data-along-the-western-flank">Magnetic anomaly 21 positional data along the western flank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-anomaly-21-positional-data-along-the-eastern-flank">Magnetic anomaly 21 positional data along the eastern flank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-need-to-work-in-radians">We need to work in radians</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-following-solution-uses-a-combination-of-exposition-and-python-code-to-illustrate-the-step-by-step-process-of-estimating-an-euler-pole-based-on-the-provided-observations">The following solution uses a combination of exposition and Python code to illustrate the step-by-step process of estimating an Euler pole based on the provided observations.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-estimate-the-spreading-rates-along-the-ridge">Task 1: Estimate the spreading rates along the ridge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textrm-speed-frac-textrm-distance-textrm-time"><span class="math notranslate nohighlight">\(\textrm{speed} = \frac{\textrm{distance}}{\textrm{time}}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-r-theta"><span class="math notranslate nohighlight">\( D = R \theta\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-now-estimate-the-speed-using-python">Let’s now estimate the speed using Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-predicting-spreading-rate-from-an-euler-pole">Task 2: Predicting spreading rate from an Euler pole</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-omega-r-sin-theta"><span class="math notranslate nohighlight">\(v = \omega R \sin \theta\)</span>,</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-cos-1-sin-lambda-p-sin-lambda-r-cos-lambda-p-cos-lambda-r-cos-phi-r-phi-p"><span class="math notranslate nohighlight">\(\theta = \cos^{-1}[\sin \lambda_P \sin \lambda_R + \cos \lambda_P \cos \lambda_R \cos(\phi_R - \phi_P)]\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-an-euler-pole">Defining an Euler pole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-and-plotting-speeds">Predicting and plotting speeds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-model-and-the-observations">Comparing the model and the observations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-improving-the-model-observations-agreement">Task 3: Improving the model-observations agreement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-what-does-our-estimated-pole-correspond-to">Conclusion: What does our estimated pole correspond to?</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Heslop, Meghan Miller, Voon Hui Lai, Louis Moresi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
