@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>LAB 5 - Maps &#8212; EMSC 2022</title>
+    <title>LAB 5 - Maps - For HPO and MESA Students &#8212; EMSC 2022</title>
   
   
   
@@ -59,12 +59,10 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks/LAB-week5/LAB5_Maps2020';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks/LAB-week5/LAB5_Maps-HPO-MESA';</script>
     <script src="../../_static/font_button.js?v=3ec2d3a6"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="LAB 6 - Focal Mechanisms" href="../LAB-week6/LAB6-focal_mechanisms.html" />
-    <link rel="prev" title="On demand mapping services" href="LAB5_On_Demand_MapServices.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +125,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -183,10 +183,9 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Week5_Lab.html">Lab week 5</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Week5_Lab.html">Lab week 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="LAB5_On_Demand_MapServices.html">On demand mapping services</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">LAB 5 - Maps</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../LAB-week6/LAB6-focal_mechanisms.html">Lab week 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -269,7 +268,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week5/LAB5_Maps2020.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week5/LAB5_Maps-HPO-MESA.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +314,7 @@
       
       
       
-      <li><a href="../../_sources/Notebooks/LAB-week5/LAB5_Maps2020.ipynb" target="_blank"
+      <li><a href="../../_sources/Notebooks/LAB-week5/LAB5_Maps-HPO-MESA.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -397,7 +396,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>LAB 5 - Maps</h1>
+    <h1>LAB 5 - Maps - For HPO and MESA Students</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,8 +410,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lab-5-maps">
-<h1>LAB 5 - Maps<a class="headerlink" href="#lab-5-maps" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-5-maps-for-hpo-and-mesa-students">
+<h1>LAB 5 - Maps - For HPO and MESA Students<a class="headerlink" href="#lab-5-maps-for-hpo-and-mesa-students" title="Link to this heading">#</a></h1>
 <p>Here we will jump in and make some maps based upon what you have learned making the volcano map and the topography maps of where you grew up in the previous two steps of this Lab.</p>
 <p>Remember how we set up our codes by importing what we need in python.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
@@ -556,24 +555,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="LAB5_On_Demand_MapServices.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">On demand mapping services</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../LAB-week6/LAB6-focal_mechanisms.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LAB 6 - Focal Mechanisms</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
