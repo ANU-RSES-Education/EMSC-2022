@@ -1,0 +1,1089 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to scatter plots and the Gutenburg-Richter Relation &#8212; EMSC 2022</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customize.css?v=a313bec9" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks-deprecated/LAB-week8/LAB6-Gutenberg-Richter';</script>
+    <script src="../../_static/font_button.js?v=3ec2d3a6"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../FrontPage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/AuWorldEQ.jpg" class="logo__image only-light" alt="EMSC 2022 - Home"/>
+    <script>document.write(`<img src="../../_static/AuWorldEQ.jpg" class="logo__image only-dark" alt="EMSC 2022 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../FrontPage.html">
+                    Table of Contents
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Notebooks/LAB-week5/Week5_Lab.html">Lab week 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-week5/LAB5_On_Demand_MapServices.html">On demand mapping services</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Notebooks/LAB-week6/LAB6-focal_mechanisms.html">Lab week 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-week6/LAB6-izmit%2Bfocal%2Bmechanism.html">LAB 6 - Focal Mechanisms continued</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Notebooks/LAB-week7/LAB7-Raypaths.html">Lab week 7</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-week7/LAB7-NZ_Earthquake.html">Lab - New Zealand Earthquake Data</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Notebooks/LAB-week8/LAB8-Gutenberg-Richter.html">Lab week 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Notebooks/LAB-week10/EMSC2022_sem1_2023_lowerpuna.html">Lab week 10 part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Notebooks/LAB-week10/Practical10-Part5-MogiModel.html">Lab week 10 part 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.i.html">Lab week 11</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.ii.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.iii.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.iv.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.v.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Notebooks/LAB-convection/EMSC2022W11.vi.html">EMSC Week 11 - A detailed look at the depth-age relationship for the seafloor.</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Lectures/Index.html">Lecture notes EMSC 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Lectures/Lectures-MantleDynamics.html">Introduction to Mantle Dynamics (EMSC 2022)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks-deprecated/LAB-week8/LAB6-Gutenberg-Richter.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/ANU-RSES-Education/EMSC-2022" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Notebooks-deprecated/LAB-week8/LAB6-Gutenberg-Richter.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to scatter plots and the Gutenburg-Richter Relation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to scatter plots and the Gutenburg-Richter Relation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-make-a-plot-of-magnitude-vs-number-of-stations">Exercise 1:  Make a plot of Magnitude vs. Number of stations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gutenberg-richter-plots">Gutenberg-Richter plots</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-make-a-gutenburg-richter-distribution-plot">Exercise 2: Make a Gutenburg-Richter distribution plot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gr">Exercise 3:  You need to  plot a fitted line to the data.  Remember the equation for GR …</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-scatter-plots-and-the-gutenburg-richter-relation">
+<h1>Introduction to scatter plots and the Gutenburg-Richter Relation<a class="headerlink" href="#introduction-to-scatter-plots-and-the-gutenburg-richter-relation" title="Link to this heading">#</a></h1>
+<p>This lesson will introduce scatter plots and how to make them in several different ways. We will start by importing the ANSS earthquake catalog which you can download <a class="reference external" href="http://www.ncedc.org/anss/catalog-search.html">here</a>. For your convenience this file is also provided in the data folder.</p>
+<p>The catalog provided is for magnitude &gt;= 5 events occurring between 1997 and 2009 worldwide. For easy import, it is best to download a CSV version.</p>
+<p>For additional details see the publication:
+John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Computation to Seismology Students. Seismological Research Letters ; 89 (3): 1165–1171. doi: <a class="reference external" href="https://doi.org/10.1785/0220170246">https://doi.org/10.1785/0220170246</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read the data, set space delimiter, and get rid of the dash line in 1st line after header</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/anss.csv&#39;</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Depth</th>
+      <th>Mag</th>
+      <th>Magt</th>
+      <th>Nst</th>
+      <th>Gap</th>
+      <th>Clo</th>
+      <th>RMS</th>
+      <th>SRC</th>
+      <th>Event</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1997/01/01</td>
+      <td>04:35:51.88</td>
+      <td>6.813</td>
+      <td>-72.894</td>
+      <td>163.7</td>
+      <td>5.3</td>
+      <td>Mw</td>
+      <td>150</td>
+      <td>1.10</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1997/01/01</td>
+      <td>22:32:32.30</td>
+      <td>-0.127</td>
+      <td>123.823</td>
+      <td>115.4</td>
+      <td>5.8</td>
+      <td>Me</td>
+      <td>178</td>
+      <td>1.01</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1997/01/01</td>
+      <td>22:43:32.31</td>
+      <td>-5.977</td>
+      <td>129.665</td>
+      <td>177.0</td>
+      <td>5.0</td>
+      <td>Mb</td>
+      <td>31</td>
+      <td>0.77</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1997/01/02</td>
+      <td>02:57:51.65</td>
+      <td>-23.860</td>
+      <td>-179.870</td>
+      <td>500.0</td>
+      <td>5.4</td>
+      <td>Mw</td>
+      <td>107</td>
+      <td>0.91</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1997/01/02</td>
+      <td>10:52:35.03</td>
+      <td>10.568</td>
+      <td>92.742</td>
+      <td>33.0</td>
+      <td>5.1</td>
+      <td>Mb</td>
+      <td>117</td>
+      <td>0.95</td>
+      <td>NEI</td>
+      <td>1.997010e+11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>What are these columns?</p>
+<p>Some are self explanatory but some are not:</p>
+<ul class="simple">
+<li><p>MagT - magnitude type, the way the magnitude was calculated</p></li>
+<li><p>Nst - the number of stations used to locate the earthquake</p></li>
+<li><p>Gap - azimuthal gap of stations used to locate the earthquake</p></li>
+<li><p>RMS - root mean square error for the location</p></li>
+<li><p>SRC - network organization that reported the event</p></li>
+<li><p>EventID - ID number assigned to the event</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Depth</th>
+      <th>Mag</th>
+      <th>Nst</th>
+      <th>RMS</th>
+      <th>Event</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>12835.000000</td>
+      <td>12835.000000</td>
+      <td>12835.000000</td>
+      <td>12835.000000</td>
+      <td>12835.000000</td>
+      <td>1.274000e+04</td>
+      <td>2.400000e+01</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2.457569</td>
+      <td>45.992318</td>
+      <td>62.271610</td>
+      <td>5.411432</td>
+      <td>153.968991</td>
+      <td>1.992723e+11</td>
+      <td>1.136930e+07</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>28.948117</td>
+      <td>119.242131</td>
+      <td>105.848819</td>
+      <td>0.425692</td>
+      <td>123.620500</td>
+      <td>1.324377e+10</td>
+      <td>1.205323e+07</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-65.736000</td>
+      <td>-179.994000</td>
+      <td>-5.000000</td>
+      <td>5.000000</td>
+      <td>0.000000</td>
+      <td>4.000000e-02</td>
+      <td>1.129580e+05</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-17.171000</td>
+      <td>-70.130000</td>
+      <td>10.000000</td>
+      <td>5.100000</td>
+      <td>63.000000</td>
+      <td>1.999100e+11</td>
+      <td>1.184708e+06</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>-1.549000</td>
+      <td>97.239000</td>
+      <td>33.000000</td>
+      <td>5.300000</td>
+      <td>116.000000</td>
+      <td>2.002011e+11</td>
+      <td>5.370876e+06</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>23.772000</td>
+      <td>142.433000</td>
+      <td>50.200000</td>
+      <td>5.600000</td>
+      <td>207.000000</td>
+      <td>2.004052e+11</td>
+      <td>2.125422e+07</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>86.283000</td>
+      <td>179.993000</td>
+      <td>691.600000</td>
+      <td>9.000000</td>
+      <td>929.000000</td>
+      <td>2.006031e+11</td>
+      <td>3.022827e+07</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Scatter plots are used to look at how two variables compare. For example, does the Magnitude of the earthquake correlate in some way to the number of stations used to locate it?</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-1-make-a-plot-of-magnitude-vs-number-of-stations">
+<h1>Exercise 1:  Make a plot of Magnitude vs. Number of stations<a class="headerlink" href="#exercise-1-make-a-plot-of-magnitude-vs-number-of-stations" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.plotting._core.FramePlotMethods object at 0x105ee78d0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can clean this plot up a lot though. Lets start by looking at the machinery that creates it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Mag&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Nst&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;None&#39;</span>
+       <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;violet&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Does the number of stations change for the magnitude?&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Stations&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Magnitude&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/1496be544bb4a36d606264be8ad65cdb4b28b1ce22504f99287e0afab7097011.png" src="../../_images/1496be544bb4a36d606264be8ad65cdb4b28b1ce22504f99287e0afab7097011.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="gutenberg-richter-plots">
+<h1>Gutenberg-Richter plots<a class="headerlink" href="#gutenberg-richter-plots" title="Link to this heading">#</a></h1>
+<p>In seismology, the Gutenberg–Richter law expresses the relationship between the magnitude and total number of earthquakes (that is the distribution) in any given region and time period of at least that magnitude.</p>
+<p><span class="math notranslate nohighlight">\(log_{10}N = a -bM\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(N = 10^{a-bM}\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N\)</span>  is the number of events having a magnitude, <span class="math notranslate nohighlight">\(\geq M\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span>  and <span class="math notranslate nohighlight">\(b\)</span>  are constants.</p></li>
+</ul>
+<p>It is assumed to be poissonian.</p>
+<p>To create the Gutenburg-Richter distribution of the earthquake magnitudes from the ANSS catalog, we are going to use numpy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.3, 5.8, 5. , ..., 5.1, 5.1, 5.1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">chist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">hist</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.0990099 ,  0.1980198 ,  0.2970297 ,  0.3960396 ,
+        0.4950495 ,  0.59405941,  0.69306931,  0.79207921,  0.89108911,
+        0.99009901,  1.08910891,  1.18811881,  1.28712871,  1.38613861,
+        1.48514851,  1.58415842,  1.68316832,  1.78217822,  1.88118812,
+        1.98019802,  2.07920792,  2.17821782,  2.27722772,  2.37623762,
+        2.47524752,  2.57425743,  2.67326733,  2.77227723,  2.87128713,
+        2.97029703,  3.06930693,  3.16831683,  3.26732673,  3.36633663,
+        3.46534653,  3.56435644,  3.66336634,  3.76237624,  3.86138614,
+        3.96039604,  4.05940594,  4.15841584,  4.25742574,  4.35643564,
+        4.45544554,  4.55445545,  4.65346535,  4.75247525,  4.85148515,
+        4.95049505,  5.04950495,  5.14851485,  5.24752475,  5.34653465,
+        5.44554455,  5.54455446,  5.64356436,  5.74257426,  5.84158416,
+        5.94059406,  6.03960396,  6.13861386,  6.23762376,  6.33663366,
+        6.43564356,  6.53465347,  6.63366337,  6.73267327,  6.83168317,
+        6.93069307,  7.02970297,  7.12871287,  7.22772277,  7.32673267,
+        7.42574257,  7.52475248,  7.62376238,  7.72277228,  7.82178218,
+        7.92079208,  8.01980198,  8.11881188,  8.21782178,  8.31683168,
+        8.41584158,  8.51485149,  8.61386139,  8.71287129,  8.81188119,
+        8.91089109,  9.00990099,  9.10891089,  9.20792079,  9.30693069,
+        9.40594059,  9.5049505 ,  9.6039604 ,  9.7029703 ,  9.8019802 ,
+        9.9009901 , 10.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0, 2067, 1896, 1817, 1408, 1313,
+        938,  737,  559,  411,  372,  283,  213,  169,  138,  114,   79,
+         71,   49,   40,   23,   29,   26,   18,   11,    8,   10,   11,
+          7,    8,    3,    1,    2,    0,    1,    1,    0,    1,    0,
+          0,    0,    1,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-2-make-a-gutenburg-richter-distribution-plot">
+<h1>Exercise 2: Make a Gutenburg-Richter distribution plot<a class="headerlink" href="#exercise-2-make-a-gutenburg-richter-distribution-plot" title="Link to this heading">#</a></h1>
+<p>We got you started but you need to plot the data …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gutenburg-Richter Distribution&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Gutenburg-Richter Distribution&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/5a7f74ff5dd31012075967179a2cc7cf948afef9ad433cb6d2e858f8f98c037e.png" src="../../_images/5a7f74ff5dd31012075967179a2cc7cf948afef9ad433cb6d2e858f8f98c037e.png" />
+</div>
+</div>
+<p>We quite frequently want to plot the fit of the <i>a</i> and <i>b</i> values of the gutenburg richter distribution. To do this, we are going to use the equation below which calculates the maximum likelihood of the distribution and returns the parameters:</p>
+<ul class="simple">
+<li><p><i>a</i> - the “productivity” of the distribution, but really just the y-intercept</p></li>
+<li><p><i>b</i> - the “mean magnitude” but really it’s just the slope</p></li>
+<li><p><i>bstdev</i> - the standard deviation of <i>b</i></p></li>
+<li><p><i>length</i> - the number of earthquakes used to calculate the values</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fmd_values</span><span class="p">(</span><span class="n">magnitudes</span><span class="p">,</span> <span class="n">bin_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    params magnitudes : numpy.array</span>
+<span class="sd">    params bin_width : float</span>
+<span class="sd">    </span>
+<span class="sd">    returns a,b,bstd, n-values if above the earthquake count threshold</span>
+<span class="sd">    else returns np.nans</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">minimum</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">average</span> <span class="o">=</span> <span class="n">magnitudes</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">b_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">average</span> <span class="o">-</span> <span class="p">(</span><span class="n">minimum</span> <span class="o">-</span> <span class="p">(</span><span class="n">bin_width</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">square_every_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">b_stddev</span> <span class="o">=</span> <span class="n">square_every_value</span><span class="p">((</span><span class="n">magnitudes</span> <span class="o">-</span> <span class="n">average</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">b_stddev</span> <span class="o">=</span> <span class="mf">2.3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b_stddev</span><span class="p">)</span> <span class="o">*</span> <span class="n">b_value</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">a_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">+</span> <span class="n">b_value</span> <span class="o">*</span> <span class="n">minimum</span>
+    
+    <span class="k">return</span> <span class="n">a_value</span><span class="p">,</span> <span class="n">b_value</span><span class="p">,</span> <span class="n">b_stddev</span><span class="p">,</span> <span class="n">length</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fmd_values</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9.3715887592244353, 1.0105590508862279, 1.0830164203641724e-15, 20835)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">bstd</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">fmd_values</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Mag</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have our values that represent the y-intercept (<i>a</i> value) and the slope (<i>b</i> value).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gr">
+<h1>Exercise 3:  You need to  plot a fitted line to the data.  Remember the equation for GR …<a class="headerlink" href="#exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gr" title="Link to this heading">#</a></h1>
+<p>We’ve started it for you, but you need to work through the calcuations and make the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e0</span><span class="p">,</span> <span class="mf">1e5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gutenburg-Richter Distribution&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="n">be13132e1651</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../_images/57bd74bef36d41a2ee37558a7e5a6fb9489acfa2810267925224748ada03c54b.png" src="../../_images/57bd74bef36d41a2ee37558a7e5a6fb9489acfa2810267925224748ada03c54b.png" />
+</div>
+</div>
+<p>This fit looks pretty good!</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Notebooks-deprecated/LAB-week8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to scatter plots and the Gutenburg-Richter Relation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-make-a-plot-of-magnitude-vs-number-of-stations">Exercise 1:  Make a plot of Magnitude vs. Number of stations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gutenberg-richter-plots">Gutenberg-Richter plots</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-make-a-gutenburg-richter-distribution-plot">Exercise 2: Make a Gutenburg-Richter distribution plot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-you-need-to-plot-a-fitted-line-to-the-data-remember-the-equation-for-gr">Exercise 3:  You need to  plot a fitted line to the data.  Remember the equation for GR …</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Heslop, Meghan Miller, Voon Hui Lai, Louis Moresi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
