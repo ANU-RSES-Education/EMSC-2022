@@ -425,7 +425,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="map-of-active-volcanoes">
 <h1>Map of active volcanoes<a class="headerlink" href="#map-of-active-volcanoes" title="Link to this heading">#</a></h1>
 <p>Here is an example of plotting a map of active volcanoes using data online at Oregon State University.  This example was written by Meghan Miller, of ANU.</p>
-<a class="reference internal image-reference" href="../../_images/volcano_map1.png"><img alt="../../_images/volcano_map1.png" src="../../_images/volcano_map1.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/volcano_map.png"><img alt="../../_images/volcano_map.png" src="../../_images/volcano_map.png" style="width: 50%;" />
 </a>
 <p>At the end of this script you will produce a map just like the one shown here.</p>
 <section id="resources-you-will-use">
@@ -453,6 +453,33 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">chartinfo</span> <span class="o">=</span> <span class="s1">&#39;Author: Meghan Miller | Data: Volcano World - volcano.oregonstate.edu&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">owslib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">owslib.wfs</span><span class="w"> </span><span class="kn">import</span> <span class="n">WebFeatureService</span>
+<span class="n">wfs11</span> <span class="o">=</span> <span class="n">WebFeatureService</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://webservices.volcano.si.edu/geoserver/GVP-VOTW/wfs&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="n">wfs11</span><span class="o">.</span><span class="n">contents</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GVP-VOTW:E3WebApp_Emissions&#39;: &lt;owslib.feature.wfs100.ContentMetadata at 0x14a4186b0&gt;,
+ &#39;GVP-VOTW:E3WebApp_Eruptions1960&#39;: &lt;owslib.feature.wfs100.ContentMetadata at 0x14a418d10&gt;,
+ &#39;GVP-VOTW:E3WebApp_HoloceneVolcanoes&#39;: &lt;owslib.feature.wfs100.ContentMetadata at 0x14a7ca450&gt;,
+ &#39;GVP-VOTW:Smithsonian_VOTW_Holocene_Eruptions&#39;: &lt;owslib.feature.wfs100.ContentMetadata at 0x14a7ca550&gt;,
+ &#39;GVP-VOTW:Smithsonian_VOTW_Holocene_Volcanoes&#39;: &lt;owslib.feature.wfs100.ContentMetadata at 0x14a0f8410&gt;,
+ &#39;GVP-VOTW:Smithsonian_VOTW_Pleistocene_Volcanoes&#39;: &lt;owslib.feature.wfs100.ContentMetadata at 0x14a0f9c70&gt;}
 </pre></div>
 </div>
 </div>

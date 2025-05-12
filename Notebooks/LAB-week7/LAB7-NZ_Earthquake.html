@@ -435,6 +435,24 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Try it here!</span>
+
+
+<span class="c1">#you can use these libraries by refering to their appreviation plt., np., pd. or ccrs</span>
+<span class="c1">#basic plotting library</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1">#scientifc computing library</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1">#data analysis tool</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1">#mapping toolkit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy</span>
+
+<span class="c1">#seismic toolkit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">obspy</span>
 </pre></div>
 </div>
 </div>
@@ -467,6 +485,10 @@ document.write(`
 <span class="n">st</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span><span class="n">norm_method</span><span class="o">=</span><span class="s1">&#39;trace&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3d087f556401126c9f75a9534b8be94efe70707c892198f6a73df08eed7d7490.png" src="../../_images/3d087f556401126c9f75a9534b8be94efe70707c892198f6a73df08eed7d7490.png" />
+<img alt="../../_images/3d087f556401126c9f75a9534b8be94efe70707c892198f6a73df08eed7d7490.png" src="../../_images/3d087f556401126c9f75a9534b8be94efe70707c892198f6a73df08eed7d7490.png" />
 </div>
 </div>
 <p>Note the difference in amplitude and arrival times in these seismograms. Generally, later arrivals and smaller amplitudes mean a greater distance between earthquake and seismometer! But let’s be a bit more precise. The cell below computes the travel times for primary and secondary waves as a function of distance to the earthquake. The predictions are based on an Earth that is perfectly spherically symmetric. In this case, we will use a 1D velocity model of the Earth called IASP91 which was developed by Professor Kennett here at RSES.</p>
@@ -505,6 +527,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;P&#39;, &#39;S&#39;])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -540,6 +567,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4f2a60c543e3f58b367f01f88804ef1f233fd5b009bd268ba48fde5e6874ffea.png" src="../../_images/4f2a60c543e3f58b367f01f88804ef1f233fd5b009bd268ba48fde5e6874ffea.png" />
 </div>
 </div>
 <p>The blue curve matches the first arrivals very well. In most seismograms, it is harder to see a clear secondary arrival, but we hope you agree that the red line and secondary arrivals in the data match reasonably well. Finally, we can view the epicenter on a map of New Zealand.</p>
@@ -585,6 +615,13 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/lmoresi/miniforge3/envs/emsc2022/lib/python3.10/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_land.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<img alt="../../_images/ed0f182c559efc9ea23ee7ee5ed1cd8b55042078bee1a4a3b2c73713495c865f.png" src="../../_images/ed0f182c559efc9ea23ee7ee5ed1cd8b55042078bee1a4a3b2c73713495c865f.png" />
 </div>
 </div>
 </section>
