@@ -1,0 +1,130 @@
+<html><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-2DVXD3M3LB"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-2DVXD3M3LB");</script><title>Dataset Information</title>
+<style type="text/css">
+<!-- ul {list-style-type: none;} -->
+</style>
+</head>
+<body>
+<h3>Dataset Information</h3>
+<table>
+
+<tr><td align=right valign=top><b>Conventions</b>:</td>
+<td align=left>CF-1.0<br></td></tr>
+
+<tr><td align=right valign=top><b>title</b>:</td>
+<td align=left>The GEBCO One Minute Grid - a continuous terrain model for oceans and land at one arc-minute intervals<br></td></tr>
+
+<tr><td align=right valign=top><b>institution</b>:</td>
+<td align=left>On behalf of the General Bathymetric Chart of the Oceans (GEBCO) the data are held at the British Oceanographic Data Centre (BODC).<br></td></tr>
+
+<tr><td align=right valign=top><b>source</b>:</td>
+<td align=left>The grid is largely based on the bathymetric contours contained in the GEBCO Digital Atlas (GDA) with existing gridded data sets used in some areas. Land elevations are derived from the Global Land One-km Base Elevation (GLOBE) database. Further information can be found in the documentation that accompanies the data set. http://www.gebco.net/data_and_products/gridded_bathymetry_data/<br></td></tr>
+
+<tr><td align=right valign=top><b>history</b>:</td>
+<td align=left>This is version 2.0 of the data set, released in November 2008<br></td></tr>
+
+<tr><td align=right valign=top><b>references</b>:</td>
+<td align=left>Information on the data set is available from the internet: http://www.gebco.net/data_and_products/gridded_bathymetry_data/<br></td></tr>
+
+<tr><td align=right valign=top><b>comment</b>:</td>
+<td align=left>The data in the GEBCO One Minute Grid should not be used for navigation or any purpose relating to safety at sea.<br></td></tr>
+
+<tr><td align=right valign=top><b>node_offset</b>:</td>
+<td align=left>0<br></td></tr>
+
+<tr><td align=right valign=top><b>History</b>:</td>
+<td align=left>Translated to CF-1.0 Conventions by Netcdf-Java CDM (NetcdfCFWriter)
+Original Dataset = /local/webassdata/grid/gebco/GRIDONE_2D_301381.nc; Translation Date = Thu Mar 26 09:04:40 GMT 2015<br></td></tr>
+</table>
+<p>
+
+<hr>
+<h3>Variables in this Dataset</h3>
+<table>
+<tr><td align=right valign=top><b>elevation</b>:</td>
+<td align=left valign=top>Grid
+<ul>
+<li> <b> long_name: </b> Elevation relative to sea level </li>
+<li> <b> units: </b> m </li>
+<li> <b> scale_factor: </b> 1.0 </li>
+<li> <b> add_offset: </b> 0.0 </li>
+<li> <b> actual_range: </b> -10577.0, 8430.0 </li>
+<li> <b> coordinates: </b> lat lon  </li>
+
+</ul>
+<table>
+<tr>
+<td align=right valign=top><b>elevation</b>:</td>
+<td align=left valign=top>Array of 16 bit Integers [lat = 0..1080][lon = 0..3300]
+
+<ul>
+<li> <b> long_name: </b> Elevation relative to sea level </li>
+<li> <b> units: </b> m </li>
+<li> <b> scale_factor: </b> 1.0 </li>
+<li> <b> add_offset: </b> 0.0 </li>
+<li> <b> actual_range: </b> -10577.0, 8430.0 </li>
+<li> <b> coordinates: </b> lat lon  </li>
+
+</ul>
+</td>
+</tr>
+<tr>
+<td align=right valign=top><b>lat</b>:</td>
+<td align=left valign=top>Array of 64 bit Reals [lat = 0..1080]
+
+<ul>
+<li> <b> standard_name: </b> latitude </li>
+<li> <b> long_name: </b> latitude </li>
+<li> <b> units: </b> degrees_north </li>
+<li> <b> axis: </b> Y </li>
+<li> <b> _CoordinateAxisType: </b> Lat </li>
+
+</ul>
+</td>
+</tr>
+<tr>
+<td align=right valign=top><b>lon</b>:</td>
+<td align=left valign=top>Array of 64 bit Reals [lon = 0..3300]
+
+<ul>
+<li> <b> standard_name: </b> longitude </li>
+<li> <b> long_name: </b> longitude </li>
+<li> <b> units: </b> degrees_east </li>
+<li> <b> axis: </b> X </li>
+<li> <b> _CoordinateAxisType: </b> Lon </li>
+
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr><tr><td align=right valign=top><b>lat</b>:</td>
+<td align=left valign=top>Array of 64 bit Reals [lat = 0..1080]
+
+<ul>
+<li> <b> standard_name: </b> latitude </li>
+<li> <b> long_name: </b> latitude </li>
+<li> <b> units: </b> degrees_north </li>
+<li> <b> axis: </b> Y </li>
+<li> <b> _CoordinateAxisType: </b> Lat </li>
+
+</ul>
+</td>
+</tr><tr><td align=right valign=top><b>lon</b>:</td>
+<td align=left valign=top>Array of 64 bit Reals [lon = 0..3300]
+
+<ul>
+<li> <b> standard_name: </b> longitude </li>
+<li> <b> long_name: </b> longitude </li>
+<li> <b> units: </b> degrees_east </li>
+<li> <b> axis: </b> X </li>
+<li> <b> _CoordinateAxisType: </b> Lon </li>
+
+</ul>
+</td>
+</tr></table>
+<p>
+
+<hr>
+<h2>No Dataset Specific Information Available.</h2><hr><hr>
+<h2>No Server Specific Information Available.</h2><hr>
+</body></html>

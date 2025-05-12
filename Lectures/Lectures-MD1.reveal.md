@@ -27,7 +27,7 @@ revealOptions:
 
 </div>
 
-<--o-->  
+<--o-->
 
 ## Mantle Convection
 
@@ -42,7 +42,7 @@ Convection in Earth’s interior is (a little bit) like a boiling pot (as we saw
 
 The hot soup rises to the surface, spreads and begins to cool, and then sinks back to the bottom of the pot where it is reheated and rises again. **Why does hot soup rise and cold soup sink** ?
 
-<--o-->  
+<--o-->
 
 ## General Observations on Convection
 
@@ -59,11 +59,11 @@ Buoyancy forces are at work and viscous forces counteract these forces once the 
 
 $$
 \textrm{buoyancy} \propto g \rho_0 \alpha(1-\Delta T)
-$$ 
+$$
 
 Convection like this will only work when the soup is heated from below or, in the case of the Earth, if it is heated from within by radioactivity. **( Can you see why ?)**
 
-<--o-->  
+<--o-->
 
 ## General Observations on Convection
 
@@ -78,21 +78,21 @@ Convection like this will only work when the soup is heated from below or, in th
 </video>
 </center>
 
-Convection is one of the ways we transfer heat from hot regions deep in the Earth to cooler, shallow regions. 
+Convection is one of the ways we transfer heat from hot regions deep in the Earth to cooler, shallow regions.
 
-<--o-->  
+<--o-->
 
-## Heat Transfer 
+## Heat Transfer
 
 !["Kmecfiunit, cmglee, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons"](https://upload.wikimedia.org/wikipedia/commons/f/f4/Heat-transmittance-means2.jpg) <!-- .element style="height:250px; float:right;" -->
 
 
-Other ways that heat can be transferred include *radiation*, *advection*, and *conduction*. 
+Other ways that heat can be transferred include *radiation*, *advection*, and *conduction*.
 
 
-**Advection** of heat is where some object carries an excess (or defecit of) heat energy from place to place. 
+**Advection** of heat is where some object carries an excess (or defecit of) heat energy from place to place.
 
-**Conduction** is the transfer of heat (or electric current) from one substance to another by direct contact (lattice vibrations / electrons). 
+**Conduction** is the transfer of heat (or electric current) from one substance to another by direct contact (lattice vibrations / electrons).
 
 **Radiation** is the transfer of heat energy by photons that pass between two materials. It does not require any physical contact or indermediary material (e.g. it is not a problem to transfer heat across a vacuum this way).
 
@@ -107,7 +107,7 @@ Other ways that heat can be transferred include *radiation*, *advection*, and *c
 
 
 $$
-  Q=-\frac{k A \Delta T}{L} 
+  Q=-\frac{k A \Delta T}{L}
 $$
 
 </br>
@@ -118,39 +118,39 @@ note: We could add an "advanced" slide here to explain the differential equation
 
 <--o-->
 
-## Conduction & Fourier's Law 
+## Conduction & Fourier's Law
 
 **Fourier's Law** is explained using a simple thought experiment such as this one but it actually refers to the fact that heat
-flows *down a temperature gradient*. 
+flows *down a temperature gradient*.
 
 ![Heat Flux](images/HeatFlux.png) <!-- .element style="height:300px; float:right" -->
 
 
-$$ q = - k \frac{dT}{dx} $$ 
+$$ q = - k \frac{dT}{dx} $$
 
 $q, (W/m^2)$ is called the heat flux and measures the flow of heat per unit area perpendicular to the temperature gradient
 
 
 <--o-->
 
-## Thermal diffusion & Fourier's Law 
+## Thermal diffusion & Fourier's Law
 
-If the heat flux into a region is not balanced by the heat flux out, the region must change temperature. For example, if more heat flow into a region than is flowing out, it will become warmer. 
+If the heat flux into a region is not balanced by the heat flux out, the region must change temperature. For example, if more heat flow into a region than is flowing out, it will become warmer.
 
 ![FourierExperiment](images/HeatFlux2.png) <!-- .element style="height:300px; float:right" -->
 
-This process reduces the amplitude of temperature variations over time and makes the temperature smoother. 
+This process reduces the amplitude of temperature variations over time and makes the temperature smoother.
 
-The heat flow in the diagram is away in both directions from the high temperature to the cooler areas. The loss of heat from this region is balanced by a reduced temperature. 
+The heat flow in the diagram is away in both directions from the high temperature to the cooler areas. The loss of heat from this region is balanced by a reduced temperature.
 
 Temperature extremes become smaller, gradients become lower, the heat flux everywhere becomes
-smaller: the temperature differences *decay* through time. 
+smaller: the temperature differences *decay* through time.
 
 <--v-->
 
 ## Newton's Law of Cooling (advanced)
 
-Another example of "thermal decay" occurs when we have a hot body in a cool environment loosing heat through its surface according to the Fourier Law. 
+Another example of "thermal decay" occurs when we have a hot body in a cool environment loosing heat through its surface according to the Fourier Law.
 
 ![NewtonExperiment](images/NewtonsLawOfCooling.png) <!-- .element style="height:300px; float:right" -->
 
@@ -160,7 +160,7 @@ $$
   \frac{dT}{dt} \propto T - T_0  \quad \rightarrow \quad T = T_1 e^{-\lambda t}
 $$
 
-This is exactly the same equation for the anomalous temperature as for the quantity of a radioactive isotope remaining after a certain time and has the same solution with $\lambda$ a constant for a particular experiment.  
+This is exactly the same equation for the anomalous temperature as for the quantity of a radioactive isotope remaining after a certain time and has the same solution with $\lambda$ a constant for a particular experiment.
 
 
 <--v-->
@@ -180,7 +180,7 @@ $$
    \frac{\partial T}{\partial t} =  \frac{k}{\rho C_p} \frac{\partial^2 T}{\partial x^2} + H
 $$
 
-Fourier was one of the first to solve this mathematically and developed his method of summing harmonics (series solutions) along the way. 
+Fourier was one of the first to solve this mathematically and developed his method of summing harmonics (series solutions) along the way.
 
 <--o-->
 
@@ -188,7 +188,7 @@ Fourier was one of the first to solve this mathematically and developed his meth
 
 ![Convection cartoon](images/ConvectionCartoon.png) <!-- .element style="height:300px; float:right" -->
 
-The soup analogy is quite helpful because it demonstrateshow heat escaping from the interior of the planet can do mechanical work (a.k.a. a heat engine). 
+The soup analogy is quite helpful because it demonstrateshow heat escaping from the interior of the planet can do mechanical work (a.k.a. a heat engine).
 
 This heat engine is the driving force behind tectonic motion and the constructive side of of the geological cycle.
 
@@ -231,9 +231,9 @@ This shows the foundering of the cooler crust of the lake into the interior. New
 
 
 
-**What have we learned so far ?** 
+**What have we learned so far ?**
 
-If the Earth really follows this cartoon, we need to understand how solid rock can deform as though it was a viscous liquid. 
+If the Earth really follows this cartoon, we need to understand how solid rock can deform as though it was a viscous liquid.
 
 ![Convection cartoon](images/ConvectionCartoon.png) <!-- .element style="width:25%; float:right" -->
 
@@ -250,7 +250,7 @@ If the Earth really follows this cartoon, we need to understand how solid rock c
 
 </div>
 
-**(*)**:  How do we know that the outer core is not solid ? 
+**(*)**:  How do we know that the outer core is not solid ?
 
 **(†)**: If you are interested, read about crystal defects and deformation
 
@@ -292,19 +292,19 @@ Imagine a tank of **thick, viscous fluid** (like syrup, for example). This turns
 
 ![Shear](images/ShearFlow.png) <!-- .element style="width:35%; float:right; padding-left:30px; " -->
 
-Viscous deformation is an irreversible *flow* that occurs in response to an applied shear stress. 
+Viscous deformation is an irreversible *flow* that occurs in response to an applied shear stress.
 The stress is found to depend on the strength of the shearing *velocity gradient*.
 
 
 $$
-  \tau = \eta \frac{d v_1}{d x_2} 
-$$  
+  \tau = \eta \frac{d v_1}{d x_2}
+$$
 <!-- .element style="width:60%;" -->
 
 
 ![GC](images/GravityCurrentAnim.gif) <!-- .element style="width:35%; float:right; padding-left:30px;" -->
 
-Think of this as the stress that resists the shear deformation, i.e. how hard it is to stir the fluid. This is much harder if the fluid is **more viscous**. 
+Think of this as the stress that resists the shear deformation, i.e. how hard it is to stir the fluid. This is much harder if the fluid is **more viscous**.
 Or think of it as how fast the fluid responds to a given force (e.g. gravity) so a viscous gravity current will spread **more slowly** if the viscosity is high.
 
 Viscosity only opposes the formation of velocity gradients; not a driving force, only a resistance.
@@ -330,7 +330,7 @@ Viscosity only opposes the formation of velocity gradients; not a driving force,
 
 </center>
 
-In this toy model, do hot blobs and cold blobs behave in the same way 
+In this toy model, do hot blobs and cold blobs behave in the same way
 (other than moving up v. moving down ?)
 
 <--o-->
@@ -346,7 +346,7 @@ In this toy model, do hot blobs and cold blobs behave in the same way
 </video>
 </center>
 
-Now let us think about how the physical properties of the fluid and the boundary conditions change how this blob behaves.  
+Now let us think about how the physical properties of the fluid and the boundary conditions change how this blob behaves.
 
 $$ \textrm{Activity} = \frac{\textrm{Whatever tends to enhance the flow}}{\textrm{Whatever tends to retard the flow}} $$
 
@@ -379,7 +379,7 @@ $$ \mathrm{buoyancy} \propto g\rho_0\alpha\left(1-\Delta T\right) $$  <!-- .elem
 </video>
 </center>
 
-Lower strength of buoyancy forces on the left, increasing towards the right. 
+Lower strength of buoyancy forces on the left, increasing towards the right.
 
 Does *buoyancy* drive the flow harder when it is a stronger effect ?
 
@@ -408,7 +408,7 @@ Does *buoyancy* drive the flow harder when it is a stronger effect ?
 </video>
 </center>
 
-Lower viscous drag stresses on the left, increasing towards the right. 
+Lower viscous drag stresses on the left, increasing towards the right.
 
 Does *viscous drag* drive the flow harder when it is a stronger effect ?
 
@@ -417,8 +417,8 @@ Does *viscous drag* drive the flow harder when it is a stronger effect ?
 ## Thermal conductivity (or diffusivity)
 
 $$
-   \frac{\partial T}{\partial t} =  \color{blue}{\frac{k}{\rho C_p}} \frac{\partial^2 T}{\partial x^2} + H 
-                                 =  \color{blue}{\kappa}  \frac{\partial^2 T}{\partial x^2} + H 
+   \frac{\partial T}{\partial t} =  \color{blue}{\frac{k}{\rho C_p}} \frac{\partial^2 T}{\partial x^2} + H
+                                 =  \color{blue}{\kappa}  \frac{\partial^2 T}{\partial x^2} + H
 $$
 
 
@@ -443,7 +443,7 @@ $$
 </video>
 </center>
 
-Slower diffusion rates (lower diffusivity) on the left, faster towards the right. 
+Slower diffusion rates (lower diffusivity) on the left, faster towards the right.
 
 Does *thermal diffusivity* drive the flow harder when it is a stronger effect ?
 
@@ -472,7 +472,7 @@ Does *thermal diffusivity* drive the flow harder when it is a stronger effect ?
 </video>
 </center>
 
-Is the flow moving faster when the box is larger ? 
+Is the flow moving faster when the box is larger ?
 
 <--v-->
 
@@ -499,7 +499,7 @@ Is the flow moving faster when the box is larger ?
 </video>
 </center>
 
-Is the flow moving faster when the box is larger ? 
+Is the flow moving faster when the box is larger ?
 
 <--o-->
 
@@ -523,9 +523,9 @@ One reason we know the latter to be the valid relationship is that this quantity
 
 ## Dimensionless Numbers
 
-Ratios where the units cancel are called **dimensionless numbers**. For fluid dynamics, the following numbers appear again and again 
+Ratios where the units cancel are called **dimensionless numbers**. For fluid dynamics, the following numbers appear again and again
 
-**Rayleigh number** measures the intensity of buoyancy forces 
+**Rayleigh number** measures the intensity of buoyancy forces
 
 $$ \mathrm{Ra} = \frac{g\rho_0\alpha\Delta T d^3}{\kappa \eta} $$
 
@@ -535,7 +535,7 @@ $$ \mathrm{Re}=\frac{\rho V_0 d}{\eta} = \frac{V_0 d}{\nu}   $$
 
 **Prandtl number** measures stress diffusion compared to thermal diffusion
 
-$$ \mathrm{Pr} = \frac{\eta}{\rho \kappa} = \frac{\nu}{\kappa} $$ 
+$$ \mathrm{Pr} = \frac{\eta}{\rho \kappa} = \frac{\nu}{\kappa} $$
 
 <--o-->
 
@@ -544,7 +544,7 @@ $$ \mathrm{Pr} = \frac{\eta}{\rho \kappa} = \frac{\nu}{\kappa} $$
 
 ## Thermal Convection
 
-In very-viscous convection, only the Rayleigh number plays a role 
+In very-viscous convection, only the Rayleigh number plays a role
 ($\mathrm{Re}\rightarrow 0$ and $\mathrm{Pr} \rightarrow \infty$)
 
 The structure of the flow and the pattern of the temperature field is predictable once we know the Rayleigh number but it is helpful first to develop some feeling for the patterns by seeing them.
@@ -554,7 +554,7 @@ The structure of the flow and the pattern of the temperature field is predictabl
 *Blue  is cool, red is warm. The bottom of the box is kept hot, the top cold and the difference in temperature is $\Delta T$, the depth of the box is $d$ and so on. These numbers are set up so that the Rayleigh number is the required value. In a lab experiment, the simplest parameter to change is $\Delta T$ assuming that the material has a constant viscosity with $T$ and does not freeze, melt, burn or boil.*
 
 
-<--v-->  
+<--v-->
 
 ## Thermal Convection
 
@@ -570,7 +570,7 @@ Rayleigh number: $Ra=100$
 </center>
 
 
-<--v-->  
+<--v-->
 
 ## Thermal Convection
 
@@ -586,7 +586,7 @@ Rayleigh number: $Ra=1,000$
 </center>
 
 
-<--v-->  
+<--v-->
 
 ## Thermal Convection
 
@@ -603,7 +603,7 @@ Rayleigh number: $Ra=10,000$
 
 
 
-<--v-->  
+<--v-->
 
 ## Thermal Convection
 
@@ -620,7 +620,7 @@ Rayleigh number: $Ra=100,000$
 
 
 
-<--v-->  
+<--v-->
 
 ## Thermal Convection
 
@@ -637,7 +637,7 @@ Rayleigh number: $Ra=1,000,000$
 
 
 
-<--v-->  
+<--v-->
 
 ## Thermal Convection
 
@@ -672,18 +672,30 @@ The pattern is not changed much when we make the box a little wider
 
 <--v-->
 
-## Flat Earth, Round Earth
 
-<center>
+
+## Flat Earth, Round Earth
 
 Rayleigh number: $Ra=1,000,000$
 
-<video autoplay controls loop height="300">
-    <source src="movies/Ra1e6-annu.mp4"
+<center>
+<video autoplay controls loop height="315">
+    <source src="movies/Annulus1e6_large_core.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 
+<video autoplay controls loop height="315">
+    <source src="movies/Annulus1e6_normal_core.m4v"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+<video autoplay controls loop height="315">
+    <source src="movies/Annulus1e6_tiny_core.m4v"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
 </center>
 
 Nor does it make a qualitative difference if we account for the Earth's curvature
@@ -699,11 +711,7 @@ Nor does it make a qualitative difference if we account for the Earth's curvatur
 
 </center>
 
-In the sphere, the patterns are harder to see by eye, but it turns out that we can draw general conclusions from the 2D cases and they still hold in 3D. 
-
-
-
-
+In the sphere, the patterns are harder to see by eye, but it turns out that we can draw general conclusions from the 2D cases and they still hold in 3D.
 
 
 <--o-->
@@ -772,7 +780,7 @@ Rayleigh number: $Ra=10,000,000$
 </video>
 </center>
 
-<--o-->  
+<--o-->
 
 ## Understanding Thermal Convection
 
@@ -799,7 +807,7 @@ A relatively simple pattern emerges from the competition between advection of he
 
 </center>
 
-Convection length and timescales are determined by the Rayleigh number. 
+Convection length and timescales are determined by the Rayleigh number.
 
   - High $\mathrm{Ra}$ narrower boundary layers, higher temperature gradients
   - High $\mathrm{Ra}$ more likely to be time-dependent, unsteady
@@ -833,7 +841,7 @@ The temperature (velocity, stress etc) profiles vary systematically with $\mathr
 ## Nusselt number
 
 <div style="width:65%">
-Another, independent, dimensionless quantity can be derived for the convecting system and it is called the *Nusslet number*. 
+Another, independent, dimensionless quantity can be derived for the convecting system and it is called the *Nusslet number*.
 
 $$ \mathrm{Nu} = \frac{Q d}{k \Delta T} $$
 
@@ -850,13 +858,13 @@ $$ \mathrm{Nu} \propto \mathrm{Ra}^{1/3} $$
 
 ## Critical Rayleigh number
 
-It can be a little difficult to see from a small set of movies, but if we reduce the Rayleigh number enough, conduction completely wins over advection and no motion takes place at all. 
+It can be a little difficult to see from a small set of movies, but if we reduce the Rayleigh number enough, conduction completely wins over advection and no motion takes place at all.
 
 ![Critical Ra](images/crit_ra.png) <!-- .element style="width:35%; float:right " -->
 
 <div style="width:65%">
 
-This can be approached theoretically, and we find that there is a critical value of the Rayleigh number and a critical wavelength where this transition occurs. 
+This can be approached theoretically, and we find that there is a critical value of the Rayleigh number and a critical wavelength where this transition occurs.
 
 $$\mathrm{Ra}_c = \frac{27}{4} \pi^4 = 657.51 $$
 
@@ -893,7 +901,7 @@ Use the following values:
   - Thermal diffusivity, $\kappa \approx 10^{-7} \mathrm{m}^2 / \mathrm{s}$
   - Viscosity, $\eta \approx 10^{22} \mathrm{Pa.s}$
 
-</br> 
+</br>
 
 $$  \mathrm{Ra}_{\textrm{Earth}} = ? $$
 
@@ -909,16 +917,16 @@ $$  \mathrm{Ra}_{\textrm{Earth}} = ? $$
 
 Convection is a heat engine (i.e. it converts heat energy into mechanical work)
 
-Convection is a balance between heat transported by fluid motion and diffusion. 
+Convection is a balance between heat transported by fluid motion and diffusion.
 The fluid self-organises to create large scale patterns *“out of nowhere”*
 
 In tanks of viscous fluids like syrup or honey, convection depends on just the one free parameter which is a combination of fluid properties, geometry and boundary conditions — this is called the Rayleigh number (Ra).
 
-If we know Ra, we can predict the heat flow and typical velocity of the system 
+If we know Ra, we can predict the heat flow and typical velocity of the system
 
 If Ra is below a critical value, convection dies away but if it is more than (about) ten times this value then convection cannot be suppressed. The Earth’s mantle is very much super-critical and so it must be convecting.
 
-None of these simple models actually produce plate tectonics but they do still tell us about the heat flow in the Earth. 
+None of these simple models actually produce plate tectonics but they do still tell us about the heat flow in the Earth.
 
 <--o-->
 
@@ -941,10 +949,9 @@ None of these simple models actually produce plate tectonics but they do still t
   [Online book](https://anu-rses-education.github.io/EMSC-3002/FrontPage.html)
 with lecture materials, practicals and live computational examples.
 
-  Wattle (when available), Programs and Courses  
+  Wattle (when available), Programs and Courses
 
   [Source code](https://github.com/underworld-geodynamics-cloud/self-managing-jupyterhub)
-</div> 
+</div>
 
 <--o-->
-

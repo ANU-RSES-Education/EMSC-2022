@@ -1,0 +1,11 @@
+Dataset {
+    Grid {
+     ARRAY:
+        Int16 elevation[lat = 1081][lon = 3301];
+     MAPS:
+        Float64 lat[lat = 1081];
+        Float64 lon[lon = 3301];
+    } elevation;
+    Float64 lat[lat = 1081];
+    Float64 lon[lon = 3301];
+} ancillary_data/bathymetry/MED_GEBCO_1min.nc;

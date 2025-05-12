@@ -1,7 +1,7 @@
 # Outputs from the Examples
- 
+
 Notebooks/*.png
-Notebooks/Lab*/*.png 
+Notebooks/Lab*/*.png
 
 /Jupyterbook/_build
 /Lectures/static_slides/slideshows
@@ -14,6 +14,15 @@ WebSlides/.quarto
 
 .DS_Store
 **/.DS_Store
+
+# If you build locally
+#
+
+Lectures/node_modules
+Lectures/package-lock.json
+Lectures/package.json
+Lectures/static_slides/*
+
 
 # IDE files
 
