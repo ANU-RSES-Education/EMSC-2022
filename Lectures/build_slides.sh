@@ -6,18 +6,20 @@
 
 if ! command -v reveal-md &> /dev/null
 then
-    npm install -g reveal-md 
+    npm install -g reveal-md
 fi
 
 mkdir -p static_slides
 reveal-md  --static static_slides/slideshows \
-           --theme https://anu-rses-education.github.io/EMSC-2022/slideshows/_assets/css/anu.css \
+           --theme css/anu.css \
            --glob '**/*.reveal.md' \
            --separator '<--o-->' \
            --vertical-separator '<--v-->' \
-           --static-dirs movies,images  
+           --static-dirs movies,images
 
+
+# --theme https://anu-rses-education.github.io/EMSC-2022/slideshows/_assets/css/anu.css \
 
 
 # Note - a breaking (broken) change to the theme css in reveal-md means we have to point this to a URL
-# at the moment 
+# at the moment
