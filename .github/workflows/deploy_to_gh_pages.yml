@@ -73,15 +73,10 @@ jobs:
       #     cache-downloads: true
 
       - name: Install Conda environment with Micromamba
-        uses: mamba-org/setup-micromamba@v1
+        uses: mamba-org/setup-micromamba@v2
         with:
-          # environment-file is not assumed anymore
           environment-file: ./.github/workflows/envs/build_jb.yml
-          # create-args:
-          #   >- # beware the >- instead of |, we don't split on newlines but on spaces
-          #   python=3.10
-          #   numpy
-          # now called cache-environment
+          cache-downloads: true
           cache-environment: true
 
       # Build the book
