@@ -4,6 +4,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.10
+  - numpy < 2
   - matplotlib
   - pyvista[all]
   # - mpmath<=1.3
@@ -17,15 +18,15 @@ dependencies:
   - obspy
   - stripy
   - xarray
+  - owslib
+  - pydap
   - netcdf4
   - pip
-  - pip:  
-    - gmsh
-    - jupyterlab>=4.1
-    - jupytext>=1.16.1
-    - pygments>=2.17.0
-    - trame-vtk
-    - trame-vuetify
-    - litho1pt0
-
-  
+  - pip:
+      - gmsh
+      - jupyterlab>=4.1
+      - jupytext>=1.16.1
+      - pygments>=2.17.0
+      - trame-vtk
+      - trame-vuetify
+      - litho1pt0
