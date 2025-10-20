@@ -1,0 +1,163 @@
+---
+title: "Pixi Environment Management"
+---
+
+## What is Pixi?
+
+[Pixi](https://prefix.dev/docs/pixi/overview) is a fast, cross-platform package manager that manages both Python and system-level dependencies. It's similar to conda but faster and more reproducible.
+
+## Installing Pixi
+
+### macOS and Linux
+
+Using the install script:
+
+```bash
+curl -fsSL https://pixi.sh/install.sh | bash
+```
+
+Or using Homebrew (macOS):
+
+```bash
+brew install pixi
+```
+
+### Windows
+
+Using PowerShell:
+
+```powershell
+iwr -useb https://pixi.sh/install.ps1 | iex
+```
+
+Or using winget:
+
+```powershell
+winget install prefix-dev.pixi
+```
+
+### Verify Installation
+
+After installation, restart your terminal and verify:
+
+```bash
+pixi --version
+```
+
+You should see the pixi version number.
+
+## Why Pixi?
+
+- **Fast**: Much faster than conda
+- **Reproducible**: Lock files ensure everyone has identical environments
+- **Cross-platform**: Works on macOS, Linux, and Windows
+- **Multiple languages**: Handles Python, R, Julia, and system tools
+- **Task runner**: Built-in task management
+
+## Basic Usage
+
+### Install Dependencies
+
+```bash
+pixi install
+```
+
+This reads `pixi.toml` and creates a locked environment in `.pixi/envs/default/`.
+
+### Run Commands
+
+```bash
+# Run in pixi environment
+pixi run quarto render WebBook
+
+# Or activate shell
+pixi shell
+quarto render WebBook
+exit
+```
+
+### Add Packages
+
+```bash
+pixi add package-name
+```
+
+Or edit `pixi.toml` directly:
+
+```toml
+[dependencies]
+matplotlib = ">=3.8.0,<4"
+```
+
+Then run `pixi install` to update.
+
+## Configuration
+
+The `pixi.toml` file defines your environment:
+
+```toml
+[workspace]
+name = "your-course-name"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "linux-64", "win-64"]
+
+[dependencies]
+quarto = ">=1.6.42,<2"
+python = ">=3.10,<3.13"
+jupyterlite = ">=0.5.1,<0.6"
+```
+
+### Version Constraints
+
+- `">=1.0,<2"` - Any 1.x version
+- `"~=1.2.3"` - Compatible with 1.2.3
+- `"*"` - Any version (not recommended)
+
+## Common Tasks
+
+### Update All Packages
+
+```bash
+pixi update
+```
+
+### List Installed Packages
+
+```bash
+pixi list
+```
+
+### Clean Environment
+
+```bash
+rm -rf .pixi
+pixi install
+```
+
+## Comparison with Other Tools
+
+| Feature | Pixi | Conda | Pip + venv |
+|---------|------|-------|------------|
+| Speed | ⚡⚡⚡ | ⚡ | ⚡⚡ |
+| Reproducibility | ✅ | ✅ | ⚠️ |
+| System packages | ✅ | ✅ | ❌ |
+| Lock files | ✅ | ✅ | ⚠️ |
+| Cross-platform | ✅ | ✅ | ✅ |
+
+## Using pip Instead
+
+If you prefer pip, install Quarto separately and use:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Create `requirements.txt`:
+```
+jupyterlite>=0.5.1
+jupyterlite-pyodide-kernel>=0.5.2
+ipython>=9.4.0
+ipykernel>=6.30.1
+```

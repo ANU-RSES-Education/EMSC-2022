@@ -1,0 +1,259 @@
+---
+title: "Binder Integration"
+---
+
+## Overview
+
+While Pyodide and JupyterLite are excellent for simple interactive code examples, they have limitations when it comes to:
+
+- Complex network requests and API calls
+- Large data downloads
+- Packages not available in Pyodide
+- Computationally intensive operations
+- File system operations
+
+For these use cases, [Binder](https://mybinder.org/) provides a full-featured computing environment running on cloud servers.
+
+## What is Binder?
+
+Binder creates a live, executable environment from a GitHub repository. When students click a Binder link, they get:
+
+- Full Jupyter Lab environment
+- Complete Python package ecosystem
+- Network access for data downloads
+- Persistent sessions (while active)
+- Real file system
+- More computational resources
+
+## Basic Binder Setup
+
+### 1. Configure Your Repository
+
+Binder reads configuration from your repository root. Create an `environment.yml` file:
+
+```yaml
+name: emsc-course
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyter
+  - numpy
+  - matplotlib
+  - pandas
+  - xarray
+  - netcdf4
+  - pip
+  - pip:
+    - some-pip-only-package
+    # Add any pip-only packages here
+```
+
+This approach uses conda for most packages (faster, better dependency resolution) and pip only for packages not available in conda-forge.
+
+### 2. Add a Binder Badge
+
+Add to your README.md:
+
+```markdown
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ANU-RSES-Education/YOUR-REPO/HEAD)
+```
+
+Replace `YOUR-REPO` with your repository name.
+
+### 3. Link from Your Course
+
+In your Quarto book, add a link to Binder:
+
+```yaml
+# In WebBook/_quarto.yml
+format:
+  live-html:
+    code-links:
+      - text: Open in Binder
+        icon: rocket-takeoff
+        href: https://mybinder.org/v2/gh/ANU-RSES-Education/YOUR-REPO/HEAD
+```
+
+## Paired Repository Strategy (Recommended for RSES)
+
+For complex courses, we recommend a **paired repository approach**:
+
+### The Strategy
+
+1. **Main Course Repository** (e.g., `EMSC-4033`)
+   - Contains course book, slides, and content
+   - Built website deployed to GitHub Pages
+   - Lightweight for fast builds
+
+2. **Binder Companion Repository** (e.g., `EMSC-4033-Binder`)
+   - Dedicated to Binder environment
+   - Syncs notebooks and data from main repository
+   - Contains all heavy dependencies
+   - Optimized for interactive computing
+
+### Benefits
+
+- **Faster main repo builds** - No heavy Binder dependencies
+- **Flexible environment** - Can install anything needed
+- **Better caching** - Binder builds are cached separately
+- **Cleaner separation** - Content vs. compute environment
+
+### Setting Up a Paired Repository
+
+#### Step 1: Create Binder Repository
+
+Create a new repository: `YOUR-COURSE-NAME-Binder`
+
+#### Step 2: Configure to Pull From Main Repo
+
+Create `.binder/postBuild` script:
+
+```bash
+#!/bin/bash
+
+# Clone the main course repository
+git clone https://github.com/ANU-RSES-Education/YOUR-COURSE-NAME.git course-content
+
+# Copy notebooks to working directory
+cp -r course-content/WebBook/Notebooks/* notebooks/
+
+# Copy any data files
+if [ -d "course-content/WebBook/Data" ]; then
+    cp -r course-content/WebBook/Data ./
+fi
+
+echo "Course content loaded successfully"
+```
+
+Make it executable:
+```bash
+chmod +x .binder/postBuild
+```
+
+#### Step 3: Create environment.yml
+
+```yaml
+name: emsc-binder
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyter
+  - jupyterlab>=4.0
+  - numpy
+  - matplotlib
+  - pandas
+  - cartopy
+  - xarray
+  - netcdf4
+  - requests
+  - beautifulsoup4
+  # Add any packages you need
+```
+
+#### Step 4: Add start.sh (optional)
+
+Create a startup script that opens a specific notebook:
+
+```bash
+#!/bin/bash
+exec jupyter lab notebooks/Welcome.ipynb
+```
+
+#### Step 5: Link from Main Repository
+
+In your main course's `_quarto.yml`:
+
+```yaml
+code-links:
+  - text: Open in Binder
+    icon: rocket-takeoff
+    href: https://mybinder.org/v2/gh/ANU-RSES-Education/YOUR-COURSE-NAME-Binder/HEAD
+```
+
+## Automation Considerations
+
+::: {.callout-note}
+## Future Development
+
+Automating the Binder repository sync is on our roadmap. Potential approaches:
+
+1. **GitHub Actions** - Trigger on main repo push to update Binder repo
+2. **Git Submodules** - Link main repo as submodule
+3. **Dynamic fetching** - postBuild always pulls latest from main
+
+This requires careful design to avoid circular dependencies and ensure reliable builds.
+:::
+
+## When to Use What
+
+| Feature | Pyodide/JupyterLite | Binder |
+|---------|---------------------|--------|
+| **Setup** | None required | Click link, wait ~30s |
+| **Speed** | Instant | Initial build delay |
+| **Packages** | Limited to Pyodide | Full Python ecosystem |
+| **Data** | Small (<10MB) | Large datasets OK |
+| **Network** | Limited/proxied | Full access |
+| **Persistence** | Browser only | Session (few hours) |
+| **Best for** | Simple examples, teaching basics | Complex analysis, real research |
+
+## Best Practices
+
+### For Simple Interactive Examples
+- Use Pyodide in course pages
+- Great for teaching syntax and concepts
+- Students can experiment immediately
+
+### For Real Data Analysis
+- Provide Binder link
+- Include clear instructions
+- Pre-load data in Binder environment
+- Give realistic expectations (build time)
+
+### Hybrid Approach
+- Start with Pyodide for basics
+- Progress to Binder for applied work
+- Show same concepts in both environments
+
+## Example Workflow
+
+1. **Week 1-3**: Basic Python with Pyodide
+   - Variables, loops, functions
+   - Simple plotting
+   - No setup required
+
+2. **Week 4-6**: Introduce Binder
+   - "For the next exercise, click the Binder link"
+   - Work with real datasets
+   - More complex libraries
+
+3. **Projects**: Full Binder environment
+   - Students' own data analysis
+   - Complete research workflow
+
+## Troubleshooting Binder
+
+### Build Fails
+
+- Check `environment.yml` syntax
+- Ensure all packages are available in conda-forge
+- Review Binder build logs
+
+### Slow to Start
+
+- Binder caches builds - first time is slow
+- Subsequent launches are faster
+- Consider using repo2docker locally for testing
+
+### Session Died
+
+- Sessions timeout after ~10 minutes of inactivity
+- Warn students to save work frequently
+- Provide download instructions for results
+
+## Additional Resources
+
+- [Binder Documentation](https://mybinder.readthedocs.io/)
+- [Example Binder Repositories](https://github.com/binder-examples)
+- [repo2docker](https://repo2docker.readthedocs.io/) - Build Binder images locally

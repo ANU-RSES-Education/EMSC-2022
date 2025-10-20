@@ -1,32 +1,23 @@
 # Conda Environment for python packages running under BINDER
-name: EMSC-2022
+name: emsc_basics
 channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - numpy < 2
-  - matplotlib
-  - pyvista[all]
-  # - mpmath<=1.3
-  # - mesalib
-  - pandas
+  - mpmath<=1.3
+  - mesalib
   - numpy
   - scipy
   - h5py
   - sympy
-  - cartopy
-  - obspy
-  - stripy
-  - xarray
-  - owslib
-  - pydap
-  - netcdf4
+  - pytest
+  - pyvista[all]
   - pip
-  - pip:
-      - gmsh
-      - jupyterlab>=4.1
-      - jupytext>=1.16.1
-      - pygments>=2.17.0
-      - trame-vtk
-      - trame-vuetify
-      - litho1pt0
+  - pip:  
+    - gmsh
+    - jupyterlab>=4.1
+    - jupytext>=1.16.1
+    - pygments>=2.17.0
+    - trame-vtk
+    - trame-vuetify
+  

@@ -1,0 +1,69 @@
+project:
+  type: website
+  output-dir: ../_build/docs
+
+website:
+  title: "EMSC Quarto Course Template"
+  description: "Documentation for the EMSC Quarto Book Course Template"
+
+  navbar:
+    logo: ANU-logo.png
+    background: "#C58812"
+    foreground: white
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Getting Started"
+        file: getting-started.qmd
+      - text: "Configuration"
+        file: configuration.qmd
+      - text: "Customization"
+        file: customization.qmd
+      - text: "Template Sync"
+        file: template-sync.qmd
+    right:
+      - icon: github
+        href: https://github.com/ANU-RSES-Education/EMSC-QuartoBook-Course
+        aria-label: GitHub
+
+  sidebar:
+    style: "docked"
+    background: light
+    contents:
+      - section: "Introduction"
+        contents:
+          - index.qmd
+          - getting-started.qmd
+      - section: "Configuration & Customization"
+        contents:
+          - configuration.qmd
+          - customization.qmd
+          - pixi-environment.qmd
+      - section: "Features"
+        contents:
+          - webbook.qmd
+          - webslides.qmd
+          - jupyterlite.qmd
+          - pyodide.qmd
+          - binder.qmd
+      - section: "Maintenance"
+        contents:
+          - template-sync.qmd
+          - template-doctor.qmd
+          - github-actions.qmd
+          - troubleshooting.qmd
+
+  page-footer:
+    center: "EMSC Quarto Course Template Documentation"
+    right:
+      - text: "ANU Research School of Earth Sciences"
+        href: https://earthsciences.anu.edu.au/
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-fold: false

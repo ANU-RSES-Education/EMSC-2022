@@ -1,0 +1,133 @@
+---
+title: "WebBook - Course Notes"
+---
+
+The WebBook is the main component of your course - a searchable, interactive online textbook built with Quarto.
+
+## Structure
+
+```
+WebBook/
+├── _quarto.yml          # Configuration
+├── index.qmd            # Home page
+├── assets/              # Images, CSS, JS
+├── Module1/             # Your content
+│   ├── lecture1.qmd
+│   └── exercises.qmd
+└── Notebooks/           # Jupyter notebooks
+    └── analysis.ipynb
+```
+
+## Writing Content
+
+### Quarto Markdown (.qmd)
+
+Basic syntax:
+
+````markdown
+---
+title: "Lecture Title"
+---
+
+## Introduction
+
+Regular markdown text with **bold** and *italic*.
+
+### Code Examples
+
+```{{python}}
+import numpy as np
+x = np.array([1, 2, 3])
+print(x.mean())
+```
+
+### Math
+
+Inline math: $E = mc^2$
+
+Display math:
+$$
+\frac{\partial u}{\partial t} = \nabla^2 u
+$$
+````
+
+### Live Interactive Code
+
+With pyodide filter enabled:
+
+````markdown
+```{{pyodide-python}}
+# This runs in the browser!
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+plt.plot(x, np.sin(x))
+plt.show()
+```
+````
+
+## Features
+
+### Navigation
+
+- **Breadcrumbs**: Show current location
+- **Search**: Full-text search
+- **Table of Contents**: Auto-generated from headers
+
+### Cross-References
+
+Reference sections, figures, and equations:
+
+```markdown
+See @sec-introduction for details.
+
+![Caption](image.png){#fig-diagram}
+
+As shown in @fig-diagram...
+```
+
+### Callouts
+
+```markdown
+::: {.callout-note}
+This is important information
+:::
+
+::: {.callout-warning}
+Be careful here!
+:::
+
+::: {.callout-tip}
+Pro tip: ...
+:::
+```
+
+### Tabsets
+
+```markdown
+::: {.panel-tabset}
+
+## Tab 1
+Content for tab 1
+
+## Tab 2
+Content for tab 2
+
+:::
+```
+
+## Building
+
+```bash
+# Render entire book
+pixi run quarto render WebBook
+
+# Preview with live reload
+pixi run quarto preview WebBook
+
+# Render single page
+pixi run quarto render WebBook/Module1/lecture1.qmd
+```
+
+Output goes to `_build/book/`.

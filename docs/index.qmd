@@ -1,0 +1,93 @@
+---
+title: "EMSC Quarto Course Template"
+---
+
+## Overview
+
+The EMSC Quarto Course Template is a comprehensive GitHub template for creating quantitative Earth and Marine Sciences courses with interactive web-based content. Developed by the Research School of Earth Sciences (RSES) at the Australian National University, this template combines modern web technologies to provide students with an engaging learning experience.
+
+### Key Features
+
+::: {.grid}
+
+::: {.g-col-6}
+**📚 Quarto Book**
+
+- Beautiful, searchable course notes
+- Integrated code examples
+- Live Python execution in browser
+- PDF export capability
+:::
+
+::: {.g-col-6}
+**🎯 Reveal.js Slides**
+
+- Professional presentation slides
+- Embedded in course book
+- Standalone viewing option
+- Custom ANU theme
+:::
+
+::: {.g-col-6}
+**🐍 Pyodide Integration**
+
+- Run Python code directly in browser
+- No installation required
+- Access to scientific libraries
+- Interactive exercises
+:::
+
+::: {.g-col-6}
+**💻 JupyterLite**
+
+- Full Jupyter environment in browser
+- Work with notebooks online
+- No server setup needed
+- Persistent storage
+:::
+
+:::
+
+### Technology Stack
+
+This template leverages:
+
+- **[Quarto](https://quarto.org/)** - Scientific publishing system
+- **[Pixi](https://prefix.dev/docs/pixi/overview)** - Fast, cross-platform package manager
+- **[JupyterLite](https://jupyterlite.readthedocs.io/)** - Jupyter running in the browser
+- **[Pyodide](https://pyodide.org/)** - Python in WebAssembly
+- **[Reveal.js](https://revealjs.com/)** - HTML presentation framework
+- **GitHub Actions** - Automated builds and deployment
+
+## Quick Start
+
+### 1. Create Your Course Repository
+
+Click the **"Use this template"** button on the [GitHub repository](https://github.com/ANU-RSES-Education/EMSC-QuartoBook-Course) to create your own course.
+
+### 2. Customize Your Course
+
+- Update `WebBook/_quarto.yml` with your course details
+- Add your content to `WebBook/`
+- Create slides in `WebSlides/`
+
+### 3. Build and Deploy
+
+The template automatically builds and deploys to GitHub Pages when you push to the main branch.
+
+## Getting Help
+
+- Read the [Getting Started Guide](getting-started.qmd) for detailed setup instructions
+- Check [Troubleshooting](troubleshooting.qmd) for common issues
+- Open an issue on [GitHub](https://github.com/ANU-RSES-Education/EMSC-QuartoBook-Course/issues)
+
+## Examples
+
+Courses built with this template:
+
+- [EMSC-3022: Planetary Sciences](https://github.com/ANU-RSES-Education/EMSC-3022)
+- [Zero to Python for Earth Sciences](https://github.com/ANU-RSES-Education/Zero-2-Python-for-Earth-Sciences)
+
+## License
+
+This template is licensed under the MIT License. See [LICENSE](https://github.com/ANU-RSES-Education/EMSC-QuartoBook-Course/blob/main/LICENSE) for details.

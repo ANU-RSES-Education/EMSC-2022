@@ -1,0 +1,207 @@
+---
+title: "Template Synchronization"
+---
+
+## Overview
+
+The template includes an automated synchronization system that allows your course repository to receive updates from the template. This ensures you can benefit from bug fixes, new features, and improvements without manually merging changes.
+
+## How It Works
+
+### Automatic Sync Process
+
+1. **Monthly Check**: On the 1st of each month, GitHub Actions runs in your course repository
+2. **Comparison**: The action compares your repo with the template repository
+3. **Pull Request**: If changes are found, a PR is automatically created
+4. **Review**: You review the changes and decide whether to merge
+5. **Merge**: Accept the changes that make sense for your course
+
+### The Sync Workflow
+
+The synchronization is configured in `.github/workflows/template-sync.yml`:
+
+```yaml
+name: Check for updates to template
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"  # Monthly on the 1st
+  workflow_dispatch:      # Manual trigger
+
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: actions-template-sync
+        uses: AndreasAugustin/actions-template-sync@v2
+        with:
+          source_repo_path: ANU-RSES-Education/EMSC-QuartoBook-Course
+```
+
+## Manual Synchronization
+
+You can manually trigger a sync check:
+
+1. Go to your repository on GitHub
+2. Click **Actions** tab
+3. Select **"Check for updates to template"** workflow
+4. Click **"Run workflow"** button
+
+## What Gets Synced
+
+The sync will attempt to update:
+
+- ✅ Build scripts (`build.sh`)
+- ✅ GitHub Actions workflows (`.github/workflows/`)
+- ✅ Pixi configuration (`pixi.toml`)
+- ✅ Template utilities and helpers
+- ⚠️ Configuration templates (`_quarto.yml` structure) - **Handle with care**
+- ❌ Your course content (WebBook chapters, slides)
+- ❌ Your customizations (when in different files)
+
+::: {.callout-warning}
+## Special Consideration: _quarto.yml
+
+The `_quarto.yml` file is heavily modified in course repositories (it contains all your content structure). Template sync may suggest changes to this file, but these should be **carefully reviewed** before accepting.
+
+**Recommended approach:**
+- Review infrastructure changes (format settings, new features)
+- Keep your content structure (chapters, parts)
+- Merge selectively, don't blindly accept
+:::
+
+## Sync Configuration
+
+You can configure which files to ignore in the sync process. Edit `.github/workflows/template-sync.yml`:
+
+```yaml
+- name: actions-template-sync
+  uses: AndreasAugustin/actions-template-sync@v2
+  with:
+    source_repo_path: ANU-RSES-Education/EMSC-QuartoBook-Course
+    ignored_files: |
+      WebBook/_quarto.yml
+      WebSlides/_quarto.yml
+      WebBook/Module*/**
+```
+
+This prevents the sync from touching your content-heavy configuration files.
+
+## Handling Conflicts
+
+When a sync PR is created, you may see conflicts if you've customized the same files.
+
+### Strategy for Common Conflicts
+
+**`WebBook/_quarto.yml`**
+- Template changes: Infrastructure improvements (new features, bug fixes)
+- Your changes: Content structure, course title, author
+- **Resolution**: Carefully merge both - keep your content, accept infrastructure improvements
+
+**`pixi.toml`**
+- Template changes: Version bumps, new common dependencies
+- Your changes: Course-specific packages
+- **Resolution**: Merge dependency lists
+
+**`.github/workflows/publish.yml`**
+- Template changes: Build optimizations, new deployment features
+- Your changes: Usually none (unless you've customized deployment)
+- **Resolution**: Usually safe to accept template changes
+
+### Conflict Resolution Process
+
+1. **Review the PR**: Read the description of what changed
+2. **Check the diff**: Look at specific changes file by file
+3. **Test locally** (optional):
+   ```bash
+   # Fetch the sync PR branch
+   git fetch origin template-sync-<date>
+   git checkout template-sync-<date>
+
+   # Build and test
+   pixi run quarto render WebBook
+   ```
+4. **Resolve conflicts**: Either through GitHub UI or locally
+5. **Merge when ready**: Only after you're satisfied with the changes
+
+## Customization Strategy
+
+To minimize conflicts, follow these practices:
+
+### Separate Your Customizations
+
+**✅ Good**: Course-specific content in separate files
+```
+WebBook/
+  Module1/
+    lecture1.qmd      # Your content
+  Module2/
+    lecture2.qmd      # Your content
+```
+
+**❌ Avoid**: Heavily modifying template infrastructure files unless necessary
+
+### Use Comments to Mark Changes
+
+In files you must modify, mark your changes:
+
+```yaml
+# CUSTOM: Added for EMSC-3022 specific requirements
+custom-setting: value
+# END CUSTOM
+```
+
+This makes it easier to preserve your changes during merges.
+
+## Opting Out
+
+If you don't want automatic sync:
+
+1. Delete `.github/workflows/template-sync.yml`
+2. You can still manually pull updates when desired
+
+::: {.callout-tip}
+Even if you opt out of automatic sync, keeping the file with the schedule commented out lets you manually trigger updates when needed.
+:::
+
+## Sync Labels
+
+Pull requests from the sync action are labeled with:
+- `template_sync` - Identifies automated sync PRs
+
+You can configure additional labels in the workflow:
+
+```yaml
+pr_labels: template_sync,dependencies,infrastructure
+```
+
+## Troubleshooting
+
+**Sync PR has too many changes**
+
+This usually happens after a long time between syncs. Review carefully and consider:
+- Accepting in smaller chunks
+- Cherry-picking specific commits
+- Asking for help in the template repository issues
+
+**Sync fails with permissions error**
+
+Ensure GitHub Actions has permissions:
+1. Settings > Actions > General
+2. Workflow permissions: "Read and write permissions"
+3. "Allow GitHub Actions to create and approve pull requests" ✅
+
+**Want to sync specific files only**
+
+The action uses patterns. You can configure exclusions (advanced):
+
+```yaml
+pr_branch_name_prefix: template_sync_
+ignored_files: "WebBook/Module*/**,custom/**"
+```
