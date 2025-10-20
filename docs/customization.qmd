@@ -1,0 +1,264 @@
+---
+title: "Customization"
+---
+
+## Branding and Styling
+
+### Custom Logo
+
+Replace the default ANU logos with your institution's branding:
+
+```yaml
+# WebBook/_quarto.yml
+navbar:
+  logo: assets/your-logo.jpg
+
+sidebar:
+  logo: assets/your-sidebar-image.jpg
+```
+
+Place your logo files in `WebBook/assets/`.
+
+### Color Scheme
+
+Edit the color scheme to match your institution:
+
+```yaml
+format:
+  live-html:
+    linkcolor: "#YOUR_COLOR"
+
+navbar:
+  foreground: "#YOUR_COLOR"
+```
+
+For more extensive customization, edit `WebBook/assets/theme.scss`:
+
+```scss
+/*-- scss:defaults --*/
+$primary: #C58812;  // Your primary color
+$secondary: #333333;  // Your secondary color
+
+/*-- scss:rules --*/
+.navbar {
+  border-bottom: 3px solid $primary;
+}
+```
+
+### Typography
+
+Change fonts in `_quarto.yml`:
+
+```yaml
+format:
+  live-html:
+    mainfont: "Your Font Name"
+    fontsize: 1.0em
+    linestretch: 1.5
+```
+
+Popular web-safe fonts:
+- Georgia, Garamond (serif)
+- Helvetica, Arial (sans-serif)
+- "Courier New", Monaco (monospace)
+
+Or use Google Fonts - just include the name and Quarto will load it.
+
+## Content Structure
+
+### Custom Chapter Organization
+
+Create a logical structure for your course:
+
+```yaml
+chapters:
+  - part: "**Week 1: Foundations**"
+    chapters:
+      - Week1/lecture.qmd
+      - Week1/lab.qmd
+      - Week1/exercises.qmd
+
+  - part: "**Week 2: Applications**"
+    chapters:
+      - Week2/lecture.qmd
+      - Week2/lab.qmd
+
+  - part: "**Assessments**"
+    chapters:
+      - Assessments/assignment1.qmd
+      - Assessments/assignment2.qmd
+```
+
+### Including Notebooks
+
+Add Jupyter notebooks to your book:
+
+```yaml
+chapters:
+  - Notebooks/analysis.ipynb
+  - Notebooks/visualization.ipynb
+```
+
+Notebooks are rendered automatically by Quarto.
+
+## Interactive Features
+
+### Pyodide (Live Python)
+
+Enable live Python code execution in your pages:
+
+1. Uncomment the pyodide filter in `_quarto.yml`:
+```yaml
+format:
+  live-html:
+    filters:
+      - pyodide
+```
+
+2. Use executable code blocks:
+````markdown
+```{pyodide-python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.show()
+```
+````
+
+### Custom JavaScript
+
+Add interactive elements with custom JavaScript:
+
+Create `WebBook/assets/custom.js`:
+```javascript
+// Your custom JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Custom JS loaded');
+});
+```
+
+Include in `_quarto.yml`:
+```yaml
+format:
+  live-html:
+    include-in-header:
+      - text: |
+          <script src="assets/custom.js"></script>
+```
+
+## Slides Customization
+
+### Custom Slide Theme
+
+Edit `WebSlides/_quarto.yml`:
+
+```yaml
+format:
+  revealjs:
+    theme: [default, custom-theme.scss]
+    slide-number: true
+    logo: images/logo.png
+    footer: "Your Course | Session"
+```
+
+Create `WebSlides/custom-theme.scss`:
+```scss
+.reveal {
+  font-family: "Your Font";
+}
+
+.reveal h1 {
+  color: #YOUR_COLOR;
+}
+```
+
+### Slide Templates
+
+Create reusable slide layouts in `WebSlides/templates/`.
+
+## GitHub Pages Customization
+
+### Custom Domain
+
+To use a custom domain (e.g., course.your.edu):
+
+1. Add `WebBook/CNAME` file:
+```
+course.your.edu
+```
+
+2. Configure DNS:
+   - Add CNAME record pointing to `username.github.io`
+
+3. Enable custom domain in Settings > Pages
+
+### robots.txt and SEO
+
+Control search engine indexing:
+
+Create `WebBook/robots.txt`:
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://your-site.github.io/sitemap.xml
+```
+
+Add SEO metadata in `_quarto.yml`:
+```yaml
+website:
+  description: "Your course description"
+  open-graph: true
+  twitter-card: true
+```
+
+## Advanced Customizations
+
+### Custom Quarto Extensions
+
+Install Quarto extensions for additional features:
+
+```bash
+# In WebBook directory
+cd WebBook
+quarto add extension-name
+```
+
+Popular extensions:
+- `quarto-ext/fontawesome` - Font Awesome icons
+- `shafayetShafee/reveal-header` - Custom slide headers
+
+### Conditional Content
+
+Show different content based on output format:
+
+````markdown
+::: {.content-visible when-format="html"}
+This only appears in HTML
+:::
+
+::: {.content-visible when-format="pdf"}
+This only appears in PDF
+:::
+````
+
+### Custom Callouts
+
+Create custom callout styles:
+
+```scss
+// In assets/theme.scss
+div.callout-your-style {
+  border-left-color: #YOUR_COLOR;
+}
+```
+
+Use in content:
+````markdown
+::: {.callout-your-style}
+Your custom callout
+:::
+````

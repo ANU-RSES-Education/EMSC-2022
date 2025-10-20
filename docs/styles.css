@@ -1,0 +1,43 @@
+/* Custom styles for documentation site */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.g-col-6 {
+  grid-column: span 6;
+}
+
+/* Callout styling */
+.callout {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-left: 4px solid;
+  border-radius: 0.25rem;
+}
+
+/* Code blocks */
+pre.sourceCode {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+th {
+  background-color: #f8f9fa;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+}

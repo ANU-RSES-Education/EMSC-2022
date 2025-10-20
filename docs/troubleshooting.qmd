@@ -1,0 +1,219 @@
+---
+title: "Troubleshooting"
+---
+
+## Common Issues
+
+### Build Errors
+
+#### "Module not found: yaml"
+
+**Problem**: Missing Python dependencies
+
+**Solution**:
+```bash
+# Update pixi environment
+pixi install
+
+# Or if using pip
+pip install pyyaml
+```
+
+#### Quarto render fails with kernel error
+
+**Problem**: Jupyter kernel not found or misconfigured
+
+**Solution**:
+```bash
+# Ensure ipykernel is installed
+pixi install
+
+# Check kernel is available
+pixi run jupyter kernelspec list
+```
+
+### GitHub Actions Failures
+
+#### "Permission denied" on deployment
+
+**Problem**: GitHub Actions doesn't have write permissions
+
+**Solution**:
+1. Go to Settings > Actions > General
+2. Under "Workflow permissions", select "Read and write permissions"
+3. Check "Allow GitHub Actions to create and approve pull requests"
+
+#### Pages deployment not working
+
+**Problem**: GitHub Pages not configured correctly
+
+**Solution**:
+1. Settings > Pages
+2. Source: "GitHub Actions" (not "Deploy from branch")
+3. Wait a few minutes after first push
+
+### Local Development
+
+#### Preview server won't start
+
+**Problem**: Port already in use
+
+**Solution**:
+```bash
+# Use different port
+pixi run quarto preview WebBook --port 4000
+```
+
+#### Changes not appearing in preview
+
+**Problem**: Browser cache or frozen execution results
+
+**Solution**:
+```bash
+# Clear quarto cache
+rm -rf WebBook/.quarto
+
+# Hard refresh browser (Cmd+Shift+R or Ctrl+Shift+R)
+```
+
+### Template Sync Issues
+
+#### Sync PR has merge conflicts
+
+**Problem**: You've modified the same files as template updates
+
+**Solution**:
+```bash
+# Checkout the PR branch locally
+git fetch origin template-sync-YYYY-MM-DD
+git checkout template-sync-YYYY-MM-DD
+
+# Merge main into it
+git merge main
+
+# Resolve conflicts, then push
+git push origin template-sync-YYYY-MM-DD
+```
+
+#### Sync creates too many changes
+
+**Problem**: Long time between syncs, or extensive template modifications
+
+**Solution**:
+- Review changes carefully section by section
+- Consider cherry-picking specific improvements
+- May need to manually merge some changes
+
+## JupyterLite Issues
+
+### Notebooks not loading
+
+**Problem**: JupyterLite build failed or content not copied
+
+**Solution**:
+```bash
+# Check jupyterlite directory exists
+ls jupyterlite/content
+
+# Rebuild manually
+cd jupyterlite
+jupyter lite build --contents content --output-dir dist
+```
+
+### Python packages not available
+
+**Problem**: Package not included in Pyodide or requirements
+
+**Solution**:
+
+1. Check if package exists in [Pyodide packages](https://pyodide.org/en/stable/usage/packages-in-pyodide.html)
+2. Add to `jupyterlite/requirements.txt`
+3. Rebuild JupyterLite
+
+## Pixi Environment Issues
+
+### Lock file out of sync
+
+**Problem**: `pixi.lock` doesn't match `pixi.toml`
+
+**Solution**:
+```bash
+# Update lock file
+pixi install
+
+# Or clean and reinstall
+rm -rf .pixi
+pixi install
+```
+
+### Platform-specific issues
+
+**Problem**: Different OS or architecture
+
+**Solution**:
+Edit `pixi.toml` to include your platform:
+```toml
+platforms = ["osx-arm64", "osx-64", "linux-64", "win-64"]
+```
+
+## Getting Help
+
+If you're still stuck:
+
+1. **Check the documentation**: Review relevant docs pages
+2. **Search existing issues**: [GitHub Issues](https://github.com/ANU-RSES-Education/EMSC-QuartoBook-Course/issues)
+3. **Ask for help**: Open a new issue with:
+   - What you're trying to do
+   - What error you're getting
+   - Your environment (OS, Quarto version)
+   - Steps to reproduce
+
+## Useful Commands
+
+### Diagnostic Information
+
+```bash
+# Check Quarto version
+quarto check
+
+# Check pixi environment
+pixi info
+
+# List installed packages
+pixi list
+
+# Check git status
+git status
+git log --oneline -5
+```
+
+### Clean Build
+
+Sometimes a clean rebuild solves issues:
+
+```bash
+# Remove all build artifacts
+rm -rf _build
+rm -rf WebBook/.quarto
+rm -rf WebSlides/.quarto
+
+# Rebuild
+pixi run quarto render WebBook
+pixi run quarto render WebSlides
+```
+
+### Reset to Template State
+
+If you want to start fresh (⚠️ destroys local changes):
+
+```bash
+# Save your content first!
+cp -r WebBook/YourContent ~/backup/
+
+# Reset to template
+git fetch origin
+git reset --hard origin/main
+
+# Restore your content
+cp -r ~/backup/YourContent WebBook/
+```

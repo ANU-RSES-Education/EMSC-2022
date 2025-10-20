@@ -1,0 +1,158 @@
+---
+title: "Getting Started"
+---
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- A GitHub account
+- Git installed on your computer
+- [Pixi package manager](https://prefix.dev/docs/pixi/overview) (recommended) or Python 3.10+
+
+## Creating Your Course Repository
+
+### Step 1: Use This Template
+
+1. Go to the [EMSC-QuartoBook-Course repository](https://github.com/ANU-RSES-Education/EMSC-QuartoBook-Course)
+2. Click the green **"Use this template"** button
+3. Choose **"Create a new repository"**
+4. Fill in your repository details:
+   - **Owner**: Your GitHub username or organization
+   - **Repository name**: e.g., `EMSC-4033-2025`
+   - **Description**: Brief course description
+   - **Public/Private**: Choose based on your needs
+5. Click **"Create repository"**
+
+::: {.callout-note}
+When you create a repository from a template, you get a fresh repository with no connection to the original. This is intentional - your course content is independent.
+:::
+
+### Step 2: Clone Your Repository
+
+```bash
+git clone https://github.com/YOUR-USERNAME/YOUR-COURSE-NAME.git
+cd YOUR-COURSE-NAME
+```
+
+### Step 3: Set Up Your Environment
+
+#### Using Pixi (Recommended)
+
+Pixi manages all dependencies automatically:
+
+```bash
+# Install dependencies
+pixi install
+
+# Activate the environment
+pixi shell
+```
+
+#### Using Python/pip
+
+If you prefer not to use Pixi:
+
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install Quarto separately from https://quarto.org/docs/get-started/
+
+# Install Python dependencies
+pip install jupyterlite jupyterlite-pyodide-kernel ipython ipykernel
+```
+
+## First Build
+
+Test that everything works:
+
+```bash
+# Using pixi
+pixi run quarto render WebBook
+
+# Or directly if quarto is in your PATH
+quarto render WebBook
+```
+
+If successful, you'll see output in `_build/book/`.
+
+## Customizing Your Course
+
+### Update Course Information
+
+Edit `WebBook/_quarto.yml`:
+
+```yaml
+book:
+  title: "Your Course Title"  # Change this
+  author:
+    - "Your Name"              # Change this
+  date: "2025"                 # Update year
+```
+
+### Repository Links
+
+Update the GitHub repository links in `WebBook/_quarto.yml`:
+
+```yaml
+other-links:
+  - text: Github Repository
+    icon: github
+    href: https://github.com/YOUR-USERNAME/YOUR-COURSE-NAME
+```
+
+## Keeping Your Course Updated
+
+The template includes an interactive update script that checks for:
+- Extension updates
+- Python package updates
+- JupyterLite rebuild needs
+- Template improvements
+
+```bash
+./update-template.sh
+```
+
+See [Template Doctor](template-doctor.qmd) for details.
+
+## Next Steps
+
+- [Configure your course](configuration.qmd) - Detailed configuration options
+- [Customize the appearance](customization.qmd) - Themes, colors, and styling
+- [Set up automatic deployment](github-actions.qmd) - GitHub Pages configuration
+
+## Testing Locally
+
+Before pushing changes, test locally:
+
+```bash
+# Render the book
+pixi run quarto render WebBook
+
+# Preview in browser
+pixi run quarto preview WebBook
+```
+
+The preview server will open your course in a web browser with live reload.
+
+## Deploying to GitHub Pages
+
+Once you push to the `main` branch, GitHub Actions will automatically:
+
+1. Build your course book
+2. Build your slides
+3. Build JupyterLite
+4. Deploy everything to GitHub Pages
+
+Your course will be available at:
+```
+https://YOUR-USERNAME.github.io/YOUR-COURSE-NAME/
+```
+
+::: {.callout-tip}
+You may need to enable GitHub Pages in your repository settings:
+- Go to Settings > Pages
+- Set Source to "GitHub Actions"
+:::

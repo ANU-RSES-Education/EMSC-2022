@@ -1,0 +1,96 @@
+---
+title: "JupyterLite"
+---
+
+JupyterLite provides a full Jupyter environment running entirely in the browser - no server required!
+
+## What is JupyterLite?
+
+A WebAssembly-powered Jupyter running in your browser:
+- Full Python environment
+- Jupyter notebook and lab interface
+- File system in browser storage
+- No installation needed
+
+## Structure
+
+```
+jupyterlite/
+├── content/         # Notebooks to include
+├── requirements.txt # Python packages
+└── jupyter-lite.config.json
+```
+
+## Adding Notebooks
+
+Place `.ipynb` files in `jupyterlite/content/`:
+
+```bash
+cp MyNotebook.ipynb jupyterlite/content/
+```
+
+They'll be available in the JupyterLite file browser.
+
+## Python Packages
+
+Edit `jupyterlite/requirements.txt`:
+
+```
+numpy
+matplotlib
+pandas
+```
+
+Rebuild after changes:
+
+```bash
+cd jupyterlite
+jupyter lite build --contents content --output-dir dist
+```
+
+## Accessing
+
+After deployment, JupyterLite is available at:
+```
+https://your-site.github.io/your-repo/jupyterlite/
+```
+
+## Limitations
+
+JupyterLite runs entirely in the browser, which brings some constraints:
+
+### Network and Data
+
+- **Limited HTTP access**: CORS restrictions apply
+- **No direct downloads**: Can't fetch arbitrary data from the internet
+- **File size limits**: ~100MB practical limit
+- **Workaround**: Pre-load data files, or use Binder for data-intensive work
+
+### Package Availability
+
+- Only packages available in Pyodide
+- Check [Pyodide packages](https://pyodide.org/en/stable/usage/packages-in-pyodide.html)
+
+### Storage and Persistence
+
+- Files stored in browser only
+- Cleared if browser cache is cleared
+- No sharing between users
+- Download important results
+
+### Performance
+
+- Slower than server-based Jupyter
+- Limited memory
+- Better for learning than production
+
+## When to Use Binder Instead
+
+JupyterLite is excellent for teaching and simple examples, but for complex research work, consider [Binder](binder.qmd):
+
+- Large datasets from the internet
+- Complex package requirements
+- Network-intensive operations
+- Collaborative work
+- Production analysis
+```

@@ -1,0 +1,67 @@
+---
+title: "GitHub Actions"
+---
+
+The template uses GitHub Actions to automatically build and deploy your course whenever you push changes.
+
+## Workflows
+
+### 1. Publish Book and Slides
+
+**File**: `.github/workflows/publish.yml`
+
+Triggers on push to main branch:
+- Builds WebBook
+- Builds WebSlides
+- Deploys to GitHub Pages
+
+### 2. Build JupyterLite
+
+**File**: `.github/workflows/jupyterlite.yml`
+
+Builds and deploys JupyterLite separately.
+
+### 3. Template Sync
+
+**File**: `.github/workflows/template-sync.yml`
+
+Monthly check for template updates.
+
+## Deployment Process
+
+1. Push to main branch
+2. GitHub Actions triggered
+3. Environment set up (Quarto, Python)
+4. Content rendered
+5. Deployed to `gh-pages` branch
+6. Available at `https://username.github.io/repo/`
+
+## Configuration
+
+Enable GitHub Pages:
+1. Settings > Pages
+2. Source: "GitHub Actions"
+
+## Customizing Workflows
+
+### Change Trigger
+
+```yaml
+on:
+  push:
+    branches:
+      - main
+      - develop  # Also trigger on develop
+```
+
+### Add Build Steps
+
+```yaml
+- name: Run tests
+  run: |
+    pytest tests/
+```
+
+## Troubleshooting
+
+See [Troubleshooting](troubleshooting.qmd) for common issues.

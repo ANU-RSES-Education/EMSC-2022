@@ -1,0 +1,85 @@
+---
+title: "WebSlides - Presentations"
+---
+
+Create professional presentation slides that can be embedded in your book or viewed standalone.
+
+## Creating Slides
+
+Slides use Quarto with the reveal.js format:
+
+````markdown
+---
+title: "Lecture 1: Introduction"
+format: revealjs
+---
+
+## First Slide
+
+Content here
+
+## Second Slide
+
+- Point 1
+- Point 2
+
+## Slide with Code
+
+```{{python}}
+print("Hello, class!")
+```
+````
+
+## Features
+
+### Two-Column Layouts
+
+```markdown
+## Slide Title
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Left column content
+:::
+
+::: {.column width="50%"}
+Right column content
+:::
+
+::::
+```
+
+### Incremental Lists
+
+```markdown
+## Incremental Reveal
+
+::: {.incremental}
+- First point (appears on click)
+- Second point (appears on click)
+- Third point (appears on click)
+:::
+```
+
+### Speaker Notes
+
+```markdown
+## Slide Title
+
+Content visible to audience
+
+::: {.notes}
+These notes only visible in presenter mode
+:::
+```
+
+Press `S` during presentation to open speaker view.
+
+## Building
+
+```bash
+pixi run quarto render WebSlides
+```
+
+Output goes to `_build/slides/`.

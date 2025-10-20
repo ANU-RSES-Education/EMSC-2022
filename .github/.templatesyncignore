@@ -1,0 +1,15 @@
+# These will be copied from the template but not over-ridden after that
+# Configuration files and content should be left alone because they are 
+# expected to be over-ridden in the copies. Workflows have to be left out
+# because they trigger GitHub security issues 
+
+.github/workflows/**
+
+WebBook/**
+WebSlides/**
+
+BinderREADME.md
+README.md
+
+pixi.lock
+pixi.toml

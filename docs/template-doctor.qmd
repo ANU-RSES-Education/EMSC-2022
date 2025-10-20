@@ -1,0 +1,244 @@
+---
+title: "Template Doctor"
+---
+
+## Overview
+
+The Template Doctor is a planned diagnostic tool to help you keep your course repository up-to-date with the latest template improvements, extensions, and best practices.
+
+## Concept
+
+A script you can run locally to check:
+
+1. **Extension versions** - Are pyodide, jupyterlite, and other Quarto extensions current?
+2. **Configuration drift** - Has your setup diverged significantly from template best practices?
+3. **Dependency updates** - Are there newer versions of packages available?
+4. **Template improvements** - What new features are available in the template?
+
+## Planned Features
+
+### Version Checks
+
+```bash
+./template-doctor.sh --check-versions
+```
+
+Would report:
+```
+Checking template components...
+✓ Quarto: 1.6.42 (current)
+⚠ JupyterLite: 0.5.1 (0.6.0 available)
+✓ Pyodide extension: current
+⚠ r-wasm extension: update available
+```
+
+### Extension Updates
+
+```bash
+./template-doctor.sh --update-extensions
+```
+
+Would:
+- Check for extension updates
+- Optionally update them
+- Test that updates don't break your build
+
+### Configuration Audit
+
+```bash
+./template-doctor.sh --audit
+```
+
+Would check:
+- Are all recommended dependencies in `pixi.toml`?
+- Is `.gitignore` properly configured?
+- Are GitHub Actions up to date?
+- Are there template improvements you haven't adopted?
+
+### Template Diff
+
+```bash
+./template-doctor.sh --diff
+```
+
+Would show:
+- What has changed in the template since you created your repo
+- Categorized by: critical, recommended, optional
+- Helps you decide what to merge from template-sync PRs
+
+## Update Script - Available Now!
+
+An interactive update script is included in the template:
+
+```bash
+./update-template.sh
+```
+
+### What It Does
+
+The script intelligently checks and updates all template components:
+
+**1. Quarto Extensions**
+- Shows installed version of r-wasm/live extension
+- Queries GitHub for latest available version
+- Compares versions and indicates if update is available
+- Provides instructions for updating
+
+**2. Python Packages**
+- Runs `pixi update --dry-run` to check for available updates
+- Only prompts to update if updates are actually available
+- Shows key package versions when everything is current
+- Applies updates via `pixi update` if confirmed
+
+**3. JupyterLite**
+- Checks if source files have changed since last build
+- Compares modification times of `content/` and `requirements.txt` vs `dist/`
+- Only prompts to rebuild if changes are detected
+- Shows last build time when up to date
+- Updates timestamp after successful rebuild
+
+**4. Template Updates**
+- Fetches latest changes from template repository
+- Shows how many commits ahead the template is
+- Lists recent template changes
+- Provides git commands to review detailed changes
+
+**5. Test Build** (optional)
+- Offers to run a test build of WebBook
+- Verifies everything works after updates
+
+### Using the Update Script
+
+From your course repository root:
+
+```bash
+# Make it executable (first time only)
+chmod +x update-template.sh
+
+# Run the update check
+./update-template.sh
+```
+
+The script is interactive and will only make changes when you confirm.
+
+### Example Output
+
+```
+========================================
+EMSC Template Update Script
+========================================
+
+✓ Pixi found
+
+1. Checking Quarto extensions...
+✓ Found r-wasm/live extension (live-html/pyodide)
+   Installed version: 0.1.3
+   Latest release:    0.1.2
+   (You have a newer version than the latest release)
+
+2. Checking Python packages...
+   Checking for updates...
+✓ All packages are up to date
+
+   Key packages:
+   quarto                1.8.25
+   jupyterlite          0.5.1
+   ipython              9.6.0
+
+3. Checking JupyterLite...
+✓ Found JupyterLite configuration
+✓ JupyterLite build is up to date
+   Last built: 2025-10-18 17:09:15
+
+4. Checking for template updates...
+✓ Template remote found
+   Fetching latest template changes...
+✓ Template is up to date
+
+5. Test build
+   Run test build? (y/n)
+```
+
+## Implementation Status
+
+::: {.callout-tip}
+## Basic Version Now Available!
+
+A working update script (`update-template.sh`) is now included in the template. It handles:
+
+**Current Implementation: Bash Script** ✓
+- Simple, runs anywhere
+- Interactive prompts
+- Handles common update tasks
+- Safe (asks before changes)
+
+**Future Enhancements:**
+- More automated checking
+- YAML/TOML parsing for drift detection
+- Integration with GitHub Actions
+- Automatic version comparison
+:::
+
+## Contributing Ideas
+
+If you have ideas for what the Template Doctor should check or how it should work, please:
+
+1. Open an issue on the [template repository](https://github.com/ANU-RSES-Education/EMSC-QuartoBook-Course/issues)
+2. Share your use cases
+3. Suggest checks that would be helpful
+
+## Workarounds Until Template Doctor Exists
+
+### Manual Version Checking
+
+Check Quarto extensions:
+```bash
+cd WebBook
+quarto list extensions
+```
+
+Check for extension updates:
+```bash
+quarto update extensions
+```
+
+### Manual Dependency Checking
+
+Compare your `pixi.toml` with the template:
+```bash
+# In your course repo
+diff pixi.toml path/to/template/pixi.toml
+```
+
+### Manual Template Comparison
+
+Set template as remote to compare:
+```bash
+git remote add template https://github.com/ANU-RSES-Education/EMSC-QuartoBook-Course.git
+git fetch template
+git diff main template/main -- .github/workflows/
+```
+
+## Future Vision
+
+Ideally, Template Doctor would be:
+
+1. **Automatic** - Runs as part of CI/CD
+2. **Smart** - Understands which changes matter for your course
+3. **Helpful** - Provides actionable suggestions
+4. **Safe** - Never overwrites without permission
+
+Example workflow:
+```yaml
+# In .github/workflows/template-doctor.yml
+- name: Run Template Doctor
+  run: |
+    ./template-doctor.sh --check-all --report
+
+- name: Comment on PR
+  if: github.event_name == 'pull_request'
+  run: |
+    # Post Template Doctor findings as PR comment
+```
+
+This would give you automatic health checks on every PR.

@@ -1,0 +1,153 @@
+---
+title: "Configuration"
+---
+
+## Quarto Configuration
+
+The main configuration file is `WebBook/_quarto.yml`. This controls all aspects of your course book.
+
+### Basic Settings
+
+```yaml
+book:
+  title: "Your Course Title"
+  author:
+    - "Primary Author"
+    - "Secondary Author"  # Optional
+  date: "2025"
+  bread-crumbs: True  # Navigation breadcrumbs
+```
+
+### Theme and Styling
+
+The template uses the `live-html` format which supports interactive Python code:
+
+```yaml
+format:
+  live-html:
+    theme: [united, "assets/theme.scss"]
+    mainfont: "Jost"
+    fontsize: 0.9em
+    linestretch: 1.7
+    linkcolor: "#C58812"  # ANU honey color
+```
+
+You can customize:
+
+- `theme`: Choose from Quarto's built-in themes (united, cosmo, flatly, etc.)
+- `mainfont`: Any Google Font or web-safe font
+- `fontsize`: Adjust base font size
+- `linkcolor`: Use your institution's colors
+
+### Navbar and Sidebar
+
+```yaml
+navbar:
+  search: true
+  logo: assets/ANU-logo.jpg  # Replace with your logo
+  background: "white"
+  foreground: "#C58812"
+
+sidebar:
+  logo: assets/AuWorldEQ.jpg  # Optional sidebar logo
+  background: "white"
+```
+
+### Adding Course Content
+
+Structure your content in the `chapters` section:
+
+```yaml
+chapters:
+  - part: "**Module 1: Introduction**"
+    chapters:
+      - Module1/lecture1.qmd
+      - Module1/lecture2.qmd
+
+  - part: "**Module 2: Advanced Topics**"
+    chapters:
+      - Module2/lecture1.qmd
+      - Module2/exercises.qmd
+```
+
+### Pyodide Packages
+
+Specify Python packages available in the browser:
+
+```yaml
+pyodide:
+  packages:
+    - micropip
+    - numpy
+    - matplotlib
+    - pandas
+    - xarray
+    - netcdf4
+```
+
+::: {.callout-warning}
+Not all Python packages are available in Pyodide. Check the [Pyodide package list](https://pyodide.org/en/stable/usage/packages-in-pyodide.html).
+:::
+
+### Code Execution
+
+By default, code execution is disabled:
+
+```yaml
+execute:
+  enabled: false
+```
+
+This means code in your `.qmd` files won't run during build. For interactive code, use the pyodide filter or JupyterLite.
+
+To enable execution during build:
+
+```yaml
+execute:
+  enabled: true
+  freeze: auto  # Cache results
+```
+
+## Slides Configuration
+
+Configure your slides in `WebSlides/_quarto.yml`:
+
+```yaml
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    logo: images/logo.png
+    footer: "Course Name | 2025"
+```
+
+## Pixi Environment
+
+Edit `pixi.toml` to add dependencies:
+
+```toml
+[dependencies]
+quarto = ">=1.6.42,<2"
+jupyterlite = ">=0.5.1,<0.6"
+matplotlib = ">=3.8.0,<4"  # Add your packages
+numpy = ">=1.26.0,<2"
+```
+
+After modifying:
+
+```bash
+pixi install
+```
+
+## JupyterLite Configuration
+
+Configure JupyterLite in `jupyterlite/jupyter-lite.config.json`:
+
+```json
+{
+  "jupyter-config-data": {
+    "appName": "Your Course Name - JupyterLite"
+  }
+}
+```
+
+Add content to `jupyterlite/content/` to make notebooks available.
