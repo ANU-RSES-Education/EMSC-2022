@@ -1,0 +1,20 @@
+# Ignore course-specific content files during template sync
+# Only sync infrastructure/theme files, not course content
+
+# Course content - these are specific to EMSC-2022
+WebBook/_quarto.yml
+WebBook/index.qmd
+WebBook/Notebooks/**
+WebBook/Lectures/**
+
+# Course-specific assets
+WebBook/assets/AuWorldEQ.jpg
+
+# Keep these synced from template:
+# WebBook/assets/theme.scss
+# WebBook/assets/styles.css
+# WebBook/assets/font_button.js
+# .github/workflows/
+# update-template.sh
+# pixi.toml
+# pixi.lock

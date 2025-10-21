@@ -1,0 +1,90 @@
+/* Match documentation styling */
+
+/* Sidebar styling - light grey background */
+.sidebar {
+  background-color: #f8f9fa !important;
+}
+
+.sidebar-navigation {
+  background-color: #f8f9fa !important;
+}
+
+/* Tighter spacing in sidebar to match docs */
+.sidebar-item-container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.sidebar .sidebar-item {
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
+  margin: 0 !important;
+}
+
+.sidebar-section-item {
+  margin: 0 !important;
+}
+
+.sidebar nav[role=doc-toc] ul li {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
+}
+
+/* Ensure sidebar items are readable on light grey */
+.sidebar-item {
+  color: #212529;
+}
+
+.sidebar-item:hover {
+  background-color: #e9ecef;
+}
+
+/* Bold headings in sidebar - only section titles */
+.sidebar-item-section > .sidebar-item-container > .sidebar-item-text .menu-text {
+  font-weight: 600;
+}
+
+/* Callout styling to match docs */
+.callout {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-left: 4px solid;
+  border-radius: 0.25rem;
+}
+
+/* Code blocks styling */
+pre.sourceCode {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+th {
+  background-color: #f8f9fa;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Grid layout support */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.g-col-6 {
+  grid-column: span 6;
+}

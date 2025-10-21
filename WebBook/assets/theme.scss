@@ -1,0 +1,42 @@
+/*-- scss:defaults --*/
+
+// Fonts
+@import url("https://indestructibletype.com/fonts/Jost.css");
+
+// Code blocks
+$code-block-bg-alpha: -.66;
+$code-block-bg-padding: 1em;
+$code-block-border-left: true;
+
+/*-- scss:rules --*/
+
+// Navbar styling to match documentation
+.navbar {
+  border-bottom: 3px solid #C58812;
+}
+
+// Sidebar logo sizing - 60% of original
+.sidebar-logo {
+  max-width: 60%;
+  margin: 1rem auto;
+  display: block;
+}
+
+.sidebar .sidebar-logo img {
+  max-width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+
+// Ensure good contrast on ANU gold navbar
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+}

@@ -3,102 +3,83 @@ project:
   output-dir: ../_build/book
 
 book:
-  title: "EMSC - Get Going with Python "
+  title: "EMSC 2022"
   author:
-    - "Louis Moresi"
-    - "Meghan Miller"
     - "David Heslop"
+    - "Meghan Miller"
     - "Voon Hui Lai"
-  date: "06/03/2024"
-  bread-crumbs: True
+    - "Louis Moresi"
+  date: today
+  bread-crumbs: true
+
   chapters:
-    - part: "**Introduction**"
+    - index.qmd
+
+    - part: "**Labs**"
       chapters:
-        - index.qmd
-        - intro.qmd
-        - TLDR.qmd
+        - Notebooks/LAB-week5/Week5_Lab.ipynb
+        - Notebooks/LAB-week5/LAB5_Volcano_Map.ipynb
+        - Notebooks/LAB-week5/LAB5_On_Demand_MapServices.ipynb
+        - Notebooks/LAB-week6/LAB6-focal_mechanisms.ipynb
+        - Notebooks/LAB-week6/LAB6-izmit+focal+mechanism.ipynb
+        - Notebooks/LAB-week7/LAB7-Raypaths.ipynb
+        - Notebooks/LAB-week7/LAB7-NZ_Earthquake.ipynb
+        - Notebooks/LAB-week8/LAB8-Gutenberg-Richter.ipynb
+        - Notebooks/LAB-week10/EMSC2022_sem1_2023_lowerpuna.ipynb
+        - Notebooks/LAB-week10/Practical10-Part5-MogiModel.ipynb
+        - Notebooks/LAB-convection/EMSC2022W11.i.ipynb
+        - Notebooks/LAB-convection/EMSC2022W11.ii.ipynb
+        - Notebooks/LAB-convection/EMSC2022W11.iii.ipynb
+        - Notebooks/LAB-convection/EMSC2022W11.iv.ipynb
+        - Notebooks/LAB-convection/EMSC2022W11.v.ipynb
+        - Notebooks/LAB-convection/EMSC2022W11.vi.ipynb
 
-    - part: "**Basic Language Skills**"
+    - part: "**Lectures**"
       chapters:
-        - Basics/Ex1-IntroWebPython.qmd
-        - Basics/Ex2-Variables.qmd
-        - Basics/Ex2a-Functions.qmd
-        - Basics/Ex3-Conditionals.qmd
-        - Basics/Ex4-Loops.qmd
-        - Basics/Ex5-ListsEtc.qmd
-        - Basics/Ex6-MoreLoops.qmd
-        - Basics/Ex7-Strings.qmd
-        - Basics/Ex8-ReadWriteFiles.qmd
-
-    - part: "**Version Control**"
-      chapters:
-        - Introduction2VersionControl/1-GettingStartedWithGit.qmd
-        - Introduction2VersionControl/2-NextStepsWithGit.qmd
-        - Introduction2VersionControl/3-YourOwnRepositories.qmd
-
-    - part: "**Advanced Language Skills**"
-      chapters:
-        - Advanced/Intro.qmd
-
-    # - part: "Next steps: Becoming a Code Developer"
-    #   chapters:
-    #     - DevSkills/Intro.qmd
-
-    # - part: "Notebooks"
-    #   chapters:
-    #   - Notebooks/Introduction.qmd
-    #   - Notebooks/Ex01/Ex1-GettingStartedWithJupyter.qmd
-
-    # - part: "Slides"
-    #   chapters:
-    #     - LectureSlides/Lecture1.qmd
-
-    - part: "Work in Progress"
-      chapters:
-        - _WIP/Test_Pyodide.qmd
-
-  # appendices:
-  #   - Notebooks/BinderLandingPage.qmd
-  #   - Notebooks/TestNB1.ipynb
-  #   - Notebooks/TestQMD_NB1.qmd
+        - Lectures/Index.qmd
+        - Lectures/Lectures-MantleDynamics.qmd
 
   navbar:
     search: true
-    logo: assets/ANU-logo.jpg
-    background: "white"
-    foreground: "#C58812" # ANU honey colour
+    logo: assets/ANU-logo.png
+    background: "#C58812"  # ANU gold
+    foreground: white
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Slides"
+        href: ../WebSlides/index.html
+    right:
+      - icon: github
+        href: https://github.com/ANU-RSES-Education/EMSC-2022
 
   sidebar:
-    # logo: Images/COS-EarthSciences-800.jpg
     logo: assets/AuWorldEQ.jpg
-    background: "white"
-    # foreground: "#C58812" # ANU honey colour
+    style: "docked"
+    background: light
 
 bibliography: references.bib
 
 execute:
   enabled: false
+  allow_errors: true
 
 format:
   html:
-    theme: [united, "assets/theme.scss"] # united / simplex / flatly
-    mainfont: "Jost"
-    fontsize: 0.9em
-    linestretch: 1.7
+    theme: [cosmo, "assets/theme.scss"]
+    css: assets/styles.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-fold: false
     linkcolor: "#C58812"
     number-sections: false
-    number-depth: 1
-    filters:
-      - pyodide
 
     code-links:
       - text: Open in Binder
         icon: rocket-takeoff
-        href: https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-getting-going-with-python/HEAD?labpath=WebBook/BinderLandingPage.qmd
+        href: https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/HEAD
     other-links:
-      - text: Github Repository
-        icon: github
-        href: https://github.com/ANU-RSES-Education/EMSC-getting-going-with-python
-
-  # pdf:
-  #   documentclass: scrreprt
+      - text: Wattle Site
+        icon: mortarboard
+        href: https://wattlecourses.anu.edu.au/course/view.php?id=36759
