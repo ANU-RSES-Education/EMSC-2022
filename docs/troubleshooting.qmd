@@ -76,6 +76,59 @@ rm -rf WebBook/.quarto
 # Hard refresh browser (Cmd+Shift+R or Ctrl+Shift+R)
 ```
 
+### Notebook rendering: text running together without line breaks
+
+**Problem**: When viewing rendered notebooks in the WebBook, content appears smashed together on single lines without proper paragraph breaks, headings appear concatenated with body text.
+
+**Example of problem**:
+```
+Navigation - Landing notebook:EMSC2022W11.i.ipynb - Next notebook:EMSC2022W11.iii.ipynb### ReferencesAmante, C. "ETOPO1..."
+```
+
+**Root Cause**: Jupyter notebook markdown cells contain multiple headings (lines starting with `#`, `##`, `###`, etc.) in a single cell. Quarto treats each markdown cell as a single unit - if a cell has multiple headings, it concatenates everything together instead of creating proper sections.
+
+**Solution**: **Each markdown cell should contain AT MOST one heading**
+
+Follow this rule when editing notebooks:
+- ✅ **GOOD**: One heading per cell
+  ```markdown
+  ## Navigation
+
+  - Link 1
+  - Link 2
+  ```
+
+- ✅ **GOOD**: No heading (plain text)
+  ```markdown
+  This is explanatory text.
+
+  You can have multiple paragraphs.
+  ```
+
+- ❌ **BAD**: Multiple headings in one cell
+  ```markdown
+  ## Navigation
+
+  - Links here
+
+  ### References
+
+  Citations here
+  ```
+  *Split this into two cells at the `### References` line*
+
+- ❌ **ALSO BAD**: Text before heading
+  ```markdown
+  Some intro text
+
+  ## Section Title
+
+  Content here
+  ```
+  *Put intro text in separate cell before the heading cell*
+
+**Quick Fix**: Split any markdown cell that contains more than one line starting with `#` (any number of `#`'s counts as a heading: `#`, `##`, `###`, etc.). Each heading and its content should be in its own cell.
+
 ### Template Sync Issues
 
 #### Sync PR has merge conflicts

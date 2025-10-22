@@ -1,0 +1,19 @@
+[workspace]
+authors = ["Louis Moresi <louis.moresi@anu.edu.au>"]
+channels = ["conda-forge"]
+name = "EMSC-2022"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+quarto = ">=1.6.42,<2"
+jupyterlite = ">=0.5.1,<0.6"
+jupyterlite-pyodide-kernel = ">=0.5.2,<0.6"
+ipython = ">=9.4.0,<10"
+ipykernel = ">=6.30.1,<7"
+nbformat = ">=5.10.4,<6"
+nbclient = ">=0.10.2,<0.11"
+yaml = ">=0.2.5,<0.3"
+pyyaml = ">=6.0.2,<7"
