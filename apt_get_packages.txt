@@ -1,6 +1,6 @@
 # Line-by-line list of packages for apt-get on the remote machine
 
-build-essential # in case we need to do any compiling etc on the machine
+# build-essential # in case we need to do any compiling etc on the machine
 
 
 # lavavu build
