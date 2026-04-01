@@ -17,8 +17,6 @@ build-essential # in case we need to do any compiling etc on the machine
 #  libx11-dev 
 #  xvfb 
 
-libgl1-mesa-dri
-libglx-mesa0
 
 # Underworld build / run
 
