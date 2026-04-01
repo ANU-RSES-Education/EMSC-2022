@@ -12,6 +12,7 @@ dependencies:
   - sympy
   - pytest
   - pyvista[all]
+  - obspy
   - pip
   - pip:  
     - gmsh
