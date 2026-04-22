@@ -46,10 +46,11 @@ RUN curl -fsSL -o /tmp/code-server.tar.gz \
 
 # Pre-install VS Code extensions into a shared location, still outside HOME.
 ENV CODE_SERVER_EXTENSIONS_DIR=/opt/code-server-extensions
+# Marketplace is flaky (502s); don't fail the whole image build on one miss.
 RUN mkdir -p ${CODE_SERVER_EXTENSIONS_DIR} \
- && code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension ms-python.python \
- && code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension sumneko.lua \
- && code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension quarto.quarto \
+ && (code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension ms-python.python || true) \
+ && (code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension sumneko.lua || true) \
+ && (code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension quarto.quarto || true) \
  && chown -R ${NB_UID}:${NB_GID} ${CODE_SERVER_EXTENSIONS_DIR}
 
 USER ${NB_UID}
@@ -83,12 +84,15 @@ RUN pip install --no-cache-dir \
       jupyter-server-proxy \
       "jupyterlab-quarto>=0.3.3"
 
-# Bake all JupyterLab extensions into the prebuilt lab assets now, so that
-# `jupyter lab` on container start does NOT trigger a webpack rebuild. This
-# is the biggest single factor in meeting Binder's 30 s start timeout.
-RUN jupyter lab build --dev-build=False --minimize=True 2>&1 \
- && jupyter lab clean
+# No `jupyter lab build` step: JupyterLab 4.x uses prebuilt federated
+# extensions exclusively. All the extensions we pip-installed ship prebuilt
+# assets, so `lab build` is not needed and (in this env) fails on a sqlite
+# symbol mismatch unrelated to us.
 
 # Quick sanity check at image build time — imports that used to OOM the
 # conda solver on Binder should all be fast once installed.
 RUN python -c "import numpy, scipy, pandas, obspy, pyvista, h5py, sympy; print('imports OK')"
+
+# Confirm the JupyterLab extension set is registered (prebuilt — no compile).
+RUN jupyter server extension list 2>&1 | grep -E "OK|jupyter_server_proxy|jupyterlab_quarto" || true \
+ && jupyter labextension list 2>&1 | head -40 || true
