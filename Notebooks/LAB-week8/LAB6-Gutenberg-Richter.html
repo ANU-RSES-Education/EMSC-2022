@@ -270,7 +270,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=tree/Notebooks/LAB-week8/LAB6-Gutenberg-Richter.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=lab/tree/Notebooks/LAB-week8/LAB6-Gutenberg-Richter.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -444,7 +444,7 @@ John M. Aiken, Chastity Aiken, Fabrice Cotton; A Python Library for Teaching Com
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read the data, set space delimiter, and get rid of the dash line in 1st line after header</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/anss.csv&#39;</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/anss.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
