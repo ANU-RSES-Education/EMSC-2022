@@ -10,10 +10,48 @@ latex:
 
 html:
 #  home_page_in_navbar option: true
-  extra_navbar: <button type="button" onclick="legibleFontSwitcher()">Switch Font</button>&nbsp;&nbsp;<button type="button" onclick="fontScaler(1.1)">&#10133;</button><button type="button" onclick="fontScaler(0.0)">&#9679;</button><button type="button" onclick="fontScaler(0.909)">&#10134;</button>  
+  extra_navbar: <button type="button" onclick="legibleFontSwitcher()">Switch Font</button>&nbsp;&nbsp;<button type="button" onclick="fontScaler(1.1)">&#10133;</button><button type="button" onclick="fontScaler(0.0)">&#9679;</button><button type="button" onclick="fontScaler(0.909)">&#10134;</button>
   use_repository_button: true
   comments:
     hypothesis: true
+  # Rewrites Jupyter Book's per-page Binder "rocket" URLs from plain
+  # `{hub}/v2/gh/owner/repo/branch?urlpath=lab/tree/{path}` (which would 404
+  # against a generic image that doesn't bake in this course's notebooks)
+  # to the nbgitpuller form
+  # `{hub}/v2/gh/{launcher}/{branch}?urlpath=git-pull%3Frepo=...%26urlpath=...%26branch=...`
+  # which pulls the current notebook content at launch time.
+  # If JS is disabled the original rocket URL remains as a harmless fallback.
+  extra_footer: |
+    <script>
+    (function () {
+      // ---- Configure for this course ----
+      const LAUNCHER   = "https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master";
+      const CONTENT    = "https://github.com/ANU-RSES-Education/EMSC-2022";
+      const BRANCH     = "master";
+      const REPO_DIR   = "EMSC-2022";  // directory name nbgitpuller clones into
+      // -----------------------------------
+      function rewrite() {
+        document.querySelectorAll('a[href*="mybinder.org/v2/gh"]').forEach(function (a) {
+          var href = a.getAttribute("href") || "";
+          if (href.indexOf("urlpath=git-pull") !== -1) return;  // already nbgitpuller
+          var m = href.match(/[?&]urlpath=(?:lab\/tree\/|tree\/)([^&#]+)/);
+          if (!m) return;
+          var nbPath = decodeURIComponent(m[1]);
+          var inner  = "repo="    + encodeURIComponent(CONTENT)
+                     + "&urlpath=" + encodeURIComponent("lab/tree/" + REPO_DIR + "/" + nbPath)
+                     + "&branch="  + BRANCH;
+          a.setAttribute("href",
+            LAUNCHER + "?urlpath=" + encodeURIComponent("git-pull?" + inner));
+          a.setAttribute("title", "Launch on Binder (nbgitpuller — pulls latest)");
+        });
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", rewrite);
+      } else {
+        rewrite();
+      }
+    })();
+    </script>
 
 # Parse and render settings
 parse:
@@ -51,12 +89,13 @@ repository:
   url         : https://github.com/ANU-RSES-Education/EMSC-2022  # Online location of this book
   # branch      : master  # Which branch of the repository should be used when creating links (optional)
 
-# `launch_buttons:` intentionally absent — the per-page rocket icon would
-# produce plain Binder URLs that expect course content baked into the image,
-# but our image is generic. Launch is instead driven by a single nbgitpuller
-# badge on FrontPage.md which pulls the current notebook content on every
-# launch. If per-page launches are needed later, add them as a custom
-# theme override rather than re-enabling launch_buttons.
+launch_buttons:
+  binderhub_url:  "https://mybinder.org"
+  notebook_interface: "jupyterlab"
+  # The HTML rocket icons generated from this config emit plain Binder URLs
+  # that would 404 against our generic (no-content-baked-in) image. The JS
+  # in `html.extra_footer` above rewrites them in-place to nbgitpuller form
+  # at page load so each one pulls the current notebook content for that page.
 
 
 execute:
