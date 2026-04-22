@@ -539,6 +539,39 @@ By David Heslop, Meghan Miller, Voon Hui Lai, Louis Moresi
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <script>
+(function () {
+  // ---- Configure for this course ----
+  const LAUNCHER   = "https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master";
+  const CONTENT    = "https://github.com/ANU-RSES-Education/EMSC-2022";
+  const BRANCH     = "master";
+  const REPO_DIR   = "EMSC-2022";  // directory name nbgitpuller clones into
+  // -----------------------------------
+  function rewrite() {
+    document.querySelectorAll('a[href*="mybinder.org/v2/gh"]').forEach(function (a) {
+      var href = a.getAttribute("href") || "";
+      if (href.indexOf("urlpath=git-pull") !== -1) return;  // already nbgitpuller
+      var m = href.match(/[?&]urlpath=(?:lab\/tree\/|tree\/)([^&#]+)/);
+      if (!m) return;
+      var nbPath = decodeURIComponent(m[1]);
+      var inner  = "repo="    + encodeURIComponent(CONTENT)
+                 + "&urlpath=" + encodeURIComponent("lab/tree/" + REPO_DIR + "/" + nbPath)
+                 + "&branch="  + BRANCH;
+      a.setAttribute("href",
+        LAUNCHER + "?urlpath=" + encodeURIComponent("git-pull?" + inner));
+      a.setAttribute("title", "Launch on Binder (nbgitpuller — pulls latest)");
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", rewrite);
+  } else {
+    rewrite();
+  }
+})();
+</script>
+
+</div>
   </div>
   
 </div>
