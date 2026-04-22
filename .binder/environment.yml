@@ -20,7 +20,9 @@ dependencies:
   - pytest
   - pyvista
   - obspy
-  - pandas
+  # pin below 3.0 — pandas 3.x removed `delim_whitespace` from read_csv()
+  # and breaks notebooks. Drop pin once notebooks are fully migrated to sep=r'\s+'.
+  - pandas<3
   - pip
   - pip:
     - gmsh

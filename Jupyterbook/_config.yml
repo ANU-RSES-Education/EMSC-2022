@@ -52,9 +52,9 @@ repository:
   # branch      : master  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
-  # jupyterhub_url: "https://emsc2022.rses.underworldcloud.org"  # The URL for your JupyterHub. 
+  # jupyterhub_url: "https://emsc2022.rses.underworldcloud.org"  # The URL for your JupyterHub.
   binderhub_url:  "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-  # notebook_interface: "classic" # "jupyterlab" or "classic"
+  notebook_interface: "jupyterlab"  # Binder image runs `jupyter lab`; generated URLs need lab/tree/... not tree/...
 
 
 execute:
