@@ -9,5 +9,5 @@ dependencies:
   - jupytext
   - pip
 
-  - pip: 
-    - jupyter-book
+  - pip:
+    - jupyter-book<2
