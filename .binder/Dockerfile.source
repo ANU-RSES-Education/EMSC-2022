@@ -59,7 +59,9 @@ ENV HOME=/home/jovyan \
 # --- conda env: scientific stack + jupyter ---
 # All in one install so micromamba solves once and installs once (one conda
 # layer; micromamba clean trims the cache).
-COPY --chown=jovyan:jovyan .binder/environment.yml /tmp/env.yml
+# Build context is .binder/ (set in build-binder-image.yml), so this path is
+# relative to .binder/, not to the repo root.
+COPY --chown=jovyan:jovyan environment.yml /tmp/env.yml
 RUN micromamba install -y -n base -f /tmp/env.yml \
  && micromamba clean --all --yes \
  && rm /tmp/env.yml
