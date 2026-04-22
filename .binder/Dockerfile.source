@@ -15,51 +15,26 @@ LABEL org.opencontainers.image.licenses="MIT"
 
 USER root
 
-# System packages — libglx-mesa0 covers the system GLX extension that the
-# conda-provided Mesa hooks into. libgl1-mesa-dri is kept out (large, plus
-# scipy-notebook's conda mesa is sufficient for headless rendering).
+# libglx-mesa0 — the system GLX extension that the conda-provided Mesa hooks
+# into for headless pyvista/VTK rendering.
 RUN apt-get update \
  && apt-get install --yes --no-install-recommends \
       libglx-mesa0 \
       curl \
-      wget \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-# Quarto CLI
+# Quarto CLI (command-line tool — cheap, no jupyter integration here).
 ARG QUARTO_VERSION=1.4.550
 RUN curl -fsSL -o /tmp/quarto.deb \
       "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb" \
  && dpkg -i /tmp/quarto.deb \
  && rm /tmp/quarto.deb
 
-# code-server (VS Code in the browser) installed to /opt so it lives outside
-# ${HOME} and is NOT touched by fix-permissions on container start (which was
-# chowning through thousands of extension files and eating startup budget).
-ARG CODE_SERVER_VERSION=4.16.1
-RUN curl -fsSL -o /tmp/code-server.tar.gz \
-      "https://github.com/coder/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server-${CODE_SERVER_VERSION}-linux-amd64.tar.gz" \
- && mkdir -p /opt/code-server \
- && tar xzf /tmp/code-server.tar.gz --strip-components=1 -C /opt/code-server \
- && rm /tmp/code-server.tar.gz \
- && ln -sf /opt/code-server/bin/code-server /usr/local/bin/code-server
-
-# Pre-install VS Code extensions into a shared location, still outside HOME.
-ENV CODE_SERVER_EXTENSIONS_DIR=/opt/code-server-extensions
-# Marketplace is flaky (502s); don't fail the whole image build on one miss.
-RUN mkdir -p ${CODE_SERVER_EXTENSIONS_DIR} \
- && (code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension ms-python.python || true) \
- && (code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension sumneko.lua || true) \
- && (code-server --extensions-dir ${CODE_SERVER_EXTENSIONS_DIR} --install-extension quarto.quarto || true) \
- && chown -R ${NB_UID}:${NB_GID} ${CODE_SERVER_EXTENSIONS_DIR}
-
 USER ${NB_UID}
 
-# Scientific conda deps on top of scipy-notebook's base (which already has
-# numpy, scipy, pandas, sympy, matplotlib, h5py, pytest).
-#
-# pyvista without `[all]` — the heavy extras are either not needed or
-# installed explicitly via pip below.
+# Scientific conda deps on top of scipy-notebook (which already has
+# numpy, scipy, pandas, sympy, matplotlib, h5py, pytest, jupyterlab).
 RUN mamba install --yes -c conda-forge \
       "mpmath<=1.3" \
       mesalib \
@@ -67,32 +42,17 @@ RUN mamba install --yes -c conda-forge \
       obspy \
  && mamba clean --all -f -y
 
-# Pip deps: jupyter/Quarto integration, VTK-on-web stack, gmsh, jupytext.
-#
-# trame_jupyter_extension intentionally NOT installed — at server startup it
-# pulls trame/vtk/vuetify into the jupyter-server process and pushes past the
-# 30 s Binder start timeout. pyvista's trame backend still works via iframe
-# mode without the dedicated jupyter extension. Re-add only if you need
-# inline trame widgets and are willing to also extend the start timeout.
+# Pip deps. Deliberately minimal — nothing here registers a jupyter_server
+# extension or a JupyterLab extension, so there is zero extra startup cost
+# over plain scipy-notebook. If inline trame widgets are needed later,
+# re-add trame_jupyter_extension + jupyter-server-proxy and budget the
+# extra startup seconds.
 RUN pip install --no-cache-dir \
       gmsh \
-      "jupyterlab>=4.1" \
       "jupytext>=1.16.1" \
-      "pygments>=2.17.0" \
       trame-vtk \
-      trame-vuetify \
-      jupyter-server-proxy \
-      "jupyterlab-quarto>=0.3.3"
+      trame-vuetify
 
-# No `jupyter lab build` step: JupyterLab 4.x uses prebuilt federated
-# extensions exclusively. All the extensions we pip-installed ship prebuilt
-# assets, so `lab build` is not needed and (in this env) fails on a sqlite
-# symbol mismatch unrelated to us.
-
-# Quick sanity check at image build time — imports that used to OOM the
-# conda solver on Binder should all be fast once installed.
+# Sanity-import of the heavy deps so a broken install fails CI rather than
+# shipping a brown image to Binder.
 RUN python -c "import numpy, scipy, pandas, obspy, pyvista, h5py, sympy; print('imports OK')"
-
-# Confirm the JupyterLab extension set is registered (prebuilt — no compile).
-RUN jupyter server extension list 2>&1 | grep -E "OK|jupyter_server_proxy|jupyterlab_quarto" || true \
- && jupyter labextension list 2>&1 | head -40 || true
