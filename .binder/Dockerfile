@@ -15,9 +15,7 @@
 
 FROM ghcr.io/anu-rses-education/emsc-2022:latest
 
-# COPY to a subdir then WORKDIR into it so JupyterLab's file-tree root is
-# the repo. This makes Jupyter Book's generated "rocket" launch URLs
-# (`?urlpath=lab/tree/Notebooks/...`) resolve correctly — they are relative
-# to CWD, not to $HOME.
-COPY --chown=1000:1000 . /home/jovyan/EMSC-2022/
-WORKDIR /home/jovyan/EMSC-2022
+# Nothing else. The image is intentionally generic — no course content
+# baked in. Notebooks are pulled in at launch by `nbgitpuller` via a
+# git-pull URL (see the README's launch badge), so the same image can
+# serve multiple courses and notebook edits require no image rebuild.

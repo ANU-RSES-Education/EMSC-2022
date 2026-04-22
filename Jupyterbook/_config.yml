@@ -51,10 +51,12 @@ repository:
   url         : https://github.com/ANU-RSES-Education/EMSC-2022  # Online location of this book
   # branch      : master  # Which branch of the repository should be used when creating links (optional)
 
-launch_buttons:
-  # jupyterhub_url: "https://emsc2022.rses.underworldcloud.org"  # The URL for your JupyterHub.
-  binderhub_url:  "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-  notebook_interface: "jupyterlab"  # Binder image runs `jupyter lab`; generated URLs need lab/tree/... not tree/...
+# `launch_buttons:` intentionally absent — the per-page rocket icon would
+# produce plain Binder URLs that expect course content baked into the image,
+# but our image is generic. Launch is instead driven by a single nbgitpuller
+# badge on FrontPage.md which pulls the current notebook content on every
+# launch. If per-page launches are needed later, add them as a custom
+# theme override rather than re-enabling launch_buttons.
 
 
 execute:
