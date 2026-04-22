@@ -1,0 +1,45 @@
+# Excluded from the Binder Docker build context so Binder doesn't spend
+# minutes copying gigabytes of stuff the runtime doesn't need. Keep this
+# list conservative — if a notebook ends up needing something in here at
+# runtime, remove the entry.
+
+# Git history (Binder mybinder.org re-clones the repo; .git isn't needed at runtime)
+.git/
+
+# Build caches and local environments
+.pixi/
+.pytest_cache/
+.quarto/
+docs/.quarto/
+.ipynb_checkpoints/
+**/__pycache__/
+**/.ipynb_checkpoints/
+
+# Built output (Jupyter Book HTML is served by gh-pages, not Binder)
+Jupyterbook/_build/
+
+# Quarto/WebBook scaffolding — duplicates of Notebooks/, not used from Binder
+WebBook/
+
+# Duplicated slideshow movies — the canonical copy is under Lectures/movies/
+WebSlides/movies/
+
+# Local-only scratch and old stashes
+_old/
+.local_workspace/
+
+# Editor/IDE state
+.vscode/
+.claude/
+.DS_Store
+.idea/
+
+# Docker itself
+.dockerignore
+.binder/Dockerfile.source
+
+# Secrets & certs (defence in depth)
+*.pem
+*.key
+.env
+.env.*
