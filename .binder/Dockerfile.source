@@ -4,55 +4,83 @@
 # ghcr.io/anu-rses-education/emsc-2022. Binder reads .binder/Dockerfile,
 # which just does `FROM` on the published image.
 #
-# To modify the runtime env: edit this file (and optionally mirror the change
-# in .binder/environment.yml for documentation), commit, push. CI rebuilds.
+# Structure follows underworld3-pixi's proven pattern for mybinder.org:
+#   * mambaorg/micromamba base (lighter than jupyter/scipy-notebook, no
+#     custom start.sh / fix-permissions overhead on every container boot)
+#   * explicit jovyan user at UID 1000 (what Binder expects)
+#   * explicit CMD: `jupyter lab --ip=0.0.0.0 --no-browser` — no wrapper
+#     script, no start-notebook.py indirection
+#   * PyVista/Mesa env vars baked in so headless rendering works out of the box
 
-FROM quay.io/jupyter/scipy-notebook:python-3.11
+FROM docker.io/mambaorg/micromamba:2.3.0
 
 LABEL org.opencontainers.image.source="https://github.com/ANU-RSES-Education/EMSC-2022"
 LABEL org.opencontainers.image.description="EMSC 2022 course environment for Binder"
 LABEL org.opencontainers.image.licenses="MIT"
 
+# --- system packages ---
 USER root
-
-# libglx-mesa0 — the system GLX extension that the conda-provided Mesa hooks
-# into for headless pyvista/VTK rendering.
-RUN apt-get update \
- && apt-get install --yes --no-install-recommends \
-      libglx-mesa0 \
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      ca-certificates \
       curl \
- && apt-get clean \
+      git \
+      libgl1 \
+      libglu1-mesa \
+      libosmesa6 \
+      libglx-mesa0 \
+      libxft2 libxinerama1 libxcursor1 libxrender1 libxext6 \
+      libglib2.0-0 \
+      libfreetype6 \
+      xvfb \
  && rm -rf /var/lib/apt/lists/*
 
-# Quarto CLI (command-line tool — cheap, no jupyter integration here).
+# --- Quarto CLI (cheap dpkg) ---
 ARG QUARTO_VERSION=1.4.550
 RUN curl -fsSL -o /tmp/quarto.deb \
       "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb" \
  && dpkg -i /tmp/quarto.deb \
  && rm /tmp/quarto.deb
 
-USER ${NB_UID}
+# --- create the jovyan user that Binder expects (UID 1000) ---
+# micromamba's default user (mambauser) is already UID 57439. We want UID 1000.
+RUN userdel -r mambauser 2>/dev/null || true \
+ && groupadd -g 1000 jovyan \
+ && useradd -m -s /bin/bash -u 1000 -g 1000 jovyan \
+ && mkdir -p /home/jovyan \
+ && chown jovyan:jovyan /home/jovyan
 
-# Scientific conda deps on top of scipy-notebook (which already has
-# numpy, scipy, pandas, sympy, matplotlib, h5py, pytest, jupyterlab).
-RUN mamba install --yes -c conda-forge \
-      "mpmath<=1.3" \
-      mesalib \
-      pyvista \
-      obspy \
- && mamba clean --all -f -y
+USER jovyan
+WORKDIR /home/jovyan
+ENV HOME=/home/jovyan \
+    MAMBA_ROOT_PREFIX=/home/jovyan/micromamba \
+    PATH=/home/jovyan/micromamba/bin:$PATH
 
-# Pip deps. Deliberately minimal — nothing here registers a jupyter_server
-# extension or a JupyterLab extension, so there is zero extra startup cost
-# over plain scipy-notebook. If inline trame widgets are needed later,
-# re-add trame_jupyter_extension + jupyter-server-proxy and budget the
-# extra startup seconds.
-RUN pip install --no-cache-dir \
-      gmsh \
-      "jupytext>=1.16.1" \
-      trame-vtk \
-      trame-vuetify
+# --- conda env: scientific stack + jupyter ---
+# All in one install so micromamba solves once and installs once (one conda
+# layer; micromamba clean trims the cache).
+COPY --chown=jovyan:jovyan .binder/environment.yml /tmp/env.yml
+RUN micromamba install -y -n base -f /tmp/env.yml \
+ && micromamba clean --all --yes \
+ && rm /tmp/env.yml
 
-# Sanity-import of the heavy deps so a broken install fails CI rather than
-# shipping a brown image to Binder.
-RUN python -c "import numpy, scipy, pandas, obspy, pyvista, h5py, sympy; print('imports OK')"
+ARG MAMBA_DOCKERFILE_ACTIVATE=1
+
+# --- sanity-import at build time: broken install fails CI, not Binder ---
+RUN python -c "import numpy, scipy, pandas, obspy, pyvista, h5py, sympy, jupyterlab; print('imports OK')"
+
+# --- PyVista / Mesa headless rendering ---
+ENV PYVISTA_OFF_SCREEN=true \
+    PYVISTA_USE_IPYVTK=true \
+    DISPLAY=:99 \
+    LIBGL_ALWAYS_SOFTWARE=1 \
+    MESA_GL_VERSION_OVERRIDE=3.3 \
+    GALLIUM_DRIVER=llvmpipe \
+    VTK_DEFAULT_OPENGL_WINDOW=vtkOSOpenGLRenderWindow
+
+# --- Binder env vars ---
+ENV NB_USER=jovyan \
+    NB_UID=1000
+
+EXPOSE 8888
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser"]

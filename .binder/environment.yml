@@ -1,9 +1,16 @@
-# Conda Environment for python packages running under BINDER
+# Conda environment for the EMSC-2022 Binder image.
+#
+# This file is **read at image-build time** by .binder/Dockerfile.source
+# (`micromamba install -n base -f /tmp/env.yml`). It is NOT read by Binder
+# directly — Binder reads .binder/Dockerfile which pulls the pre-built
+# image from ghcr.io. So this file is now the canonical list of deps for
+# the runtime; edit here and CI rebuilds the image.
 name: emsc_basics
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
+  - python=3.11
+  - jupyterlab>=4.1
   - mpmath<=1.3
   - mesalib
   - numpy
@@ -15,11 +22,9 @@ dependencies:
   - obspy
   - pandas
   - pip
-  - pip:  
+  - pip:
     - gmsh
-    - jupyterlab>=4.1
     - jupytext>=1.16.1
     - pygments>=2.17.0
     - trame-vtk
     - trame-vuetify
-  
