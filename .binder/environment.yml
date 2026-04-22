@@ -11,7 +11,7 @@ dependencies:
   - h5py
   - sympy
   - pytest
-  - pyvista[all]
+  - pyvista
   - obspy
   - pandas
   - pip
