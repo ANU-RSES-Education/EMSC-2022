@@ -17,9 +17,9 @@ Here you will find the Lab notebooks for the course, and the Mantle Dynamics Lec
 
 The course Jupyter environment is hosted on [mybinder.org](https://mybinder.org/). Clicking the badge below will start a container, pull the current notebooks into it via `nbgitpuller`, and drop you into JupyterLab at the top of the `Notebooks/` folder:
 
-[![Launch on Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FANU-RSES-Education%252FEMSC-2022%26urlpath%3Dlab%252Ftree%252FEMSC-2022%252FNotebooks%26branch%3Dmaster)
+[![Launch on Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ANU-RSES-Education/binder-launcher/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FANU-RSES-Education%252FEMSC-2022%26urlpath%3Dlab%252Ftree%252FEMSC-2022%252FNotebooks%26branch%3Dmaster)
 
-The Binder image itself is generic (does not contain this course's notebooks); it is reused across RSES teaching material. `nbgitpuller` fetches the latest notebooks from this repo on every launch, so you always get the current content — no image rebuild is needed when a notebook is updated.
+The Binder image itself is generic (does not contain this course's notebooks); it is reused across RSES teaching material via [`ANU-RSES-Education/binder-launcher`](https://github.com/ANU-RSES-Education/binder-launcher). `nbgitpuller` fetches the latest notebooks from this repo on every launch, so you always get the current content — no image rebuild is needed when a notebook is updated.
 
 ```{tableofcontents}
 ```

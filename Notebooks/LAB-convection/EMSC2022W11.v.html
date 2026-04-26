@@ -734,7 +734,11 @@ By David Heslop, Meghan Miller, Voon Hui Lai, Louis Moresi
   <script>
 (function () {
   // ---- Configure for this course ----
-  const LAUNCHER   = "https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-2022/master";
+  // LAUNCHER points at the generic ANU-RSES launcher repo (a few-KB
+  // .binder/Dockerfile that just FROMs the shared GHCR image).
+  // mybinder.org caches by *that* repo's commit hash, so launches don't
+  // pay to re-clone EMSC-2022's hundreds-of-MB content tree every time.
+  const LAUNCHER   = "https://mybinder.org/v2/gh/ANU-RSES-Education/binder-launcher/main";
   const CONTENT    = "https://github.com/ANU-RSES-Education/EMSC-2022";
   const BRANCH     = "master";
   const REPO_DIR   = "EMSC-2022";  // directory name nbgitpuller clones into
