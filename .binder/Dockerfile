@@ -13,7 +13,7 @@
 # GHCR image). To change what notebooks / content ship: edit the repo tree —
 # Binder will rebuild this tiny launcher Dockerfile on the next launch.
 
-FROM ghcr.io/anu-rses-education/emsc-2022:latest
+FROM ghcr.io/anu-rses-education/binder-launcher:latest
 
 # Nothing else. The image is intentionally generic — no course content
 # baked in. Notebooks are pulled in at launch by `nbgitpuller` via a
