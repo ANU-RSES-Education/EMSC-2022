@@ -568,14 +568,16 @@ The structure of the flow and the pattern of the temperature field is predictabl
 
 <center>
 
-Rayleigh number: $Ra=100$
+Rayleigh number: $Ra=10^3$ (near the critical value $Ra_c \approx 1707$)
 
 <video muted autoplay controls loop height="500">
-    <source src="movies/Ra1e2.mp4"
+    <source src="movies/Ra1e3.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
+
+The initial perturbation decays back to the conduction profile — sub-critical, no convection sustained.
 
 
 <--v-->
@@ -584,30 +586,16 @@ Rayleigh number: $Ra=100$
 
 <center>
 
-Rayleigh number: $Ra=1,000$
+Rayleigh number: $Ra=10^4$
 
 <video muted autoplay controls loop height="500">
-    <source src="movies/Ra1e3.m4v"
+    <source src="movies/Ra1e4.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
 
-
-<--v-->
-
-## Thermal Convection
-
-<center>
-
-Rayleigh number: $Ra=10,000$
-
-<video muted autoplay controls loop height="500">
-    <source src="movies/Ra1e4.m4v"
-            type="video/mp4">
-    Sorry, your browser doesn't support embedded videos.
-</video>
-</center>
+Single steady cell. $\mathrm{Nu} \approx 4.8$.
 
 
 
@@ -617,14 +605,16 @@ Rayleigh number: $Ra=10,000$
 
 <center>
 
-Rayleigh number: $Ra=100,000$
+Rayleigh number: $Ra=10^5$
 
 <video muted autoplay controls loop height="500">
-    <source src="movies/Ra1e5.m4v"
+    <source src="movies/Ra1e5.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
+
+Steady single-cell convection. $\mathrm{Nu} \approx 10.4$.
 
 
 
@@ -634,14 +624,16 @@ Rayleigh number: $Ra=100,000$
 
 <center>
 
-Rayleigh number: $Ra=1,000,000$
+Rayleigh number: $Ra=10^6$
 
 <video muted autoplay controls loop height="500">
-    <source src="movies/Ra1e6.m4v"
+    <source src="movies/Ra1e6.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
+
+Steady cell at the Blankenbach benchmark value — $\mathrm{Nu} \approx 21$.
 
 
 
@@ -651,7 +643,7 @@ Rayleigh number: $Ra=1,000,000$
 
 <center>
 
-Rayleigh number: $Ra=10,000,000$
+Rayleigh number: $Ra=10^7$
 
 <video muted autoplay controls loop height="500">
     <source src="movies/Ra1e7.mp4"
@@ -659,6 +651,8 @@ Rayleigh number: $Ra=10,000,000$
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
+
+Strongly time-dependent — plume bursts; $\mathrm{Nu}$ fluctuates roughly 30–50.
 
 
 <--v-->
@@ -677,6 +671,49 @@ Rayleigh number: $Ra=10^8$
 </center>
 
 At this Rayleigh number cavity plumes appear: thermal heads break off from their tails and travel independently. The flow is strongly time-dependent — there is no purely steady solution.
+
+<--o-->
+
+## Path independence
+
+The steady state of an isoviscous convecting box depends on the Rayleigh number alone — *not* on how the system was started. Two simulations of the same $Ra=10^6$ box from very different initial conditions converge to the same time-averaged heat transport and flow.
+
+<--v-->
+
+## Same $Ra=10^6$, different paths
+
+<center>
+
+Cold start — initial conduction profile, sudden onset of plumes
+
+<video muted autoplay controls loop height="260">
+    <source src="movies/Ra1e6.mp4"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+Warm start — continued from a $Ra=10^5$ steady state
+
+<video muted autoplay controls loop height="260">
+    <source src="movies/Ra1e6_warm.mp4"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+<--v-->
+
+## Convergence in $\mathrm{Nu}$ and $V_{\mathrm{rms}}$
+
+<center>
+
+<!-- Drop in `images/Ra1e6_NuVrms.png` (cold/warm overlaid Nu and Vrms vs time) when ready -->
+
+*Graph: $\mathrm{Nu}$ and $V_{\mathrm{rms}}$ vs time for cold and warm starts (forthcoming).*
+
+</center>
+
+Both runs settle to the same time-averaged $\mathrm{Nu} \approx 21$ and $V_{\mathrm{rms}}$, despite the very different early-time behaviour — confirming path independence at this Rayleigh number.
 
 <--o-->
 
