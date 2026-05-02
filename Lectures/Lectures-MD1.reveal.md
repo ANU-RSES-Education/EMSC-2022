@@ -655,7 +655,7 @@ Rayleigh number: $Ra=10^6$ — passive tracers
 </video>
 </center>
 
-Steady at the Blankenbach benchmark value — $\mathrm{Nu} \approx 21$. The flow is now obvious without the tracers, but they reveal the shear-driven mixing inside the cell.
+Steady at the Blankenbach benchmark value — $\mathrm{Nu} \approx 21$. The flow is now obvious without the tracers, but they reveal that mixing in the interior is low — the cell core is close to solid-body rotation, with shear concentrated near the boundary layers.
 
 
 
@@ -692,7 +692,7 @@ Rayleigh number: $Ra=10^8$
 </video>
 </center>
 
-At this Rayleigh number cavity plumes appear: thermal heads break off from their tails and travel independently. The flow is strongly time-dependent — there is no purely steady solution.
+At this Rayleigh number *decapitated plumes* appear: the heads detach from their tails and travel independently, then become absorbed into a larger-scale circulation. The flow is strongly time-dependent — there is no purely steady solution. This is close to the transition into the hard-turbulence regime.
 
 <--o-->
 
