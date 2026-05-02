@@ -706,22 +706,21 @@ The steady state of an isoviscous convecting box depends on the Rayleigh number 
 
 <center>
 
-Cold start — initial conduction profile, sudden onset of plumes
-
-<video muted autoplay controls loop height="260">
+<video muted autoplay controls loop height="400">
     <source src="movies/Ra1e6.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 
-Warm start — continued from a $Ra=10^5$ steady state
-
-<video muted autoplay controls loop height="260">
+<video muted autoplay controls loop height="400">
     <source src="movies/Ra1e6_warm.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
+
 </center>
+
+*Left:* cold start — initial conduction profile, sudden onset of plumes. *Right:* warm start — continued from a $Ra=10^5$ steady state.
 
 <--v-->
 
