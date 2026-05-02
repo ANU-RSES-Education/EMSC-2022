@@ -956,7 +956,7 @@ These are the computed results from the models we have just looked at and discus
 | $Ra=10^7$       | 1/64   | 1690  |   41.70 ± 3.56 |   40.69 ± 3.84 |     2256 ± 221 |  0.4911 ± 0.0006 | *(no published)*      |
 | $Ra=10^8$       | 1/50   | 2142  |   52.55 ± 1.93 |   56.14 ± 5.24 |    8530 ± 1840 | 0.49 *(drift)* | *(no published)*      |
 
-1×1 box, isoviscous, free-slip BCs, P3 cubic $T$. Errors are std-dev over the last 200 saved steps (or whole run if shorter). $V_{\mathrm{rms}}\propto\sqrt{\mathrm{Ra}}$ holds across the range; $\mathrm{Nu}$ tracks $\mathrm{Ra}^{1/3}$ to within ~3 % of Blankenbach (1989) at intermediate $\mathrm{Ra}$.
+1×1 box, isoviscous, free-slip BCs, P3 cubic $T$. Errors are std-dev over the last 200 saved steps (or whole run if shorter). $V_{\mathrm{rms}}\propto\mathrm{Ra}^{2/3}$ and $\mathrm{Nu}\propto\mathrm{Ra}^{1/3}$ both hold across the steady-state range, to within ~3 % of Blankenbach (1989) at intermediate $\mathrm{Ra}$.
 
 </div>
 
