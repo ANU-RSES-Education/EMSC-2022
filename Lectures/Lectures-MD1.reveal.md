@@ -730,13 +730,11 @@ Both runs end in an equivalent state — not exactly the same (one is a mirror i
 
 <center>
 
-<!-- Drop in `images/Ra1e6_NuVrms.png` (cold/warm overlaid Nu and Vrms vs time) when ready -->
-
-*Graph: $\mathrm{Nu}$ and $V_{\mathrm{rms}}$ vs time for cold and warm starts (forthcoming).*
+<img src="images/Ra1e6_compare.png" alt="Nu, Vrms, and mean T over time for the Ra=10^6 cold and warm starts" style="max-height:560px"/>
 
 </center>
 
-Both runs settle to the same time-averaged $\mathrm{Nu} \approx 21$ and $V_{\mathrm{rms}}$, despite the very different early-time behaviour — confirming path independence at this Rayleigh number.
+Different transient paths, same time-averaged $\mathrm{Nu} \approx 22$ and $V_{\mathrm{rms}} \approx 834$ — both runs converge to the Blankenbach benchmark values.
 
 <--o-->
 
