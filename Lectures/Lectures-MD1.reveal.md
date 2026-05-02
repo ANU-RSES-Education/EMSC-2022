@@ -70,7 +70,7 @@ Convection like this will only work when the soup is heated from below or, in th
 **Definition**:  Convection is the transfer of heat by the self-organised movement of a fluid. Free convection is when the fluid is stirred entirely by rising buoyant material and sinking negatively-buoyant material. (Forced convection is produced when the fluid is stirred mechanically).
 
 <center>
-<video autoplay controls width="33%">
+<video muted autoplay controls width="33%">
     <source src="movies/LavaLampNormalSpeed.m4v"
             type="video/mp4">
 
@@ -259,7 +259,7 @@ If the Earth really follows this cartoon, we need to understand how solid rock c
 ## A Toy Model
 
 <center>
-<video autoplay controls height="315">
+<video muted autoplay controls height="315">
     <source src="movies/ReferenceSinker.mp4"
             type="video/mp4">
 
@@ -314,14 +314,14 @@ Viscosity only opposes the formation of velocity gradients; not a driving force,
 ## A Toy Model
 
 <center>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/ReferenceSinker.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
 
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/ReferenceFloater.mp4"
             type="video/mp4">
 
@@ -338,7 +338,7 @@ In this toy model, do hot blobs and cold blobs behave in the same way
 ## A Toy Model
 
 <center>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/ReferenceSinker.mp4"
             type="video/mp4">
 
@@ -359,19 +359,19 @@ We will consider how the behaviour changes with various parameters. When we chan
 $$ \mathrm{buoyancy} \propto g\rho_0\alpha\left(1-\Delta T\right) $$  <!-- .element style="width:40%" -->
 
 <center>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/LessBuoyantSinker.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/ReferenceSinker.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/MoreBuoyantSinker.mp4"
             type="video/mp4">
 
@@ -388,19 +388,19 @@ Does *buoyancy* drive the flow harder when it is a stronger effect ?
 ## Viscous drag
 
 <center>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/LessViscousSinker.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/ReferenceSinker.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/MoreViscousSinker.mp4"
             type="video/mp4">
 
@@ -423,19 +423,19 @@ $$
 
 
 <center>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/LowerThermalDiff.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/ReferenceSinker.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/HigherThermalDiff.mp4"
             type="video/mp4">
 
@@ -452,19 +452,19 @@ Does *thermal diffusivity* drive the flow harder when it is a stronger effect ?
 ## The Size of the Box
 
 <center>
-<video autoplay controls loop height="80">
+<video muted autoplay controls loop height="80">
     <source src="movies/TinyLittleBox.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="160">
+<video muted autoplay controls loop height="160">
     <source src="movies/ReferenceSinker.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="320">
+<video muted autoplay controls loop height="320">
     <source src="movies/GreatBigBox.mp4"
             type="video/mp4">
 
@@ -479,19 +479,19 @@ Is the flow moving faster when the box is larger ?
 ## The Size of the Box (Scaled to fit)
 
 <center>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/TinyLittleBox.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/ReferenceSinker.mp4"
             type="video/mp4">
 
     Sorry, your browser doesn't support embedded videos.
 </video>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/GreatBigBox.mp4"
             type="video/mp4">
 
@@ -562,7 +562,7 @@ The structure of the flow and the pattern of the temperature field is predictabl
 
 Rayleigh number: $Ra=100$
 
-<video autoplay controls loop height="500">
+<video muted autoplay controls loop height="500">
     <source src="movies/Ra1e2.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -578,7 +578,7 @@ Rayleigh number: $Ra=100$
 
 Rayleigh number: $Ra=1,000$
 
-<video autoplay controls loop height="500">
+<video muted autoplay controls loop height="500">
     <source src="movies/Ra1e3.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -594,7 +594,7 @@ Rayleigh number: $Ra=1,000$
 
 Rayleigh number: $Ra=10,000$
 
-<video autoplay controls loop height="500">
+<video muted autoplay controls loop height="500">
     <source src="movies/Ra1e4.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -611,7 +611,7 @@ Rayleigh number: $Ra=10,000$
 
 Rayleigh number: $Ra=100,000$
 
-<video autoplay controls loop height="500">
+<video muted autoplay controls loop height="500">
     <source src="movies/Ra1e5.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -628,7 +628,7 @@ Rayleigh number: $Ra=100,000$
 
 Rayleigh number: $Ra=1,000,000$
 
-<video autoplay controls loop height="500">
+<video muted autoplay controls loop height="500">
     <source src="movies/Ra1e6.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -645,12 +645,30 @@ Rayleigh number: $Ra=1,000,000$
 
 Rayleigh number: $Ra=10,000,000$
 
-<video autoplay controls loop height="500">
+<video muted autoplay controls loop height="500">
     <source src="movies/Ra1e7.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
+
+
+<--v-->
+
+## Thermal Convection
+
+<center>
+
+Rayleigh number: $Ra=10^8$
+
+<video muted autoplay controls loop height="500">
+    <source src="movies/Ra1e8.mp4"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</center>
+
+At this Rayleigh number cavity plumes appear: thermal heads break off from their tails and travel independently. The flow is strongly time-dependent — there is no purely steady solution.
 
 <--o-->
 
@@ -660,7 +678,7 @@ Rayleigh number: $Ra=10,000,000$
 
 Rayleigh number: $Ra=1,000,000$
 
-<video autoplay controls loop height="250">
+<video muted autoplay controls loop height="250">
     <source src="movies/Ra1e6-4x1.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -679,19 +697,19 @@ The pattern is not changed much when we make the box a little wider
 Rayleigh number: $Ra=1,000,000$
 
 <center>
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/Annulus1e6_large_core.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/Annulus1e6_normal_core.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 
-<video autoplay controls loop height="315">
+<video muted autoplay controls loop height="315">
     <source src="movies/Annulus1e6_tiny_core.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -740,7 +758,7 @@ Again, the best thing is to watch the system evolve and get a feel for what happ
 
 Rayleigh number: $Ra=100,000$
 
-<video autoplay controls loop height="450">
+<video muted autoplay controls loop height="450">
     <source src="movies/Ra1e5tr.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -757,7 +775,7 @@ Rayleigh number: $Ra=100,000$
 
 Rayleigh number: $Ra=1,000,000$
 
-<video autoplay controls loop height="450">
+<video muted autoplay controls loop height="450">
     <source src="movies/Ra1e6tr.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -773,7 +791,7 @@ Rayleigh number: $Ra=1,000,000$
 
 Rayleigh number: $Ra=10,000,000$
 
-<video autoplay controls loop height="450">
+<video muted autoplay controls loop height="450">
     <source src="movies/Ra1e7tr.m4v"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
@@ -882,7 +900,7 @@ If $\mathrm{Ra} \gg \mathrm{Ra}_c$ then convective motion is inevitable
 
 <div style="float:right; width:35%">
 </video>
-<video autoplay controls loop height="320">
+<video muted autoplay controls loop height="320">
     <source src="movies/etopoimageH.mp4"
             type="video/mp4">
 

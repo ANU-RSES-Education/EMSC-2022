@@ -145,7 +145,7 @@ So we can imagine standing on the plate and measuring the geotherm. From this pe
 
 <center>
 </video>
-<video autoplay controls loop height="400">
+<video muted autoplay controls loop height="400">
     <source src="movies/OceanCooling2.mov"
             type="video/mp4">
 
