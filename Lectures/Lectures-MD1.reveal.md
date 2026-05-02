@@ -944,7 +944,7 @@ $$ \mathrm{Nu} \propto \mathrm{Ra}^{1/3} $$
 
 These are the computed results from the models we have just looked at and discussed in the previous slides.
 
-<div style="font-size: 70%;">
+<div style="font-size: 60%;">
 
 | Case        | Mesh   | Steps | $\mathrm{Nu}_{\mathrm{top}}$ | $\mathrm{Nu}_{\mathrm{bot}}$ | $V_{\mathrm{rms}}$ | $\langle T \rangle$ | Benchmark $\mathrm{Nu}$ / $V_{\mathrm{rms}}$ |
 |-------------|--------|------:|----------------:|----------------:|---------------:|----------------:|----------------------------:|
