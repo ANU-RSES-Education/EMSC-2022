@@ -925,7 +925,7 @@ The temperature (velocity, stress etc) profiles vary systematically with $\mathr
 ## Nusselt number
 
 <div style="width:65%">
-Another, independent, dimensionless quantity can be derived for the convecting system and it is called the *Nusslet number*.
+Another, independent, dimensionless quantity can be derived for the convecting system and it is called the <em>Nusselt number</em>.
 
 $$ \mathrm{Nu} = \frac{Q d}{k \Delta T} $$
 
