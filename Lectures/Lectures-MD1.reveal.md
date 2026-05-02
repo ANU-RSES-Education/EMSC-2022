@@ -685,14 +685,14 @@ Strongly time-dependent — plume bursts; $\mathrm{Nu}$ fluctuates roughly 30–
 
 Rayleigh number: $Ra=10^8$
 
-<video muted autoplay controls loop height="500">
+<video muted autoplay controls loop height="440">
     <source src="movies/Ra1e8.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
 
-At this Rayleigh number *decapitated plumes* appear: the heads detach from their tails and travel independently, then become absorbed into a larger-scale circulation. The flow is strongly time-dependent — there is no purely steady solution. This is close to the transition into the hard-turbulence regime.
+<small>At this Rayleigh number *decapitated plumes* appear: the heads detach from their tails and travel independently, then become absorbed into a larger-scale circulation. The flow is strongly time-dependent — there is no purely steady solution. This is close to the transition into the hard-turbulence regime.</small>
 
 <--o-->
 
