@@ -942,7 +942,9 @@ $$ \mathrm{Nu} \propto \mathrm{Ra}^{1/3} $$
 
 ## Measured $\mathrm{Nu}$, $V_{\mathrm{rms}}$, $\langle T \rangle$
 
-<div style="font-size: 55%;">
+These are the computed results from the models we have just looked at and discussed in the previous slides.
+
+<div style="font-size: 70%;">
 
 | Case        | Mesh   | Steps | $\mathrm{Nu}_{\mathrm{top}}$ | $\mathrm{Nu}_{\mathrm{bot}}$ | $V_{\mathrm{rms}}$ | $\langle T \rangle$ | Benchmark $\mathrm{Nu}$ / $V_{\mathrm{rms}}$ |
 |-------------|--------|------:|----------------:|----------------:|---------------:|----------------:|----------------------------:|
@@ -954,9 +956,15 @@ $$ \mathrm{Nu} \propto \mathrm{Ra}^{1/3} $$
 | $Ra=10^7$       | 1/64   | 1690  |   41.70 ± 3.56 |   40.69 ± 3.84 |     2256 ± 221 |  0.4911 ± 0.0006 | *(no published)*      |
 | $Ra=10^8$       | 1/50   | 2142  |   52.55 ± 1.93 |   56.14 ± 5.24 |    8530 ± 1840 | 0.49 *(drift)* | *(no published)*      |
 
+1×1 box, isoviscous, free-slip BCs, P3 cubic $T$. Errors are std-dev over the last 200 saved steps (or whole run if shorter). $V_{\mathrm{rms}}\propto\sqrt{\mathrm{Ra}}$ holds across the range; $\mathrm{Nu}$ tracks $\mathrm{Ra}^{1/3}$ to within ~3 % of Blankenbach (1989) at intermediate $\mathrm{Ra}$.
+
 </div>
 
-<small>1×1 box, isoviscous, free-slip BCs, P3 cubic $T$. Errors are std-dev over the last 200 saved steps (or whole run if shorter). $V_{\mathrm{rms}}\propto\sqrt{\mathrm{Ra}}$ holds across the range; $\mathrm{Nu}$ tracks $\mathrm{Ra}^{1/3}$ to within ~3 % of Blankenbach&nbsp;1989 at intermediate $\mathrm{Ra}$.</small>
+<div style="font-size: 45%; margin-top: 1em;">
+
+Blankenbach, B., Busse, F., Christensen, U., Cserepes, L., Gunkel, D., Hansen, U., et al. (1989). A benchmark comparison for mantle convection codes. <em>Geophysical Journal International</em>, 98(1), 23–38. <https://doi.org/10.1111/j.1365-246X.1989.tb05511.x>
+
+</div>
 
 <--o-->
 
