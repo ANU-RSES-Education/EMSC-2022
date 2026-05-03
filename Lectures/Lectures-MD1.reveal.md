@@ -818,44 +818,31 @@ Again, the best thing is to watch the system evolve and get a feel for what happ
 
 <--v-->
 
-## Steady State Convection
+## Steady State Convection — $Ra=10^5$ and $Ra=10^6$
 
 <center>
 
-Rayleigh number: $Ra=10^5$
-
-<video muted autoplay controls loop height="450">
+<video muted autoplay controls loop height="400">
     <source src="movies/Ra1e5_tracers.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
-</center>
 
-
-<--v-->
-
-## Steady State Convection
-
-
-<center>
-
-Rayleigh number: $Ra=10^6$
-
-<video muted autoplay controls loop height="450">
+<video muted autoplay controls loop height="400">
     <source src="movies/Ra1e6_tracers.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
+
 </center>
+
+*Left:* $Ra=10^5$. *Right:* $Ra=10^6$. Both reach a steady single cell; the higher-Ra case has thinner thermal boundary layers and circulates an order of magnitude faster, but the broad pattern is the same.
 
 <--v-->
 
-## Steady State Convection
-
+## Non-steady convection and stirring — $Ra=10^7$
 
 <center>
-
-Rayleigh number: $Ra=10^7$
 
 <video muted autoplay controls loop height="450">
     <source src="movies/Ra1e7_tracers.mp4"
@@ -863,6 +850,8 @@ Rayleigh number: $Ra=10^7$
     Sorry, your browser doesn't support embedded videos.
 </video>
 </center>
+
+Same broad lessons as the steady cases — boundary layers feed a large-scale circulation — but the flow is no longer steady. Plumes burst, the cell wobbles, and the tracers reveal vigorous, irregular stirring throughout the interior.
 
 <--o-->
 
