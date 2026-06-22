@@ -1,20 +1,29 @@
 # Ignore course-specific content files during template sync
 # Only sync infrastructure/theme files, not course content
 
-# Course content - these are specific to EMSC-2022
+# Course content - these files should be customized per course
 WebBook/_quarto.yml
 WebBook/index.qmd
+WebBook/intro.qmd
+WebBook/summary.qmd
+WebBook/references.qmd
+WebBook/LectureSlides/**
 WebBook/Notebooks/**
-WebBook/Lectures/**
+WebBook/Images/**
 
 # Course-specific assets
 WebBook/assets/AuWorldEQ.jpg
+
+# Documentation (template documentation vs course documentation)
+README.md
 
 # Keep these synced from template:
 # WebBook/assets/theme.scss
 # WebBook/assets/styles.css
 # WebBook/assets/font_button.js
+# WebBook/assets/ANU-logo.png
 # .github/workflows/
 # update-template.sh
 # pixi.toml
 # pixi.lock
+# serve-book.py
